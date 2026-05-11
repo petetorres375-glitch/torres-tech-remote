@@ -479,6 +479,43 @@
     .clp-file-meta { font-size:0.72rem; color:#888; margin-top:0.1rem; }
     .clp-new { font-size:0.66rem; font-weight:700; background:#fef3ee; color:#c44d24; border-radius:6px; padding:0.15rem 0.45rem; margin-left:0.4rem; vertical-align:middle; }
 
+    /* BLACKJACK POPUP */
+    .bj-overlay { position:fixed; inset:0; z-index:800; display:flex; align-items:center; justify-content:center; background:rgba(28,28,30,0.52); opacity:0; visibility:hidden; transition:opacity 0.25s,visibility 0.25s; }
+    .bj-overlay.open { opacity:1; visibility:visible; }
+    .bj-pop-box { background:#fff; border-radius:20px; padding:2rem; width:min(520px,92vw); max-height:88vh; overflow-y:auto; box-shadow:0 24px 64px rgba(0,0,0,0.18); transform:scale(0.93); transition:transform 0.28s cubic-bezier(0.32,0.72,0,1); }
+    .bj-overlay.open .bj-pop-box { transform:scale(1); }
+    .bj-pop-hdr { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; }
+    .bj-pop-title { font-size:1rem; font-weight:700; color:#1c1c1e; }
+    .bj-pop-close { width:32px; height:32px; border-radius:8px; border:1.5px solid #e8e4de; background:transparent; cursor:pointer; font-size:1rem; color:#888; display:flex; align-items:center; justify-content:center; transition:color 0.15s,border-color 0.15s,background 0.15s; }
+    .bj-pop-close:hover { color:#e05c2e; border-color:#e05c2e; background:#fef3ee; }
+    .bj-felt { background:linear-gradient(180deg,#14532d,#166534 50%,#14532d); border-radius:16px; padding:1.75rem 2rem 1.5rem; text-align:center; margin-bottom:1.25rem; box-shadow:inset 0 0 50px rgba(0,0,0,0.3); }
+    .bj-role { font-size:0.62rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:0.5rem; }
+    .bj-tally { font-size:0.72rem; font-weight:700; color:rgba(255,255,255,0.45); margin-top:0.35rem; min-height:1.2em; }
+    .bj-felt-hand { display:flex; gap:0.7rem; justify-content:center; }
+    .bj-felt-sep { border:none; border-top:1px solid rgba(255,255,255,0.1); margin:1.1rem 0; }
+    .bj-felt .bj-card { width:68px; height:96px; background:#fff; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.45); display:flex; flex-direction:column; justify-content:space-between; padding:7px 8px; opacity:0; flex-shrink:0; }
+    .bj-felt .bj-card.red  { color:#dc2626; }
+    .bj-felt .bj-card.dark { color:#1a1a1a; }
+    .bj-felt .bj-card.back { background:#1e3a8a; background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.07) 0,rgba(255,255,255,0.07) 2px,transparent 2px,transparent 10px); }
+    @keyframes bjDeal { from{opacity:0;transform:translateY(-50px) rotate(-8deg) scale(0.85)} to{opacity:1;transform:translateY(0) rotate(0) scale(1)} }
+    .bj-felt .bj-card.deal { animation:bjDeal 0.38s cubic-bezier(0.32,0.72,0,1) forwards; }
+    .bj-cr-top { font-size:0.82rem; line-height:1; display:flex; flex-direction:column; gap:1px; }
+    .bj-cr-rank { font-size:1rem; font-weight:900; }
+    .bj-cr-sm   { font-size:0.7rem; }
+    .bj-cr-big  { font-size:1.9rem; line-height:1; margin:auto; }
+    .bj-cr-bot  { font-size:0.82rem; line-height:1; transform:rotate(180deg); display:flex; flex-direction:column; gap:1px; align-self:flex-end; }
+    .bj-win { opacity:0; margin-top:0.75rem; }
+    .bj-win.show { animation:dmFade 0.5s ease forwards; }
+    @keyframes bjGlow { 0%,100%{transform:scale(1);text-shadow:0 0 20px rgba(251,191,36,0.5)} 50%{transform:scale(1.05);text-shadow:0 0 32px rgba(251,191,36,0.85)} }
+    .bj-win-text { font-size:1.35rem; font-weight:900; color:#fbbf24; letter-spacing:0.06em; animation:bjGlow 1.3s ease-in-out infinite; }
+    .bj-win-sub  { font-size:0.68rem; color:rgba(255,255,255,0.32); margin-top:0.25rem; letter-spacing:0.08em; text-transform:uppercase; }
+    .bj-pay-row  { display:flex; gap:0.75rem; opacity:0; }
+    .bj-pay-row.show { animation:dmFade 0.4s ease forwards; }
+    .bj-pay-pill { flex:1; background:#fafafa; border:1px solid #f0efed; border-radius:10px; padding:0.6rem 0.5rem; text-align:center; }
+    .bj-pay-v { font-size:0.9rem; font-weight:800; color:#1c1c1e; }
+    .bj-pay-v.up { color:#22c55e; }
+    .bj-pay-l { font-size:0.6rem; text-transform:uppercase; letter-spacing:0.08em; color:#bbb; font-weight:600; margin-top:0.1rem; }
+
     @media (max-width:768px) {
       .hero { grid-template-columns:1fr; }
       .hero-stats { display:none; }
@@ -734,6 +771,55 @@
         <div class="ats-recs-hdr">Recommendations</div>
         <div class="ats-rec"><span class="ats-rec-dot"></span>Add Docker or containerization experience to your Skills section.</div>
         <div class="ats-rec"><span class="ats-rec-dot"></span>Mention AWS, GCP, or cloud deployment to address missing keywords.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLACKJACK POPUP -->
+  <div class="bj-overlay" id="bj-overlay">
+    <div class="bj-pop-box">
+      <div class="bj-pop-hdr">
+        <span class="bj-pop-title">Blackjack</span>
+        <button class="bj-pop-close" id="bj-close">&#10005;</button>
+      </div>
+      <div class="bj-felt">
+        <div class="bj-role">Dealer</div>
+        <div class="bj-felt-hand">
+          <div class="bj-card dark" id="bjc0">
+            <div class="bj-cr-top"><div class="bj-cr-rank">5</div><div class="bj-cr-sm">&#9827;</div></div>
+            <div class="bj-cr-big">&#9827;</div>
+            <div class="bj-cr-bot"><div class="bj-cr-rank">5</div><div class="bj-cr-sm">&#9827;</div></div>
+          </div>
+          <div class="bj-card back" id="bjc1">
+            <div style="color:rgba(255,255,255,0.15);font-size:2rem;font-weight:900;margin:auto;">?</div>
+          </div>
+        </div>
+        <div class="bj-tally" id="bj-dtally">&nbsp;</div>
+        <hr class="bj-felt-sep">
+        <div class="bj-role">You</div>
+        <div class="bj-felt-hand">
+          <div class="bj-card red" id="bjc2">
+            <div class="bj-cr-top"><div class="bj-cr-rank">A</div><div class="bj-cr-sm">&#9829;</div></div>
+            <div class="bj-cr-big">&#9829;</div>
+            <div class="bj-cr-bot"><div class="bj-cr-rank">A</div><div class="bj-cr-sm">&#9829;</div></div>
+          </div>
+          <div class="bj-card dark" id="bjc3">
+            <div class="bj-cr-top"><div class="bj-cr-rank">K</div><div class="bj-cr-sm">&#9824;</div></div>
+            <div class="bj-cr-big">&#9824;</div>
+            <div class="bj-cr-bot"><div class="bj-cr-rank">K</div><div class="bj-cr-sm">&#9824;</div></div>
+          </div>
+        </div>
+        <div class="bj-tally" id="bj-ptally">&nbsp;</div>
+        <div class="bj-win" id="bj-win">
+          <div class="bj-win-text">BLACKJACK!</div>
+          <div class="bj-win-sub">Natural 21 &mdash; Pays 3:2</div>
+        </div>
+      </div>
+      <div class="bj-pay-row" id="bj-payrow">
+        <div class="bj-pay-pill"><div class="bj-pay-v">$50</div><div class="bj-pay-l">Bet</div></div>
+        <div class="bj-pay-pill"><div class="bj-pay-v">3:2</div><div class="bj-pay-l">Payout</div></div>
+        <div class="bj-pay-pill"><div class="bj-pay-v up">+$75</div><div class="bj-pay-l">Won</div></div>
+        <div class="bj-pay-pill"><div class="bj-pay-v">$125</div><div class="bj-pay-l">Balance</div></div>
       </div>
     </div>
   </div>
@@ -1064,13 +1150,37 @@
     document.getElementById('clp-close').addEventListener('click', closeCli);
     document.getElementById('clp-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeCli(); });
 
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeAts(); closeSheets(); closeCli(); } });
+    function openBj() {
+      ['bjc0','bjc1','bjc2','bjc3'].forEach(id => { document.getElementById(id).classList.remove('deal'); });
+      document.getElementById('bj-dtally').innerHTML = '&nbsp;';
+      document.getElementById('bj-ptally').innerHTML = '&nbsp;';
+      document.getElementById('bj-win').classList.remove('show');
+      document.getElementById('bj-payrow').classList.remove('show');
+      document.getElementById('bj-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      [[300,'bjc0'],[630,'bjc2'],[960,'bjc1'],[1280,'bjc3']].forEach(([d,id]) => {
+        setTimeout(() => document.getElementById(id).classList.add('deal'), d);
+      });
+      setTimeout(() => { document.getElementById('bj-dtally').textContent = 'Dealer: 15'; }, 970);
+      setTimeout(() => { document.getElementById('bj-ptally').textContent = 'You: 21'; }, 1390);
+      setTimeout(() => document.getElementById('bj-win').classList.add('show'), 1950);
+      setTimeout(() => document.getElementById('bj-payrow').classList.add('show'), 2400);
+    }
+    function closeBj() {
+      document.getElementById('bj-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('bj-close').addEventListener('click', closeBj);
+    document.getElementById('bj-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeBj(); });
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeAts(); closeSheets(); closeCli(); closeBj(); } });
 
     document.querySelectorAll('.pcard[data-demo]').forEach(card => {
       card.addEventListener('click', () => {
         if (card.dataset.demo === 'ats') { openAts(); return; }
         if (card.dataset.demo === 'sheets') { openSheets(); return; }
         if (card.dataset.demo === 'cli') { openCli(); return; }
+        if (card.dataset.demo === 'blackjack') { openBj(); return; }
         if (card.classList.contains('demo-open')) return;
         const d = demos[card.dataset.demo];
         if (!d) return;
