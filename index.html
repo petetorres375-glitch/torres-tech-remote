@@ -540,6 +540,68 @@
     .cfu-status { text-align:center; margin-top:1rem; font-size:0.92rem; font-weight:700; color:#ef4444; opacity:0; }
     .cfu-status.show { animation:dmFade 0.4s ease forwards; }
 
+    .pc7{animation-delay:0.7s;} .pc8{animation-delay:0.8s;}
+
+    /* INVENTORY POPUP */
+    .inv-overlay { position:fixed; inset:0; z-index:800; display:flex; align-items:center; justify-content:center; background:rgba(28,28,30,0.52); opacity:0; visibility:hidden; transition:opacity 0.25s,visibility 0.25s; }
+    .inv-overlay.open { opacity:1; visibility:visible; }
+    .inv-box { background:#fff; border-radius:20px; padding:2rem; width:min(660px,92vw); max-height:88vh; overflow-y:auto; box-shadow:0 24px 64px rgba(0,0,0,0.18); transform:scale(0.93); transition:transform 0.28s cubic-bezier(0.32,0.72,0,1); }
+    .inv-overlay.open .inv-box { transform:scale(1); }
+    .inv-mhdr { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; }
+    .inv-mtitle-row { display:flex; align-items:center; gap:0.75rem; }
+    .inv-icon { width:32px; height:32px; border-radius:8px; background:#fef3ee; color:#e05c2e; display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .inv-mtitle { font-size:1rem; font-weight:700; color:#1c1c1e; }
+    .inv-mclose { width:32px; height:32px; border-radius:8px; border:1.5px solid #e8e4de; background:transparent; cursor:pointer; font-size:1rem; color:#888; display:flex; align-items:center; justify-content:center; transition:color 0.15s,border-color 0.15s,background 0.15s; }
+    .inv-mclose:hover { color:#e05c2e; border-color:#e05c2e; background:#fef3ee; }
+    .inv-prog-wrap { background:#f5f4f2; border-radius:6px; height:6px; overflow:hidden; margin-bottom:0.4rem; }
+    .inv-prog-bar { height:100%; background:linear-gradient(90deg,#e05c2e,#f59e0b); width:0%; border-radius:6px; transition:width 0.38s ease; }
+    .inv-prog-meta { display:flex; justify-content:space-between; font-size:0.72rem; color:#888; margin-bottom:1.25rem; }
+    .inv-table-wrap { border:1px solid #e8e8e8; border-radius:10px; overflow:hidden; margin-bottom:1.25rem; }
+    .inv-grid { width:100%; border-collapse:collapse; font-size:0.8rem; }
+    .inv-grid thead th { background:#f8f9fa; color:#666; font-weight:700; padding:0.4rem 0.75rem; border-bottom:1px solid #e8e8e8; text-align:left; font-size:0.68rem; letter-spacing:0.04em; text-transform:uppercase; }
+    .inv-rn { background:#f8f9fa; color:#bbb; font-size:0.7rem; width:28px; text-align:center; border-right:1px solid #efefef; }
+    .inv-grid td { padding:0.45rem 0.75rem; border-bottom:1px solid #f0f0f0; color:#1c1c1e; opacity:0; }
+    .inv-row:last-child td { border-bottom:none; }
+    .inv-row.show td { animation:invRowIn 0.4s ease forwards; }
+    @keyframes invRowIn { 0%{opacity:0;background:#fef9f7} 40%{opacity:1;background:#fef9f7} 100%{opacity:1;background:transparent} }
+    .inv-badge { border-radius:50px; padding:0.12rem 0.55rem; font-size:0.72rem; font-weight:700; white-space:nowrap; }
+    .inv-badge.ok   { background:#dcfce7; color:#166534; }
+    .inv-badge.low  { background:#fef3c7; color:#92400e; }
+    .inv-badge.crit { background:#fee2e2; color:#991b1b; }
+    .inv-summary { display:flex; background:#fafafa; border-radius:10px; overflow:hidden; opacity:0; }
+    .inv-summary.show { animation:dmFade 0.4s ease forwards; }
+    .inv-sum-item { flex:1; padding:0.7rem 0.75rem; text-align:center; border-right:1px solid #efefef; }
+    .inv-sum-item:last-child { border-right:none; }
+    .inv-sum-num { font-size:0.92rem; font-weight:800; color:#1c1c1e; }
+    .inv-warn { color:#f59e0b; } .inv-crit { color:#ef4444; }
+    .inv-sum-lbl { font-size:0.6rem; text-transform:uppercase; letter-spacing:0.08em; color:#bbb; font-weight:600; margin-top:0.1rem; }
+
+    /* CONTACTS POPUP */
+    .ct-overlay { position:fixed; inset:0; z-index:800; display:flex; align-items:center; justify-content:center; background:rgba(28,28,30,0.52); opacity:0; visibility:hidden; transition:opacity 0.25s,visibility 0.25s; }
+    .ct-overlay.open { opacity:1; visibility:visible; }
+    .ct-box { background:#fff; border-radius:20px; padding:2rem; width:min(520px,92vw); max-height:88vh; overflow-y:auto; box-shadow:0 24px 64px rgba(0,0,0,0.18); transform:scale(0.93); transition:transform 0.28s cubic-bezier(0.32,0.72,0,1); }
+    .ct-overlay.open .ct-box { transform:scale(1); }
+    .ct-mhdr { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.1rem; }
+    .ct-mtitle-row { display:flex; align-items:center; gap:0.75rem; }
+    .ct-icon { width:32px; height:32px; border-radius:8px; background:#eff6ff; color:#3b82f6; display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .ct-mtitle { font-size:1rem; font-weight:700; color:#1c1c1e; }
+    .ct-mclose { width:32px; height:32px; border-radius:8px; border:1.5px solid #e8e4de; background:transparent; cursor:pointer; font-size:1rem; color:#888; display:flex; align-items:center; justify-content:center; transition:color 0.15s,border-color 0.15s,background 0.15s; }
+    .ct-mclose:hover { color:#e05c2e; border-color:#e05c2e; background:#fef3ee; }
+    .ct-search-wrap { position:relative; margin-bottom:1rem; }
+    .ct-search-icon { position:absolute; left:0.75rem; top:50%; transform:translateY(-50%); color:#bbb; font-size:0.85rem; pointer-events:none; }
+    .ct-search { width:100%; border:1.5px solid #e8e4de; border-radius:10px; padding:0.5rem 0.85rem 0.5rem 2.1rem; font-size:0.82rem; color:#1c1c1e; outline:none; box-sizing:border-box; }
+    .ct-search:focus { border-color:#e05c2e; }
+    .ct-list { display:flex; flex-direction:column; gap:0.55rem; margin-bottom:1.1rem; }
+    .ct-card { display:flex; align-items:center; gap:0.9rem; border:1px solid #f0efed; border-radius:12px; padding:0.8rem 1rem; opacity:0; }
+    .ct-info { flex:1; min-width:0; }
+    .ct-name  { font-size:0.88rem; font-weight:700; color:#1c1c1e; }
+    .ct-role  { font-size:0.73rem; color:#888; margin-top:0.05rem; }
+    .ct-email { font-size:0.72rem; color:#aaa; margin-top:0.05rem; }
+    .ct-actions { display:flex; gap:0.4rem; flex-shrink:0; }
+    .ct-btn { border:1.5px solid #e8e4de; background:#fff; border-radius:7px; padding:0.22rem 0.6rem; font-size:0.72rem; font-weight:600; color:#555; cursor:pointer; transition:border-color 0.15s,color 0.15s; }
+    .ct-btn:hover { border-color:#e05c2e; color:#e05c2e; }
+    .ct-footer { display:flex; align-items:center; gap:0.5rem; padding:0.6rem 0.75rem; background:#fafafa; border-radius:10px; font-size:0.75rem; color:#888; }
+
     @media (max-width:768px) {
       .hero { grid-template-columns:1fr; }
       .hero-stats { display:none; }
@@ -733,6 +795,36 @@
         <div class="pcard-demo"></div>
       </div>
 
+      <div class="pcard pc7" data-demo="inventory">
+        <div class="pcard-face">
+          <div class="pcard-header">
+            <div class="pcard-icon"><i class="ti ti-package" aria-hidden="true"></i></div>
+          </div>
+          <div class="pcard-title">Inventory Data Sheet</div>
+          <div class="pcard-desc">Live inventory dashboard — tracks stock levels, flags low and critical items, and surfaces a quick summary in real time.</div>
+          <div class="pcard-tags">
+            <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span>
+          </div>
+          <div class="pcard-hint">&#9654; Click to see demo</div>
+        </div>
+        <div class="pcard-demo"></div>
+      </div>
+
+      <div class="pcard pc8" data-demo="contacts">
+        <div class="pcard-face">
+          <div class="pcard-header">
+            <div class="pcard-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+          </div>
+          <div class="pcard-title">Contacts Manager</div>
+          <div class="pcard-desc">Clean contact card UI — search by name, view details at a glance, and manage your team or client list with ease.</div>
+          <div class="pcard-tags">
+            <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">JavaScript</span>
+          </div>
+          <div class="pcard-hint">&#9654; Click to see demo</div>
+        </div>
+        <div class="pcard-demo"></div>
+      </div>
+
     </div>
   </section>
 
@@ -756,6 +848,103 @@
       <div class="trust-item"><i class="ti ti-circle-check" aria-hidden="true"></i>No surprises</div>
     </div>
     <button class="bottom-cta">Start a Project &rarr;</button>
+  </div>
+
+  <!-- INVENTORY POPUP -->
+  <div class="inv-overlay" id="inv-overlay">
+    <div class="inv-box">
+      <div class="inv-mhdr">
+        <div class="inv-mtitle-row">
+          <div class="inv-icon"><i class="ti ti-package" aria-hidden="true"></i></div>
+          <span class="inv-mtitle">Inventory Data Sheet</span>
+        </div>
+        <button class="inv-mclose" id="inv-close">&#10005;</button>
+      </div>
+      <div class="inv-prog-wrap"><div class="inv-prog-bar" id="inv-prog"></div></div>
+      <div class="inv-prog-meta"><span id="inv-prog-lbl">Loading inventory&hellip;</span><span id="inv-prog-count">0 / 5</span></div>
+      <div class="inv-table-wrap">
+        <table class="inv-grid">
+          <thead>
+            <tr>
+              <th class="inv-rn">#</th>
+              <th>Item</th>
+              <th>SKU</th>
+              <th>In Stock</th>
+              <th>Reorder At</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="inv-row" id="invr0"><td class="inv-rn">1</td><td>Widget A</td><td>WGT-001</td><td>142</td><td>20</td><td><span class="inv-badge ok">In Stock</span></td></tr>
+            <tr class="inv-row" id="invr1"><td class="inv-rn">2</td><td>Widget B</td><td>WGT-002</td><td>14</td><td>25</td><td><span class="inv-badge low">Low Stock</span></td></tr>
+            <tr class="inv-row" id="invr2"><td class="inv-rn">3</td><td>Gadget X</td><td>GDG-010</td><td>87</td><td>15</td><td><span class="inv-badge ok">In Stock</span></td></tr>
+            <tr class="inv-row" id="invr3"><td class="inv-rn">4</td><td>Gadget Y</td><td>GDG-011</td><td>3</td><td>20</td><td><span class="inv-badge crit">Critical</span></td></tr>
+            <tr class="inv-row" id="invr4"><td class="inv-rn">5</td><td>Component Z</td><td>CMP-099</td><td>210</td><td>30</td><td><span class="inv-badge ok">In Stock</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="inv-summary" id="inv-summary">
+        <div class="inv-sum-item"><span class="inv-sum-num" id="inv-s-ok">0</span><span class="inv-sum-lbl">In Stock</span></div>
+        <div class="inv-sum-item"><span class="inv-sum-num inv-warn" id="inv-s-low">0</span><span class="inv-sum-lbl">Low</span></div>
+        <div class="inv-sum-item"><span class="inv-sum-num inv-crit" id="inv-s-crit">0</span><span class="inv-sum-lbl">Critical</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACTS POPUP -->
+  <div class="ct-overlay" id="ct-overlay">
+    <div class="ct-box">
+      <div class="ct-mhdr">
+        <div class="ct-mtitle-row">
+          <div class="ct-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+          <span class="ct-mtitle">Contacts Manager</span>
+        </div>
+        <button class="ct-mclose" id="ct-close">&#10005;</button>
+      </div>
+      <div class="ct-search-wrap">
+        <i class="ti ti-search ct-search-icon" aria-hidden="true"></i>
+        <input class="ct-search" id="ct-search" type="text" placeholder="Search contacts&hellip;" autocomplete="off">
+      </div>
+      <div class="ct-list" id="ct-list">
+        <div class="ct-card" id="ctc0">
+          <div class="ct-avatar" style="background:#e05c2e;">AT</div>
+          <div class="ct-info">
+            <div class="ct-name">Alice Torres</div>
+            <div class="ct-role">Project Manager</div>
+            <div class="ct-email">alice@acme.com</div>
+          </div>
+          <div class="ct-actions"><button class="ct-btn">Email</button><button class="ct-btn">Call</button></div>
+        </div>
+        <div class="ct-card" id="ctc1">
+          <div class="ct-avatar" style="background:#3b82f6;">JR</div>
+          <div class="ct-info">
+            <div class="ct-name">James Rivera</div>
+            <div class="ct-role">Lead Developer</div>
+            <div class="ct-email">james@corp.io</div>
+          </div>
+          <div class="ct-actions"><button class="ct-btn">Email</button><button class="ct-btn">Call</button></div>
+        </div>
+        <div class="ct-card" id="ctc2">
+          <div class="ct-avatar" style="background:#22c55e;">MB</div>
+          <div class="ct-info">
+            <div class="ct-name">Maria Brown</div>
+            <div class="ct-role">UX Designer</div>
+            <div class="ct-email">maria@startup.co</div>
+          </div>
+          <div class="ct-actions"><button class="ct-btn">Email</button><button class="ct-btn">Call</button></div>
+        </div>
+        <div class="ct-card" id="ctc3">
+          <div class="ct-avatar" style="background:#a855f7;">CD</div>
+          <div class="ct-info">
+            <div class="ct-name">Carlos Diaz</div>
+            <div class="ct-role">Sales Director</div>
+            <div class="ct-email">carlos@bigco.com</div>
+          </div>
+          <div class="ct-actions"><button class="ct-btn">Email</button><button class="ct-btn">Call</button></div>
+        </div>
+      </div>
+      <div class="ct-footer"><span id="ct-count">4 contacts</span></div>
+    </div>
   </div>
 
   <!-- ATS REPORT POPUP -->
@@ -1273,7 +1462,88 @@
     document.getElementById('cfu-close').addEventListener('click', closeCfu);
     document.getElementById('cfu-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeCfu(); });
 
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeAts(); closeSheets(); closeCli(); closeBj(); closeCfu(); } });
+    function openInv() {
+      const rows = document.querySelectorAll('.inv-row');
+      rows.forEach(r => r.classList.remove('show'));
+      const prog = document.getElementById('inv-prog');
+      prog.style.transition = 'none';
+      prog.style.width = '0%';
+      document.getElementById('inv-prog-lbl').textContent = 'Loading inventory…';
+      document.getElementById('inv-prog-count').textContent = '0 / 5';
+      document.getElementById('inv-s-ok').textContent = '0';
+      document.getElementById('inv-s-low').textContent = '0';
+      document.getElementById('inv-s-crit').textContent = '0';
+      const sumEl = document.getElementById('inv-summary');
+      sumEl.classList.remove('show');
+      sumEl.style.opacity = '0';
+      document.getElementById('inv-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      let i = 0;
+      const iv = setInterval(() => {
+        if (i >= rows.length) {
+          clearInterval(iv);
+          document.getElementById('inv-prog-lbl').textContent = 'Done';
+          setTimeout(() => { sumEl.classList.add('show'); }, 200);
+          animateInvSummary();
+          return;
+        }
+        rows[i].classList.add('show');
+        prog.style.transition = 'width 0.3s ease';
+        prog.style.width = Math.round((i + 1) / rows.length * 100) + '%';
+        document.getElementById('inv-prog-count').textContent = (i + 1) + ' / 5';
+        i++;
+      }, 400);
+    }
+    function animateInvSummary() {
+      let ok = 0, low = 0, crit = 0;
+      document.querySelectorAll('.inv-badge').forEach(b => {
+        if (b.classList.contains('ok')) ok++;
+        else if (b.classList.contains('low')) low++;
+        else if (b.classList.contains('crit')) crit++;
+      });
+      document.getElementById('inv-s-ok').textContent = ok;
+      document.getElementById('inv-s-low').textContent = low;
+      document.getElementById('inv-s-crit').textContent = crit;
+    }
+    function closeInv() {
+      document.getElementById('inv-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('inv-close').addEventListener('click', closeInv);
+    document.getElementById('inv-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeInv(); });
+
+    function openCt() {
+      document.querySelectorAll('.ct-card').forEach((c,i) => {
+        c.style.opacity = '0';
+        c.style.transform = 'translateY(18px)';
+        setTimeout(() => { c.style.transition = 'opacity 0.32s ease, transform 0.32s ease'; c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }, 120 + i * 100);
+      });
+      document.getElementById('ct-search').value = '';
+      document.querySelectorAll('.ct-card').forEach(c => c.style.display = '');
+      document.getElementById('ct-count').textContent = '4 contacts';
+      document.getElementById('ct-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeCt() {
+      document.getElementById('ct-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('ct-close').addEventListener('click', closeCt);
+    document.getElementById('ct-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeCt(); });
+    document.getElementById('ct-search').addEventListener('input', function() {
+      const q = this.value.toLowerCase();
+      let visible = 0;
+      document.querySelectorAll('.ct-card').forEach(c => {
+        const match = c.querySelector('.ct-name').textContent.toLowerCase().includes(q) ||
+                      c.querySelector('.ct-role').textContent.toLowerCase().includes(q) ||
+                      c.querySelector('.ct-email').textContent.toLowerCase().includes(q);
+        c.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      document.getElementById('ct-count').textContent = visible + ' contact' + (visible !== 1 ? 's' : '');
+    });
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeAts(); closeSheets(); closeCli(); closeBj(); closeCfu(); closeInv(); closeCt(); } });
 
     document.querySelectorAll('.pcard[data-demo]').forEach(card => {
       card.addEventListener('click', () => {
@@ -1282,6 +1552,8 @@
         if (card.dataset.demo === 'cli') { openCli(); return; }
         if (card.dataset.demo === 'blackjack') { openBj(); return; }
         if (card.dataset.demo === 'connectfour') { openCfu(); return; }
+        if (card.dataset.demo === 'inventory') { openInv(); return; }
+        if (card.dataset.demo === 'contacts') { openCt(); return; }
         if (card.classList.contains('demo-open')) return;
         const d = demos[card.dataset.demo];
         if (!d) return;
