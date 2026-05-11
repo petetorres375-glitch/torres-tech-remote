@@ -583,6 +583,20 @@
     .inv-warn { color:#f59e0b; } .inv-crit { color:#ef4444; }
     .inv-sum-lbl { font-size:0.6rem; text-transform:uppercase; letter-spacing:0.08em; color:#bbb; font-weight:600; margin-top:0.1rem; }
 
+    /* BAR CHARTS */
+    .inv-chart, .sh-chart { margin-top:1.25rem; opacity:0; }
+    .inv-chart.show, .sh-chart.show { animation:dmFade 0.4s ease forwards; }
+    .inv-chart-title, .sh-chart-title { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#aaa; margin-bottom:0.65rem; }
+    .inv-bars, .sh-bars { display:flex; align-items:flex-end; gap:0.55rem; height:90px; }
+    .inv-bar-wrap, .sh-bar-wrap { flex:1; display:flex; flex-direction:column; align-items:center; gap:0.25rem; height:100%; justify-content:flex-end; }
+    .inv-bar, .sh-bar { width:100%; border-radius:5px 5px 0 0; height:0px; transition:height 0.65s cubic-bezier(0.32,0.72,0,1); }
+    .inv-bar.ok   { background:linear-gradient(180deg,#86efac,#22c55e); }
+    .inv-bar.low  { background:linear-gradient(180deg,#fcd34d,#f59e0b); }
+    .inv-bar.crit { background:linear-gradient(180deg,#fca5a5,#ef4444); }
+    .sh-bar       { background:linear-gradient(180deg,#86efac,#34a853); }
+    .inv-bar-val, .sh-bar-val { font-size:0.65rem; font-weight:700; color:#555; min-height:0.85rem; }
+    .inv-bar-lbl, .sh-bar-lbl { font-size:0.62rem; color:#bbb; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:100%; }
+
     /* CONTACTS POPUP */
     .ct-overlay { position:fixed; inset:0; z-index:800; display:flex; align-items:center; justify-content:center; background:rgba(28,28,30,0.52); opacity:0; visibility:hidden; transition:opacity 0.25s,visibility 0.25s; }
     .ct-overlay.open { opacity:1; visibility:visible; }
@@ -907,6 +921,16 @@
         <div class="inv-sum-item"><span class="inv-sum-num inv-warn" id="inv-s-low">0</span><span class="inv-sum-lbl">Low</span></div>
         <div class="inv-sum-item"><span class="inv-sum-num inv-crit" id="inv-s-crit">0</span><span class="inv-sum-lbl">Critical</span></div>
       </div>
+      <div class="inv-chart" id="inv-chart">
+        <div class="inv-chart-title">Stock Levels</div>
+        <div class="inv-bars">
+          <div class="inv-bar-wrap"><div class="inv-bar-val" id="ibv0"></div><div class="inv-bar ok" id="ib0"></div><div class="inv-bar-lbl">Widget A</div></div>
+          <div class="inv-bar-wrap"><div class="inv-bar-val" id="ibv1"></div><div class="inv-bar low" id="ib1"></div><div class="inv-bar-lbl">Widget B</div></div>
+          <div class="inv-bar-wrap"><div class="inv-bar-val" id="ibv2"></div><div class="inv-bar ok" id="ib2"></div><div class="inv-bar-lbl">Gadget X</div></div>
+          <div class="inv-bar-wrap"><div class="inv-bar-val" id="ibv3"></div><div class="inv-bar crit" id="ib3"></div><div class="inv-bar-lbl">Gadget Y</div></div>
+          <div class="inv-bar-wrap"><div class="inv-bar-val" id="ibv4"></div><div class="inv-bar ok" id="ib4"></div><div class="inv-bar-lbl">Comp. Z</div></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1150,6 +1174,15 @@
         <div class="sh-sum-item"><div class="sh-sum-v">~2.3s</div><div class="sh-sum-l">Runtime</div></div>
         <div class="sh-sum-item"><div class="sh-sum-v ok">&#10003;</div><div class="sh-sum-l">Complete</div></div>
       </div>
+      <div class="sh-chart" id="sh-chart">
+        <div class="sh-chart-title">Records Updated</div>
+        <div class="sh-bars">
+          <div class="sh-bar-wrap"><div class="sh-bar-val" id="sbv0"></div><div class="sh-bar" id="sb0"></div><div class="sh-bar-lbl">Acme Co.</div></div>
+          <div class="sh-bar-wrap"><div class="sh-bar-val" id="sbv1"></div><div class="sh-bar" id="sb1"></div><div class="sh-bar-lbl">Corp Inc.</div></div>
+          <div class="sh-bar-wrap"><div class="sh-bar-val" id="sbv2"></div><div class="sh-bar" id="sb2"></div><div class="sh-bar-lbl">StartupX</div></div>
+          <div class="sh-bar-wrap"><div class="sh-bar-val" id="sbv3"></div><div class="sh-bar" id="sb3"></div><div class="sh-bar-lbl">BigCo</div></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1343,6 +1376,9 @@
       const prog = document.getElementById('sh-prog');
       prog.style.transition = 'none'; prog.style.width = '0%';
       document.getElementById('sh-summary').classList.remove('show');
+      const shChart = document.getElementById('sh-chart');
+      shChart.classList.remove('show');
+      [0,1,2,3].forEach(i => { document.getElementById('sb'+i).style.height = '0px'; document.getElementById('sbv'+i).textContent = ''; });
       document.getElementById('sh-prog-lbl').textContent = 'Running script…';
       document.getElementById('sh-prog-count').textContent = '0 / 4';
       document.getElementById('sh-overlay').classList.add('open');
@@ -1357,6 +1393,18 @@
       setTimeout(() => {
         document.getElementById('sh-prog-lbl').textContent = 'Complete';
         document.getElementById('sh-summary').classList.add('show');
+        setTimeout(() => {
+          shChart.classList.add('show');
+          const vals = [24, 38, 15, 52];
+          const max = 52;
+          const maxPx = 82;
+          vals.forEach((v, i) => {
+            setTimeout(() => {
+              document.getElementById('sb'+i).style.height = Math.round(v / max * maxPx) + 'px';
+              document.getElementById('sbv'+i).textContent = v;
+            }, i * 90);
+          });
+        }, 350);
       }, 380 + 4*430 + 180);
     }
     function closeSheets() {
@@ -1499,6 +1547,9 @@
       const sumEl = document.getElementById('inv-summary');
       sumEl.classList.remove('show');
       sumEl.style.opacity = '0';
+      const invChart = document.getElementById('inv-chart');
+      invChart.classList.remove('show');
+      [0,1,2,3,4].forEach(i => { document.getElementById('ib'+i).style.height = '0px'; document.getElementById('ibv'+i).textContent = ''; });
       document.getElementById('inv-overlay').classList.add('open');
       document.body.style.overflow = 'hidden';
       let i = 0;
@@ -1527,6 +1578,20 @@
       document.getElementById('inv-s-ok').textContent = ok;
       document.getElementById('inv-s-low').textContent = low;
       document.getElementById('inv-s-crit').textContent = crit;
+      setTimeout(() => {
+        const chartEl = document.getElementById('inv-chart');
+        chartEl.classList.add('show');
+        const vals = [142, 14, 87, 3, 210];
+        const max = 210;
+        const maxPx = 82;
+        vals.forEach((v, i) => {
+          const h = Math.max(4, Math.round(v / max * maxPx));
+          setTimeout(() => {
+            document.getElementById('ib' + i).style.height = h + 'px';
+            document.getElementById('ibv' + i).textContent = v;
+          }, i * 80);
+        });
+      }, 350);
     }
     function closeInv() {
       document.getElementById('inv-overlay').classList.remove('open');
