@@ -210,11 +210,14 @@
   .product-card {
     background: var(--white); border: 1px solid var(--divider);
     border-radius: var(--radius-lg); padding: 28px;
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow 0.3s, transform 0.3s;
     position: relative; overflow: hidden;
+    opacity: 0; transform: translateY(28px);
   }
-  .product-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.09); transform: translateY(-2px); }
+  .product-card.visible { opacity: 1; transform: translateY(0); }
+  .product-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.13); transform: translateY(-6px); }
   .product-card.featured { border-color: var(--orange-border); }
+  .product-card.featured:hover { box-shadow: 0 16px 48px rgba(255,107,0,0.18); transform: translateY(-6px); }
   .product-card.featured::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0;
     height: 3px; background: var(--orange);
@@ -439,7 +442,7 @@
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#how">How It Works</a></li>
     </ul>
-    <a href="mailto:torrestechremote@gmail.com" class="nav-cta">Get a Quote</a>
+    <a href="mailto:pedro_torres@torrestechremote.com" class="nav-cta">Get a Quote</a>
   </div>
 </nav>
 
@@ -454,7 +457,7 @@
       <h1 class="hero-title">AI tools &amp; tech services that <em>actually ship.</em></h1>
       <p class="hero-sub">Python automation, AI-powered apps, and custom websites — built fast, priced fairly, delivered without the runaround.</p>
       <div class="hero-actions">
-        <a href="mailto:torrestechremote@gmail.com" class="btn-primary">Start a Project</a>
+        <a href="mailto:pedro_torres@torrestechremote.com" class="btn-primary">Start a Project</a>
         <a href="#services" class="btn-secondary">See Services</a>
       </div>
     </div>
@@ -534,46 +537,46 @@
     <div class="products-grid">
 
       <div class="product-card featured">
-        <div class="product-badge">Coming soon</div>
-        <div class="product-icon">📄</div>
-        <div class="product-name">DocScan AI</div>
-        <div class="product-desc">Upload any PDF and get an instant AI summary, extracted key clauses, and colour-coded risk flags. Built for freelancers, real estate agents, and small businesses who sign contracts without a lawyer on retainer.</div>
+        <div class="product-badge">Live</div>
+        <div class="product-icon">🧰</div>
+        <div class="product-name">Workblox</div>
+        <div class="product-desc">AI productivity suite — Doc Analyzer, Workflow Builder, and OS Helpers (Linux, Windows, Mac) in one polished app. Analyze documents, generate Python scripts, and get plain-English terminal commands. Built with React and Flask, deployed on Railway and GitHub Pages.</div>
         <div class="product-tags">
-          <span class="product-tag">iOS &amp; Android</span>
-          <span class="product-tag">Gemini AI</span>
-          <span class="product-tag">Claude</span>
+          <span class="product-tag">React</span>
+          <span class="product-tag">Flask</span>
+          <span class="product-tag">Claude API</span>
           <span class="product-tag">Railway</span>
-          <span class="product-tag">React Native</span>
+          <span class="product-tag">GitHub Pages</span>
         </div>
-        <span class="product-link">Launching soon →</span>
+        <a class="product-link" href="https://petetorres375-glitch.github.io/workblox/" target="_blank" rel="noreferrer">Launch Workblox →</a>
       </div>
 
       <div class="product-card">
-        <div class="product-badge soon">Demo</div>
+        <div class="product-badge soon">Live</div>
         <div class="product-icon">🐧</div>
         <div class="product-name">Linux Assistant</div>
-        <div class="product-desc">Describe a Linux problem in plain English — get the exact command, a clear explanation, and safety warnings. Powered by Gemini AI.</div>
+        <div class="product-desc">Describe a Linux problem in plain English — get the exact command, a clear explanation, and safety warnings. Powered by Claude AI.</div>
         <div class="product-tags">
           <span class="product-tag">Python</span>
           <span class="product-tag">Flask</span>
-          <span class="product-tag">Gemini AI</span>
           <span class="product-tag">Claude</span>
+          <span class="product-tag">Railway</span>
         </div>
-        <span class="product-link" style="color:var(--gray-3);cursor:default;">Linux Assistant</span>
+        <a class="product-link" href="https://web-production-58a9b.up.railway.app/" target="_blank" rel="noreferrer">Try Linux Assistant →</a>
       </div>
 
       <div class="product-card">
-        <div class="product-badge soon">Demo</div>
+        <div class="product-badge">Subscription</div>
         <div class="product-icon">⚡</div>
         <div class="product-name">Workflow Builder</div>
-        <div class="product-desc">Describe a repetitive task in plain English and get a ready-to-run Python script. AI-generated automation for real workflows.</div>
+        <div class="product-desc">Describe a repetitive task in plain English and get a ready-to-run Python script. AI-generated automation for real business workflows — launching as a standalone subscription app.</div>
         <div class="product-tags">
           <span class="product-tag">Python</span>
           <span class="product-tag">Flask</span>
-          <span class="product-tag">Gemini AI</span>
           <span class="product-tag">Claude</span>
+          <span class="product-tag">Railway</span>
         </div>
-        <span class="product-link" style="color:var(--gray-3);cursor:default;">Workflow Builder</span>
+        <a class="product-link" href="mailto:pedro_torres@torrestechremote.com">Join the waitlist →</a>
       </div>
 
     </div>
@@ -820,7 +823,7 @@
     <h2 class="section-title">Ready to build something?</h2>
     <p class="section-sub">Describe your project and I'll get back to you within 24 hours with a clear scope and flat-rate quote.</p>
     <div class="cta-actions">
-      <a href="mailto:torrestechremote@gmail.com" class="btn-white">Email Me Directly</a>
+      <a href="mailto:pedro_torres@torrestechremote.com" class="btn-white">Email Me Directly</a>
       <a href="#services" class="btn-outline-white">Browse Services</a>
     </div>
   </div>
@@ -837,11 +840,22 @@
       <a href="#products">Products</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="mailto:torrestechremote@gmail.com">Contact</a>
+      <a href="mailto:pedro_torres@torrestechremote.com">Contact</a>
     </div>
-    <div class="footer-copy">© 2025 Torres Tech Remote</div>
+    <div class="footer-copy">© 2026 Torres Tech Remote</div>
   </div>
 </footer>
 
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.product-card').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
