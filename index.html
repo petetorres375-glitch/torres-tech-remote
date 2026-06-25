@@ -219,11 +219,14 @@
   .product-card {
     background: var(--white); border: 1px solid var(--divider);
     border-radius: var(--radius-lg); padding: 28px;
-    transition: box-shadow 0.3s, transform 0.3s, opacity 0.5s;
+    transition: box-shadow 0.3s, transform 0.3s;
     position: relative; overflow: hidden;
-    opacity: 0; transform: translateY(24px);
   }
-  .product-card.visible { opacity: 1; transform: translateY(0); }
+  .product-card.visible { animation: cardIn 0.5s ease both; }
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
   .product-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.13); transform: translateY(-6px); }
   .product-card.featured { border-color: var(--orange-border); }
   .product-card.featured:hover { box-shadow: 0 16px 48px rgba(255,107,0,0.18); transform: translateY(-6px); }
@@ -672,7 +675,7 @@
       <div class="product-card" data-demo="windows">
         <div class="product-badge soon">Demo</div>
         <div class="product-icon">🪟</div>
-        <div class="product-name">Windows Helper</div>
+        <div class="product-name">Windows Assistant</div>
         <div class="product-desc">Describe a Windows problem in plain English — get the exact PowerShell or CMD command, an explanation, and warnings before you run it.</div>
         <div class="product-tags">
           <span class="product-tag">Python</span>
@@ -687,7 +690,7 @@
       <div class="product-card" data-demo="mac">
         <div class="product-badge soon">Demo</div>
         <div class="product-icon">🍎</div>
-        <div class="product-name">Mac Helper</div>
+        <div class="product-name">Mac Assistant</div>
         <div class="product-desc">Describe a Mac problem in plain English — get the exact Terminal command, an explanation, and safety warnings. No more Googling cryptic macOS errors.</div>
         <div class="product-tags">
           <span class="product-tag">Python</span>
@@ -1029,13 +1032,13 @@
   </div>
 </div>
 
-<!-- Windows Helper Demo Overlay -->
+<!-- Windows Assistant Demo Overlay -->
 <div class="demo-overlay" id="win-overlay">
   <div class="demo-box">
     <div class="demo-hdr">
       <div class="demo-title-row">
         <div class="demo-icon" style="background:#0078d4">🪟</div>
-        <span class="demo-title">Windows Helper</span>
+        <span class="demo-title">Windows Assistant</span>
       </div>
       <button class="demo-close" id="win-close">&#10005;</button>
     </div>
@@ -1066,13 +1069,13 @@
   </div>
 </div>
 
-<!-- Mac Helper Demo Overlay -->
+<!-- Mac Assistant Demo Overlay -->
 <div class="demo-overlay" id="mac-overlay">
   <div class="demo-box">
     <div class="demo-hdr">
       <div class="demo-title-row">
         <div class="demo-icon" style="background:#1d1d1f">🍎</div>
-        <span class="demo-title">Mac Helper</span>
+        <span class="demo-title">Mac Assistant</span>
       </div>
       <button class="demo-close" id="mac-close">&#10005;</button>
     </div>
