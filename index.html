@@ -639,8 +639,23 @@
         <span class="product-link" style="color:var(--gray-3);cursor:default;">Launching soon</span>
       </div>
 
+      <div class="product-card" data-demo="docanalyzer">
+        <div class="product-badge soon">Demo</div>
+        <div class="product-icon">📄</div>
+        <div class="product-name">Doc Analyzer</div>
+        <div class="product-desc">Upload any PDF, TXT, or Markdown file and get an instant AI summary — key data points, action items, and red flags. Email the report directly from the app.</div>
+        <div class="product-tags">
+          <span class="product-tag">Python</span>
+          <span class="product-tag">Flask</span>
+          <span class="product-tag">Claude</span>
+          <span class="product-tag">Railway</span>
+        </div>
+        <span class="product-link" style="color:var(--gray-3);cursor:default;">Part of Workblox</span>
+        <div class="product-hint">Click to see a demo →</div>
+      </div>
+
       <div class="product-card" data-demo="linux">
-        <div class="product-badge">Coming Soon</div>
+        <div class="product-badge soon">Demo</div>
         <div class="product-icon">🐧</div>
         <div class="product-name">Linux Assistant</div>
         <div class="product-desc">Describe a Linux problem in plain English — get the exact command, a clear explanation, and safety warnings. Powered by Claude AI.</div>
@@ -650,8 +665,36 @@
           <span class="product-tag">Claude</span>
           <span class="product-tag">Railway</span>
         </div>
-        <a class="product-link" href="https://web-production-58a9b.up.railway.app/" target="_blank" rel="noreferrer">Try Linux Assistant →</a>
+        <span class="product-link" style="color:var(--gray-3);cursor:default;">Part of Workblox</span>
         <div class="product-hint">Click to see a demo →</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-badge soon">Demo</div>
+        <div class="product-icon">🪟</div>
+        <div class="product-name">Windows Helper</div>
+        <div class="product-desc">Describe a Windows problem in plain English — get the exact PowerShell or CMD command, an explanation, and warnings before you run it.</div>
+        <div class="product-tags">
+          <span class="product-tag">Python</span>
+          <span class="product-tag">Flask</span>
+          <span class="product-tag">Claude</span>
+          <span class="product-tag">Railway</span>
+        </div>
+        <span class="product-link" style="color:var(--gray-3);cursor:default;">Part of Workblox</span>
+      </div>
+
+      <div class="product-card">
+        <div class="product-badge soon">Demo</div>
+        <div class="product-icon">🍎</div>
+        <div class="product-name">Mac Helper</div>
+        <div class="product-desc">Describe a Mac problem in plain English — get the exact Terminal command, an explanation, and safety warnings. No more Googling cryptic macOS errors.</div>
+        <div class="product-tags">
+          <span class="product-tag">Python</span>
+          <span class="product-tag">Flask</span>
+          <span class="product-tag">Claude</span>
+          <span class="product-tag">Railway</span>
+        </div>
+        <span class="product-link" style="color:var(--gray-3);cursor:default;">Part of Workblox</span>
       </div>
 
       <div class="product-card" data-demo="workflow">
@@ -1100,6 +1143,7 @@
       if (e.target.closest('a')) return;
       if (card.dataset.demo === 'linux') openLa();
       else if (card.dataset.demo === 'workflow') openWb();
+      else if (card.dataset.demo === 'docanalyzer') openDa();
     });
   });
 </script>
