@@ -219,9 +219,9 @@
   .product-card {
     background: var(--white); border: 1px solid var(--divider);
     border-radius: var(--radius-lg); padding: 28px;
-    transition: box-shadow 0.3s, transform 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s, opacity 0.5s;
     position: relative; overflow: hidden;
-    opacity: 0; transform: translateY(28px);
+    opacity: 0; transform: translateY(24px);
   }
   .product-card.visible { opacity: 1; transform: translateY(0); }
   .product-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.13); transform: translateY(-6px); }
@@ -498,8 +498,18 @@
 
   /* hint text on product cards */
   .product-card[data-demo] { cursor:pointer; }
-  .product-hint { font-size:0.72rem; font-weight:600; color:var(--orange); margin-top:0.5rem; opacity:0.6; transition:opacity 0.15s; }
-  .product-card[data-demo]:hover .product-hint { opacity:1; }
+  .product-hint {
+    font-size:0.75rem; font-weight:700; color:var(--orange);
+    margin-top:0.75rem; display:inline-flex; align-items:center; gap:5px;
+  }
+  .product-hint::before {
+    content:''; display:inline-block; width:6px; height:6px; border-radius:50%;
+    background:var(--orange); animation:hintPulse 1.8s ease-in-out infinite;
+  }
+  @keyframes hintPulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50%      { opacity:0.3; transform:scale(0.7); }
+  }
 
   @keyframes dmFade { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
 </style>
@@ -1038,15 +1048,18 @@
 </div>
 
 <script>
+  const cards = document.querySelectorAll('.product-card');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        setTimeout(() => entry.target.classList.add('visible'), i * 120);
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.product-card').forEach(el => observer.observe(el));
+  }, { threshold: 0.08 });
+  cards.forEach(el => observer.observe(el));
+  // fallback: make all cards visible after 2s regardless
+  setTimeout(() => cards.forEach(el => el.classList.add('visible')), 2000);
 
   function openLa() {
     document.getElementById('la-question').textContent = '';
