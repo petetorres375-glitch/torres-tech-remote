@@ -425,6 +425,74 @@
     .stat-num { font-size: 20px; }
     section { padding: 64px 20px; }
   }
+
+  /* ── Demo Overlays ─────────────────────────────────────────────────────── */
+  .demo-overlay { position:fixed; inset:0; z-index:900; display:flex; align-items:center; justify-content:center; background:rgba(28,28,30,0.55); opacity:0; visibility:hidden; transition:opacity 0.25s,visibility 0.25s; }
+  .demo-overlay.open { opacity:1; visibility:visible; }
+  .demo-box { background:#fff; border-radius:20px; padding:2rem; width:min(640px,92vw); max-height:88vh; overflow-y:auto; box-shadow:0 24px 64px rgba(0,0,0,0.2); transform:scale(0.93); transition:transform 0.28s cubic-bezier(0.32,0.72,0,1); }
+  .demo-overlay.open .demo-box { transform:scale(1); }
+  .demo-hdr { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.4rem; }
+  .demo-title-row { display:flex; align-items:center; gap:0.75rem; }
+  .demo-icon { width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+  .demo-icon.dark { background:#18181b; }
+  .demo-icon.orange { background:var(--orange-tint); }
+  .demo-title { font-size:1rem; font-weight:700; color:#1c1c1e; }
+  .demo-close { width:32px; height:32px; border-radius:8px; border:1.5px solid #e8e4de; background:transparent; cursor:pointer; font-size:1rem; color:#888; display:flex; align-items:center; justify-content:center; transition:color 0.15s,border-color 0.15s,background 0.15s; }
+  .demo-close:hover { color:var(--orange); border-color:var(--orange); background:var(--orange-tint); }
+
+  /* Linux Assistant demo */
+  .la-q-box { background:#f5f4f2; border-radius:10px; padding:0.75rem 1rem; margin-bottom:1rem; }
+  .la-q-lbl { font-size:0.63rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#bbb; margin-bottom:0.3rem; }
+  .la-q-text { font-size:0.88rem; color:#1c1c1e; line-height:1.55; min-height:1.4rem; }
+  .la-term { background:#1e1e2e; border-radius:12px; overflow:hidden; font-family:'Space Grotesk','Courier New',monospace; }
+  .la-tbar { background:#2a2a3c; padding:0.6rem 1rem; display:flex; align-items:center; gap:6px; }
+  .la-tdot { width:10px; height:10px; border-radius:50%; }
+  .la-tdot:nth-child(1){background:#ff5f56} .la-tdot:nth-child(2){background:#ffbd2e} .la-tdot:nth-child(3){background:#27c93f}
+  .la-ttitle { margin-left:auto; font-size:0.7rem; color:#4b4b6a; }
+  .la-tbody { padding:1.2rem 1.4rem; }
+  .la-section { margin-bottom:0.9rem; opacity:0; }
+  .la-section.show { animation:dmFade 0.35s ease forwards; }
+  .la-section:last-child { margin-bottom:0; }
+  .la-slbl { font-size:0.6rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#4b4b6a; margin-bottom:0.3rem; }
+  .la-cmd  { font-size:0.86rem; font-weight:700; color:#4ade80; line-height:1.5; word-break:break-all; }
+  .la-exp  { font-size:0.8rem; color:#a1a1aa; line-height:1.65; }
+  .la-warn { font-size:0.8rem; color:#fbbf24; line-height:1.55; }
+
+  /* Workflow Builder demo */
+  .wb-panes { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  @media(max-width:520px){ .wb-panes { grid-template-columns:1fr; } }
+  .wb-plbl { font-size:0.63rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#bbb; margin-bottom:0.5rem; }
+  .wb-task-pane { background:#f5f4f2; border-radius:10px; padding:0.9rem 1rem; min-height:160px; }
+  .wb-task-text { font-size:0.84rem; color:#555; line-height:1.7; }
+  .wb-code-pane { background:#1e1e2e; border-radius:10px; padding:0.9rem 1rem; font-family:'Space Grotesk','Courier New',monospace; min-height:160px; }
+  .wb-cl { font-size:0.74rem; line-height:1.7; color:#a1a1aa; opacity:0; }
+  .wb-cl.show { animation:dmFade 0.2s ease forwards; }
+  .wb-kw{color:#c792ea} .wb-fn{color:#82aaff} .wb-str{color:#c3e88d} .wb-ok{color:#4ade80;font-weight:700}
+
+  /* Doc Analyzer demo */
+  .da-file-row { display:flex; align-items:center; gap:0.65rem; margin-bottom:0.75rem; }
+  .da-file-icon { width:28px; height:35px; background:var(--orange); border-radius:4px; display:flex; align-items:flex-end; justify-content:center; padding-bottom:4px; color:#fff; font-size:0.55rem; font-weight:800; flex-shrink:0; clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%); }
+  .da-file-name { font-size:0.88rem; font-weight:700; color:#1c1c1e; }
+  .da-file-meta { font-size:0.72rem; color:#888; margin-top:0.05rem; }
+  .da-prog-outer { background:#f5f4f2; border-radius:6px; height:8px; overflow:hidden; margin-bottom:0.35rem; }
+  .da-prog-inner { height:100%; background:linear-gradient(90deg,var(--orange),#f87c50); width:0%; border-radius:6px; transition:width 1.9s cubic-bezier(0.4,0,0.2,1); }
+  .da-prog-meta { display:flex; justify-content:space-between; font-size:0.72rem; color:#888; margin-bottom:1.25rem; }
+  .da-bullets { display:flex; flex-direction:column; gap:0.7rem; }
+  .da-bullet { display:flex; align-items:flex-start; gap:0.7rem; padding:0.8rem 1rem; border:1px solid #e8e4de; border-radius:10px; opacity:0; }
+  .da-bullet.show { animation:dmFade 0.4s ease forwards; }
+  .da-bicon { font-size:1rem; flex-shrink:0; margin-top:0.05rem; }
+  .da-btext { font-size:0.84rem; color:#555; line-height:1.6; }
+  .da-bullet.ok { border-color:#bbf7d0; background:#f0fdf4; }
+  .da-bullet.ok .da-bicon { color:#16a34a; }
+  .da-bullet.warn { border-color:#fde68a; background:#fffbeb; }
+  .da-bullet.warn .da-bicon { color:#d97706; }
+
+  /* hint text on product cards */
+  .product-card[data-demo] { cursor:pointer; }
+  .product-hint { font-size:0.72rem; font-weight:600; color:var(--orange); margin-top:0.5rem; opacity:0.6; transition:opacity 0.15s; }
+  .product-card[data-demo]:hover .product-hint { opacity:1; }
+
+  @keyframes dmFade { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
 </style>
 </head>
 <body>
@@ -551,7 +619,7 @@
         <span class="product-link" style="color:var(--gray-3);cursor:default;">Launching soon</span>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-demo="linux">
         <div class="product-badge soon">Live</div>
         <div class="product-icon">🐧</div>
         <div class="product-name">Linux Assistant</div>
@@ -563,9 +631,10 @@
           <span class="product-tag">Railway</span>
         </div>
         <a class="product-link" href="https://web-production-58a9b.up.railway.app/" target="_blank" rel="noreferrer">Try Linux Assistant →</a>
+        <div class="product-hint">Click to see a demo →</div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-demo="workflow">
         <div class="product-badge">Subscription</div>
         <div class="product-icon">⚡</div>
         <div class="product-name">Workflow Builder</div>
@@ -577,6 +646,7 @@
           <span class="product-tag">Railway</span>
         </div>
         <a class="product-link" href="mailto:pedro_torres@torrestechremote.com">Join the waitlist →</a>
+        <div class="product-hint">Click to see a demo →</div>
       </div>
 
     </div>
@@ -846,6 +916,117 @@
   </div>
 </footer>
 
+<!-- Linux Assistant Demo Overlay -->
+<div class="demo-overlay" id="la-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row">
+        <div class="demo-icon dark">🐧</div>
+        <span class="demo-title">Linux Assistant</span>
+      </div>
+      <button class="demo-close" id="la-close">&#10005;</button>
+    </div>
+    <div class="la-q-box">
+      <div class="la-q-lbl">Your Question</div>
+      <div class="la-q-text" id="la-question"></div>
+    </div>
+    <div class="la-term">
+      <div class="la-tbar">
+        <div class="la-tdot"></div><div class="la-tdot"></div><div class="la-tdot"></div>
+        <span class="la-ttitle">linux-assistant</span>
+      </div>
+      <div class="la-tbody">
+        <div class="la-section" id="la-s0">
+          <div class="la-slbl">Command</div>
+          <div class="la-cmd" id="la-cmd"></div>
+        </div>
+        <div class="la-section" id="la-s1">
+          <div class="la-slbl">Explanation</div>
+          <div class="la-exp" id="la-exp"></div>
+        </div>
+        <div class="la-section" id="la-s2">
+          <div class="la-slbl">Warning</div>
+          <div class="la-warn" id="la-warn"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Workflow Builder Demo Overlay -->
+<div class="demo-overlay" id="wb-overlay">
+  <div class="demo-box" style="width:min(700px,92vw)">
+    <div class="demo-hdr">
+      <div class="demo-title-row">
+        <div class="demo-icon orange">⚡</div>
+        <span class="demo-title">Workflow Builder</span>
+      </div>
+      <button class="demo-close" id="wb-close">&#10005;</button>
+    </div>
+    <div class="wb-panes">
+      <div>
+        <div class="wb-plbl">Your Task</div>
+        <div class="wb-task-pane"><div class="wb-task-text" id="wb-task"></div></div>
+      </div>
+      <div>
+        <div class="wb-plbl">Generated Script</div>
+        <div class="wb-code-pane">
+          <div class="wb-cl" id="wbl0"><span class="wb-kw">import</span> os</div>
+          <div class="wb-cl" id="wbl1"><span class="wb-kw">from</span> datetime <span class="wb-kw">import</span> date</div>
+          <div class="wb-cl" id="wbl2">&nbsp;</div>
+          <div class="wb-cl" id="wbl3">folder = <span class="wb-str">"/reports"</span></div>
+          <div class="wb-cl" id="wbl4">today = date.<span class="wb-fn">today</span>().<span class="wb-fn">strftime</span>(<span class="wb-str">"%Y-%m-%d"</span>)</div>
+          <div class="wb-cl" id="wbl5">&nbsp;</div>
+          <div class="wb-cl" id="wbl6"><span class="wb-kw">for</span> fname <span class="wb-kw">in</span> os.<span class="wb-fn">listdir</span>(folder):</div>
+          <div class="wb-cl" id="wbl7">&nbsp;&nbsp;<span class="wb-kw">if not</span> fname.<span class="wb-fn">startswith</span>(today):</div>
+          <div class="wb-cl" id="wbl8">&nbsp;&nbsp;&nbsp;&nbsp;new = <span class="wb-str">f"{today}_{fname}"</span></div>
+          <div class="wb-cl" id="wbl9">&nbsp;&nbsp;&nbsp;&nbsp;os.<span class="wb-fn">rename</span>(</div>
+          <div class="wb-cl" id="wbl10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.path.<span class="wb-fn">join</span>(folder, fname),</div>
+          <div class="wb-cl" id="wbl11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.path.<span class="wb-fn">join</span>(folder, new))</div>
+          <div class="wb-cl" id="wbl12">&nbsp;</div>
+          <div class="wb-cl wb-ok" id="wbl13"><span class="wb-fn">print</span>(<span class="wb-str">"Done &mdash; files renamed."</span>)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Doc Analyzer Demo Overlay -->
+<div class="demo-overlay" id="da-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row">
+        <div class="demo-icon orange">📄</div>
+        <span class="demo-title">Doc Analyzer</span>
+      </div>
+      <button class="demo-close" id="da-close">&#10005;</button>
+    </div>
+    <div class="da-file-row">
+      <div class="da-file-icon">PDF</div>
+      <div>
+        <div class="da-file-name">quarterly_report.pdf</div>
+        <div class="da-file-meta">2.4 MB &bull; 18 pages</div>
+      </div>
+    </div>
+    <div class="da-prog-outer"><div class="da-prog-inner" id="da-prog"></div></div>
+    <div class="da-prog-meta"><span id="da-prog-lbl">Analyzing document&hellip;</span><span id="da-pct">0%</span></div>
+    <div class="da-bullets">
+      <div class="da-bullet ok" id="dab0">
+        <span class="da-bicon">&#10003;</span>
+        <span class="da-btext">18-page document processed. Main topic: Q3 financial performance &mdash; revenue growth and operational highlights.</span>
+      </div>
+      <div class="da-bullet ok" id="dab1">
+        <span class="da-bicon">&#10003;</span>
+        <span class="da-btext">Key figures extracted: Revenue $4.2M (+14% YoY), net margin 22%, three new product lines launched this quarter.</span>
+      </div>
+      <div class="da-bullet warn" id="dab2">
+        <span class="da-bicon">&#9651;</span>
+        <span class="da-btext">Accounts receivable up 31% with no explanation &mdash; may indicate delayed collections. Worth reviewing before filing.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -856,6 +1037,75 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.product-card').forEach(el => observer.observe(el));
+
+  function openLa() {
+    document.getElementById('la-question').textContent = '';
+    ['la-s0','la-s1','la-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    document.getElementById('la-cmd').textContent = '';
+    document.getElementById('la-exp').textContent = '';
+    document.getElementById('la-warn').textContent = '';
+    document.getElementById('la-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const q = 'how do I find large files taking up disk space?';
+    const qEl = document.getElementById('la-question');
+    let ci = 0;
+    const tv = setInterval(() => { qEl.textContent = q.slice(0, ++ci); if (ci >= q.length) clearInterval(tv); }, 32);
+    const afterQ = q.length * 32 + 450;
+    setTimeout(() => { document.getElementById('la-cmd').textContent = 'find / -type f -size +100M -exec ls -lh {} \\; 2>/dev/null'; document.getElementById('la-s0').classList.add('show'); }, afterQ);
+    setTimeout(() => { document.getElementById('la-exp').textContent = 'Searches from root for files over 100MB and lists their sizes. The 2>/dev/null suppresses permission errors on protected directories.'; document.getElementById('la-s1').classList.add('show'); }, afterQ + 700);
+    setTimeout(() => { document.getElementById('la-warn').textContent = 'Running from / scans the entire filesystem and can be slow. Narrow to /home or /var for faster, more targeted results.'; document.getElementById('la-s2').classList.add('show'); }, afterQ + 1450);
+  }
+  function closeLa() { document.getElementById('la-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('la-close').addEventListener('click', closeLa);
+  document.getElementById('la-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeLa(); });
+
+  function openWb() {
+    document.getElementById('wb-task').textContent = '';
+    for (let i = 0; i <= 13; i++) { const el = document.getElementById('wbl'+i); if (el) el.classList.remove('show'); }
+    document.getElementById('wb-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const task = "Every Monday, rename all files in /reports by prepending today's date.";
+    const tEl = document.getElementById('wb-task');
+    let ci = 0;
+    const tv = setInterval(() => { tEl.textContent = task.slice(0, ++ci); if (ci >= task.length) clearInterval(tv); }, 26);
+    const codeStart = task.length * 26 + 500;
+    for (let i = 0; i <= 13; i++) {
+      setTimeout(() => { const el = document.getElementById('wbl'+i); if (el) el.classList.add('show'); }, codeStart + i * 150);
+    }
+  }
+  function closeWb() { document.getElementById('wb-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('wb-close').addEventListener('click', closeWb);
+  document.getElementById('wb-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeWb(); });
+
+  function openDa() {
+    const prog = document.getElementById('da-prog');
+    prog.style.transition = 'none'; prog.style.width = '0%';
+    document.getElementById('da-prog-lbl').textContent = 'Analyzing document…';
+    document.getElementById('da-pct').textContent = '0%';
+    [0,1,2].forEach(i => document.getElementById('dab'+i).classList.remove('show'));
+    document.getElementById('da-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      prog.style.transition = 'width 1.9s cubic-bezier(0.4,0,0.2,1)';
+      prog.style.width = '100%';
+      let n = 0;
+      const iv = setInterval(() => { n++; document.getElementById('da-pct').textContent = n + '%'; if (n >= 100) { clearInterval(iv); document.getElementById('da-prog-lbl').textContent = 'Analysis complete'; } }, 19);
+    }, 100);
+    [0,1,2].forEach(i => setTimeout(() => document.getElementById('dab'+i).classList.add('show'), 2300 + i * 350));
+  }
+  function closeDa() { document.getElementById('da-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('da-close').addEventListener('click', closeDa);
+  document.getElementById('da-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeDa(); });
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLa(); closeWb(); closeDa(); } });
+
+  document.querySelectorAll('.product-card[data-demo]').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('a')) return;
+      if (card.dataset.demo === 'linux') openLa();
+      else if (card.dataset.demo === 'workflow') openWb();
+    });
+  });
 </script>
 </body>
 </html>
