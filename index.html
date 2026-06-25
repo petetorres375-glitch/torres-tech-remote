@@ -669,7 +669,7 @@
         <div class="product-hint">Click to see a demo →</div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-demo="windows">
         <div class="product-badge soon">Demo</div>
         <div class="product-icon">🪟</div>
         <div class="product-name">Windows Helper</div>
@@ -681,9 +681,10 @@
           <span class="product-tag">Railway</span>
         </div>
         <span class="product-link" style="color:var(--gray-3);cursor:default;">Part of Workblox</span>
+        <div class="product-hint">Click to see a demo →</div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-demo="mac">
         <div class="product-badge soon">Demo</div>
         <div class="product-icon">🍎</div>
         <div class="product-name">Mac Helper</div>
@@ -695,6 +696,7 @@
           <span class="product-tag">Railway</span>
         </div>
         <span class="product-link" style="color:var(--gray-3);cursor:default;">Part of Workblox</span>
+        <div class="product-hint">Click to see a demo →</div>
       </div>
 
       <div class="product-card" data-demo="workflow">
@@ -1027,6 +1029,80 @@
   </div>
 </div>
 
+<!-- Windows Helper Demo Overlay -->
+<div class="demo-overlay" id="win-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row">
+        <div class="demo-icon" style="background:#0078d4">🪟</div>
+        <span class="demo-title">Windows Helper</span>
+      </div>
+      <button class="demo-close" id="win-close">&#10005;</button>
+    </div>
+    <div class="la-q-box">
+      <div class="la-q-lbl">Your Question</div>
+      <div class="la-q-text" id="win-question"></div>
+    </div>
+    <div class="la-term" style="background:#012456">
+      <div class="la-tbar" style="background:#001f3f">
+        <div class="la-tdot"></div><div class="la-tdot"></div><div class="la-tdot"></div>
+        <span class="la-ttitle">PowerShell</span>
+      </div>
+      <div class="la-tbody">
+        <div class="la-section" id="win-s0">
+          <div class="la-slbl">Command</div>
+          <div class="la-cmd" id="win-cmd" style="color:#569cd6"></div>
+        </div>
+        <div class="la-section" id="win-s1">
+          <div class="la-slbl">Explanation</div>
+          <div class="la-exp" id="win-exp"></div>
+        </div>
+        <div class="la-section" id="win-s2">
+          <div class="la-slbl">Warning</div>
+          <div class="la-warn" id="win-warn"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mac Helper Demo Overlay -->
+<div class="demo-overlay" id="mac-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row">
+        <div class="demo-icon" style="background:#1d1d1f">🍎</div>
+        <span class="demo-title">Mac Helper</span>
+      </div>
+      <button class="demo-close" id="mac-close">&#10005;</button>
+    </div>
+    <div class="la-q-box">
+      <div class="la-q-lbl">Your Question</div>
+      <div class="la-q-text" id="mac-question"></div>
+    </div>
+    <div class="la-term" style="background:#1d1d1f">
+      <div class="la-tbar" style="background:#2d2d2d">
+        <div class="la-tdot"></div><div class="la-tdot"></div><div class="la-tdot"></div>
+        <span class="la-ttitle">Terminal</span>
+      </div>
+      <div class="la-tbody">
+        <div class="la-section" id="mac-s0">
+          <div class="la-slbl">Command</div>
+          <div class="la-cmd" id="mac-cmd" style="color:#4ade80"></div>
+        </div>
+        <div class="la-section" id="mac-s1">
+          <div class="la-slbl">Explanation</div>
+          <div class="la-exp" id="mac-exp"></div>
+        </div>
+        <div class="la-section" id="mac-s2">
+          <div class="la-slbl">Warning</div>
+          <div class="la-warn" id="mac-warn"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Doc Analyzer Demo Overlay -->
 <div class="demo-overlay" id="da-overlay">
   <div class="demo-box">
@@ -1136,7 +1212,49 @@
   document.getElementById('da-close').addEventListener('click', closeDa);
   document.getElementById('da-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeDa(); });
 
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLa(); closeWb(); closeDa(); } });
+  function openWin() {
+    document.getElementById('win-question').textContent = '';
+    ['win-s0','win-s1','win-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    document.getElementById('win-cmd').textContent = '';
+    document.getElementById('win-exp').textContent = '';
+    document.getElementById('win-warn').textContent = '';
+    document.getElementById('win-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const q = 'how do I check what is running on port 3000?';
+    const qEl = document.getElementById('win-question');
+    let ci = 0;
+    const tv = setInterval(() => { qEl.textContent = q.slice(0, ++ci); if (ci >= q.length) clearInterval(tv); }, 32);
+    const afterQ = q.length * 32 + 450;
+    setTimeout(() => { document.getElementById('win-cmd').textContent = 'netstat -aon | findstr :3000'; document.getElementById('win-s0').classList.add('show'); }, afterQ);
+    setTimeout(() => { document.getElementById('win-exp').textContent = 'Lists all active connections and filters for port 3000. The last column is the Process ID (PID) — use Task Manager to look it up.'; document.getElementById('win-s1').classList.add('show'); }, afterQ + 700);
+    setTimeout(() => { document.getElementById('win-warn').textContent = 'Run Command Prompt as Administrator for full results. Some system processes may be hidden without elevated permissions.'; document.getElementById('win-s2').classList.add('show'); }, afterQ + 1450);
+  }
+  function closeWin() { document.getElementById('win-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('win-close').addEventListener('click', closeWin);
+  document.getElementById('win-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeWin(); });
+
+  function openMac() {
+    document.getElementById('mac-question').textContent = '';
+    ['mac-s0','mac-s1','mac-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    document.getElementById('mac-cmd').textContent = '';
+    document.getElementById('mac-exp').textContent = '';
+    document.getElementById('mac-warn').textContent = '';
+    document.getElementById('mac-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const q = 'how do I see which apps are using the most memory?';
+    const qEl = document.getElementById('mac-question');
+    let ci = 0;
+    const tv = setInterval(() => { qEl.textContent = q.slice(0, ++ci); if (ci >= q.length) clearInterval(tv); }, 32);
+    const afterQ = q.length * 32 + 450;
+    setTimeout(() => { document.getElementById('mac-cmd').textContent = 'ps aux -m | head -10'; document.getElementById('mac-s0').classList.add('show'); }, afterQ);
+    setTimeout(() => { document.getElementById('mac-exp').textContent = 'Lists all running processes sorted by memory usage. The %MEM column shows each app\'s share of total RAM.'; document.getElementById('mac-s1').classList.add('show'); }, afterQ + 700);
+    setTimeout(() => { document.getElementById('mac-warn').textContent = 'This is a snapshot, not a live view. Open Activity Monitor for real-time memory tracking with a visual breakdown.'; document.getElementById('mac-s2').classList.add('show'); }, afterQ + 1450);
+  }
+  function closeMac() { document.getElementById('mac-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('mac-close').addEventListener('click', closeMac);
+  document.getElementById('mac-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeMac(); });
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLa(); closeWb(); closeDa(); closeWin(); closeMac(); } });
 
   document.querySelectorAll('.product-card[data-demo]').forEach(card => {
     card.addEventListener('click', e => {
@@ -1144,6 +1262,8 @@
       if (card.dataset.demo === 'linux') openLa();
       else if (card.dataset.demo === 'workflow') openWb();
       else if (card.dataset.demo === 'docanalyzer') openDa();
+      else if (card.dataset.demo === 'windows') openWin();
+      else if (card.dataset.demo === 'mac') openMac();
     });
   });
 </script>
