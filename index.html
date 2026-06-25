@@ -128,7 +128,16 @@
   .hero-title em { color: var(--orange); font-style: normal; }
   .hero-sub {
     font-size: 18px; color: var(--gray-2);
-    line-height: 1.65; margin-bottom: 36px; max-width: 460px;
+    line-height: 1.65; margin-bottom: 16px; max-width: 460px;
+  }
+  .hero-drive {
+    font-size: 15px; font-weight: 700; color: var(--orange);
+    margin-bottom: 32px; max-width: 460px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hero-drive::before {
+    content: ''; display: inline-block; width: 20px; height: 2px;
+    background: var(--orange); flex-shrink: 0;
   }
   .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn-primary {
@@ -524,6 +533,7 @@
       </div>
       <h1 class="hero-title">AI tools &amp; tech services that <em>actually ship.</em></h1>
       <p class="hero-sub">Python automation, AI-powered apps, and custom websites — built fast with Claude Code and Claude AI, priced fairly, delivered without the runaround.</p>
+      <p class="hero-drive">I drive the build — Claude Code and Claude AI accelerate it.</p>
       <div class="hero-actions">
         <a href="mailto:pedro_torres@torrestechremote.com" class="btn-primary">Start a Project</a>
         <a href="#services" class="btn-secondary">See Services</a>
