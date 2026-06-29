@@ -681,7 +681,10 @@
           <span class="product-tag">Railway</span>
           <span class="product-tag">GitHub Pages</span>
         </div>
-        <a href="https://petetorres375-glitch.github.io/workblox-business" target="_blank" class="product-link">Launch Workblox Business →</a>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+          <a href="https://petetorres375-glitch.github.io/workblox-business" target="_blank" class="product-link">Launch →</a>
+          <button class="btn-install" onclick="handleInstallBusiness()" style="display:inline-block;">Install App</button>
+        </div>
       </div>
 
       <div class="product-card" data-demo="docanalyzer">
@@ -1022,6 +1025,20 @@
   </div>
 </div>
 
+<div class="demo-overlay" id="ios-install-business-overlay">
+  <div class="ios-modal-box">
+    <h3>Install Workblox Business</h3>
+    <p>To add Workblox Business to your home screen on iPhone or iPad:</p>
+    <div class="ios-modal-steps">
+      <div class="ios-modal-step"><div class="ios-modal-step-num">1</div><span>Open <strong>Workblox Business</strong> in Safari</span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">2</div><span>Tap the <strong>Share</strong> button — the square with an arrow pointing up</span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">3</div><span>Scroll down and tap <strong>"Add to Home Screen"</strong></span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">4</div><span>Tap <strong>"Add"</strong> in the top right</span></div>
+    </div>
+    <button class="ios-modal-close" onclick="closeIosBusinessModal()">Got it</button>
+  </div>
+</div>
+
 <div class="demo-overlay" id="la-overlay">
   <div class="demo-box">
     <div class="demo-hdr">
@@ -1333,7 +1350,18 @@
   function closeIosModal() { document.getElementById('ios-install-overlay').classList.remove('open'); document.body.style.overflow = ''; }
   document.getElementById('ios-install-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeIosModal(); });
 
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLa(); closeWb(); closeDa(); closeWin(); closeMac(); closeIosModal(); } });
+  function handleInstallBusiness() {
+    if (isIOS()) {
+      document.getElementById('ios-install-business-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    } else {
+      window.location.href = 'https://petetorres375-glitch.github.io/workblox-business';
+    }
+  }
+  function closeIosBusinessModal() { document.getElementById('ios-install-business-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('ios-install-business-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeIosBusinessModal(); });
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLa(); closeWb(); closeDa(); closeWin(); closeMac(); closeIosModal(); closeIosBusinessModal(); } });
 
   document.querySelectorAll('.product-card[data-demo]').forEach(card => {
     card.addEventListener('click', e => {
