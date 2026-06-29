@@ -157,6 +157,32 @@
     display: inline-block;
   }
   .btn-secondary:hover { border-color: var(--gray-4); transform: translateY(-1px); }
+  .btn-install {
+    background: var(--white); color: var(--black);
+    border: 1.5px solid var(--divider);
+    padding: 13px 26px; border-radius: var(--radius);
+    font-size: 15px; font-weight: 600; cursor: pointer;
+    transition: border-color 0.15s, transform 0.1s;
+    display: none; font-family: inherit;
+  }
+  .btn-install:hover { border-color: var(--gray-4); transform: translateY(-1px); }
+  .btn-install-white {
+    background: transparent; color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    padding: 13px 26px; border-radius: var(--radius);
+    font-size: 15px; font-weight: 600; cursor: pointer;
+    transition: border-color 0.15s, transform 0.1s;
+    display: none; font-family: inherit;
+  }
+  .btn-install-white:hover { border-color: rgba(255,255,255,0.6); transform: translateY(-1px); }
+  @media (max-width: 768px) { .btn-install, .btn-install-white { display: inline-block; } }
+  .ios-modal-box { background:var(--white); border-radius:var(--radius-lg); padding:32px 28px; max-width:340px; width:90%; text-align:center; }
+  .ios-modal-box h3 { font-size:18px; font-weight:700; margin-bottom:8px; }
+  .ios-modal-box p { font-size:14px; color:var(--gray-3); line-height:1.6; margin-bottom:20px; }
+  .ios-modal-steps { text-align:left; margin-bottom:24px; display:flex; flex-direction:column; gap:12px; }
+  .ios-modal-step { display:flex; align-items:flex-start; gap:12px; font-size:14px; color:var(--gray-2); }
+  .ios-modal-step-num { background:var(--orange); color:var(--white); border-radius:50%; width:22px; height:22px; min-width:22px; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; margin-top:1px; }
+  .ios-modal-close { background:var(--orange); color:var(--white); border:none; padding:12px 28px; border-radius:var(--radius); font-size:15px; font-weight:600; cursor:pointer; font-family:inherit; }
 
   /* Hero card */
   .hero-card {
@@ -549,6 +575,7 @@
       <p class="hero-drive">I drive the build — Claude Code and Claude AI accelerate it.</p>
       <div class="hero-actions">
         <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="btn-primary">Launch Workblox</a>
+        <button class="btn-install" onclick="handleInstall()">Install App</button>
         <a href="mailto:pedro_torres@torrestechremote.com" class="btn-secondary">Start a Project</a>
       </div>
     </div>
@@ -942,6 +969,7 @@
     <p class="section-sub">Describe your project and I'll get back to you within 24 hours with a clear scope and flat-rate quote.</p>
     <div class="cta-actions">
       <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="btn-white">Launch Workblox</a>
+      <button class="btn-install-white" onclick="handleInstall()">Install App</button>
       <a href="mailto:pedro_torres@torrestechremote.com" class="btn-outline-white">Start a Project</a>
     </div>
   </div>
@@ -965,6 +993,20 @@
 </footer>
 
 <!-- Linux Assistant Demo Overlay -->
+<div class="demo-overlay" id="ios-install-overlay">
+  <div class="ios-modal-box">
+    <h3>Install Workblox</h3>
+    <p>To add Workblox to your home screen on iPhone or iPad:</p>
+    <div class="ios-modal-steps">
+      <div class="ios-modal-step"><div class="ios-modal-step-num">1</div><span>Open <strong>Workblox</strong> in Safari</span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">2</div><span>Tap the <strong>Share</strong> button — the square with an arrow pointing up</span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">3</div><span>Scroll down and tap <strong>"Add to Home Screen"</strong></span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">4</div><span>Tap <strong>"Add"</strong> in the top right</span></div>
+    </div>
+    <button class="ios-modal-close" onclick="closeIosModal()">Got it</button>
+  </div>
+</div>
+
 <div class="demo-overlay" id="la-overlay">
   <div class="demo-box">
     <div class="demo-hdr">
@@ -1264,7 +1306,19 @@
   document.getElementById('mac-close').addEventListener('click', closeMac);
   document.getElementById('mac-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeMac(); });
 
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLa(); closeWb(); closeDa(); closeWin(); closeMac(); } });
+  function isIOS() { return /iphone|ipad|ipod/i.test(navigator.userAgent); }
+  function handleInstall() {
+    if (isIOS()) {
+      document.getElementById('ios-install-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    } else {
+      window.location.href = 'https://petetorres375-glitch.github.io/workblox';
+    }
+  }
+  function closeIosModal() { document.getElementById('ios-install-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('ios-install-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeIosModal(); });
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLa(); closeWb(); closeDa(); closeWin(); closeMac(); closeIosModal(); } });
 
   document.querySelectorAll('.product-card[data-demo]').forEach(card => {
     card.addEventListener('click', e => {
