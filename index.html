@@ -506,8 +506,15 @@
         <div class="tool-hint tool-hint-blue">See it in action →</div>
       </div>
 
-      <div class="tool-card tool-card-business">
+      <div class="tool-card tool-card-business" data-demo="batchats">
         <div class="tool-card-icon">📊</div>
+        <div class="tool-card-name">Batch ATS Analyzer</div>
+        <div class="tool-card-desc">Upload multiple resumes at once and score every candidate against a job description — ranked by match percentage.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business">
+        <div class="tool-card-icon">📈</div>
         <div class="tool-card-name">Proposal Generator</div>
         <div class="tool-card-desc">Create professional business proposals from a project brief — scoped, priced, and ready to send.</div>
       </div>
@@ -761,6 +768,45 @@
   </div>
 </div>
 
+<!-- ── Batch ATS Analyzer Demo ── -->
+<div class="demo-overlay" id="batchats-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">📊</div><span class="demo-title">Batch ATS Analyzer</span></div>
+      <button class="demo-close" id="batchats-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Job description</div>
+    <div class="dm-input">Senior Frontend Developer &mdash; React, TypeScript, 4+ years</div>
+    <div class="dm-label" style="margin-top:0.5rem">Candidate Rankings</div>
+    <div class="dm-candidates">
+      <div class="dm-candidate" id="hc0">
+        <div class="dm-cand-avatar" style="background:#e05c2e">SC</div>
+        <div><div class="dm-cand-name">Sarah Chen</div><div class="dm-cand-role">5 yrs React · TypeScript · Next.js</div></div>
+        <div class="dm-cand-score-wrap">
+          <div class="dm-cand-score" style="color:var(--orange)" id="hc0-score">0%</div>
+          <div class="dm-cand-bar-outer"><div class="dm-cand-bar" style="background:var(--orange)" id="hc0-bar"></div></div>
+        </div>
+      </div>
+      <div class="dm-candidate" id="hc1">
+        <div class="dm-cand-avatar" style="background:#7c3aed">MR</div>
+        <div><div class="dm-cand-name">Marcus Rivera</div><div class="dm-cand-role">4 yrs React · JavaScript · Redux</div></div>
+        <div class="dm-cand-score-wrap">
+          <div class="dm-cand-score" style="color:#7c3aed" id="hc1-score">0%</div>
+          <div class="dm-cand-bar-outer"><div class="dm-cand-bar" style="background:#7c3aed" id="hc1-bar"></div></div>
+        </div>
+      </div>
+      <div class="dm-candidate" id="hc2">
+        <div class="dm-cand-avatar" style="background:var(--blue)">PP</div>
+        <div><div class="dm-cand-name">Priya Patel</div><div class="dm-cand-role">3 yrs Vue · JavaScript · CSS</div></div>
+        <div class="dm-cand-score-wrap">
+          <div class="dm-cand-score" style="color:var(--blue)" id="hc2-score">0%</div>
+          <div class="dm-cand-bar-outer"><div class="dm-cand-bar" style="background:var(--blue)" id="hc2-bar"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ── Contract Analyzer Demo ── -->
 <div class="demo-overlay" id="contract-overlay">
   <div class="demo-box">
@@ -955,6 +1001,29 @@
     });
   }
 
+  /* ── Batch ATS Analyzer ── */
+  function openBatchAts() {
+    [0,1,2].forEach(i => {
+      const c = document.getElementById('hc'+i); if(c) c.classList.remove('show');
+      const sc = document.getElementById('hc'+i+'-score'); if(sc) sc.textContent='0%';
+      const br = document.getElementById('hc'+i+'-bar'); if(br) { br.style.transition='none'; br.style.width='0%'; }
+    });
+    openOverlay('batchats-overlay');
+    const candidates = [{pct:94},{pct:87},{pct:71}];
+    candidates.forEach(({pct}, i) => {
+      setTimeout(() => {
+        document.getElementById('hc'+i).classList.add('show');
+        const bar = document.getElementById('hc'+i+'-bar');
+        const num = document.getElementById('hc'+i+'-score');
+        setTimeout(() => {
+          bar.style.transition='width 1.2s cubic-bezier(0.4,0,0.2,1)';
+          bar.style.width=pct+'%';
+          let n=0; const iv=setInterval(()=>{n=Math.min(n+2,pct);num.textContent=n+'%';if(n>=pct)clearInterval(iv);},25);
+        }, 200);
+      }, 400+i*500);
+    });
+  }
+
   /* ── Contract Analyzer ── */
   function openContract() {
     const prog = document.getElementById('ct-prog');
@@ -999,6 +1068,7 @@
     ['workflow-overlay','workflow-close'],
     ['os-overlay','os-close'],
     ['hiring-overlay','hiring-close'],
+    ['batchats-overlay','batchats-close'],
     ['contract-overlay','contract-close'],
     ['social-overlay','social-close'],
     ['jd-overlay','jd-close'],
@@ -1010,7 +1080,7 @@
   document.addEventListener('keydown', e => { if(e.key==='Escape') overlayDemos.forEach(([ov])=>closeOverlay(ov)); });
 
   /* ── Wire tool cards to demos ── */
-  const demoMap = {ats:openAts, doc:openDoc, workflow:openWorkflow, os:openOs, hiring:openHiring, contract:openContract, social:openSocial, jd:openJd};
+  const demoMap = {ats:openAts, doc:openDoc, workflow:openWorkflow, os:openOs, hiring:openHiring, batchats:openBatchAts, contract:openContract, social:openSocial, jd:openJd};
   document.querySelectorAll('.tool-card[data-demo]').forEach(card => {
     card.addEventListener('click', () => {
       const fn = demoMap[card.dataset.demo];
