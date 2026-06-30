@@ -8,37 +8,38 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --orange:       #e05c2e;
-    --orange-dark:  #c44d24;
-    --orange-tint:  #fef3ee;
-    --orange-border:#f5c4ad;
-    --black:        #1c1c1e;
-    --gray-1:       #3a3a3c;
-    --gray-2:       #666;
-    --gray-3:       #999;
-    --gray-4:       #bbb;
-    --divider:      #e8e4de;
-    --bg-alt:       #fafafa;
-    --bg-warm:      #f5f4f2;
-    --white:        #fff;
-    --radius:       10px;
-    --radius-lg:    16px;
+    --orange:        #e05c2e;
+    --orange-dark:   #c44d24;
+    --orange-tint:   #fef3ee;
+    --orange-border: #f5c4ad;
+    --blue:          #2563eb;
+    --blue-dark:     #1d4ed8;
+    --blue-tint:     #eff6ff;
+    --blue-border:   #bfdbfe;
+    --black:         #1c1c1e;
+    --gray-1:        #3a3a3c;
+    --gray-2:        #666;
+    --gray-3:        #999;
+    --gray-4:        #bbb;
+    --divider:       #e8e4de;
+    --bg-alt:        #fafafa;
+    --bg-warm:       #f5f4f2;
+    --white:         #fff;
+    --radius:        10px;
+    --radius-lg:     16px;
   }
   html { scroll-behavior: smooth; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     color: var(--black); background: var(--white);
-    font-size: 16px; line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+    font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; text-decoration: none; }
-  img { display: block; max-width: 100%; }
 
-  /* Nav */
+  /* ── Nav ── */
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.96); backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--divider);
   }
   .nav-inner {
@@ -47,34 +48,23 @@
   }
   .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; letter-spacing: -0.3px; }
   .nav-logo-mark {
-    width: 34px; height: 34px; border-radius: 9px;
-    background: var(--orange);
+    width: 34px; height: 34px; border-radius: 9px; background: var(--orange);
     display: flex; align-items: center; justify-content: center;
-    font-size: 14px; font-weight: 900; color: var(--white); letter-spacing: -0.5px;
+    font-size: 14px; font-weight: 900; color: var(--white);
   }
   .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; font-size: 14px; color: var(--gray-2); }
   .nav-links a:hover { color: var(--black); }
-  .nav-cta {
-    background: var(--orange); color: var(--white);
-    padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 600;
-    transition: background 0.15s;
+  .nav-actions { display: flex; gap: 10px; }
+  .nav-btn {
+    padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;
+    transition: background 0.15s, transform 0.1s; display: inline-block;
   }
-  .nav-cta:hover { background: var(--orange-dark); }
+  .nav-btn-personal { background: var(--orange); color: var(--white); }
+  .nav-btn-personal:hover { background: var(--orange-dark); }
+  .nav-btn-business { background: var(--blue); color: var(--white); }
+  .nav-btn-business:hover { background: var(--blue-dark); }
 
-  /* Sections */
-  section { padding: 88px 24px; }
-  .container { max-width: 1080px; margin: 0 auto; }
-  .section-label {
-    display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
-  }
-  .section-title {
-    font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -0.5px;
-    line-height: 1.15; color: var(--black); margin-bottom: 16px;
-  }
-  .section-sub { font-size: 17px; color: var(--gray-2); max-width: 560px; line-height: 1.65; }
-
-  /* Hero */
+  /* ── Hero ── */
   #hero { padding: 96px 24px 80px; background: var(--white); border-bottom: 1px solid var(--divider); }
   .hero-inner { max-width: 1080px; margin: 0 auto; text-align: center; }
   .hero-badge {
@@ -87,31 +77,32 @@
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
   .hero-title {
     font-size: clamp(38px, 6vw, 62px); font-weight: 800; letter-spacing: -2px;
-    line-height: 1.06; color: var(--black); margin-bottom: 22px; max-width: 780px; margin-left: auto; margin-right: auto;
+    line-height: 1.06; color: var(--black); margin-bottom: 22px;
+    max-width: 780px; margin-left: auto; margin-right: auto;
   }
   .hero-title em { color: var(--orange); font-style: normal; }
   .hero-sub {
-    font-size: 19px; color: var(--gray-2); line-height: 1.65; margin-bottom: 40px;
-    max-width: 560px; margin-left: auto; margin-right: auto;
+    font-size: 19px; color: var(--gray-2); line-height: 1.65;
+    max-width: 560px; margin: 0 auto 40px;
   }
   .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--orange); color: var(--white);
-    padding: 14px 28px; border-radius: var(--radius); font-size: 15px; font-weight: 600;
+  .btn-orange {
+    background: var(--orange); color: var(--white); padding: 14px 28px;
+    border-radius: var(--radius); font-size: 15px; font-weight: 600;
     transition: background 0.15s, transform 0.1s; display: inline-block;
   }
-  .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
-  .btn-secondary {
-    background: var(--white); color: var(--black); border: 1.5px solid var(--divider);
-    padding: 14px 28px; border-radius: var(--radius); font-size: 15px; font-weight: 600;
-    transition: border-color 0.15s, transform 0.1s; display: inline-block;
+  .btn-orange:hover { background: var(--orange-dark); transform: translateY(-1px); }
+  .btn-blue {
+    background: var(--blue); color: var(--white); padding: 14px 28px;
+    border-radius: var(--radius); font-size: 15px; font-weight: 600;
+    transition: background 0.15s, transform 0.1s; display: inline-block;
   }
-  .btn-secondary:hover { border-color: var(--gray-4); transform: translateY(-1px); }
+  .btn-blue:hover { background: var(--blue-dark); transform: translateY(-1px); }
 
-  /* Stats */
+  /* ── Stats ── */
   .stats-bar {
-    background: var(--bg-alt); border-top: 1px solid var(--divider); border-bottom: 1px solid var(--divider);
-    padding: 28px 24px;
+    background: var(--bg-alt); border-top: 1px solid var(--divider);
+    border-bottom: 1px solid var(--divider); padding: 28px 24px;
   }
   .stats-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; }
   .stat { text-align: center; padding: 8px 24px; border-right: 1px solid var(--divider); flex: 1; }
@@ -119,42 +110,68 @@
   .stat-num { font-size: 26px; font-weight: 800; color: var(--black); letter-spacing: -0.5px; }
   .stat-label { font-size: 13px; color: var(--gray-3); margin-top: 2px; }
 
-  /* Apps */
-  #apps { background: var(--bg-alt); }
-  .apps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
-  .app-card {
-    background: var(--white); border: 1px solid var(--divider); border-radius: var(--radius-lg);
-    padding: 32px; position: relative; overflow: hidden;
-    transition: box-shadow 0.3s, transform 0.3s;
-  }
-  .app-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.1); transform: translateY(-4px); }
-  .app-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background: var(--orange); }
-  .app-card-badge {
-    display: inline-block; background: var(--orange-tint); color: var(--orange-dark);
-    border: 1px solid var(--orange-border); font-size: 11px; font-weight: 700;
-    letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 18px;
-  }
-  .app-icon { font-size: 40px; margin-bottom: 14px; }
-  .app-name { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
-  .app-target { font-size: 13px; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
-  .app-desc { font-size: 15px; color: var(--gray-2); line-height: 1.65; margin-bottom: 24px; }
-  .app-tools { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
-  .app-tool {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 13px; color: var(--gray-1); padding: 8px 12px;
-    background: var(--bg-warm); border-radius: 8px;
-  }
-  .app-tool-icon { font-size: 16px; flex-shrink: 0; }
-  .app-cta {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--orange); color: var(--white);
-    padding: 12px 24px; border-radius: var(--radius); font-size: 14px; font-weight: 600;
-    transition: background 0.15s, transform 0.1s;
-  }
-  .app-cta:hover { background: var(--orange-dark); transform: translateY(-1px); }
+  /* ── App Sections ── */
+  .app-section { padding: 80px 24px; }
+  .app-section-personal { background: var(--orange-tint); border-top: 1px solid var(--orange-border); border-bottom: 1px solid var(--orange-border); }
+  .app-section-business { background: var(--blue-tint); border-top: 1px solid var(--blue-border); border-bottom: 1px solid var(--blue-border); }
 
-  /* Features */
-  #features { background: var(--orange-tint); border-top: 1px solid var(--orange-border); border-bottom: 1px solid var(--orange-border); }
+  .app-section-header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 48px; }
+  .app-section-left { flex: 1; min-width: 260px; }
+  .app-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    border-radius: 20px; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 14px; margin-bottom: 16px;
+  }
+  .app-pill-personal { background: var(--orange-tint); border: 1px solid var(--orange-border); color: var(--orange-dark); }
+  .app-pill-business { background: var(--blue-tint); border: 1px solid var(--blue-border); color: var(--blue-dark); }
+  .app-pill-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .app-pill-dot-orange { background: var(--orange); }
+  .app-pill-dot-blue { background: var(--blue); }
+  .app-section-title { font-size: clamp(24px, 3.5vw, 34px); font-weight: 800; letter-spacing: -0.5px; line-height: 1.15; margin-bottom: 10px; }
+  .app-section-sub { font-size: 16px; color: var(--gray-2); line-height: 1.65; max-width: 440px; }
+  .app-section-cta {
+    display: inline-flex; align-items: center; gap: 8px; align-self: flex-end;
+    padding: 13px 24px; border-radius: var(--radius); font-size: 14px; font-weight: 600;
+    transition: background 0.15s, transform 0.1s; white-space: nowrap;
+  }
+  .app-section-cta:hover { transform: translateY(-1px); }
+  .cta-orange { background: var(--orange); color: var(--white); }
+  .cta-orange:hover { background: var(--orange-dark); }
+  .cta-blue { background: var(--blue); color: var(--white); }
+  .cta-blue:hover { background: var(--blue-dark); }
+
+  /* ── Tool Cards ── */
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .tool-card {
+    background: var(--white); border-radius: var(--radius-lg); padding: 22px;
+    transition: box-shadow 0.25s, transform 0.25s; position: relative;
+  }
+  .tool-card-personal { border: 1.5px solid var(--orange-border); }
+  .tool-card-business { border: 1.5px solid var(--blue-border); }
+  .tool-card[data-demo] { cursor: pointer; }
+  .tool-card[data-demo]:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.12); transform: translateY(-4px); }
+  .tool-card-icon { font-size: 28px; margin-bottom: 12px; }
+  .tool-card-name { font-size: 14px; font-weight: 700; margin-bottom: 5px; }
+  .tool-card-desc { font-size: 12px; color: var(--gray-2); line-height: 1.55; margin-bottom: 12px; }
+  .tool-hint {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 700;
+  }
+  .tool-hint-orange { color: var(--orange); }
+  .tool-hint-blue { color: var(--blue); }
+  .tool-hint::before {
+    content: ''; display: inline-block; width: 6px; height: 6px;
+    border-radius: 50%; animation: hintPulse 1.8s ease-in-out infinite;
+  }
+  .tool-hint-orange::before { background: var(--orange); }
+  .tool-hint-blue::before { background: var(--blue); }
+  @keyframes hintPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.7)} }
+
+  /* ── Features ── */
+  #features { background: var(--bg-alt); padding: 80px 24px; }
+  .section-label { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+  .section-title { font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -0.5px; line-height: 1.15; color: var(--black); margin-bottom: 16px; }
+  .section-sub { font-size: 17px; color: var(--gray-2); max-width: 560px; line-height: 1.65; }
   .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 48px; }
   .feature-card {
     background: var(--white); border: 1px solid var(--divider); border-radius: var(--radius-lg);
@@ -162,16 +179,15 @@
   }
   .feature-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); transform: translateY(-2px); }
   .feature-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: var(--orange-tint); border: 1px solid var(--orange-border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px; margin-bottom: 16px;
+    width: 44px; height: 44px; border-radius: 10px; background: var(--orange-tint);
+    border: 1px solid var(--orange-border); display: flex; align-items: center;
+    justify-content: center; font-size: 20px; margin-bottom: 16px;
   }
   .feature-name { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
   .feature-desc { font-size: 14px; color: var(--gray-2); line-height: 1.6; }
 
-  /* How */
-  #how { background: var(--bg-alt); }
+  /* ── How ── */
+  #how { background: var(--white); padding: 80px 24px; border-top: 1px solid var(--divider); }
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-top: 48px; }
   .step-num {
     font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: var(--orange);
@@ -182,26 +198,14 @@
   .step-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
   .step-desc { font-size: 14px; color: var(--gray-2); line-height: 1.6; }
 
-  /* CTA */
+  /* ── CTA ── */
   #cta { background: var(--black); padding: 88px 24px; text-align: center; }
   #cta .section-label { color: var(--orange); }
   #cta .section-title { color: var(--white); margin: 0 auto 16px; max-width: 560px; }
   #cta .section-sub { color: var(--gray-4); margin: 0 auto 36px; text-align: center; }
   .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .btn-white {
-    background: var(--white); color: var(--black);
-    padding: 14px 28px; border-radius: var(--radius); font-size: 15px; font-weight: 700;
-    transition: background 0.15s, transform 0.1s; display: inline-block;
-  }
-  .btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
-  .btn-outline-white {
-    background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.25);
-    padding: 14px 28px; border-radius: var(--radius); font-size: 15px; font-weight: 600;
-    transition: border-color 0.15s, transform 0.1s; display: inline-block;
-  }
-  .btn-outline-white:hover { border-color: rgba(255,255,255,0.6); transform: translateY(-1px); }
 
-  /* Footer */
+  /* ── Footer ── */
   footer { background: var(--black); border-top: 1px solid #2a2a2e; padding: 36px 24px; }
   .footer-inner {
     max-width: 1080px; margin: 0 auto;
@@ -210,25 +214,155 @@
   .footer-logo { display: flex; align-items: center; gap: 10px; }
   .footer-logo-mark {
     width: 28px; height: 28px; border-radius: 6px; background: var(--orange);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 800; color: var(--white);
+    display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--white);
   }
   .footer-brand { display: flex; flex-direction: column; gap: 1px; }
-  .footer-logo-name { font-size: 14px; font-weight: 800; color: var(--white); letter-spacing: -0.2px; }
+  .footer-logo-name { font-size: 14px; font-weight: 800; color: var(--white); }
   .footer-logo-sub { font-size: 11px; color: var(--gray-3); }
   .footer-links { display: flex; gap: 24px; }
   .footer-links a { font-size: 13px; color: var(--gray-3); }
   .footer-links a:hover { color: var(--white); }
   .footer-copy { font-size: 12px; color: var(--gray-3); }
 
+  /* ── Demo Overlays ── */
+  .demo-overlay {
+    position: fixed; inset: 0; z-index: 900;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(28,28,30,0.6); opacity: 0; visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
+  }
+  .demo-overlay.open { opacity: 1; visibility: visible; }
+  .demo-box {
+    background: var(--white); border-radius: 20px; padding: 2rem;
+    width: min(580px, 92vw); max-height: 88vh; overflow-y: auto;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+    transform: scale(0.93); transition: transform 0.28s cubic-bezier(0.32,0.72,0,1);
+  }
+  .demo-overlay.open .demo-box { transform: scale(1); }
+  .demo-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.4rem; }
+  .demo-title-row { display: flex; align-items: center; gap: 0.75rem; }
+  .demo-icon { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .demo-icon-orange { background: var(--orange-tint); border: 1px solid var(--orange-border); }
+  .demo-icon-blue { background: var(--blue-tint); border: 1px solid var(--blue-border); }
+  .demo-title { font-size: 1rem; font-weight: 700; color: var(--black); }
+  .demo-close {
+    width: 32px; height: 32px; border-radius: 8px; border: 1.5px solid var(--divider);
+    background: transparent; cursor: pointer; font-size: 1rem; color: var(--gray-3);
+    display: flex; align-items: center; justify-content: center;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .demo-close:hover { color: var(--orange); border-color: var(--orange); }
+
+  /* Shared demo components */
+  .dm-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-4); margin-bottom: 0.4rem; }
+  .dm-input { background: var(--bg-warm); border-radius: 10px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.88rem; color: var(--black); line-height: 1.55; min-height: 1.4rem; }
+  .dm-section { margin-bottom: 0.9rem; opacity: 0; }
+  .dm-section.show { animation: dmFade 0.35s ease forwards; }
+  @keyframes dmFade { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+
+  /* Terminal */
+  .dm-term { background: #1e1e2e; border-radius: 12px; overflow: hidden; font-family: 'Courier New', monospace; }
+  .dm-tbar { background: #2a2a3c; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 6px; }
+  .dm-tdot { width: 10px; height: 10px; border-radius: 50%; }
+  .dm-tdot:nth-child(1){background:#ff5f56} .dm-tdot:nth-child(2){background:#ffbd2e} .dm-tdot:nth-child(3){background:#27c93f}
+  .dm-ttitle { margin-left: auto; font-size: 0.7rem; color: #4b4b6a; }
+  .dm-tbody { padding: 1.2rem 1.4rem; }
+  .dm-slbl { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #4b4b6a; margin-bottom: 0.3rem; }
+  .dm-cmd { font-size: 0.86rem; font-weight: 700; color: #4ade80; line-height: 1.5; word-break: break-all; }
+  .dm-exp { font-size: 0.8rem; color: #a1a1aa; line-height: 1.65; }
+  .dm-warn { font-size: 0.8rem; color: #fbbf24; line-height: 1.55; }
+
+  /* Score bar */
+  .dm-score-wrap { background: var(--bg-warm); border-radius: var(--radius-lg); padding: 1.2rem; margin-bottom: 1rem; }
+  .dm-score-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+  .dm-score-label { font-size: 0.88rem; font-weight: 600; }
+  .dm-score-num { font-size: 1.6rem; font-weight: 800; color: var(--orange); letter-spacing: -1px; }
+  .dm-bar-outer { background: #e8e4de; border-radius: 6px; height: 10px; overflow: hidden; }
+  .dm-bar-inner { height: 100%; border-radius: 6px; width: 0%; transition: width 1.6s cubic-bezier(0.4,0,0.2,1); }
+  .dm-bar-orange { background: linear-gradient(90deg, var(--orange), #f87c50); }
+  .dm-bar-blue { background: linear-gradient(90deg, var(--blue), #60a5fa); }
+  .dm-kw-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .dm-kw {
+    font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .dm-kw-found { background: #dcfce7; color: #15803d; }
+  .dm-kw-miss { background: #fee2e2; color: #dc2626; }
+
+  /* Candidate cards */
+  .dm-candidates { display: flex; flex-direction: column; gap: 10px; }
+  .dm-candidate {
+    display: flex; align-items: center; gap: 12px; padding: 12px 14px;
+    border: 1px solid var(--divider); border-radius: var(--radius); opacity: 0;
+  }
+  .dm-candidate.show { animation: dmFade 0.4s ease forwards; }
+  .dm-cand-avatar {
+    width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 14px; font-weight: 700; color: var(--white); flex-shrink: 0;
+  }
+  .dm-cand-name { font-size: 0.88rem; font-weight: 700; margin-bottom: 2px; }
+  .dm-cand-role { font-size: 0.75rem; color: var(--gray-3); }
+  .dm-cand-score-wrap { margin-left: auto; text-align: right; }
+  .dm-cand-score { font-size: 1.1rem; font-weight: 800; }
+  .dm-cand-bar-outer { width: 80px; background: #e8e4de; border-radius: 4px; height: 5px; margin-top: 4px; }
+  .dm-cand-bar { height: 100%; border-radius: 4px; width: 0%; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+
+  /* Contract flags */
+  .dm-flags { display: flex; flex-direction: column; gap: 8px; }
+  .dm-flag {
+    display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px;
+    border-radius: var(--radius); opacity: 0;
+  }
+  .dm-flag.show { animation: dmFade 0.4s ease forwards; }
+  .dm-flag-ok { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .dm-flag-warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .dm-flag-bad { background: #fef2f2; border: 1px solid #fecaca; }
+  .dm-flag-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+  .dm-flag-text { font-size: 0.83rem; color: var(--gray-1); line-height: 1.55; }
+  .dm-flag-text strong { font-weight: 700; }
+
+  /* Social posts */
+  .dm-posts { display: flex; flex-direction: column; gap: 10px; }
+  .dm-post {
+    border: 1px solid var(--divider); border-radius: var(--radius);
+    overflow: hidden; opacity: 0;
+  }
+  .dm-post.show { animation: dmFade 0.4s ease forwards; }
+  .dm-post-hdr { padding: 8px 12px; display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 700; }
+  .dm-post-hdr-li { background: #0a66c2; color: var(--white); }
+  .dm-post-hdr-ig { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: var(--white); }
+  .dm-post-hdr-x { background: var(--black); color: var(--white); }
+  .dm-post-body { padding: 10px 12px; font-size: 0.82rem; color: var(--gray-1); line-height: 1.6; }
+
+  /* Progress */
+  .dm-prog-outer { background: var(--bg-warm); border-radius: 6px; height: 8px; overflow: hidden; margin-bottom: 0.35rem; }
+  .dm-prog-inner { height: 100%; border-radius: 6px; width: 0%; transition: width 1.9s cubic-bezier(0.4,0,0.2,1); }
+  .dm-prog-meta { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--gray-3); margin-bottom: 1.25rem; }
+  .dm-bullets { display: flex; flex-direction: column; gap: 0.7rem; }
+  .dm-bullet {
+    display: flex; align-items: flex-start; gap: 0.7rem; padding: 0.8rem 1rem;
+    border: 1px solid var(--divider); border-radius: 10px; opacity: 0;
+  }
+  .dm-bullet.show { animation: dmFade 0.4s ease forwards; }
+  .dm-bullet-ok { border-color: #bbf7d0; background: #f0fdf4; }
+  .dm-bullet-warn { border-color: #fde68a; background: #fffbeb; }
+  .dm-b-icon { font-size: 1rem; flex-shrink: 0; }
+  .dm-b-text { font-size: 0.84rem; color: var(--gray-1); line-height: 1.6; }
+
+  /* Code */
+  .dm-code-pane { background: #1e1e2e; border-radius: 10px; padding: 0.9rem 1rem; font-family: 'Courier New', monospace; }
+  .dm-cl { font-size: 0.74rem; line-height: 1.7; color: #a1a1aa; opacity: 0; }
+  .dm-cl.show { animation: dmFade 0.2s ease forwards; }
+  .dm-kw-c{color:#c792ea} .dm-fn-c{color:#82aaff} .dm-str-c{color:#c3e88d} .dm-ok-c{color:#4ade80;font-weight:700}
+
   /* Responsive */
   @media (max-width: 768px) {
-    .apps-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .stat { padding: 8px 12px; }
     .stat-num { font-size: 20px; }
-    section { padding: 64px 20px; }
     .hero-title { letter-spacing: -1px; }
+    .app-section-header { flex-direction: column; }
+    .tools-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
   }
 </style>
 </head>
@@ -242,12 +376,15 @@
       Workblox
     </div>
     <ul class="nav-links">
-      <li><a href="#apps">Apps</a></li>
-      <li><a href="#features">Features</a></li>
+      <li><a href="#personal">Personal</a></li>
+      <li><a href="#business">Business</a></li>
       <li><a href="#how">How It Works</a></li>
       <li><a href="mailto:pedro_torres@torrestechremote.com">Contact</a></li>
     </ul>
-    <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="nav-cta">Get Started</a>
+    <div class="nav-actions">
+      <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="nav-btn nav-btn-personal">Personal</a>
+      <a href="https://business.torrestechremote.com" target="_blank" class="nav-btn nav-btn-business">Business</a>
+    </div>
   </div>
 </nav>
 
@@ -261,8 +398,8 @@
     <h1 class="hero-title">AI tools built for<br><em>real work.</em></h1>
     <p class="hero-sub">Two apps. Whether you're managing your career or running a business, Workblox gives you the AI tools to get it done — fast.</p>
     <div class="hero-actions">
-      <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="btn-primary">Try Workblox Personal</a>
-      <a href="https://business.torrestechremote.com" target="_blank" class="btn-secondary">Try Workblox Business</a>
+      <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="btn-orange">Try Workblox Personal</a>
+      <a href="https://business.torrestechremote.com" target="_blank" class="btn-blue">Try Workblox Business</a>
     </div>
   </div>
 </section>
@@ -270,63 +407,127 @@
 <!-- Stats -->
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat">
-      <div class="stat-num">2</div>
-      <div class="stat-label">Installable apps</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">18+</div>
-      <div class="stat-label">AI tools total</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">0</div>
-      <div class="stat-label">Docs ever stored</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">Claude</div>
-      <div class="stat-label">Powered by Anthropic</div>
-    </div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">Installable apps</div></div>
+    <div class="stat"><div class="stat-num">18+</div><div class="stat-label">AI tools total</div></div>
+    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Docs ever stored</div></div>
+    <div class="stat"><div class="stat-num">Claude</div><div class="stat-label">Powered by Anthropic</div></div>
   </div>
 </div>
 
-<!-- Apps -->
-<section id="apps">
+<!-- Personal -->
+<section id="personal" class="app-section app-section-personal">
   <div class="container">
-    <div class="section-label">Two Apps</div>
-    <h2 class="section-title">Pick the app that fits your work.</h2>
-    <p class="section-sub">Workblox Personal is built for individuals. Workblox Business is built for owners, managers, and HR teams.</p>
-    <div class="apps-grid">
+    <div class="app-section-header">
+      <div class="app-section-left">
+        <div class="app-pill app-pill-personal"><div class="app-pill-dot app-pill-dot-orange"></div>Workblox Personal</div>
+        <div class="app-section-title">For individuals &amp; job seekers.</div>
+        <div class="app-section-sub">Resume tools, document analysis, workflow automation, and OS helpers — all in one app.</div>
+      </div>
+      <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="app-section-cta cta-orange">Launch Personal →</a>
+    </div>
+    <div class="tools-grid">
 
-      <div class="app-card">
-        <div class="app-card-badge">Personal</div>
-        <div class="app-icon">🧰</div>
-        <div class="app-name">Workblox Personal</div>
-        <div class="app-target">For individuals &amp; job seekers</div>
-        <div class="app-desc">Resume tools, document analysis, workflow automation, and OS helpers — everything you need to stay productive and land your next opportunity.</div>
-        <div class="app-tools">
-          <div class="app-tool"><span class="app-tool-icon">📋</span> ATS Resume Analyzer</div>
-          <div class="app-tool"><span class="app-tool-icon">✍️</span> Resume Builder</div>
-          <div class="app-tool"><span class="app-tool-icon">📄</span> Doc Analyzer</div>
-          <div class="app-tool"><span class="app-tool-icon">⚡</span> Workflow Builder</div>
-          <div class="app-tool"><span class="app-tool-icon">🐧</span> Linux · Windows · Mac Helpers</div>
-        </div>
-        <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="app-cta">Launch Workblox Personal →</a>
+      <div class="tool-card tool-card-personal" data-demo="ats">
+        <div class="tool-card-icon">📋</div>
+        <div class="tool-card-name">ATS Resume Analyzer</div>
+        <div class="tool-card-desc">Score your resume against any job description. See missing keywords and get a match percentage before you apply.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
       </div>
 
-      <div class="app-card">
-        <div class="app-card-badge">Business</div>
-        <div class="app-icon">💼</div>
-        <div class="app-name">Workblox Business</div>
-        <div class="app-target">For owners, HR &amp; managers</div>
-        <div class="app-desc">From hiring to customer communications — 13 AI tools covering every corner of business operations, in one polished app.</div>
-        <div class="app-tools">
-          <div class="app-tool"><span class="app-tool-icon">👥</span> Hiring Manager &amp; Batch ATS Analyzer</div>
-          <div class="app-tool"><span class="app-tool-icon">📝</span> Job Description Writer</div>
-          <div class="app-tool"><span class="app-tool-icon">📑</span> Proposal &amp; Contract Analyzer</div>
-          <div class="app-tool"><span class="app-tool-icon">📣</span> Social Media &amp; Ad Copy Generator</div>
-          <div class="app-tool"><span class="app-tool-icon">📋</span> Policy &amp; SOP Generator</div>
-        </div>
-        <a href="https://business.torrestechremote.com" target="_blank" class="app-cta">Launch Workblox Business →</a>
+      <div class="tool-card tool-card-personal" data-demo="doc">
+        <div class="tool-card-icon">📄</div>
+        <div class="tool-card-name">Doc Analyzer</div>
+        <div class="tool-card-desc">Upload any PDF, TXT, or DOCX file and get an instant AI summary with key points and red flags.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-personal" data-demo="workflow">
+        <div class="tool-card-icon">⚡</div>
+        <div class="tool-card-name">Workflow Builder</div>
+        <div class="tool-card-desc">Describe a repetitive task in plain English — get a ready-to-run Python script in seconds.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-personal" data-demo="os">
+        <div class="tool-card-icon">💻</div>
+        <div class="tool-card-name">OS Helpers</div>
+        <div class="tool-card-desc">Linux, Windows &amp; Mac. Describe your problem in plain English — get the exact command with a clear explanation.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-personal">
+        <div class="tool-card-icon">✍️</div>
+        <div class="tool-card-name">Resume Builder</div>
+        <div class="tool-card-desc">Build a polished, professional resume from scratch. Export as PDF, ready to send.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Business -->
+<section id="business" class="app-section app-section-business">
+  <div class="container">
+    <div class="app-section-header">
+      <div class="app-section-left">
+        <div class="app-pill app-pill-business"><div class="app-pill-dot app-pill-dot-blue"></div>Workblox Business</div>
+        <div class="app-section-title">For owners, HR &amp; managers.</div>
+        <div class="app-section-sub">13 AI tools covering hiring, communications, proposals, policies, and more — all in one app.</div>
+      </div>
+      <a href="https://business.torrestechremote.com" target="_blank" class="app-section-cta cta-blue">Launch Business →</a>
+    </div>
+    <div class="tools-grid">
+
+      <div class="tool-card tool-card-business" data-demo="hiring">
+        <div class="tool-card-icon">👥</div>
+        <div class="tool-card-name">Hiring Manager</div>
+        <div class="tool-card-desc">Score and rank candidates against a job description. Batch analyze multiple resumes at once.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business" data-demo="contract">
+        <div class="tool-card-icon">📑</div>
+        <div class="tool-card-name">Contract Analyzer</div>
+        <div class="tool-card-desc">Upload a contract and get a breakdown of risk items, unusual clauses, and key terms — before you sign.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business" data-demo="social">
+        <div class="tool-card-icon">📣</div>
+        <div class="tool-card-name">Social Media Generator</div>
+        <div class="tool-card-desc">Turn one brief into ready-to-post content for LinkedIn, Instagram, and X — all at once.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business" data-demo="jd">
+        <div class="tool-card-icon">📝</div>
+        <div class="tool-card-name">Job Description Writer</div>
+        <div class="tool-card-desc">Generate a complete, professional job description from a role title and a few key requirements.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business">
+        <div class="tool-card-icon">📊</div>
+        <div class="tool-card-name">Proposal Generator</div>
+        <div class="tool-card-desc">Create professional business proposals from a project brief — scoped, priced, and ready to send.</div>
+      </div>
+
+      <div class="tool-card tool-card-business">
+        <div class="tool-card-icon">💬</div>
+        <div class="tool-card-name">Customer Response Drafter</div>
+        <div class="tool-card-desc">Draft professional responses to customer complaints or inquiries — on brand, every time.</div>
+      </div>
+
+      <div class="tool-card tool-card-business">
+        <div class="tool-card-icon">🎯</div>
+        <div class="tool-card-name">Ad Copy Writer</div>
+        <div class="tool-card-desc">Generate high-converting ad copy for Google, Facebook, and more from a simple brief.</div>
+      </div>
+
+      <div class="tool-card tool-card-business">
+        <div class="tool-card-icon">📋</div>
+        <div class="tool-card-name">Policy &amp; SOP Generator</div>
+        <div class="tool-card-desc">Create workplace policies and standard operating procedures in minutes — not hours.</div>
       </div>
 
     </div>
@@ -340,33 +541,27 @@
     <h2 class="section-title">Built different from the start.</h2>
     <p class="section-sub">Not just another AI wrapper. Workblox is purpose-built for the tasks you actually do at work.</p>
     <div class="features-grid">
-
       <div class="feature-card">
         <div class="feature-icon">🤖</div>
         <div class="feature-name">Powered by Claude AI</div>
-        <div class="feature-desc">Every tool runs on Anthropic's Claude — one of the most capable AI models available. You get real answers, not generic templates.</div>
+        <div class="feature-desc">Every tool runs on Anthropic's Claude — one of the most capable AI models available. Real answers, not generic templates.</div>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">📱</div>
         <div class="feature-name">Installs like a native app</div>
-        <div class="feature-desc">Both apps are installable PWAs. Add them to your home screen on Android, iPhone, Mac, Windows, or Linux — no app store needed.</div>
+        <div class="feature-desc">Both apps are installable PWAs. Add to your home screen on Android, iPhone, Mac, Windows, or Linux — no app store needed.</div>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">🔒</div>
         <div class="feature-name">Your documents stay yours</div>
         <div class="feature-desc">Files you upload are processed and discarded immediately. Nothing is stored, retained, or shared. Ever.</div>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
         <div class="feature-name">Results in seconds</div>
-        <div class="feature-desc">No waiting, no loading screens, no back-and-forth. Describe what you need and get a polished output ready to use.</div>
+        <div class="feature-desc">No waiting, no back-and-forth. Describe what you need and get a polished output ready to use.</div>
       </div>
-
     </div>
-  </div>
 </section>
 
 <!-- How It Works -->
@@ -374,27 +569,27 @@
   <div class="container">
     <div class="section-label">How It Works</div>
     <h2 class="section-title">Up and running in minutes.</h2>
-    <p class="section-sub">No setup, no configuration. Just sign in and start using the tools.</p>
+    <p class="section-sub">No setup, no configuration. Sign in and start using the tools.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">Step 01</div>
         <div class="step-title">Sign in with Google</div>
-        <div class="step-desc">One click. No password to remember. Your account is created automatically the first time you sign in.</div>
+        <div class="step-desc">One click. No password to remember. Your account is ready instantly.</div>
       </div>
       <div class="step">
         <div class="step-num">Step 02</div>
         <div class="step-title">Pick a tool</div>
-        <div class="step-desc">Choose from 18+ AI tools across both apps. Personal tools for your career, business tools for your team.</div>
+        <div class="step-desc">Choose from 18+ AI tools across both apps — personal productivity or business operations.</div>
       </div>
       <div class="step">
         <div class="step-num">Step 03</div>
         <div class="step-title">Get your result</div>
-        <div class="step-desc">Describe your task, upload your file, or fill in the fields — and get a polished, ready-to-use output in seconds.</div>
+        <div class="step-desc">Describe your task, upload a file, or fill in the fields — polished output in seconds.</div>
       </div>
       <div class="step">
         <div class="step-num">Step 04</div>
         <div class="step-title">Install for faster access</div>
-        <div class="step-desc">Add Workblox to your home screen or desktop for instant access anytime — works offline and feels like a native app.</div>
+        <div class="step-desc">Add Workblox to your home screen or desktop — works offline, feels like a native app.</div>
       </div>
     </div>
   </div>
@@ -405,10 +600,10 @@
   <div class="container">
     <div class="section-label">Get Started</div>
     <h2 class="section-title">Ready to get more done?</h2>
-    <p class="section-sub">Try Workblox Personal for free, or get started with Workblox Business.</p>
+    <p class="section-sub">Try either app — no credit card required.</p>
     <div class="cta-actions">
-      <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="btn-white">Try Workblox Personal</a>
-      <a href="https://business.torrestechremote.com" target="_blank" class="btn-outline-white">Try Workblox Business</a>
+      <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="btn-orange">Try Workblox Personal</a>
+      <a href="https://business.torrestechremote.com" target="_blank" class="btn-blue">Try Workblox Business</a>
     </div>
   </div>
 </section>
@@ -424,8 +619,8 @@
       </div>
     </div>
     <div class="footer-links">
-      <a href="#apps">Apps</a>
-      <a href="#features">Features</a>
+      <a href="#personal">Personal</a>
+      <a href="#business">Business</a>
       <a href="mailto:pedro_torres@torrestechremote.com">Contact</a>
       <a href="tos.html">Terms</a>
       <a href="privacy.html">Privacy</a>
@@ -434,5 +629,409 @@
   </div>
 </footer>
 
+<!-- ── ATS Demo ── -->
+<div class="demo-overlay" id="ats-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-orange">📋</div><span class="demo-title">ATS Resume Analyzer</span></div>
+      <button class="demo-close" id="ats-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Analyzing resume for</div>
+    <div class="dm-input" id="ats-job"></div>
+    <div class="dm-section" id="ats-score-sec">
+      <div class="dm-score-wrap">
+        <div class="dm-score-row">
+          <span class="dm-score-label">ATS Match Score</span>
+          <span class="dm-score-num" id="ats-score-num">0%</span>
+        </div>
+        <div class="dm-bar-outer"><div class="dm-bar-inner dm-bar-orange" id="ats-bar"></div></div>
+      </div>
+    </div>
+    <div class="dm-section" id="ats-kw-sec">
+      <div class="dm-label">Keywords found</div>
+      <div class="dm-kw-row" id="ats-kw-found"></div>
+    </div>
+    <div class="dm-section" id="ats-miss-sec">
+      <div class="dm-label">Keywords missing</div>
+      <div class="dm-kw-row" id="ats-kw-miss"></div>
+    </div>
+    <div class="dm-section" id="ats-tip-sec">
+      <div class="dm-label">Top suggestion</div>
+      <div class="dm-input" id="ats-tip"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Doc Analyzer Demo ── -->
+<div class="demo-overlay" id="doc-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-orange">📄</div><span class="demo-title">Doc Analyzer</span></div>
+      <button class="demo-close" id="doc-close">&#10005;</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:0.65rem;margin-bottom:0.75rem;">
+      <div style="width:28px;height:35px;background:var(--orange);border-radius:4px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;color:#fff;font-size:0.55rem;font-weight:800;flex-shrink:0;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%)">PDF</div>
+      <div><div style="font-size:0.88rem;font-weight:700;">quarterly_report.pdf</div><div style="font-size:0.72rem;color:var(--gray-3);">2.4 MB &bull; 18 pages</div></div>
+    </div>
+    <div class="dm-prog-outer"><div class="dm-prog-inner dm-bar-orange" id="doc-prog"></div></div>
+    <div class="dm-prog-meta"><span id="doc-prog-lbl">Analyzing document&hellip;</span><span id="doc-pct">0%</span></div>
+    <div class="dm-bullets">
+      <div class="dm-bullet dm-bullet-ok" id="doc-b0"><span class="dm-b-icon">&#10003;</span><span class="dm-b-text">18-page document processed. Main topic: Q3 financial performance &mdash; revenue growth and operational highlights.</span></div>
+      <div class="dm-bullet dm-bullet-ok" id="doc-b1"><span class="dm-b-icon">&#10003;</span><span class="dm-b-text">Key figures: Revenue $4.2M (+14% YoY), net margin 22%, three new product lines launched this quarter.</span></div>
+      <div class="dm-bullet dm-bullet-warn" id="doc-b2"><span class="dm-b-icon">&#9651;</span><span class="dm-b-text">Accounts receivable up 31% with no explanation &mdash; may indicate delayed collections. Worth reviewing before filing.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Workflow Builder Demo ── -->
+<div class="demo-overlay" id="workflow-overlay">
+  <div class="demo-box" style="width:min(660px,92vw)">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-orange">⚡</div><span class="demo-title">Workflow Builder</span></div>
+      <button class="demo-close" id="workflow-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Your task</div>
+    <div class="dm-input" id="wf-task"></div>
+    <div class="dm-label">Generated script</div>
+    <div class="dm-code-pane">
+      <div class="dm-cl" id="wfl0"><span class="dm-kw-c">import</span> os</div>
+      <div class="dm-cl" id="wfl1"><span class="dm-kw-c">from</span> datetime <span class="dm-kw-c">import</span> date</div>
+      <div class="dm-cl" id="wfl2">&nbsp;</div>
+      <div class="dm-cl" id="wfl3">folder = <span class="dm-str-c">"/reports"</span></div>
+      <div class="dm-cl" id="wfl4">today = date.<span class="dm-fn-c">today</span>().<span class="dm-fn-c">strftime</span>(<span class="dm-str-c">"%Y-%m-%d"</span>)</div>
+      <div class="dm-cl" id="wfl5">&nbsp;</div>
+      <div class="dm-cl" id="wfl6"><span class="dm-kw-c">for</span> fname <span class="dm-kw-c">in</span> os.<span class="dm-fn-c">listdir</span>(folder):</div>
+      <div class="dm-cl" id="wfl7">&nbsp;&nbsp;<span class="dm-kw-c">if not</span> fname.<span class="dm-fn-c">startswith</span>(today):</div>
+      <div class="dm-cl" id="wfl8">&nbsp;&nbsp;&nbsp;&nbsp;new = <span class="dm-str-c">f"{today}_{fname}"</span></div>
+      <div class="dm-cl" id="wfl9">&nbsp;&nbsp;&nbsp;&nbsp;os.<span class="dm-fn-c">rename</span>(os.path.<span class="dm-fn-c">join</span>(folder, fname), os.path.<span class="dm-fn-c">join</span>(folder, new))</div>
+      <div class="dm-cl dm-ok-c" id="wfl10"><span class="dm-fn-c">print</span>(<span class="dm-str-c">"Done &mdash; files renamed."</span>)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── OS Helper Demo ── -->
+<div class="demo-overlay" id="os-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-orange">💻</div><span class="demo-title">Linux Assistant</span></div>
+      <button class="demo-close" id="os-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Your question</div>
+    <div class="dm-input" id="os-q"></div>
+    <div class="dm-term">
+      <div class="dm-tbar"><div class="dm-tdot"></div><div class="dm-tdot"></div><div class="dm-tdot"></div><span class="dm-ttitle">linux-assistant</span></div>
+      <div class="dm-tbody">
+        <div class="dm-section" id="os-s0"><div class="dm-slbl">Command</div><div class="dm-cmd" id="os-cmd"></div></div>
+        <div class="dm-section" id="os-s1"><div class="dm-slbl">Explanation</div><div class="dm-exp" id="os-exp"></div></div>
+        <div class="dm-section" id="os-s2"><div class="dm-slbl">Warning</div><div class="dm-warn" id="os-warn"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Hiring Manager Demo ── -->
+<div class="demo-overlay" id="hiring-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">👥</div><span class="demo-title">Hiring Manager</span></div>
+      <button class="demo-close" id="hiring-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Role</div>
+    <div class="dm-input">Senior Frontend Developer &mdash; React, TypeScript, 4+ years</div>
+    <div class="dm-label" style="margin-top:0.5rem">Candidate Rankings</div>
+    <div class="dm-candidates">
+      <div class="dm-candidate" id="hc0">
+        <div class="dm-cand-avatar" style="background:#e05c2e">SC</div>
+        <div><div class="dm-cand-name">Sarah Chen</div><div class="dm-cand-role">5 yrs React · TypeScript · Next.js</div></div>
+        <div class="dm-cand-score-wrap">
+          <div class="dm-cand-score" style="color:var(--orange)" id="hc0-score">0%</div>
+          <div class="dm-cand-bar-outer"><div class="dm-cand-bar" style="background:var(--orange)" id="hc0-bar"></div></div>
+        </div>
+      </div>
+      <div class="dm-candidate" id="hc1">
+        <div class="dm-cand-avatar" style="background:#7c3aed">MR</div>
+        <div><div class="dm-cand-name">Marcus Rivera</div><div class="dm-cand-role">4 yrs React · JavaScript · Redux</div></div>
+        <div class="dm-cand-score-wrap">
+          <div class="dm-cand-score" style="color:#7c3aed" id="hc1-score">0%</div>
+          <div class="dm-cand-bar-outer"><div class="dm-cand-bar" style="background:#7c3aed" id="hc1-bar"></div></div>
+        </div>
+      </div>
+      <div class="dm-candidate" id="hc2">
+        <div class="dm-cand-avatar" style="background:var(--blue)">PP</div>
+        <div><div class="dm-cand-name">Priya Patel</div><div class="dm-cand-role">3 yrs Vue · JavaScript · CSS</div></div>
+        <div class="dm-cand-score-wrap">
+          <div class="dm-cand-score" style="color:var(--blue)" id="hc2-score">0%</div>
+          <div class="dm-cand-bar-outer"><div class="dm-cand-bar" style="background:var(--blue)" id="hc2-bar"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Contract Analyzer Demo ── -->
+<div class="demo-overlay" id="contract-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">📑</div><span class="demo-title">Contract Analyzer</span></div>
+      <button class="demo-close" id="contract-close">&#10005;</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:0.65rem;margin-bottom:0.75rem;">
+      <div style="width:28px;height:35px;background:var(--blue);border-radius:4px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;color:#fff;font-size:0.55rem;font-weight:800;flex-shrink:0;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%)">PDF</div>
+      <div><div style="font-size:0.88rem;font-weight:700;">vendor_agreement.pdf</div><div style="font-size:0.72rem;color:var(--gray-3);">1.1 MB &bull; 12 pages</div></div>
+    </div>
+    <div class="dm-prog-outer"><div class="dm-prog-inner dm-bar-blue" id="ct-prog"></div></div>
+    <div class="dm-prog-meta"><span id="ct-prog-lbl">Analyzing contract&hellip;</span><span id="ct-pct">0%</span></div>
+    <div class="dm-flags">
+      <div class="dm-flag dm-flag-ok" id="ct-f0"><span class="dm-flag-icon">&#10003;</span><span class="dm-flag-text"><strong>Payment terms:</strong> Net 30 — standard and acceptable.</span></div>
+      <div class="dm-flag dm-flag-warn" id="ct-f1"><span class="dm-flag-icon">&#9651;</span><span class="dm-flag-text"><strong>Auto-renewal clause found:</strong> Contract renews automatically every 12 months unless cancelled 60 days prior.</span></div>
+      <div class="dm-flag dm-flag-bad" id="ct-f2"><span class="dm-flag-icon">&#9888;</span><span class="dm-flag-text"><strong>Liability cap missing:</strong> No limit on vendor liability defined. Significant financial exposure if service fails.</span></div>
+      <div class="dm-flag dm-flag-warn" id="ct-f3"><span class="dm-flag-icon">&#9651;</span><span class="dm-flag-text"><strong>Non-compete: 24 months</strong> — unusually long. Industry standard is 12 months. Consider negotiating.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Social Media Demo ── -->
+<div class="demo-overlay" id="social-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">📣</div><span class="demo-title">Social Media Generator</span></div>
+      <button class="demo-close" id="social-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Your brief</div>
+    <div class="dm-input">Promote our summer sale — 30% off all services through July 31st.</div>
+    <div class="dm-posts">
+      <div class="dm-post" id="sm-li">
+        <div class="dm-post-hdr dm-post-hdr-li">LinkedIn</div>
+        <div class="dm-post-body">Big news for businesses looking to level up this summer &#128293;<br><br>We're offering <strong>30% off all our services</strong> through July 31st. Whether you need AI tools, automation, or a new website — now is the time.<br><br>Send us a message to lock in your rate before the deadline.<br><br>#SmallBusiness #AI #SummerSale</div>
+      </div>
+      <div class="dm-post" id="sm-ig">
+        <div class="dm-post-hdr dm-post-hdr-ig">Instagram</div>
+        <div class="dm-post-body">Summer sale is ON &#9728;&#65039; 30% off everything — July 31st deadline. Link in bio to get started. &#128293;&#128293; #SummerSale #AITools #BusinessOwner</div>
+      </div>
+      <div class="dm-post" id="sm-x">
+        <div class="dm-post-hdr dm-post-hdr-x">X / Twitter</div>
+        <div class="dm-post-body">30% off all our services through July 31st. AI tools, automation, web — whatever your business needs. DM us to get started &#128293;</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Job Description Demo ── -->
+<div class="demo-overlay" id="jd-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">📝</div><span class="demo-title">Job Description Writer</span></div>
+      <button class="demo-close" id="jd-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Role</div>
+    <div class="dm-input" id="jd-role"></div>
+    <div class="dm-section" id="jd-s0">
+      <div class="dm-label">About the role</div>
+      <div class="dm-input" id="jd-about"></div>
+    </div>
+    <div class="dm-section" id="jd-s1">
+      <div class="dm-label">Responsibilities</div>
+      <div class="dm-input" id="jd-resp"></div>
+    </div>
+    <div class="dm-section" id="jd-s2">
+      <div class="dm-label">Requirements</div>
+      <div class="dm-input" id="jd-req"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ── Helpers ── */
+  function openOverlay(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeOverlay(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+  function typeIn(el, text, speed, cb) {
+    let i = 0;
+    const iv = setInterval(() => { el.innerHTML = text.slice(0, ++i); if (i >= text.length) { clearInterval(iv); if (cb) cb(); } }, speed);
+  }
+  function show(id, delay) { setTimeout(() => document.getElementById(id) && document.getElementById(id).classList.add('show'), delay); }
+  function animBar(barId, pct, numId, suffix, color) {
+    setTimeout(() => {
+      const bar = document.getElementById(barId);
+      const num = document.getElementById(numId);
+      if (!bar || !num) return;
+      bar.style.width = pct + '%';
+      let n = 0;
+      const iv = setInterval(() => {
+        n = Math.min(n + 2, pct);
+        num.textContent = n + suffix;
+        if (n >= pct) clearInterval(iv);
+      }, 30);
+    }, 300);
+  }
+
+  /* ── ATS ── */
+  function openAts() {
+    const jEl = document.getElementById('ats-job');
+    jEl.textContent = '';
+    ['ats-score-sec','ats-kw-sec','ats-miss-sec','ats-tip-sec'].forEach(id => document.getElementById(id).classList.remove('show'));
+    document.getElementById('ats-bar').style.width = '0%';
+    document.getElementById('ats-score-num').textContent = '0%';
+    document.getElementById('ats-kw-found').innerHTML = '';
+    document.getElementById('ats-kw-miss').innerHTML = '';
+    document.getElementById('ats-tip').textContent = '';
+    openOverlay('ats-overlay');
+    typeIn(jEl, 'Software Engineer — React, Python, AWS at Acme Corp', 28, () => {
+      show('ats-score-sec', 200);
+      animBar('ats-bar', 74, 'ats-score-num', '%', '');
+      setTimeout(() => {
+        show('ats-kw-sec', 0);
+        ['React ✓','Python ✓','TypeScript ✓','REST APIs ✓'].forEach((kw, i) => {
+          setTimeout(() => {
+            const el = document.createElement('span');
+            el.className = 'dm-kw dm-kw-found'; el.textContent = kw;
+            document.getElementById('ats-kw-found').appendChild(el);
+          }, i * 150);
+        });
+      }, 1200);
+      setTimeout(() => {
+        show('ats-miss-sec', 0);
+        ['Kubernetes ✗','GraphQL ✗','AWS CDK ✗'].forEach((kw, i) => {
+          setTimeout(() => {
+            const el = document.createElement('span');
+            el.className = 'dm-kw dm-kw-miss'; el.textContent = kw;
+            document.getElementById('ats-kw-miss').appendChild(el);
+          }, i * 150);
+        });
+      }, 2000);
+      setTimeout(() => {
+        show('ats-tip-sec', 0);
+        document.getElementById('ats-tip').textContent = 'Add cloud infrastructure experience (Kubernetes, AWS CDK) to push your score above 85%.';
+      }, 2800);
+    });
+  }
+
+  /* ── Doc Analyzer ── */
+  function openDoc() {
+    const prog = document.getElementById('doc-prog');
+    prog.style.transition = 'none'; prog.style.width = '0%';
+    document.getElementById('doc-prog-lbl').textContent = 'Analyzing document…';
+    document.getElementById('doc-pct').textContent = '0%';
+    [0,1,2].forEach(i => document.getElementById('doc-b'+i).classList.remove('show'));
+    openOverlay('doc-overlay');
+    setTimeout(() => {
+      prog.style.transition = 'width 1.9s cubic-bezier(0.4,0,0.2,1)'; prog.style.width = '100%';
+      let n = 0; const iv = setInterval(() => { n++; document.getElementById('doc-pct').textContent = n+'%'; if (n>=100){clearInterval(iv);document.getElementById('doc-prog-lbl').textContent='Analysis complete';} }, 19);
+    }, 100);
+    [0,1,2].forEach(i => show('doc-b'+i, 2300+i*350));
+  }
+
+  /* ── Workflow Builder ── */
+  function openWorkflow() {
+    const tEl = document.getElementById('wf-task');
+    tEl.textContent = '';
+    for (let i=0;i<=10;i++){const el=document.getElementById('wfl'+i);if(el)el.classList.remove('show');}
+    openOverlay('workflow-overlay');
+    typeIn(tEl, "Every Monday, rename all files in /reports by prepending today's date.", 26, () => {
+      for (let i=0;i<=10;i++) show('wfl'+i, 400+i*150);
+    });
+  }
+
+  /* ── OS Helper ── */
+  function openOs() {
+    document.getElementById('os-q').textContent = '';
+    ['os-s0','os-s1','os-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    document.getElementById('os-cmd').textContent='';
+    document.getElementById('os-exp').textContent='';
+    document.getElementById('os-warn').textContent='';
+    openOverlay('os-overlay');
+    typeIn(document.getElementById('os-q'), 'how do I find large files taking up disk space?', 32, () => {
+      const t = 450;
+      setTimeout(()=>{ document.getElementById('os-cmd').textContent='find / -type f -size +100M -exec ls -lh {} \\; 2>/dev/null'; show('os-s0',0); }, t);
+      setTimeout(()=>{ document.getElementById('os-exp').textContent='Searches from root for files over 100MB and lists their sizes. The 2>/dev/null suppresses permission errors on protected directories.'; show('os-s1',0); }, t+700);
+      setTimeout(()=>{ document.getElementById('os-warn').textContent='Running from / scans the entire filesystem and can be slow. Narrow to /home or /var for faster, more targeted results.'; show('os-s2',0); }, t+1450);
+    });
+  }
+
+  /* ── Hiring Manager ── */
+  function openHiring() {
+    [0,1,2].forEach(i => {
+      const c = document.getElementById('hc'+i); c.classList.remove('show');
+      document.getElementById('hc'+i+'-score').textContent='0%';
+      document.getElementById('hc'+i+'-bar').style.width='0%';
+    });
+    openOverlay('hiring-overlay');
+    const candidates = [{pct:94},{pct:87},{pct:71}];
+    candidates.forEach(({pct}, i) => {
+      setTimeout(() => {
+        document.getElementById('hc'+i).classList.add('show');
+        const bar = document.getElementById('hc'+i+'-bar');
+        const num = document.getElementById('hc'+i+'-score');
+        setTimeout(() => {
+          bar.style.transition='width 1.2s cubic-bezier(0.4,0,0.2,1)';
+          bar.style.width=pct+'%';
+          let n=0; const iv=setInterval(()=>{n=Math.min(n+2,pct);num.textContent=n+'%';if(n>=pct)clearInterval(iv);},25);
+        }, 200);
+      }, 400+i*500);
+    });
+  }
+
+  /* ── Contract Analyzer ── */
+  function openContract() {
+    const prog = document.getElementById('ct-prog');
+    prog.style.transition='none'; prog.style.width='0%';
+    document.getElementById('ct-prog-lbl').textContent='Analyzing contract…';
+    document.getElementById('ct-pct').textContent='0%';
+    [0,1,2,3].forEach(i => document.getElementById('ct-f'+i).classList.remove('show'));
+    openOverlay('contract-overlay');
+    setTimeout(()=>{
+      prog.style.transition='width 1.9s cubic-bezier(0.4,0,0.2,1)'; prog.style.width='100%';
+      let n=0; const iv=setInterval(()=>{n++;document.getElementById('ct-pct').textContent=n+'%';if(n>=100){clearInterval(iv);document.getElementById('ct-prog-lbl').textContent='Analysis complete';}},19);
+    },100);
+    [0,1,2,3].forEach(i => show('ct-f'+i, 2200+i*380));
+  }
+
+  /* ── Social Media ── */
+  function openSocial() {
+    ['sm-li','sm-ig','sm-x'].forEach(id => document.getElementById(id).classList.remove('show'));
+    openOverlay('social-overlay');
+    ['sm-li','sm-ig','sm-x'].forEach((id,i) => show(id, 400+i*500));
+  }
+
+  /* ── Job Description ── */
+  function openJd() {
+    document.getElementById('jd-role').textContent='';
+    ['jd-s0','jd-s1','jd-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    document.getElementById('jd-about').textContent='';
+    document.getElementById('jd-resp').textContent='';
+    document.getElementById('jd-req').textContent='';
+    openOverlay('jd-overlay');
+    typeIn(document.getElementById('jd-role'), 'Senior Marketing Manager', 40, () => {
+      setTimeout(()=>{ show('jd-s0',0); document.getElementById('jd-about').textContent="We're looking for a strategic Senior Marketing Manager to lead brand growth initiatives and own our go-to-market strategy across digital channels."; }, 400);
+      setTimeout(()=>{ show('jd-s1',0); document.getElementById('jd-resp').textContent="• Lead multi-channel marketing campaigns\n• Manage a team of 3 marketing specialists\n• Own content calendar and social strategy\n• Report on KPIs and optimize campaigns weekly"; }, 1100);
+      setTimeout(()=>{ show('jd-s2',0); document.getElementById('jd-req').textContent="• 5+ years marketing experience\n• Proven track record with digital campaigns\n• Strong analytics skills (Google Analytics, HubSpot)\n• Excellent written communication"; }, 2000);
+    });
+  }
+
+  /* ── Wire up all close buttons and overlays ── */
+  const overlayDemos = [
+    ['ats-overlay','ats-close'],
+    ['doc-overlay','doc-close'],
+    ['workflow-overlay','workflow-close'],
+    ['os-overlay','os-close'],
+    ['hiring-overlay','hiring-close'],
+    ['contract-overlay','contract-close'],
+    ['social-overlay','social-close'],
+    ['jd-overlay','jd-close'],
+  ];
+  overlayDemos.forEach(([ov,cl]) => {
+    document.getElementById(cl).addEventListener('click', () => closeOverlay(ov));
+    document.getElementById(ov).addEventListener('click', e => { if(e.target===e.currentTarget) closeOverlay(ov); });
+  });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') overlayDemos.forEach(([ov])=>closeOverlay(ov)); });
+
+  /* ── Wire tool cards to demos ── */
+  const demoMap = {ats:openAts, doc:openDoc, workflow:openWorkflow, os:openOs, hiring:openHiring, contract:openContract, social:openSocial, jd:openJd};
+  document.querySelectorAll('.tool-card[data-demo]').forEach(card => {
+    card.addEventListener('click', () => {
+      const fn = demoMap[card.dataset.demo];
+      if (fn) fn();
+    });
+  });
+</script>
 </body>
 </html>
