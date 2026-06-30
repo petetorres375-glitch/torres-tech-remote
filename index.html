@@ -683,6 +683,7 @@
         </div>
         <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
           <a href="https://petetorres375-glitch.github.io/workblox/workblox-business" target="_blank" class="product-link">Launch →</a>
+          <button class="btn-install" onclick="handleInstallBusiness()" style="display:inline-block;">Install App</button>
         </div>
       </div>
 
@@ -1066,6 +1067,58 @@
   </div>
 </div>
 
+<div class="demo-overlay" id="windows-install-overlay">
+  <div class="ios-modal-box">
+    <h3>Install Workblox on Windows</h3>
+    <p>Open Workblox in Chrome, then:</p>
+    <div class="ios-modal-steps">
+      <div class="ios-modal-step"><div class="ios-modal-step-num">1</div><span>Click <strong>"Continue"</strong> below — Workblox opens in Chrome</span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">2</div><span>Click the <strong>install icon ⊕</strong> in Chrome's address bar → <strong>"Install"</strong></span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">3</div><span>Workblox is added to your <strong>Start Menu</strong> and Desktop</span></div>
+    </div>
+    <button class="ios-modal-close" onclick="closeWindowsModal()">Continue to Workblox</button>
+  </div>
+</div>
+
+<div class="demo-overlay" id="windows-install-business-overlay">
+  <div class="ios-modal-box">
+    <h3>Install Workblox Business on Windows</h3>
+    <p>Open Workblox Business in Chrome, then:</p>
+    <div class="ios-modal-steps">
+      <div class="ios-modal-step"><div class="ios-modal-step-num">1</div><span>Click <strong>"Continue"</strong> below — Workblox Business opens in Chrome</span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">2</div><span>Click the <strong>install icon ⊕</strong> in Chrome's address bar → <strong>"Install"</strong></span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">3</div><span>Workblox Business is added to your <strong>Start Menu</strong> and Desktop</span></div>
+    </div>
+    <button class="ios-modal-close" onclick="closeWindowsBusinessModal()">Continue to Workblox Business</button>
+  </div>
+</div>
+
+<div class="demo-overlay" id="mac-install-overlay">
+  <div class="ios-modal-box">
+    <h3>Install Workblox on Mac</h3>
+    <p>Open Workblox in Chrome, then:</p>
+    <div class="ios-modal-steps">
+      <div class="ios-modal-step"><div class="ios-modal-step-num">1</div><span>Click <strong>"Continue"</strong> below — Workblox opens in Chrome</span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">2</div><span>Click the <strong>install icon ⊕</strong> in Chrome's address bar → <strong>"Install"</strong></span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">3</div><span>Workblox is added to your <strong>Applications folder</strong> and Dock</span></div>
+    </div>
+    <button class="ios-modal-close" onclick="closeMacInstallModal()">Continue to Workblox</button>
+  </div>
+</div>
+
+<div class="demo-overlay" id="mac-install-business-overlay">
+  <div class="ios-modal-box">
+    <h3>Install Workblox Business on Mac</h3>
+    <p>Open Workblox Business in Chrome, then:</p>
+    <div class="ios-modal-steps">
+      <div class="ios-modal-step"><div class="ios-modal-step-num">1</div><span>Click <strong>"Continue"</strong> below — Workblox Business opens in Chrome</span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">2</div><span>Click the <strong>install icon ⊕</strong> in Chrome's address bar → <strong>"Install"</strong></span></div>
+      <div class="ios-modal-step"><div class="ios-modal-step-num">3</div><span>Workblox Business is added to your <strong>Applications folder</strong> and Dock</span></div>
+    </div>
+    <button class="ios-modal-close" onclick="closeMacBusinessModal()">Continue to Workblox Business</button>
+  </div>
+</div>
+
 <div class="demo-overlay" id="la-overlay">
   <div class="demo-box">
     <div class="demo-hdr">
@@ -1366,7 +1419,10 @@
   document.getElementById('mac-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeMac(); });
 
   function isIOS() { return /iphone|ipad|ipod/i.test(navigator.userAgent); }
-  function isLinuxDesktop() { return /Linux/.test(navigator.userAgent) && !/Android/.test(navigator.userAgent) && !isIOS(); }
+  function isAndroid() { return /Android/i.test(navigator.userAgent); }
+  function isLinuxDesktop() { return /Linux/.test(navigator.userAgent) && !isAndroid() && !isIOS(); }
+  function isWindows() { return /Windows NT/.test(navigator.userAgent); }
+  function isMac() { return /Macintosh/.test(navigator.userAgent) && !isIOS(); }
 
   function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
@@ -1374,24 +1430,36 @@
   function handleInstall() {
     if (isIOS()) { openModal('ios-install-overlay'); }
     else if (isLinuxDesktop()) { openModal('linux-install-overlay'); }
+    else if (isWindows()) { openModal('windows-install-overlay'); }
+    else if (isMac()) { openModal('mac-install-overlay'); }
     else { window.location.href = 'https://petetorres375-glitch.github.io/workblox'; }
   }
   function closeIosModal() { closeModal('ios-install-overlay'); }
   function closeLinuxModal() { closeModal('linux-install-overlay'); window.location.href = 'https://petetorres375-glitch.github.io/workblox'; }
+  function closeWindowsModal() { closeModal('windows-install-overlay'); window.location.href = 'https://petetorres375-glitch.github.io/workblox'; }
+  function closeMacInstallModal() { closeModal('mac-install-overlay'); window.location.href = 'https://petetorres375-glitch.github.io/workblox'; }
   document.getElementById('ios-install-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeIosModal(); });
   document.getElementById('linux-install-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal('linux-install-overlay'); });
+  document.getElementById('windows-install-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal('windows-install-overlay'); });
+  document.getElementById('mac-install-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal('mac-install-overlay'); });
 
   function handleInstallBusiness() {
     if (isIOS()) { openModal('ios-install-business-overlay'); }
     else if (isLinuxDesktop()) { openModal('linux-install-business-overlay'); }
+    else if (isWindows()) { openModal('windows-install-business-overlay'); }
+    else if (isMac()) { openModal('mac-install-business-overlay'); }
     else { window.location.href = 'https://petetorres375-glitch.github.io/workblox/workblox-business'; }
   }
   function closeIosBusinessModal() { closeModal('ios-install-business-overlay'); }
   function closeLinuxBusinessModal() { closeModal('linux-install-business-overlay'); window.location.href = 'https://petetorres375-glitch.github.io/workblox/workblox-business'; }
+  function closeWindowsBusinessModal() { closeModal('windows-install-business-overlay'); window.location.href = 'https://petetorres375-glitch.github.io/workblox/workblox-business'; }
+  function closeMacBusinessModal() { closeModal('mac-install-business-overlay'); window.location.href = 'https://petetorres375-glitch.github.io/workblox/workblox-business'; }
   document.getElementById('ios-install-business-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeIosBusinessModal(); });
   document.getElementById('linux-install-business-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal('linux-install-business-overlay'); });
+  document.getElementById('windows-install-business-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal('windows-install-business-overlay'); });
+  document.getElementById('mac-install-business-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal('mac-install-business-overlay'); });
 
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLa(); closeWb(); closeDa(); closeWin(); closeMac(); closeIosModal(); closeIosBusinessModal(); closeModal('linux-install-overlay'); closeModal('linux-install-business-overlay'); } });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLa(); closeWb(); closeDa(); closeWin(); closeMac(); closeIosModal(); closeIosBusinessModal(); closeModal('linux-install-overlay'); closeModal('linux-install-business-overlay'); closeModal('windows-install-overlay'); closeModal('windows-install-business-overlay'); closeModal('mac-install-overlay'); closeModal('mac-install-business-overlay'); } });
 
   document.querySelectorAll('.product-card[data-demo]').forEach(card => {
     card.addEventListener('click', e => {
