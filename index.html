@@ -61,8 +61,8 @@
   }
   .nav-btn-personal { background: var(--orange); color: var(--white); }
   .nav-btn-personal:hover { background: var(--orange-dark); }
-  .nav-btn-business { background: var(--blue); color: var(--white); }
-  .nav-btn-business:hover { background: var(--blue-dark); }
+  .nav-btn-business { background: var(--white); color: var(--orange); border: 1.5px solid var(--orange); }
+  .nav-btn-business:hover { background: var(--orange-tint); }
 
   /* ── Hero ── */
   #hero { padding: 96px 24px 80px; background: var(--white); border-bottom: 1px solid var(--divider); }
@@ -98,6 +98,12 @@
     transition: background 0.15s, transform 0.1s; display: inline-block;
   }
   .btn-blue:hover { background: var(--blue-dark); transform: translateY(-1px); }
+  .btn-secondary {
+    background: var(--white); color: var(--black); border: 1.5px solid var(--divider);
+    padding: 14px 28px; border-radius: var(--radius); font-size: 15px; font-weight: 600;
+    transition: border-color 0.15s, transform 0.1s; display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--gray-4); transform: translateY(-1px); }
 
   /* ── Stats ── */
   .stats-bar {
@@ -113,7 +119,7 @@
   /* ── App Sections ── */
   .app-section { padding: 80px 24px; }
   .app-section-personal { background: var(--orange-tint); border-top: 1px solid var(--orange-border); border-bottom: 1px solid var(--orange-border); }
-  .app-section-business { background: var(--blue-tint); border-top: 1px solid var(--blue-border); border-bottom: 1px solid var(--blue-border); }
+  .app-section-business { background: var(--white); border-top: 1px solid var(--divider); border-bottom: 1px solid var(--divider); }
 
   .app-section-header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 48px; }
   .app-section-left { flex: 1; min-width: 260px; }
@@ -399,7 +405,7 @@
     <p class="hero-sub">Two apps. Whether you're managing your career or running a business, Workblox gives you the AI tools to get it done — fast.</p>
     <div class="hero-actions">
       <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="btn-orange">Try Workblox Personal</a>
-      <a href="https://business.torrestechremote.com" target="_blank" class="btn-blue">Try Workblox Business</a>
+      <a href="https://business.torrestechremote.com" target="_blank" class="btn-secondary">Try Workblox Business</a>
     </div>
   </div>
 </section>
@@ -624,7 +630,7 @@
     <p class="section-sub">Try either app — no credit card required.</p>
     <div class="cta-actions">
       <a href="https://petetorres375-glitch.github.io/workblox" target="_blank" class="btn-orange">Try Workblox Personal</a>
-      <a href="https://business.torrestechremote.com" target="_blank" class="btn-blue">Try Workblox Business</a>
+      <a href="https://business.torrestechremote.com" target="_blank" class="btn-outline-white">Try Workblox Business</a>
     </div>
   </div>
 </section>
