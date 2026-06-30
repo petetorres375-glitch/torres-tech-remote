@@ -608,10 +608,11 @@
     <div class="section-label">Contact</div>
     <h2 class="section-title">Get in touch.</h2>
     <p class="section-sub" style="margin:0 auto 32px;">Questions about Workblox, account access, or anything else — reach out directly.</p>
-    <a href="mailto:pedro_torres@torrestechremote.com" style="display:inline-flex;align-items:center;gap:10px;background:var(--white);border:1.5px solid var(--divider);border-radius:var(--radius-lg);padding:16px 28px;font-size:16px;font-weight:600;color:var(--black);transition:box-shadow 0.2s,transform 0.2s;">
+    <div style="display:inline-flex;align-items:center;gap:12px;background:var(--white);border:1.5px solid var(--divider);border-radius:var(--radius-lg);padding:16px 28px;font-size:16px;font-weight:600;color:var(--black);">
       <span style="font-size:20px;">✉️</span>
       pedro_torres@torrestechremote.com
-    </a>
+      <button onclick="navigator.clipboard.writeText('pedro_torres@torrestechremote.com').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1800)})" style="background:var(--orange);color:var(--white);border:none;border-radius:6px;padding:6px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;">Copy</button>
+    </div>
   </div>
 </section>
 
