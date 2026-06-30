@@ -736,34 +736,27 @@
       <div class="demo-title-row"><div class="demo-icon demo-icon-blue">👥</div><span class="demo-title">Hiring Manager</span></div>
       <button class="demo-close" id="hiring-close">&#10005;</button>
     </div>
-    <div class="dm-label">Role</div>
-    <div class="dm-input">Senior Frontend Developer &mdash; React, TypeScript, 4+ years</div>
-    <div class="dm-label" style="margin-top:0.5rem">Candidate Rankings</div>
-    <div class="dm-candidates">
-      <div class="dm-candidate" id="hc0">
-        <div class="dm-cand-avatar" style="background:#e05c2e">SC</div>
-        <div><div class="dm-cand-name">Sarah Chen</div><div class="dm-cand-role">5 yrs React · TypeScript · Next.js</div></div>
-        <div class="dm-cand-score-wrap">
-          <div class="dm-cand-score" style="color:var(--orange)" id="hc0-score">0%</div>
-          <div class="dm-cand-bar-outer"><div class="dm-cand-bar" style="background:var(--orange)" id="hc0-bar"></div></div>
-        </div>
-      </div>
-      <div class="dm-candidate" id="hc1">
-        <div class="dm-cand-avatar" style="background:#7c3aed">MR</div>
-        <div><div class="dm-cand-name">Marcus Rivera</div><div class="dm-cand-role">4 yrs React · JavaScript · Redux</div></div>
-        <div class="dm-cand-score-wrap">
-          <div class="dm-cand-score" style="color:#7c3aed" id="hc1-score">0%</div>
-          <div class="dm-cand-bar-outer"><div class="dm-cand-bar" style="background:#7c3aed" id="hc1-bar"></div></div>
-        </div>
-      </div>
-      <div class="dm-candidate" id="hc2">
-        <div class="dm-cand-avatar" style="background:var(--blue)">PP</div>
-        <div><div class="dm-cand-name">Priya Patel</div><div class="dm-cand-role">3 yrs Vue · JavaScript · CSS</div></div>
-        <div class="dm-cand-score-wrap">
-          <div class="dm-cand-score" style="color:var(--blue)" id="hc2-score">0%</div>
-          <div class="dm-cand-bar-outer"><div class="dm-cand-bar" style="background:var(--blue)" id="hc2-bar"></div></div>
-        </div>
-      </div>
+    <div class="dm-label">Position</div>
+    <div class="dm-input" id="hm-role"></div>
+    <div class="dm-section" id="hm-s0">
+      <div class="dm-label">Position Summary</div>
+      <div class="dm-input" id="hm-summary"></div>
+    </div>
+    <div class="dm-section" id="hm-s1">
+      <div class="dm-label">Interview Questions</div>
+      <div class="dm-input" id="hm-questions"></div>
+    </div>
+    <div class="dm-section" id="hm-s2">
+      <div class="dm-label">Evaluation Criteria</div>
+      <div class="dm-input" id="hm-eval"></div>
+    </div>
+    <div class="dm-section" id="hm-s3">
+      <div class="dm-label">Red Flags to Watch</div>
+      <div class="dm-input" id="hm-redflags"></div>
+    </div>
+    <div class="dm-section" id="hm-s4">
+      <div class="dm-label">Onboarding Tips</div>
+      <div class="dm-input" id="hm-onboarding"></div>
     </div>
   </div>
 </div>
@@ -949,24 +942,16 @@
 
   /* ── Hiring Manager ── */
   function openHiring() {
-    [0,1,2].forEach(i => {
-      const c = document.getElementById('hc'+i); c.classList.remove('show');
-      document.getElementById('hc'+i+'-score').textContent='0%';
-      document.getElementById('hc'+i+'-bar').style.width='0%';
-    });
+    document.getElementById('hm-role').textContent='';
+    ['hm-s0','hm-s1','hm-s2','hm-s3','hm-s4'].forEach(id => document.getElementById(id).classList.remove('show'));
+    ['hm-summary','hm-questions','hm-eval','hm-redflags','hm-onboarding'].forEach(id => document.getElementById(id).textContent='');
     openOverlay('hiring-overlay');
-    const candidates = [{pct:94},{pct:87},{pct:71}];
-    candidates.forEach(({pct}, i) => {
-      setTimeout(() => {
-        document.getElementById('hc'+i).classList.add('show');
-        const bar = document.getElementById('hc'+i+'-bar');
-        const num = document.getElementById('hc'+i+'-score');
-        setTimeout(() => {
-          bar.style.transition='width 1.2s cubic-bezier(0.4,0,0.2,1)';
-          bar.style.width=pct+'%';
-          let n=0; const iv=setInterval(()=>{n=Math.min(n+2,pct);num.textContent=n+'%';if(n>=pct)clearInterval(iv);},25);
-        }, 200);
-      }, 400+i*500);
+    typeIn(document.getElementById('hm-role'), 'Customer Service Representative', 40, () => {
+      setTimeout(()=>{ show('hm-s0',0); document.getElementById('hm-summary').textContent='Handles inbound customer inquiries, resolves complaints, and maintains satisfaction across phone, email, and chat. First point of contact representing the company brand.'; }, 400);
+      setTimeout(()=>{ show('hm-s1',0); document.getElementById('hm-questions').innerHTML='• Describe a time you turned an angry customer into a satisfied one.<br>• How do you handle multiple open tickets at the same time?<br>• What does great customer service mean to you?'; }, 1100);
+      setTimeout(()=>{ show('hm-s2',0); document.getElementById('hm-eval').innerHTML='• Clear, calm communication under pressure<br>• Empathy and active listening skills<br>• Response time and problem resolution rate<br>• Familiarity with CRM tools'; }, 1900);
+      setTimeout(()=>{ show('hm-s3',0); document.getElementById('hm-redflags').innerHTML='• Blames previous employers or customers<br>• Vague answers with no specific examples<br>• Shows impatience when asked follow-up questions<br>• Can\'t describe a conflict resolution situation'; }, 2700);
+      setTimeout(()=>{ show('hm-s4',0); document.getElementById('hm-onboarding').innerHTML='• Shadow senior reps for the first two weeks<br>• Review top 20 most common customer issues<br>• Set 30-day response time and satisfaction targets<br>• Weekly check-ins for the first 90 days'; }, 3500);
     });
   }
 
