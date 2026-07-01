@@ -464,10 +464,11 @@
         <div class="tool-hint tool-hint-orange">See it in action →</div>
       </div>
 
-      <div class="tool-card tool-card-personal">
+      <div class="tool-card tool-card-personal" data-demo="resume">
         <div class="tool-card-icon">✍️</div>
         <div class="tool-card-name">Resume Builder</div>
         <div class="tool-card-desc">Build a polished, professional resume from scratch. Export as PDF, ready to send.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
       </div>
 
     </div>
@@ -522,28 +523,32 @@
         <div class="tool-hint tool-hint-blue">See it in action →</div>
       </div>
 
-      <div class="tool-card tool-card-business">
+      <div class="tool-card tool-card-business" data-demo="proposal">
         <div class="tool-card-icon">📈</div>
         <div class="tool-card-name">Proposal Generator</div>
         <div class="tool-card-desc">Create professional business proposals from a project brief — scoped, priced, and ready to send.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
       </div>
 
-      <div class="tool-card tool-card-business">
+      <div class="tool-card tool-card-business" data-demo="customer">
         <div class="tool-card-icon">💬</div>
         <div class="tool-card-name">Customer Response Drafter</div>
         <div class="tool-card-desc">Draft professional responses to customer complaints or inquiries — on brand, every time.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
       </div>
 
-      <div class="tool-card tool-card-business">
+      <div class="tool-card tool-card-business" data-demo="adcopy">
         <div class="tool-card-icon">🎯</div>
         <div class="tool-card-name">Ad Copy Writer</div>
         <div class="tool-card-desc">Generate high-converting ad copy for Google, Facebook, and more from a simple brief.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
       </div>
 
-      <div class="tool-card tool-card-business">
+      <div class="tool-card tool-card-business" data-demo="policy">
         <div class="tool-card-icon">📋</div>
         <div class="tool-card-name">Policy &amp; SOP Generator</div>
         <div class="tool-card-desc">Create workplace policies and standard operating procedures in minutes — not hours.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
       </div>
 
     </div>
@@ -990,6 +995,118 @@
   </div>
 </div>
 
+<!-- Resume Builder -->
+<div class="demo-overlay" id="resume-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-orange">✍️</div><span class="demo-title">Resume Builder</span></div>
+      <button class="demo-close" id="resume-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Name &amp; Title</div>
+    <div class="dm-input" id="res-name"></div>
+    <div class="dm-section" id="res-s0">
+      <div class="dm-label">Professional Summary</div>
+      <div class="dm-input" id="res-summary"></div>
+    </div>
+    <div class="dm-section" id="res-s1">
+      <div class="dm-label">Experience</div>
+      <div class="dm-input" id="res-exp"></div>
+    </div>
+    <div class="dm-section" id="res-s2">
+      <div class="dm-label">Skills</div>
+      <div class="dm-input" id="res-skills"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Proposal Generator -->
+<div class="demo-overlay" id="proposal-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">📈</div><span class="demo-title">Proposal Generator</span></div>
+      <button class="demo-close" id="proposal-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Project Brief</div>
+    <div class="dm-input" id="prop-brief"></div>
+    <div class="dm-section" id="prop-s0">
+      <div class="dm-label">Executive Summary</div>
+      <div class="dm-input" id="prop-exec"></div>
+    </div>
+    <div class="dm-section" id="prop-s1">
+      <div class="dm-label">Scope &amp; Deliverables</div>
+      <div class="dm-input" id="prop-scope"></div>
+    </div>
+    <div class="dm-section" id="prop-s2">
+      <div class="dm-label">Timeline &amp; Pricing</div>
+      <div class="dm-input" id="prop-timeline"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Customer Response Drafter -->
+<div class="demo-overlay" id="customer-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">💬</div><span class="demo-title">Customer Response Drafter</span></div>
+      <button class="demo-close" id="customer-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Customer Message</div>
+    <div class="dm-input" id="cust-complaint"></div>
+    <div class="dm-section" id="cust-s0">
+      <div class="dm-label">Drafted Response</div>
+      <div class="dm-input" id="cust-response"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Ad Copy Writer -->
+<div class="demo-overlay" id="adcopy-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">🎯</div><span class="demo-title">Ad Copy Writer</span></div>
+      <button class="demo-close" id="adcopy-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Product / Service Brief</div>
+    <div class="dm-input" id="ad-brief"></div>
+    <div class="dm-section" id="ad-s0">
+      <div class="dm-label">Google Ad</div>
+      <div class="dm-input" id="ad-google"></div>
+    </div>
+    <div class="dm-section" id="ad-s1">
+      <div class="dm-label">Facebook Ad</div>
+      <div class="dm-input" id="ad-fb"></div>
+    </div>
+    <div class="dm-section" id="ad-s2">
+      <div class="dm-label">Headline</div>
+      <div class="dm-input" id="ad-headline"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Policy & SOP Generator -->
+<div class="demo-overlay" id="policy-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">📋</div><span class="demo-title">Policy &amp; SOP Generator</span></div>
+      <button class="demo-close" id="policy-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Policy Type</div>
+    <div class="dm-input" id="pol-type"></div>
+    <div class="dm-section" id="pol-s0">
+      <div class="dm-label">Purpose &amp; Scope</div>
+      <div class="dm-input" id="pol-purpose"></div>
+    </div>
+    <div class="dm-section" id="pol-s1">
+      <div class="dm-label">Procedures</div>
+      <div class="dm-input" id="pol-steps"></div>
+    </div>
+    <div class="dm-section" id="pol-s2">
+      <div class="dm-label">Responsibilities</div>
+      <div class="dm-input" id="pol-resp"></div>
+    </div>
+  </div>
+</div>
+
 <script>
   /* ── Helpers ── */
   function openOverlay(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
@@ -1172,17 +1289,89 @@
     });
   }
 
+  /* ── Resume Builder ── */
+  function openResume() {
+    document.getElementById('res-name').textContent='';
+    ['res-s0','res-s1','res-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    ['res-summary','res-exp','res-skills'].forEach(id => document.getElementById(id).textContent='');
+    openOverlay('resume-overlay');
+    typeIn(document.getElementById('res-name'), 'Alex Rivera — Marketing Specialist', 38, () => {
+      setTimeout(()=>{ show('res-s0',0); document.getElementById('res-summary').textContent="Results-driven marketing professional with 4+ years of experience growing brand awareness and driving leads through data-informed campaigns across digital and social channels."; }, 400);
+      setTimeout(()=>{ show('res-s1',0); document.getElementById('res-exp').textContent="Marketing Coordinator — BrightPath Agency (2021–Present)\n• Managed $50K/mo ad budget across Google and Meta\n• Grew email list 42% in 12 months\n• Led rebranding initiative for 3 client accounts"; }, 1200);
+      setTimeout(()=>{ show('res-s2',0); document.getElementById('res-skills').textContent="Google Analytics · HubSpot · Adobe Creative Suite · Copywriting · SEO · Project Management"; }, 2200);
+    });
+  }
+
+  /* ── Proposal Generator ── */
+  function openProposal() {
+    document.getElementById('prop-brief').textContent='';
+    ['prop-s0','prop-s1','prop-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    ['prop-exec','prop-scope','prop-timeline'].forEach(id => document.getElementById(id).textContent='');
+    openOverlay('proposal-overlay');
+    typeIn(document.getElementById('prop-brief'), 'Redesign e-commerce site for a boutique clothing brand', 35, () => {
+      setTimeout(()=>{ show('prop-s0',0); document.getElementById('prop-exec').textContent="We propose a full redesign of your e-commerce platform to increase conversion rates, improve mobile experience, and align with your brand identity. Estimated ROI improvement: 25–40%."; }, 400);
+      setTimeout(()=>{ show('prop-s1',0); document.getElementById('prop-scope').textContent="• Homepage + 5 core page templates\n• Mobile-first responsive design\n• Shopify theme integration\n• Product catalog migration\n• 2 rounds of revisions included"; }, 1200);
+      setTimeout(()=>{ show('prop-s2',0); document.getElementById('prop-timeline').textContent="Timeline: 6 weeks  |  Investment: $4,500\nDeposit: 50% upfront · Balance on delivery\nMilestone check-ins at Week 2 and Week 4"; }, 2200);
+    });
+  }
+
+  /* ── Customer Response Drafter ── */
+  function openCustomer() {
+    document.getElementById('cust-complaint').textContent='';
+    document.getElementById('cust-s0').classList.remove('show');
+    document.getElementById('cust-response').textContent='';
+    openOverlay('customer-overlay');
+    typeIn(document.getElementById('cust-complaint'), 'My order arrived damaged and customer service has not replied in 3 days.', 30, () => {
+      setTimeout(()=>{
+        show('cust-s0',0);
+        typeIn(document.getElementById('cust-response'),
+          "Hi Sarah,\n\nThank you for reaching out — I sincerely apologize for the damaged order and the delay in our response. That's not the experience we want for you.\n\nI've escalated your case and a replacement will ship within 24 hours. You'll receive a tracking number by email, and as a gesture of goodwill I've applied a $15 credit to your account.\n\nPlease don't hesitate to reach out directly if anything else comes up.\n\nWarm regards,\nSupport Team", 18);
+      }, 600);
+    });
+  }
+
+  /* ── Ad Copy Writer ── */
+  function openAdCopy() {
+    document.getElementById('ad-brief').textContent='';
+    ['ad-s0','ad-s1','ad-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    ['ad-google','ad-fb','ad-headline'].forEach(id => document.getElementById(id).textContent='');
+    openOverlay('adcopy-overlay');
+    typeIn(document.getElementById('ad-brief'), 'Online yoga studio — beginner-friendly, $29/mo', 38, () => {
+      setTimeout(()=>{ show('ad-s0',0); document.getElementById('ad-google').textContent="Start Yoga Today — $29/mo | No Experience Needed\nJoin 10,000+ students. Live &amp; on-demand classes. Cancel anytime.\nbeginneryoga.com · Start Free Trial"; }, 400);
+      setTimeout(()=>{ show('ad-s1',0); document.getElementById('ad-fb').textContent="You don't need to be flexible to start yoga — you just need to start. 🧘\nOur beginner-friendly studio has helped 10,000+ people build strength, calm stress, and feel great. All levels welcome.\n👉 Try 2 weeks free — no credit card needed."; }, 1300);
+      setTimeout(()=>{ show('ad-s2',0); document.getElementById('ad-headline').textContent="\"Your First Class Is Free — Feel the Difference Today\""; }, 2300);
+    });
+  }
+
+  /* ── Policy & SOP Generator ── */
+  function openPolicy() {
+    document.getElementById('pol-type').textContent='';
+    ['pol-s0','pol-s1','pol-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    ['pol-purpose','pol-steps','pol-resp'].forEach(id => document.getElementById(id).textContent='');
+    openOverlay('policy-overlay');
+    typeIn(document.getElementById('pol-type'), 'Remote Work Policy', 45, () => {
+      setTimeout(()=>{ show('pol-s0',0); document.getElementById('pol-purpose').textContent="This policy establishes guidelines for employees working remotely to ensure productivity, data security, and clear communication standards across the organization."; }, 400);
+      setTimeout(()=>{ show('pol-s1',0); document.getElementById('pol-steps').textContent="1. Employees must be reachable during core hours (9am–3pm local time)\n2. Video on for team meetings unless approved exception\n3. VPN required when accessing company systems\n4. Home office equipment must meet minimum spec standards\n5. Weekly 1:1 with direct manager — mandatory"; }, 1200);
+      setTimeout(()=>{ show('pol-s2',0); document.getElementById('pol-resp').textContent="Employee: adhere to policy and report issues promptly\nManager: ensure team compliance and log exceptions\nHR: annual policy review and enforcement"; }, 2300);
+    });
+  }
+
   /* ── Wire up all close buttons and overlays ── */
   const overlayDemos = [
     ['ats-overlay','ats-close'],
     ['doc-overlay','doc-close'],
     ['workflow-overlay','workflow-close'],
     ['os-overlay','os-close'],
+    ['resume-overlay','resume-close'],
     ['hiring-overlay','hiring-close'],
     ['batchats-overlay','batchats-close'],
     ['contract-overlay','contract-close'],
     ['social-overlay','social-close'],
     ['jd-overlay','jd-close'],
+    ['proposal-overlay','proposal-close'],
+    ['customer-overlay','customer-close'],
+    ['adcopy-overlay','adcopy-close'],
+    ['policy-overlay','policy-close'],
   ];
   overlayDemos.forEach(([ov,cl]) => {
     document.getElementById(cl).addEventListener('click', () => closeOverlay(ov));
@@ -1191,7 +1380,7 @@
   document.addEventListener('keydown', e => { if(e.key==='Escape') overlayDemos.forEach(([ov])=>closeOverlay(ov)); });
 
   /* ── Wire tool cards to demos ── */
-  const demoMap = {ats:openAts, doc:openDoc, workflow:openWorkflow, os:openOs, hiring:openHiring, batchats:openBatchAts, contract:openContract, social:openSocial, jd:openJd};
+  const demoMap = {ats:openAts, doc:openDoc, workflow:openWorkflow, os:openOs, resume:openResume, hiring:openHiring, batchats:openBatchAts, contract:openContract, social:openSocial, jd:openJd, proposal:openProposal, customer:openCustomer, adcopy:openAdCopy, policy:openPolicy};
   document.querySelectorAll('.tool-card[data-demo]').forEach(card => {
     card.addEventListener('click', () => {
       const fn = demoMap[card.dataset.demo];
