@@ -546,8 +546,43 @@
 
       <div class="tool-card tool-card-business" data-demo="policy">
         <div class="tool-card-icon">📋</div>
-        <div class="tool-card-name">Policy &amp; SOP Generator</div>
-        <div class="tool-card-desc">Create workplace policies and standard operating procedures in minutes — not hours.</div>
+        <div class="tool-card-name">Policy Generator</div>
+        <div class="tool-card-desc">Create clear workplace policies in minutes — employee handbook ready, no legal jargon required.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business" data-demo="sop">
+        <div class="tool-card-icon">🗂️</div>
+        <div class="tool-card-name">SOP Generator</div>
+        <div class="tool-card-desc">Turn any process description into a clean, numbered standard operating procedure ready to hand to your team.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business" data-demo="review">
+        <div class="tool-card-icon">⭐</div>
+        <div class="tool-card-name">Review Request Email</div>
+        <div class="tool-card-desc">Write a friendly, natural email asking customers to leave a review — personalized and on brand.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business" data-demo="bizemail">
+        <div class="tool-card-icon">📧</div>
+        <div class="tool-card-name">Business Email Drafter</div>
+        <div class="tool-card-desc">Draft clear, professional business emails for any situation — follow-ups, proposals, reschedules, and more.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business" data-demo="meeting">
+        <div class="tool-card-icon">📝</div>
+        <div class="tool-card-name">Meeting Notes Cleaner</div>
+        <div class="tool-card-desc">Paste raw meeting notes and get a structured summary with action items, decisions, and next steps.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business" data-demo="contacts">
+        <div class="tool-card-icon">📇</div>
+        <div class="tool-card-name">Contacts</div>
+        <div class="tool-card-desc">Manage your business contacts in one place. Add manually or import — always at your fingertips.</div>
         <div class="tool-hint tool-hint-blue">See it in action →</div>
       </div>
 
@@ -1083,6 +1118,110 @@
   </div>
 </div>
 
+<!-- SOP Generator -->
+<div class="demo-overlay" id="sop-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">🗂️</div><span class="demo-title">SOP Generator</span></div>
+      <button class="demo-close" id="sop-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Process Description</div>
+    <div class="dm-input" id="sop-proc"></div>
+    <div class="dm-section" id="sop-s0">
+      <div class="dm-label">Purpose</div>
+      <div class="dm-input" id="sop-purpose"></div>
+    </div>
+    <div class="dm-section" id="sop-s1">
+      <div class="dm-label">Step-by-Step Procedure</div>
+      <div class="dm-input" id="sop-steps"></div>
+    </div>
+    <div class="dm-section" id="sop-s2">
+      <div class="dm-label">Notes &amp; Exceptions</div>
+      <div class="dm-input" id="sop-notes"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Review Request Email -->
+<div class="demo-overlay" id="review-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">⭐</div><span class="demo-title">Review Request Email</span></div>
+      <button class="demo-close" id="review-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Business &amp; Service</div>
+    <div class="dm-input" id="rev-brief"></div>
+    <div class="dm-section" id="rev-s0">
+      <div class="dm-label">Generated Email</div>
+      <div class="dm-input" id="rev-email"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Business Email Drafter -->
+<div class="demo-overlay" id="bizemail-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">📧</div><span class="demo-title">Business Email Drafter</span></div>
+      <button class="demo-close" id="bizemail-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Purpose</div>
+    <div class="dm-input" id="biz-purpose"></div>
+    <div class="dm-section" id="biz-s0">
+      <div class="dm-label">Drafted Email</div>
+      <div class="dm-input" id="biz-email"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Meeting Notes Cleaner -->
+<div class="demo-overlay" id="meeting-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">📝</div><span class="demo-title">Meeting Notes Cleaner</span></div>
+      <button class="demo-close" id="meeting-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Raw Notes</div>
+    <div class="dm-input" id="mtg-raw"></div>
+    <div class="dm-section" id="mtg-s0">
+      <div class="dm-label">Summary</div>
+      <div class="dm-input" id="mtg-summary"></div>
+    </div>
+    <div class="dm-section" id="mtg-s1">
+      <div class="dm-label">Action Items</div>
+      <div class="dm-input" id="mtg-actions"></div>
+    </div>
+    <div class="dm-section" id="mtg-s2">
+      <div class="dm-label">Decisions Made</div>
+      <div class="dm-input" id="mtg-decisions"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Contacts -->
+<div class="demo-overlay" id="contacts-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue">📇</div><span class="demo-title">Contacts</span></div>
+      <button class="demo-close" id="contacts-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Contact Name</div>
+    <div class="dm-input" id="con-name"></div>
+    <div class="dm-section" id="con-s0">
+      <div class="dm-label">Company</div>
+      <div class="dm-input" id="con-company"></div>
+    </div>
+    <div class="dm-section" id="con-s1">
+      <div class="dm-label">Phone &amp; Email</div>
+      <div class="dm-input" id="con-contact"></div>
+    </div>
+    <div class="dm-section" id="con-s2">
+      <div class="dm-label">Notes</div>
+      <div class="dm-input" id="con-notes"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Policy & SOP Generator -->
 <div class="demo-overlay" id="policy-overlay">
   <div class="demo-box">
@@ -1289,6 +1428,75 @@
     });
   }
 
+  /* ── SOP Generator ── */
+  function openSop() {
+    document.getElementById('sop-proc').textContent='';
+    ['sop-s0','sop-s1','sop-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    ['sop-purpose','sop-steps','sop-notes'].forEach(id => document.getElementById(id).textContent='');
+    openOverlay('sop-overlay');
+    typeIn(document.getElementById('sop-proc'), 'Onboarding a new remote employee', 38, () => {
+      setTimeout(()=>{ show('sop-s0',0); document.getElementById('sop-purpose').textContent="Ensure every new remote employee is set up, informed, and productive within their first 5 business days."; }, 400);
+      setTimeout(()=>{ show('sop-s1',0); document.getElementById('sop-steps').textContent="1. Send welcome email with IT credentials — Day 1 morning\n2. Schedule intro calls with team leads — Day 1 afternoon\n3. Provide access to project management tools — Day 2\n4. Assign onboarding buddy from same department — Day 2\n5. 30-minute check-in with manager — Day 5"; }, 1200);
+      setTimeout(()=>{ show('sop-s2',0); document.getElementById('sop-notes').textContent="Exception: contractors follow abbreviated 2-day onboarding. IT access requests must be submitted 24h before start date."; }, 2300);
+    });
+  }
+
+  /* ── Review Request Email ── */
+  function openReview() {
+    document.getElementById('rev-brief').textContent='';
+    document.getElementById('rev-s0').classList.remove('show');
+    document.getElementById('rev-email').textContent='';
+    openOverlay('review-overlay');
+    typeIn(document.getElementById('rev-brief'), 'Torres Tech Remote — web design services', 38, () => {
+      setTimeout(()=>{
+        show('rev-s0',0);
+        typeIn(document.getElementById('rev-email'),
+          "Hi Marcus,\n\nIt was a pleasure working with you on the new Torres Tech Remote website — I hope you're as happy with the result as I am!\n\nIf you have a moment, it would mean a lot if you could leave a quick review on Google. It only takes about two minutes and helps others find us:\n\n👉 Leave a review on Google\n\nThank you so much for trusting us with your project.\n\nWarm regards,\nPedro — Torres Tech Remote", 14);
+      }, 600);
+    });
+  }
+
+  /* ── Business Email Drafter ── */
+  function openBizEmail() {
+    document.getElementById('biz-purpose').textContent='';
+    document.getElementById('biz-s0').classList.remove('show');
+    document.getElementById('biz-email').textContent='';
+    openOverlay('bizemail-overlay');
+    typeIn(document.getElementById('biz-purpose'), 'Follow up on a proposal sent 5 days ago', 38, () => {
+      setTimeout(()=>{
+        show('biz-s0',0);
+        typeIn(document.getElementById('biz-email'),
+          "Subject: Following Up — Project Proposal\n\nHi Jennifer,\n\nI hope your week is going well. I wanted to follow up on the proposal I sent over last Thursday for the website redesign project.\n\nI know things get busy — I just wanted to make sure it landed in the right place and see if you had any questions or need anything clarified.\n\nHappy to hop on a quick call this week if that's easier.\n\nLooking forward to hearing from you.\n\nBest,\nPedro Torres", 14);
+      }, 600);
+    });
+  }
+
+  /* ── Meeting Notes Cleaner ── */
+  function openMeeting() {
+    document.getElementById('mtg-raw').textContent='';
+    ['mtg-s0','mtg-s1','mtg-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    ['mtg-summary','mtg-actions','mtg-decisions'].forEach(id => document.getElementById(id).textContent='');
+    openOverlay('meeting-overlay');
+    typeIn(document.getElementById('mtg-raw'), 'pedro said launch q3, sarah handles social, budget approved 5k, next mtg thursday', 22, () => {
+      setTimeout(()=>{ show('mtg-s0',0); document.getElementById('mtg-summary').textContent="Team aligned on Q3 product launch timeline. Social media strategy assigned to Sarah. Budget approved and confirmed."; }, 500);
+      setTimeout(()=>{ show('mtg-s1',0); document.getElementById('mtg-actions').textContent="• Sarah — develop social media launch plan (due before Thursday)\n• Pedro — confirm Q3 launch date with stakeholders\n• Finance — process $5,000 budget allocation"; }, 1300);
+      setTimeout(()=>{ show('mtg-s2',0); document.getElementById('mtg-decisions').textContent="✓ Q3 launch greenlit\n✓ $5,000 budget approved\n✓ Sarah owns social media for launch"; }, 2300);
+    });
+  }
+
+  /* ── Contacts ── */
+  function openContacts() {
+    document.getElementById('con-name').textContent='';
+    ['con-s0','con-s1','con-s2'].forEach(id => document.getElementById(id).classList.remove('show'));
+    ['con-company','con-contact','con-notes'].forEach(id => document.getElementById(id).textContent='');
+    openOverlay('contacts-overlay');
+    typeIn(document.getElementById('con-name'), 'Jennifer Walsh', 50, () => {
+      setTimeout(()=>{ show('con-s0',0); document.getElementById('con-company').textContent="Walsh Creative Studio — Creative Director"; }, 400);
+      setTimeout(()=>{ show('con-s1',0); document.getElementById('con-contact').textContent="📞 (512) 555-0182\n✉️ jennifer@walshcreative.com"; }, 1000);
+      setTimeout(()=>{ show('con-s2',0); document.getElementById('con-notes').textContent="Met at ATX Networking April 2024. Interested in brand refresh Q4. Follow up October."; }, 1700);
+    });
+  }
+
   /* ── Resume Builder ── */
   function openResume() {
     document.getElementById('res-name').textContent='';
@@ -1372,6 +1580,11 @@
     ['customer-overlay','customer-close'],
     ['adcopy-overlay','adcopy-close'],
     ['policy-overlay','policy-close'],
+    ['sop-overlay','sop-close'],
+    ['review-overlay','review-close'],
+    ['bizemail-overlay','bizemail-close'],
+    ['meeting-overlay','meeting-close'],
+    ['contacts-overlay','contacts-close'],
   ];
   overlayDemos.forEach(([ov,cl]) => {
     document.getElementById(cl).addEventListener('click', () => closeOverlay(ov));
@@ -1380,7 +1593,7 @@
   document.addEventListener('keydown', e => { if(e.key==='Escape') overlayDemos.forEach(([ov])=>closeOverlay(ov)); });
 
   /* ── Wire tool cards to demos ── */
-  const demoMap = {ats:openAts, doc:openDoc, workflow:openWorkflow, os:openOs, resume:openResume, hiring:openHiring, batchats:openBatchAts, contract:openContract, social:openSocial, jd:openJd, proposal:openProposal, customer:openCustomer, adcopy:openAdCopy, policy:openPolicy};
+  const demoMap = {ats:openAts, doc:openDoc, workflow:openWorkflow, os:openOs, resume:openResume, hiring:openHiring, batchats:openBatchAts, contract:openContract, social:openSocial, jd:openJd, proposal:openProposal, customer:openCustomer, adcopy:openAdCopy, policy:openPolicy, sop:openSop, review:openReview, bizemail:openBizEmail, meeting:openMeeting, contacts:openContacts};
   document.querySelectorAll('.tool-card[data-demo]').forEach(card => {
     card.addEventListener('click', () => {
       const fn = demoMap[card.dataset.demo];
