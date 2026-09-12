@@ -306,6 +306,29 @@
   .dm-input { background: var(--bg-warm); border-radius: 10px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.88rem; color: var(--black); line-height: 1.55; min-height: 1.4rem; }
   .dm-section { margin-bottom: 0.9rem; opacity: 0; }
   .dm-section.show { animation: dmFade 0.35s ease forwards; }
+  /* Data Cleanup demo */
+  .dm-fix { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 8px; background: var(--bg-warm); margin-bottom: 8px; font-size: 0.82rem; opacity: 0; }
+  .dm-fix.show { animation: dmFade 0.35s ease forwards; }
+  .dm-fix-before { color: var(--gray-4); text-decoration: line-through; white-space: pre; }
+  .dm-fix-arrow { color: var(--gray-4); }
+  .dm-fix-after { font-weight: 700; color: var(--black); }
+  .dm-fix-tag { margin-left: auto; font-size: 0.66rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+  .dm-fix-tag-fixed { background: #dcfce7; color: #16a34a; }
+  .dm-fix-tag-merged { background: #dbeafe; color: #2563eb; }
+  .dm-fix-tag-flag { background: #fef3c7; color: #b45309; }
+  .dm-summary { margin-top: 12px; padding: 12px 14px; border-radius: 10px; background: #eff6ff; border: 1px solid var(--blue-border); font-size: 0.84rem; font-weight: 600; line-height: 1.5; color: var(--black); opacity: 0; min-height: 1rem; }
+  .dm-summary.show { animation: dmFade 0.35s ease forwards; }
+  /* Expense Organizer demo */
+  .dm-exp-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 8px; background: var(--bg-warm); margin-bottom: 6px; font-size: 0.82rem; opacity: 0; }
+  .dm-exp-row.show { animation: dmFade 0.35s ease forwards; }
+  .dm-exp-date { color: var(--gray-3); width: 52px; flex-shrink: 0; }
+  .dm-exp-vendor { font-weight: 600; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dm-exp-amt { font-weight: 700; width: 62px; text-align: right; flex-shrink: 0; }
+  .dm-exp-cat { font-size: 0.66rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #dbeafe; color: #2563eb; width: 88px; text-align: center; flex-shrink: 0; }
+  .dm-exp-cat-review { background: #fef3c7; color: #b45309; }
+  .dm-exp-total { display: flex; justify-content: space-between; padding: 5px 12px; font-size: 0.82rem; opacity: 0; }
+  .dm-exp-total.show { animation: dmFade 0.35s ease forwards; }
+  .dm-exp-grand { border-top: 1.5px solid var(--divider); margin-top: 4px; padding-top: 10px; font-weight: 800; font-size: 0.9rem; }
   @keyframes dmFade { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
 
   /* Terminal */
@@ -456,7 +479,7 @@
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat"><div class="stat-label">Installable apps</div><div class="stat-num">2</div></div>
-    <div class="stat"><div class="stat-label">AI tools total</div><div class="stat-num">18+</div></div>
+    <div class="stat"><div class="stat-label">AI tools total</div><div class="stat-num">23</div></div>
     <div class="stat"><div class="stat-label">Docs ever stored</div><div class="stat-num">0</div></div>
     <div class="stat"><div class="stat-label">Powered by Anthropic</div><div class="stat-num">Claude</div></div>
     <div class="stat"><div class="stat-label">Designed &amp; driven by</div><div class="stat-num">Pedro</div></div>
@@ -562,7 +585,7 @@
       <div class="app-section-left">
         <div class="app-pill app-pill-business"><div class="app-pill-dot app-pill-dot-blue"></div>Workblox Business</div>
         <div class="app-section-title">For owners, HR &amp; managers.</div>
-        <div class="app-section-sub">13 AI tools covering hiring, communications, proposals, policies, and more — all in one app.</div>
+        <div class="app-section-sub">16 AI tools covering hiring, communications, proposals, policies, and more — all in one app.</div>
       </div>
       <a href="https://business.torrestechremote.com" target="_blank" class="app-section-cta cta-blue">⊕ Install Business</a>
     </div>
@@ -666,6 +689,20 @@
         <div class="tool-hint tool-hint-blue">See it in action →</div>
       </div>
 
+      <div class="tool-card tool-card-business" data-demo="datacleanup">
+        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg></div>
+        <div class="tool-card-name">Data Cleanup</div>
+        <div class="tool-card-desc">Upload a messy spreadsheet and get back consistent dates, tidy text, and duplicates sorted out.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
+      <div class="tool-card tool-card-business" data-demo="expenses">
+        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 14.25l6-6m4.5-3.493V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185ZM9.75 9h.008v.008H9.75V9Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008V13.5Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg></div>
+        <div class="tool-card-name">Expense Organizer</div>
+        <div class="tool-card-desc">Drop in receipts and bank exports, and get a categorized expense table you can edit and export.</div>
+        <div class="tool-hint tool-hint-blue">See it in action →</div>
+      </div>
+
     </div>
 
     <div style="margin-top:44px;padding-top:36px;border-top:1px solid var(--blue-border);">
@@ -686,8 +723,8 @@
       </div>
 
       <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;">All 14 tools</div>
-        <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$60<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;">All 16 tools</div>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$75<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
         <div style="font-size:13px;color:var(--gray-2);line-height:1.6;">Everything in Workblox Business.</div>
       </div>
       </div>
@@ -741,7 +778,7 @@
       <div class="step">
         <div class="step-num">Step 02</div>
         <div class="step-title">Pick a tool</div>
-        <div class="step-desc">Choose from 18+ AI tools across both apps — personal productivity or business operations.</div>
+        <div class="step-desc">Choose from 23 AI tools across both apps — personal productivity or business operations.</div>
       </div>
       <div class="step">
         <div class="step-num">Step 03</div>
@@ -856,7 +893,7 @@
 
         <details class="faq-item">
           <summary>What's included?</summary>
-          <div class="faq-answer">You choose your tools from the catalog of 14 Workblox Business tools — Hiring Manager, Batch ATS Analyzer, Job Description Writer, Contract Analyzer, Proposal Generator, Customer Response Drafter, Review Request Email, Social Media Generator, Ad Copy Writer, Policy Generator, SOP Generator, Meeting Notes Cleaner, Business Email Drafter, and Contacts — and your price is set by how many you pick: $25/mo for 1–3, $40/mo for 4–7, or $60/mo for all 14. You can request to add more later from Settings — new additions go live once they're reviewed and approved, and your tier updates to match. Removing a tool you already have is immediate.</div>
+          <div class="faq-answer">You choose your tools from the catalog of 16 Workblox Business tools — Hiring Manager, Batch ATS Analyzer, Job Description Writer, Contract Analyzer, Proposal Generator, Customer Response Drafter, Review Request Email, Social Media Generator, Ad Copy Writer, Policy Generator, SOP Generator, Meeting Notes Cleaner, Business Email Drafter, Contacts, Data Cleanup, and Expense Organizer — and your price is set by how many you pick: $25/mo for 1–3, $40/mo for 4–7, or $75/mo for all 16. You can request to add more later from Settings — new additions go live once they're reviewed and approved, and your tier updates to match. Removing a tool you already have is immediate.</div>
         </details>
         <details class="faq-item">
           <summary>Is this built for teams or solo operators?</summary>
@@ -1387,6 +1424,77 @@
   </div>
 </div>
 
+<!-- Data Cleanup Demo -->
+<div class="demo-overlay" id="datacleanup-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg></div><span class="demo-title">Data Cleanup</span></div>
+      <button class="demo-close" id="datacleanup-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Uploaded spreadsheet</div>
+    <div class="dm-input" id="dc-file"></div>
+    <div class="dm-section" id="dc-s0">
+      <div class="dm-label">What changed</div>
+      <div class="dm-fix" id="dc-f0">
+        <span class="dm-fix-before">03/04/2024</span><span class="dm-fix-arrow">→</span><span class="dm-fix-after">2024-04-03</span>
+        <span class="dm-fix-tag dm-fix-tag-fixed">Date fixed</span>
+      </div>
+      <div class="dm-fix" id="dc-f1">
+        <span class="dm-fix-before">  Alice   Smith </span><span class="dm-fix-arrow">→</span><span class="dm-fix-after">Alice Smith</span>
+        <span class="dm-fix-tag dm-fix-tag-fixed">Tidied</span>
+      </div>
+      <div class="dm-fix" id="dc-f2">
+        <span class="dm-fix-after">alice@acme.co</span>
+        <span class="dm-fix-tag dm-fix-tag-merged">2 rows merged</span>
+      </div>
+      <div class="dm-fix" id="dc-f3">
+        <span class="dm-fix-after">05/06/2024</span>
+        <span class="dm-fix-tag dm-fix-tag-flag">Ambiguous — flagged, not guessed</span>
+      </div>
+    </div>
+    <div class="dm-summary" id="dc-sum"></div>
+  </div>
+</div>
+
+<!-- Expense Organizer Demo -->
+<div class="demo-overlay" id="expenses-overlay">
+  <div class="demo-box">
+    <div class="demo-hdr">
+      <div class="demo-title-row"><div class="demo-icon demo-icon-blue"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 14.25l6-6m4.5-3.493V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185ZM9.75 9h.008v.008H9.75V9Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008V13.5Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></svg></div><span class="demo-title">Expense Organizer</span></div>
+      <button class="demo-close" id="expenses-close">&#10005;</button>
+    </div>
+    <div class="dm-label">Uploaded</div>
+    <div class="dm-input" id="ex-file"></div>
+    <div class="dm-section" id="ex-s0">
+      <div class="dm-label">Organized expenses</div>
+      <div class="dm-exp-row" id="ex-r0">
+        <span class="dm-exp-date">Mar 5</span><span class="dm-exp-vendor">Blue Bottle Coffee</span>
+        <span class="dm-exp-amt">$12.50</span><span class="dm-exp-cat">Meals</span>
+      </div>
+      <div class="dm-exp-row" id="ex-r1">
+        <span class="dm-exp-date">Mar 7</span><span class="dm-exp-vendor">Adobe Creative Cloud</span>
+        <span class="dm-exp-amt">$52.99</span><span class="dm-exp-cat">Software</span>
+      </div>
+      <div class="dm-exp-row" id="ex-r2">
+        <span class="dm-exp-date">Mar 19</span><span class="dm-exp-vendor">Delta Air Lines</span>
+        <span class="dm-exp-amt">$341.20</span><span class="dm-exp-cat">Travel</span>
+      </div>
+      <div class="dm-exp-row" id="ex-r3">
+        <span class="dm-exp-date">Mar 22</span><span class="dm-exp-vendor">SQ *TERMINAL 4471</span>
+        <span class="dm-exp-amt">$18.00</span><span class="dm-exp-cat dm-exp-cat-review">Check this</span>
+      </div>
+    </div>
+    <div class="dm-section" id="ex-s1">
+      <div class="dm-label">Category totals</div>
+      <div class="dm-exp-total" id="ex-t0"><span>Travel</span><span>$341.20</span></div>
+      <div class="dm-exp-total" id="ex-t1"><span>Software</span><span>$52.99</span></div>
+      <div class="dm-exp-total" id="ex-t2"><span>Meals</span><span>$12.50</span></div>
+      <div class="dm-exp-total" id="ex-t3"><span>Uncategorized</span><span>$18.00</span></div>
+      <div class="dm-exp-total dm-exp-grand" id="ex-t4"><span>Total</span><span id="ex-grand">$0.00</span></div>
+    </div>
+  </div>
+</div>
+
 <!-- Policy & SOP Generator -->
 <div class="demo-overlay" id="policy-overlay">
   <div class="demo-box">
@@ -1755,6 +1863,60 @@
     });
   }
 
+  /* ── Data Cleanup ── */
+  function openDataCleanup() {
+    const file = document.getElementById('dc-file');
+    const sum  = document.getElementById('dc-sum');
+    file.textContent = '';
+    document.getElementById('dc-s0').classList.remove('show');
+    [0,1,2,3].forEach(i => document.getElementById('dc-f'+i).classList.remove('show'));
+    sum.classList.remove('show'); sum.textContent = '';
+    openOverlay('datacleanup-overlay');
+    typeIn(file, 'customers.csv — 248 rows, 5 columns', 34, () => {
+      show('dc-s0', 250);
+      [0,1,2,3].forEach(i => show('dc-f'+i, 550 + i*430));
+      setTimeout(() => {
+        sum.classList.add('show');
+        // Counts tick up one at a time, the way the real tool reports them.
+        const target = [14, 6, 3];
+        let a = 0, b = 0, c = 0;
+        const iv = setInterval(() => {
+          if (a < target[0]) a++;
+          else if (b < target[1]) b++;
+          else if (c < target[2]) c++;
+          else { clearInterval(iv); return; }
+          sum.textContent = 'Fixed ' + a + ' date formats, merged ' + b + ' duplicate rows, flagged ' + c + ' rows for your review.';
+        }, 55);
+      }, 2500);
+    });
+  }
+
+  /* ── Expense Organizer ── */
+  function openExpenses() {
+    const file = document.getElementById('ex-file');
+    file.textContent = '';
+    ['ex-s0','ex-s1'].forEach(id => document.getElementById(id).classList.remove('show'));
+    [0,1,2,3].forEach(i => document.getElementById('ex-r'+i).classList.remove('show'));
+    [0,1,2,3,4].forEach(i => document.getElementById('ex-t'+i).classList.remove('show'));
+    document.getElementById('ex-grand').textContent = '$0.00';
+    openOverlay('expenses-overlay');
+    typeIn(file, '12 receipts + march_statement.csv', 38, () => {
+      show('ex-s0', 250);
+      [0,1,2,3].forEach(i => show('ex-r'+i, 550 + i*400));
+      show('ex-s1', 2300);
+      [0,1,2,3,4].forEach(i => show('ex-t'+i, 2400 + i*220));
+      setTimeout(() => {
+        const grand = document.getElementById('ex-grand');
+        let n = 0;
+        const iv = setInterval(() => {
+          n = Math.min(n + 9.25, 424.69);
+          grand.textContent = '$' + n.toFixed(2);
+          if (n >= 424.69) clearInterval(iv);
+        }, 22);
+      }, 3400);
+    });
+  }
+
   /* ── Wire up all close buttons and overlays ── */
   const overlayDemos = [
     ['ats-overlay','ats-close'],
@@ -1776,6 +1938,8 @@
     ['bizemail-overlay','bizemail-close'],
     ['meeting-overlay','meeting-close'],
     ['contacts-overlay','contacts-close'],
+    ['datacleanup-overlay','datacleanup-close'],
+    ['expenses-overlay','expenses-close'],
   ];
   overlayDemos.forEach(([ov,cl]) => {
     document.getElementById(cl).addEventListener('click', () => closeOverlay(ov));
@@ -1784,7 +1948,7 @@
   document.addEventListener('keydown', e => { if(e.key==='Escape') overlayDemos.forEach(([ov])=>closeOverlay(ov)); });
 
   /* ── Wire tool cards to demos ── */
-  const demoMap = {ats:openAts, doc:openDoc, workflow:openWorkflow, linux:()=>openOs('linux'), mac:()=>openOs('mac'), windows:()=>openOs('windows'), resume:openResume, hiring:openHiring, batchats:openBatchAts, contract:openContract, social:openSocial, jd:openJd, proposal:openProposal, customer:openCustomer, adcopy:openAdCopy, policy:openPolicy, sop:openSop, review:openReview, bizemail:openBizEmail, meeting:openMeeting, contacts:openContacts};
+  const demoMap = {ats:openAts, doc:openDoc, workflow:openWorkflow, linux:()=>openOs('linux'), mac:()=>openOs('mac'), windows:()=>openOs('windows'), resume:openResume, hiring:openHiring, batchats:openBatchAts, contract:openContract, social:openSocial, jd:openJd, proposal:openProposal, customer:openCustomer, adcopy:openAdCopy, policy:openPolicy, sop:openSop, review:openReview, bizemail:openBizEmail, meeting:openMeeting, contacts:openContacts, datacleanup:openDataCleanup, expenses:openExpenses};
   document.querySelectorAll('.tool-card[data-demo]').forEach(card => {
     card.addEventListener('click', () => {
       const fn = demoMap[card.dataset.demo];
