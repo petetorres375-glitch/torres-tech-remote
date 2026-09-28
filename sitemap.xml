@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://torrestechremote.com/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -17,16 +17,11 @@
   </url>
   <url>
     <loc>https://torrestechremote.com/tos.html</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://torrestechremote.com/privacy.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://torrestechremote.com/service_agreement.html</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.3</priority>
   </url>
