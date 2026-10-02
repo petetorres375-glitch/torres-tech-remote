@@ -192,6 +192,7 @@
   }
   .tool-hint-orange::before { background: var(--orange); }
   .tool-hint-blue::before { background: var(--blue); }
+  .tool-more { display: block; margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--blue); text-decoration: underline; }
   @keyframes hintPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.7)} }
 
   /* ── Features ── */
@@ -551,6 +552,7 @@
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://torrestechremote.com/#business-app",
       "name": "Workblox Business",
       "url": "https://business.torrestechremote.com",
       "description": "AI tools for small businesses: Hiring Manager, Batch ATS Analyzer, Job Description Writer, Contract Analyzer, Proposal Generator and more.",
@@ -784,6 +786,7 @@
         <div class="tool-card-name">Contract Analyzer</div>
         <div class="tool-card-desc">Upload a contract and get a breakdown of risk items, unusual clauses, and key terms — before you sign.</div>
         <div class="tool-hint tool-hint-blue">See it in action →</div>
+        <a href="contract-analyzer.html" class="tool-more">Learn more →</a>
       </div>
 
       <div class="tool-card tool-card-business" data-demo="social">
@@ -1205,6 +1208,7 @@
     <div class="footer-links">
       <a href="#personal">Personal</a>
       <a href="#business">Business</a>
+      <a href="contract-analyzer.html">Contract Analyzer</a>
       <a href="#contact">Support</a>
       <a href="tos.html">Terms</a>
       <a href="privacy.html">Privacy</a>
@@ -2175,7 +2179,8 @@
   /* ── Wire tool cards to demos ── */
   const demoMap = {ats:openAts, doc:openDoc, workflow:openWorkflow, linux:()=>openOs('linux'), mac:()=>openOs('mac'), windows:()=>openOs('windows'), resume:openResume, hiring:openHiring, batchats:openBatchAts, contract:openContract, social:openSocial, jd:openJd, proposal:openProposal, customer:openCustomer, adcopy:openAdCopy, policy:openPolicy, sop:openSop, review:openReview, bizemail:openBizEmail, meeting:openMeeting, contacts:openContacts, datacleanup:openDataCleanup, expenses:openExpenses};
   document.querySelectorAll('.tool-card[data-demo]').forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('a')) return;
       const fn = demoMap[card.dataset.demo];
       if (fn) fn();
     });
