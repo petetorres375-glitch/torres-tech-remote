@@ -1,0 +1,21 @@
+# After each push, tell Bing (via IndexNow) which pages were added, changed
+# or removed. See _tools/indexnow.py.
+name: Notify search engines
+
+on:
+  push:
+    branches: [main]
+    paths: ["**.html"]
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Submit changed pages
+        run: |
+          changed=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- '*.html' | grep -v '^_' || true)
+          echo "Changed pages:"; echo "$changed"
+          python3 _tools/indexnow.py $changed
