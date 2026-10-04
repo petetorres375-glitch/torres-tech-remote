@@ -1325,16 +1325,16 @@
     <div class="dm-input" id="wf-task"></div>
     <div class="dm-label">Generated script</div>
     <div class="dm-code-pane">
-      <div class="dm-cl" id="wfl0"><span class="dm-kw-c">import</span> os</div>
+      <div class="dm-cl" id="wfl0"><span class="dm-kw-c">from</span> pathlib <span class="dm-kw-c">import</span> Path</div>
       <div class="dm-cl" id="wfl1"><span class="dm-kw-c">from</span> datetime <span class="dm-kw-c">import</span> date</div>
       <div class="dm-cl" id="wfl2">&nbsp;</div>
-      <div class="dm-cl" id="wfl3">folder = <span class="dm-str-c">"/reports"</span></div>
+      <div class="dm-cl" id="wfl3">folder = Path.<span class="dm-fn-c">home</span>() / <span class="dm-str-c">"Reports"</span></div>
       <div class="dm-cl" id="wfl4">today = date.<span class="dm-fn-c">today</span>().<span class="dm-fn-c">strftime</span>(<span class="dm-str-c">"%Y-%m-%d"</span>)</div>
       <div class="dm-cl" id="wfl5">&nbsp;</div>
-      <div class="dm-cl" id="wfl6"><span class="dm-kw-c">for</span> fname <span class="dm-kw-c">in</span> os.<span class="dm-fn-c">listdir</span>(folder):</div>
-      <div class="dm-cl" id="wfl7">&nbsp;&nbsp;<span class="dm-kw-c">if not</span> fname.<span class="dm-fn-c">startswith</span>(today):</div>
-      <div class="dm-cl" id="wfl8">&nbsp;&nbsp;&nbsp;&nbsp;new = <span class="dm-str-c">f"{today}_{fname}"</span></div>
-      <div class="dm-cl" id="wfl9">&nbsp;&nbsp;&nbsp;&nbsp;os.<span class="dm-fn-c">rename</span>(os.path.<span class="dm-fn-c">join</span>(folder, fname), os.path.<span class="dm-fn-c">join</span>(folder, new))</div>
+      <div class="dm-cl" id="wfl6"><span class="dm-kw-c">for</span> f <span class="dm-kw-c">in</span> folder.<span class="dm-fn-c">iterdir</span>():</div>
+      <div class="dm-cl" id="wfl7">&nbsp;&nbsp;<span class="dm-kw-c">if</span> f.<span class="dm-fn-c">is_file</span>() <span class="dm-kw-c">and not</span> f.name.<span class="dm-fn-c">startswith</span>(today):</div>
+      <div class="dm-cl" id="wfl8">&nbsp;&nbsp;&nbsp;&nbsp;new = f.<span class="dm-fn-c">with_name</span>(<span class="dm-str-c">f"{today}_{f.name}"</span>)</div>
+      <div class="dm-cl" id="wfl9">&nbsp;&nbsp;&nbsp;&nbsp;f.<span class="dm-fn-c">rename</span>(new)</div>
       <div class="dm-cl dm-ok-c" id="wfl10"><span class="dm-fn-c">print</span>(<span class="dm-str-c">"Done &mdash; files renamed."</span>)</div>
     </div>
   </div>
@@ -1876,7 +1876,7 @@
     tEl.textContent = '';
     for (let i=0;i<=10;i++){const el=document.getElementById('wfl'+i);if(el)el.classList.remove('show');}
     openOverlay('workflow-overlay');
-    typeIn(tEl, "Every Monday, rename all files in /reports by prepending today's date.", 26, () => {
+    typeIn(tEl, "Rename all files in my Reports folder to add today's date at the start.", 26, () => {
       for (let i=0;i<=10;i++) show('wfl'+i, 400+i*150);
     });
   }
