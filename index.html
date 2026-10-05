@@ -122,6 +122,21 @@
     transition: border-color 0.15s, transform 0.1s; display: inline-block;
   }
   .btn-secondary:hover { border-color: var(--gray-4); transform: translateY(-1px); }
+  .cta-note { font-size: 14px; color: var(--gray-2); margin-top: 18px; }
+  .cta-note a { color: var(--orange); font-weight: 600; text-decoration: underline; }
+
+  /* ── Getting started strip (under the hero buttons) ── */
+  .start-label { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-3); margin-top: 40px; margin-bottom: 12px; }
+  .start-steps { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; list-style: none; }
+  .start-step {
+    display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600;
+    background: var(--bg-alt); border: 1px solid var(--divider); border-radius: 999px; padding: 6px 16px 6px 6px;
+  }
+  .start-step-num {
+    width: 26px; height: 26px; border-radius: 50%; background: var(--orange); color: var(--white);
+    font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .start-arrow { color: var(--gray-4); font-size: 16px; }
 
   /* ── Stats ── */
   .stats-bar {
@@ -159,6 +174,10 @@
     transition: background 0.15s, transform 0.1s; white-space: nowrap;
   }
   .app-section-cta:hover { transform: translateY(-1px); }
+  .app-section-cta-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; align-self: flex-end; }
+  .app-section-cta-wrap .app-section-cta { align-self: auto; }
+  .app-section-signin { font-size: 13px; color: var(--gray-2); }
+  .app-section-signin a { font-weight: 600; text-decoration: underline; }
   .cta-orange { background: var(--orange); color: var(--white); }
   .cta-orange:hover { background: var(--orange-dark); }
   .cta-blue { background: var(--blue); color: var(--white); }
@@ -455,6 +474,8 @@
     .stat-num { font-size: 20px; }
     .hero-title { letter-spacing: -1px; }
     .app-section-header { flex-direction: column; }
+    .app-section-cta-wrap { align-items: flex-start; align-self: flex-start; }
+    .start-arrow { display: none; }
     .tools-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
   }
 </style>
@@ -654,9 +675,18 @@
     <p class="hero-sub">Two apps, in 24 languages. Whether you're managing your career or running a business, Workblox gives you the AI tools to get it done — fast.</p>
     <p style="font-size:15px;font-weight:700;color:var(--orange);margin-bottom:32px;display:flex;align-items:center;justify-content:center;gap:8px;"><span style="display:inline-block;width:20px;height:2px;background:var(--orange);flex-shrink:0;"></span>I drive it — AI builds it.</p>
     <div class="hero-actions">
-      <a href="https://workblox.torrestechremote.com" target="_blank" class="btn-orange">⊕ Install Personal</a>
-      <a href="https://business.torrestechremote.com" target="_blank" class="btn-secondary">⊕ Install Business</a>
+      <a href="signup.html" class="btn-orange">Start free trial &mdash; Personal</a>
+      <a href="signup-business.html" class="btn-secondary">Start free trial &mdash; Business</a>
     </div>
+    <p class="cta-note">Already a customer? Sign in to <a href="https://workblox.torrestechremote.com" target="_blank">Personal</a> or <a href="https://business.torrestechremote.com" target="_blank" style="color:var(--blue);">Business</a></p>
+    <div class="start-label">How to get started</div>
+    <ol class="start-steps">
+      <li class="start-step"><span class="start-step-num">1</span>Create your account</li>
+      <li class="start-arrow" aria-hidden="true">&rarr;</li>
+      <li class="start-step"><span class="start-step-num">2</span>Choose your tools</li>
+      <li class="start-arrow" aria-hidden="true">&rarr;</li>
+      <li class="start-step"><span class="start-step-num">3</span>7 days free, cancel anytime</li>
+    </ol>
   </div>
 </section>
 
@@ -680,7 +710,10 @@
         <div class="app-section-title">For individuals &amp; job seekers.</div>
         <div class="app-section-sub">Resume tools, document analysis, workflow automation, and OS helpers — all in one app.</div>
       </div>
-      <a href="https://workblox.torrestechremote.com" target="_blank" class="app-section-cta cta-orange">⊕ Install Personal</a>
+      <div class="app-section-cta-wrap">
+        <a href="signup.html" class="app-section-cta cta-orange">Start free trial</a>
+        <span class="app-section-signin">Already a customer? <a href="https://workblox.torrestechremote.com" target="_blank" style="color:var(--orange-dark);">Sign in &rarr;</a></span>
+      </div>
     </div>
     <div class="tools-grid">
 
@@ -779,7 +812,10 @@
         <div class="app-section-title">For owners, HR &amp; managers.</div>
         <div class="app-section-sub">16 AI tools covering hiring, communications, proposals, policies, and more — all in one app.</div>
       </div>
-      <a href="https://business.torrestechremote.com" target="_blank" class="app-section-cta cta-blue">⊕ Install Business</a>
+      <div class="app-section-cta-wrap">
+        <a href="signup-business.html" class="app-section-cta cta-blue">Start free trial</a>
+        <span class="app-section-signin">Already a customer? <a href="https://business.torrestechremote.com" target="_blank" style="color:var(--blue-dark);">Sign in &rarr;</a></span>
+      </div>
     </div>
     <div class="tools-grid">
 
@@ -976,22 +1012,22 @@
   <div class="container">
     <div class="section-label">How It Works</div>
     <h2 class="section-title">Up and running in minutes.</h2>
-    <p class="section-sub">No setup, no configuration. Sign in and start using the tools.</p>
+    <p class="section-sub">No setup, no configuration. Create your account and start using the tools.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">Step 01</div>
-        <div class="step-title">Sign in with Google</div>
-        <div class="step-desc">One click. No password to remember. Your account is ready instantly.</div>
+        <div class="step-title">Create your account</div>
+        <div class="step-desc">Click <a href="#hero" style="color:var(--orange);font-weight:600;">Start free trial</a> and sign up with Google or your email. It takes about a minute.</div>
       </div>
       <div class="step">
         <div class="step-num">Step 02</div>
-        <div class="step-title">Pick a tool</div>
-        <div class="step-desc">Choose from 23 AI tools across both apps — personal productivity or business operations.</div>
+        <div class="step-title">Choose your tools</div>
+        <div class="step-desc">Pick only the tools you need. Your monthly price is set by how many you choose.</div>
       </div>
       <div class="step">
         <div class="step-num">Step 03</div>
-        <div class="step-title">Get your result</div>
-        <div class="step-desc">Describe your task, upload a file, or fill in the fields — polished output in seconds.</div>
+        <div class="step-title">Start your free trial</div>
+        <div class="step-desc">Add a card to start 7 days free. Cancel before the trial ends and you won't be charged.</div>
       </div>
       <div class="step">
         <div class="step-num">Step 04</div>
