@@ -193,7 +193,7 @@ def page_html(p):
       <a href="{app['signup']}" class="btn-primary">Start 7-day free trial</a>
       <a href="{'#example' if p.get('example') else '#how'}" class="btn-secondary">{'See an example' if p.get('example') else 'How it works'}</a>
     </div>
-    <p class="hero-note">From {app['from']}. {p['hero_note']}</p>
+    <p class="hero-note">From {app['from']}. {p['hero_note']} Available in 24 languages.</p>
   </div>
 </section>
 
