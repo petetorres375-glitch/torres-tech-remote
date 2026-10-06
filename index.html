@@ -64,14 +64,30 @@
     height: 60px; display: flex; align-items: center; justify-content: space-between;
   }
   .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; letter-spacing: -0.3px; color: #fff; }
+  .nav-logo-mark span { color: var(--orange); }
+  .nav-brand { display: flex; flex-direction: column; line-height: 1.1; }
+  .nav-brand-name { font-size: 18px; font-weight: 800; color: #fff; }
+  .nav-brand-sub { font-size: 11px; font-weight: 500; color: #9aa4b8; letter-spacing: 0; }
   .nav-logo-mark {
-    width: 34px; height: 34px; border-radius: 9px; background: var(--orange);
+    width: 34px; height: 34px; border-radius: 9px; background: #0f172a; box-shadow: 0 0 0 1px #334155;
     display: flex; align-items: center; justify-content: center;
     font-size: 14px; font-weight: 900; color: var(--white);
   }
   .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
-  .nav-links a { font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 7px; background: var(--orange); color: var(--white); transition: background 0.15s; }
-  .nav-links a:hover { background: var(--orange-dark); }
+  .nav-links a { font-size: 13px; font-weight: 600; padding: 7px 10px; border-radius: 7px; color: #d4d4d8; transition: color 0.15s, background 0.15s; }
+  .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+  .nav-links a.nav-cta, a.nav-cta { background: var(--orange); color: var(--white); padding: 8px 14px; margin-left: 6px; }
+  .nav-links a.nav-cta:hover, a.nav-cta:hover { background: var(--orange-dark); }
+  .nav-cta-mobile { display: inline-block; font-size: 13px; font-weight: 700; border-radius: 7px; }
+  .nav-mobile { display: none; align-items: center; gap: 6px; }
+  .nav-signin-mobile { font-size: 13px; font-weight: 600; color: #d4d4d8; padding: 8px 10px; }
+  .signin-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 10px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--divider); }
+  .signin-label { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--gray-1); }
+  .signin-btn { font-size: 14px; font-weight: 700; padding: 7px 14px; border-radius: 8px; border: 1.5px solid; background: var(--white); }
+  .signin-btn-business { color: var(--blue-dark); border-color: var(--blue-border); }
+  .signin-btn-business:hover { background: var(--blue-tint); }
+  .signin-btn-personal { color: var(--orange-dark); border-color: var(--orange-border); }
+  .signin-btn-personal:hover { background: var(--orange-tint); }
   .nav-actions { display: flex; gap: 10px; }
   .nav-btn {
     padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;
@@ -123,6 +139,50 @@
   }
   .btn-secondary:hover { border-color: var(--gray-4); transform: translateY(-1px); }
   .cta-note { font-size: 14px; color: var(--gray-2); margin-top: 18px; }
+  .hero-split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; text-align: left; }
+  .hero-split .hero-title { margin-left: 0; font-size: clamp(36px, 5vw, 56px); }
+  .hero-split .hero-sub { margin-left: 0; margin-bottom: 32px; }
+  .hero-split .hero-actions { justify-content: flex-start; }
+  .hero-personal-link { display: inline-block; margin-top: 22px; font-size: 14px; color: var(--gray-2); border-top: 1px solid var(--divider); padding-top: 16px; }
+  .hero-personal-link strong { color: var(--orange-dark); }
+  .hero-personal-link:hover { color: var(--black); }
+  .hero-shot { margin: 0; border-radius: 14px; overflow: hidden; background: #f4f4f5; border: 1px solid var(--divider); box-shadow: 0 24px 60px -20px rgba(15,23,42,0.35), 0 4px 14px rgba(15,23,42,0.08); }
+  .hero-shot-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: #1c1c1e; }
+  .hero-shot-bar span { width: 10px; height: 10px; border-radius: 50%; background: #3f3f46; }
+  .hero-shot-title { margin-left: 10px; font-size: 12px; font-weight: 600; color: #a1a1aa; }
+  .hero-shot img { display: block; width: 100%; height: auto; }
+  .hero-shot figcaption { font-size: 12px; color: var(--gray-3); padding: 8px 14px; background: var(--white); border-top: 1px solid var(--divider); }
+  .nav-sep { width: 1px; height: 22px; background: #3f3f46; margin: 0 4px; }
+  .hero-kicker { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-1); margin-bottom: 22px; }
+  .hero-kicker-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+  .btn-lg { padding: 16px 24px; font-size: 16px; font-weight: 700; border-radius: 12px; white-space: nowrap; }
+  .btn-orange.btn-lg { box-shadow: 0 8px 20px rgba(224,92,46,0.28); }
+  .hero-terms { font-size: 15px; color: var(--gray-2); margin-top: 16px; }
+  .hero-points { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 20px; }
+  .hero-points li { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: var(--gray-1); }
+  .hero-points svg { color: var(--blue); flex-shrink: 0; }
+  .price-strip { background: var(--bg-alt); border-bottom: 1px solid var(--divider); padding: 22px 24px; }
+  .price-strip-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px 28px; flex-wrap: wrap; }
+  .price-strip-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .price-strip-label { font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-1); margin-right: 8px; }
+  .price-chip { padding: 9px 14px; border-radius: 10px; background: var(--white); border: 1px solid var(--divider); font-size: 15px; color: var(--gray-2); }
+  .price-chip b { color: var(--black); }
+  .price-chip:hover { border-color: var(--blue-border); }
+  .price-strip-personal { font-size: 14px; color: var(--gray-1); }
+  .price-strip-personal b { color: var(--orange-dark); text-decoration: underline; }
+  .plan-builder { border: 1px solid var(--blue-border); background: var(--white); border-radius: var(--radius-lg); padding: 22px 24px; margin-bottom: 16px; }
+  .pb-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+  .pb-title { font-size: 15px; font-weight: 800; }
+  .pb-count { font-size: 14px; color: var(--gray-2); }
+  .pb-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pb-chip { font: inherit; font-size: 14px; font-weight: 600; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1.5px solid #cbd5e1; background: var(--white); color: var(--gray-1); cursor: pointer; }
+  .pb-chip:hover { border-color: var(--blue); }
+  .pb-chip[aria-pressed="true"] { border-color: var(--blue); background: var(--blue-tint); color: #1e3a8a; }
+  .pb-chip[aria-pressed="true"]::before { content: "\2713  "; color: var(--blue); font-weight: 800; }
+  .pb-tier { transition: box-shadow 0.15s, border-color 0.15s; }
+  .pb-tier.is-active { border-color: var(--blue) !important; box-shadow: 0 0 0 1.5px var(--blue); }
+  .pb-result { margin-top: 16px; font-size: 19px; font-weight: 700; color: var(--black); }
+  .plan-terms { margin-top: 16px; font-size: 16px; color: var(--gray-1); line-height: 1.65; max-width: 900px; }
   .cta-note a { color: var(--orange); font-weight: 600; text-decoration: underline; }
 
   /* ── Getting started strip (under the hero buttons) ── */
@@ -471,8 +531,22 @@
   @media (max-width: 480px) {
     .contact-email { padding: 14px 16px !important; font-size: 14px !important; gap: 10px !important; }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
     .nav-links { display: none; }
+    .nav-mobile { display: flex; }
+    .hero-split { grid-template-columns: 1fr; gap: 36px; }
+    .hero-shot { max-width: 640px; }
+  }
+  @media (max-width: 400px) {
+    .nav-brand-sub { display: none; }
+    .nav-inner { padding: 0 14px; }
+    .nav-mobile a { white-space: nowrap; }
+    .nav-signin-mobile { padding: 8px 6px; }
+  }
+  @media (max-width: 768px) {
+    #hero { padding-top: 48px; }
+    .price-strip-label { width: 100%; }
+    .signin-label { width: 100%; }
     .stat { padding: 8px 12px; }
     .stat-num { font-size: 20px; }
     .hero-title { letter-spacing: -1px; }
@@ -650,48 +724,70 @@
 <!-- Nav -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">
-      <div class="nav-logo-mark">TTR</div>
-      Torres Tech Remote
-    </div>
+    <a class="nav-logo" href="#hero">
+      <div class="nav-logo-mark">TT<span>R</span></div>
+      <div class="nav-brand"><span class="nav-brand-name">Workblox</span><span class="nav-brand-sub">by Torres Tech Remote</span></div>
+    </a>
     <ul class="nav-links">
-      <li><a href="#personal">Personal</a></li>
-      <li><a href="#business">Business</a></li>
-      <li><a href="#how">How It Works</a>
-<a href="#install">Install</a></li>
-      <li><a href="#translation">Translation</a></li>
+      <li><a href="#business">Business tools</a></li>
+      <li><a href="#business-pricing">Pricing</a></li>
+      <li><a href="#how">How it works</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#personal">Personal</a></li>
+      <li class="nav-sep" aria-hidden="true"></li>
+      <li><a href="https://business.torrestechremote.com" target="_blank">Sign in</a></li>
+      <li><a href="signup-business.html" class="nav-cta">Start free trial</a></li>
     </ul>
+    <div class="nav-mobile">
+      <a href="https://business.torrestechremote.com" target="_blank" class="nav-signin-mobile">Sign in</a>
+      <a href="signup-business.html" class="nav-cta nav-cta-mobile">Free trial</a>
+    </div>
   </div>
 </nav>
 
 <!-- Hero -->
 <section id="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">
-      <div class="hero-badge-dot"></div>
-      Now live — Personal &amp; Business
+  <div class="hero-inner hero-split">
+    <div class="hero-copy">
+      <div class="hero-kicker"><span class="hero-kicker-dot"></span>Workblox Business &middot; for small business owners</div>
+      <h1 class="hero-title">Take the <em>paperwork</em> off your plate.</h1>
+      <p class="hero-sub">AI tools that explain a contract before you sign it, write your proposals and customer replies, and turn receipts into organized expenses. Pick only the tools you need.</p>
+      <div class="hero-actions">
+        <a href="signup-business.html" class="btn-orange btn-lg">Start your 7-day free trial</a>
+        <a href="#business" class="btn-secondary btn-lg">See all business tools</a>
+      </div>
+      <p class="hero-terms">7 days free, then from $25/month. Card required. Cancel anytime.</p>
+      <ul class="hero-points">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>24 languages</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Documents are not stored</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Pay only for the tools you pick</li>
+      </ul>
+      <div class="signin-row">
+        <span class="signin-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>Already a customer? Sign in:</span>
+        <a href="https://business.torrestechremote.com" target="_blank" class="signin-btn signin-btn-business">Business</a>
+        <a href="https://workblox.torrestechremote.com" target="_blank" class="signin-btn signin-btn-personal">Personal</a>
+      </div>
     </div>
-    <h1 class="hero-title">AI tools built for<br><em>real work.</em></h1>
-    <p class="hero-sub">Two apps, in 24 languages. Whether you're managing your career or running a business, Workblox gives you the AI tools to get it done — fast.</p>
-    <p style="font-size:15px;font-weight:700;color:var(--orange);margin-bottom:32px;display:flex;align-items:center;justify-content:center;gap:8px;"><span style="display:inline-block;width:20px;height:2px;background:var(--orange);flex-shrink:0;"></span>I drive it — AI builds it.</p>
-    <div class="hero-actions">
-      <a href="signup.html" class="btn-orange">Start free trial &mdash; Personal</a>
-      <a href="signup-business.html" class="btn-secondary">Start free trial &mdash; Business</a>
-    </div>
-    <p class="cta-note">Already a customer? Sign in to <a href="https://workblox.torrestechremote.com" target="_blank">Personal</a> or <a href="https://business.torrestechremote.com" target="_blank" style="color:var(--blue);">Business</a></p>
-    <div class="start-label">How to get started</div>
-    <ol class="start-steps">
-      <li class="start-step"><span class="start-step-num">1</span>Create your account</li>
-      <li class="start-arrow" aria-hidden="true">&rarr;</li>
-      <li class="start-step"><span class="start-step-num">2</span>Choose your tools</li>
-      <li class="start-arrow" aria-hidden="true">&rarr;</li>
-      <li class="start-step"><span class="start-step-num">3</span>7 days free, cancel anytime</li>
-    </ol>
+    <figure class="hero-shot">
+      <div class="hero-shot-bar"><span></span><span></span><span></span><div class="hero-shot-title">Contract Analyzer &middot; Workblox Business</div></div>
+      <img src="img/contract-analyzer-report.webp" width="1100" height="799" alt="Workblox Contract Analyzer report: a plain-language summary of a landscaping services agreement, marked Medium Risk, with the key obligations listed">
+      <figcaption>Real Contract Analyzer output. Sample contract; names and companies are fictional.</figcaption>
+    </figure>
   </div>
 </section>
+
+<!-- Pricing strip -->
+<div class="price-strip">
+  <div class="price-strip-inner">
+    <div class="price-strip-left">
+      <span class="price-strip-label">Pick only what you need</span>
+      <a href="#business-pricing" class="price-chip"><b>1&ndash;3 tools</b> &middot; $25/mo</a>
+      <a href="#business-pricing" class="price-chip"><b>4&ndash;7 tools</b> &middot; $40/mo</a>
+      <a href="#business-pricing" class="price-chip"><b>8&ndash;16 tools</b> &middot; $75/mo</a>
+    </div>
+    <a href="#personal" class="price-strip-personal">Job seeker? <b>Workblox Personal</b>: resume builder + ATS checker, from $10/mo &rarr;</a>
+  </div>
+</div>
 
 <!-- Stats -->
 <div class="stats-bar">
@@ -703,108 +799,6 @@
     <div class="stat"><div class="stat-label">Designed &amp; driven by</div><div class="stat-num">Pedro</div></div>
   </div>
 </div>
-
-<!-- Personal -->
-<section id="personal" class="app-section app-section-personal">
-  <div class="container">
-    <div class="app-section-header">
-      <div class="app-section-left">
-        <div class="app-pill app-pill-personal"><div class="app-pill-dot app-pill-dot-orange"></div>Workblox Personal</div>
-        <div class="app-section-title">For individuals &amp; job seekers.</div>
-        <div class="app-section-sub">Resume tools, document analysis, workflow automation, and OS helpers — all in one app.</div>
-      </div>
-      <div class="app-section-cta-wrap">
-        <a href="signup.html" class="app-section-cta cta-orange">Start free trial</a>
-        <span class="app-section-signin">Already a customer? <a href="https://workblox.torrestechremote.com" target="_blank" style="color:var(--orange-dark);">Sign in &rarr;</a></span>
-      </div>
-    </div>
-    <div class="tools-grid">
-
-      <div class="tool-card tool-card-personal" data-demo="ats">
-        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12"/></svg></div>
-        <div class="tool-card-name">ATS Resume Analyzer</div>
-        <div class="tool-card-desc">Check your resume the way hiring software reads it. Get a score out of 100, the keywords you're missing for your target job, and what to fix first.</div>
-        <div class="tool-hint tool-hint-orange">See it in action →</div>
-        <a href="ats-resume-checker.html" class="tool-more">Learn more →</a>
-      </div>
-
-      <div class="tool-card tool-card-personal" data-demo="doc">
-        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 15.803 7.5 7.5 0 0 0 15.803 15.803Z"/></svg></div>
-        <div class="tool-card-name">Doc Analyzer</div>
-        <div class="tool-card-desc">Upload a PDF, Word, Pages, or text file — or snap a photo — and get a summary, key facts, action items, and red flags.</div>
-        <div class="tool-hint tool-hint-orange">See it in action →</div>
-        <a href="document-summarizer.html" class="tool-more">Learn more →</a>
-      </div>
-
-      <div class="tool-card tool-card-personal" data-demo="workflow">
-        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/></svg></div>
-        <div class="tool-card-name">Workflow Builder</div>
-        <div class="tool-card-desc">Describe a repetitive task in plain English — get a ready-to-run Python script in seconds.</div>
-        <div class="tool-hint tool-hint-orange">See it in action →</div>
-        <a href="python-automation-script-generator.html" class="tool-more">Learn more →</a>
-      </div>
-
-      <div class="tool-card tool-card-personal" data-demo="linux">
-        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"/></svg></div>
-        <div class="tool-card-name">Linux Helper</div>
-        <div class="tool-card-desc">Describe your problem in plain English — get the exact terminal command or desktop steps, with a clear explanation and any warnings.</div>
-        <div class="tool-hint tool-hint-orange">See it in action →</div>
-        <a href="linux-command-helper.html" class="tool-more">Learn more →</a>
-      </div>
-
-      <div class="tool-card tool-card-personal" data-demo="mac">
-        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"/></svg></div>
-        <div class="tool-card-name">Mac Helper</div>
-        <div class="tool-card-desc">Fixes for your Mac — click-by-click in System Settings or one Terminal command, explained before you run it.</div>
-        <div class="tool-hint tool-hint-orange">See it in action →</div>
-        <a href="mac-terminal-helper.html" class="tool-more">Learn more →</a>
-      </div>
-
-      <div class="tool-card tool-card-personal" data-demo="windows">
-        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"/></svg></div>
-        <div class="tool-card-name">Windows Helper</div>
-        <div class="tool-card-desc">Fixes for Windows — click-by-click in Settings or one PowerShell command, explained before you run it.</div>
-        <div class="tool-hint tool-hint-orange">See it in action →</div>
-        <a href="windows-command-helper.html" class="tool-more">Learn more →</a>
-      </div>
-
-      <div class="tool-card tool-card-personal" data-demo="resume">
-        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"/></svg></div>
-        <div class="tool-card-name">Resume Builder</div>
-        <div class="tool-card-desc">Build a polished, professional resume from scratch. Download as PDF, Word or TXT, ready to send.</div>
-        <div class="tool-hint tool-hint-orange">See it in action →</div>
-        <a href="resume-builder.html" class="tool-more">Learn more →</a>
-      </div>
-
-    </div>
-
-    <div style="margin-top:44px;padding-top:36px;border-top:1px solid var(--orange-border);">
-      <div style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);margin-bottom:8px;">Pricing</div>
-      <div style="font-size:22px;font-weight:700;letter-spacing:-0.3px;margin-bottom:6px;">Pay for the tools you pick.</div>
-      <p style="font-size:15px;color:var(--gray-2);line-height:1.65;max-width:560px;margin-bottom:24px;">Choose the tools you want on your dashboard &mdash; you only pay for what you pick. The more you add, the less each one costs.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:720px;">
-      <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;">1&ndash;2 tools</div>
-        <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$10<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
-        <div style="font-size:13px;color:var(--gray-2);line-height:1.6;">Just the essentials you actually use.</div>
-      </div>
-
-      <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;box-shadow:0 0 0 1.5px var(--orange);">
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;">3&ndash;4 tools</div>
-        <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$15<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
-        <div style="font-size:13px;color:var(--gray-2);line-height:1.6;">A little more room to work with.</div>
-      </div>
-
-      <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;">5&ndash;7 tools</div>
-        <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$20<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
-        <div style="font-size:13px;color:var(--gray-2);line-height:1.6;">Up to every tool in Workblox Personal.</div>
-      </div>
-      </div>
-      <p style="margin-top:16px;font-size:13px;color:var(--gray-2);line-height:1.6;max-width:560px;">Every plan starts with a 7-day free trial. A card is required to start; cancel before the trial ends and you won't be charged. Change your selection anytime from Settings. Cancel whenever you like from Settings &rarr; Manage billing &mdash; access runs through the end of your billing period. Available to customers in the United States and U.S. territories only.</p>
-    </div>
-  </div>
-</section>
 
 <!-- Business -->
 <section id="business" class="app-section app-section-business">
@@ -952,30 +946,154 @@
 
     </div>
 
-    <div style="margin-top:44px;padding-top:36px;border-top:1px solid var(--blue-border);">
+    <div id="business-pricing" style="margin-top:44px;padding-top:36px;border-top:1px solid var(--blue-border);scroll-margin-top:72px;">
       <div style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;">Pricing</div>
       <div style="font-size:22px;font-weight:700;letter-spacing:-0.3px;margin-bottom:6px;">Pay for the tools you pick.</div>
-      <p style="font-size:15px;color:var(--gray-2);line-height:1.65;max-width:560px;margin-bottom:24px;">Same idea &mdash; pick the tools your business runs on and pay for those. Single user, no per-seat pricing.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:720px;">
-      <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
+      <p style="font-size:15px;color:var(--gray-2);line-height:1.65;max-width:560px;margin-bottom:24px;">Pick the tools your business runs on and pay only for those. Single user, no per-seat pricing.</p>
+      <div class="plan-builder" id="plan-builder">
+        <div class="pb-head"><span class="pb-title">Build your plan</span><span class="pb-count" id="pb-count">Tap the tools you'd use</span></div>
+        <div class="pb-chips">
+          <button type="button" class="pb-chip" aria-pressed="false">Contract Analyzer</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Proposal Generator</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Business Email Drafter</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Customer Response Drafter</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Review Request Email</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Job Description Writer</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Hiring Manager</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Batch ATS Analyzer</button>
+          <button type="button" class="pb-chip" aria-pressed="false">SOP Generator</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Policy Generator</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Meeting Notes Cleaner</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Expense Organizer</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Spreadsheet Organizer</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Contacts</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Social Media Generator</button>
+          <button type="button" class="pb-chip" aria-pressed="false">Ad Copy Writer</button>
+        </div>
+      </div>
+      <div class="pb-tiers" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+      <div class="pb-tier" style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
         <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;">1&ndash;3 tools</div>
         <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$25<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
         <div style="font-size:13px;color:var(--gray-2);line-height:1.6;">Built around one core workflow.</div>
       </div>
 
-      <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;box-shadow:0 0 0 1.5px var(--blue);">
+      <div class="pb-tier" style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
         <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;">4&ndash;7 tools</div>
         <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$40<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
         <div style="font-size:13px;color:var(--gray-2);line-height:1.6;">Room to grow as your business does.</div>
       </div>
 
-      <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
+      <div class="pb-tier" style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
         <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;">8&ndash;16 tools</div>
         <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$75<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
         <div style="font-size:13px;color:var(--gray-2);line-height:1.6;">Up to every tool in Workblox Business.</div>
       </div>
       </div>
-      <p style="margin-top:16px;font-size:13px;color:var(--gray-2);line-height:1.6;max-width:560px;">Every plan starts with a 7-day free trial. A card is required to start; cancel before the trial ends and you won't be charged. Change your selection anytime from Settings. Cancel whenever you like from Settings &rarr; Manage billing &mdash; access runs through the end of your billing period. Available to customers in the United States and U.S. territories only.</p>
+      <p class="pb-result" id="pb-result" hidden></p>
+      <p class="plan-terms">Every plan starts with a 7-day free trial. A card is required to start; cancel before the trial ends and you won't be charged. Change your selection anytime from Settings. Cancel whenever you like from Settings &rarr; Manage billing &mdash; access runs through the end of your billing period. Available to customers in the United States and U.S. territories only.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Personal -->
+<section id="personal" class="app-section app-section-personal">
+  <div class="container">
+    <div class="app-section-header">
+      <div class="app-section-left">
+        <div class="app-pill app-pill-personal"><div class="app-pill-dot app-pill-dot-orange"></div>Workblox Personal</div>
+        <div class="app-section-title">For individuals &amp; job seekers.</div>
+        <div class="app-section-sub">Resume tools, document analysis, workflow automation, and OS helpers — all in one app.</div>
+      </div>
+      <div class="app-section-cta-wrap">
+        <a href="signup.html" class="app-section-cta cta-orange">Start free trial</a>
+        <span class="app-section-signin">Already a customer? <a href="https://workblox.torrestechremote.com" target="_blank" style="color:var(--orange-dark);">Sign in &rarr;</a></span>
+      </div>
+    </div>
+    <div class="tools-grid">
+
+      <div class="tool-card tool-card-personal" data-demo="ats">
+        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12"/></svg></div>
+        <div class="tool-card-name">ATS Resume Analyzer</div>
+        <div class="tool-card-desc">Check your resume the way hiring software reads it. Get a score out of 100, the keywords you're missing for your target job, and what to fix first.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
+        <a href="ats-resume-checker.html" class="tool-more">Learn more →</a>
+      </div>
+
+      <div class="tool-card tool-card-personal" data-demo="doc">
+        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 15.803 7.5 7.5 0 0 0 15.803 15.803Z"/></svg></div>
+        <div class="tool-card-name">Doc Analyzer</div>
+        <div class="tool-card-desc">Upload a PDF, Word, Pages, or text file — or snap a photo — and get a summary, key facts, action items, and red flags.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
+        <a href="document-summarizer.html" class="tool-more">Learn more →</a>
+      </div>
+
+      <div class="tool-card tool-card-personal" data-demo="workflow">
+        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/></svg></div>
+        <div class="tool-card-name">Workflow Builder</div>
+        <div class="tool-card-desc">Describe a repetitive task in plain English — get a ready-to-run Python script in seconds.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
+        <a href="python-automation-script-generator.html" class="tool-more">Learn more →</a>
+      </div>
+
+      <div class="tool-card tool-card-personal" data-demo="linux">
+        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"/></svg></div>
+        <div class="tool-card-name">Linux Helper</div>
+        <div class="tool-card-desc">Describe your problem in plain English — get the exact terminal command or desktop steps, with a clear explanation and any warnings.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
+        <a href="linux-command-helper.html" class="tool-more">Learn more →</a>
+      </div>
+
+      <div class="tool-card tool-card-personal" data-demo="mac">
+        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"/></svg></div>
+        <div class="tool-card-name">Mac Helper</div>
+        <div class="tool-card-desc">Fixes for your Mac — click-by-click in System Settings or one Terminal command, explained before you run it.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
+        <a href="mac-terminal-helper.html" class="tool-more">Learn more →</a>
+      </div>
+
+      <div class="tool-card tool-card-personal" data-demo="windows">
+        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"/></svg></div>
+        <div class="tool-card-name">Windows Helper</div>
+        <div class="tool-card-desc">Fixes for Windows — click-by-click in Settings or one PowerShell command, explained before you run it.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
+        <a href="windows-command-helper.html" class="tool-more">Learn more →</a>
+      </div>
+
+      <div class="tool-card tool-card-personal" data-demo="resume">
+        <div class="tool-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"/></svg></div>
+        <div class="tool-card-name">Resume Builder</div>
+        <div class="tool-card-desc">Build a polished, professional resume from scratch. Download as PDF, Word or TXT, ready to send.</div>
+        <div class="tool-hint tool-hint-orange">See it in action →</div>
+        <a href="resume-builder.html" class="tool-more">Learn more →</a>
+      </div>
+
+    </div>
+
+    <div style="margin-top:44px;padding-top:36px;border-top:1px solid var(--orange-border);">
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);margin-bottom:8px;">Pricing</div>
+      <div style="font-size:22px;font-weight:700;letter-spacing:-0.3px;margin-bottom:6px;">Pay for the tools you pick.</div>
+      <p style="font-size:15px;color:var(--gray-2);line-height:1.65;max-width:560px;margin-bottom:24px;">Choose the tools you want on your dashboard &mdash; you only pay for what you pick. The more you add, the less each one costs.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:720px;">
+      <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;">1&ndash;2 tools</div>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$10<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
+        <div style="font-size:13px;color:var(--gray-2);line-height:1.6;">Just the essentials you actually use.</div>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;">3&ndash;4 tools</div>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$15<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
+        <div style="font-size:13px;color:var(--gray-2);line-height:1.6;">A little more room to work with.</div>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;">
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;">5&ndash;7 tools</div>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:6px;">$20<span style="font-size:14px;font-weight:400;color:var(--gray-3);letter-spacing:0;">/mo</span></div>
+        <div style="font-size:13px;color:var(--gray-2);line-height:1.6;">Up to every tool in Workblox Personal.</div>
+      </div>
+      </div>
+      <p class="plan-terms">Every plan starts with a 7-day free trial. A card is required to start; cancel before the trial ends and you won't be charged. Change your selection anytime from Settings. Cancel whenever you like from Settings &rarr; Manage billing &mdash; access runs through the end of your billing period. Available to customers in the United States and U.S. territories only.</p>
     </div>
   </div>
 </section>
@@ -1008,6 +1126,7 @@
         <div class="feature-desc">No waiting, no back-and-forth. Describe what you need and get a polished output ready to use.</div>
       </div>
     </div>
+  </div>
 </section>
 
 <!-- How It Works -->
@@ -1240,6 +1359,7 @@
   <div class="container">
     <div class="section-label">Built by</div>
     <h2 class="section-title">Pedro Torres</h2>
+    <p style="font-size:15px;font-weight:700;color:var(--orange);margin:-4px 0 16px;display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:20px;height:2px;background:var(--orange);flex-shrink:0;"></span>I drive it — AI builds it.</p>
     <p class="section-sub" style="margin-bottom:36px;">Workblox is designed, built, and maintained by Pedro Torres — founder of Torres Tech Remote. <a href="https://www.linkedin.com/in/pedro-torres-8a818241a/" target="_blank" rel="me noopener" style="color:var(--orange);font-weight:600;white-space:nowrap;">Connect on LinkedIn&nbsp;&rarr;</a></p>
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
       <div style="display:flex;align-items:flex-start;gap:16px;background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:24px;max-width:420px;">
@@ -2272,5 +2392,30 @@
   });
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c60da00970ce404fbd115d07cfea6c99"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+(function () {
+  var root = document.getElementById('plan-builder');
+  if (!root) return;
+  var chips = root.querySelectorAll('.pb-chip');
+  var tiers = document.querySelectorAll('#business-pricing .pb-tier');
+  var count = document.getElementById('pb-count');
+  var result = document.getElementById('pb-result');
+  var prices = ['$25', '$40', '$75'];
+  function update() {
+    var n = root.querySelectorAll('.pb-chip[aria-pressed="true"]').length;
+    var t = n === 0 ? -1 : n <= 3 ? 0 : n <= 7 ? 1 : 2;
+    tiers.forEach(function (el, i) { el.classList.toggle('is-active', i === t); });
+    count.textContent = n === 0 ? "Tap the tools you'd use" : n === 1 ? '1 tool selected' : n + ' tools selected';
+    if (t < 0) { result.hidden = true; }
+    else { result.hidden = false; result.textContent = '7 days free, then ' + prices[t] + '/month for ' + (n === 1 ? '1 tool' : n + ' tools') + '. Cancel anytime.'; }
+  }
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+      update();
+    });
+  });
+})();
+</script>
 </body>
 </html>
