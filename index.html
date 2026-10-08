@@ -152,6 +152,27 @@
   .hero-shot-title { margin-left: 10px; font-size: 12px; font-weight: 600; color: #a1a1aa; }
   .hero-shot img { display: block; width: 100%; height: auto; }
   .hero-shot figcaption { font-size: 12px; color: var(--gray-3); padding: 8px 14px; background: var(--white); border-top: 1px solid var(--divider); }
+
+  /* ── Translation slideshow ── a scroll-snap track, so swiping works with no
+     script; the script only drives the arrows, dots and window title. */
+  .tr-show { max-width: 760px; margin: 0 auto 44px; }
+  .tr-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; background: #f4f4f5; }
+  .tr-track::-webkit-scrollbar { display: none; }
+  .tr-slide { flex: 0 0 100%; scroll-snap-align: start; margin: 0; position: relative; }
+  .tr-slide img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; }
+  .tr-slide::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 56px; background: linear-gradient(rgba(255,255,255,0), #fff); pointer-events: none; }
+  .tr-slide-whole::after { display: none; } /* the whole screen is shown; nothing is cut off to fade */
+  .tr-controls { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--white); border-top: 1px solid var(--divider); }
+  .tr-caption { flex: 1; font-size: 13px; line-height: 1.45; color: var(--gray-1); min-height: 38px; display: flex; align-items: center; }
+  .tr-btn { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--divider); background: var(--white); color: var(--black); font-size: 18px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .tr-btn:hover { border-color: var(--orange); color: var(--orange-dark); }
+  .tr-btn:focus-visible, .tr-dot:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .tr-btn:disabled { opacity: 0.35; cursor: default; border-color: var(--divider); color: var(--black); }
+  .tr-dots { display: flex; justify-content: center; gap: 8px; padding: 0 0 12px; background: var(--white); }
+  .tr-dot { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: var(--gray-4); cursor: pointer; }
+  .tr-dot[aria-current="true"] { background: var(--orange); width: 22px; border-radius: 4px; }
+  .tr-note { font-size: 12px; color: var(--gray-3); text-align: center; margin-top: 10px; }
+  @media (prefers-reduced-motion: no-preference) { .tr-track { scroll-behavior: smooth; } .tr-dot { transition: width .2s; } }
   .nav-sep { width: 1px; height: 22px; background: #3f3f46; margin: 0 4px; }
   .hero-kicker { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-1); margin-bottom: 22px; }
   .hero-kicker-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
@@ -1218,6 +1239,30 @@
     <div class="section-label">Translation Services</div>
     <h2 class="section-title">Document &amp; Contract Translation <span style="display:inline-block;vertical-align:middle;background:var(--orange);color:var(--white);font-size:13px;font-weight:700;letter-spacing:0.3px;padding:4px 12px;border-radius:999px;">Coming soon</span></h2>
     <p class="section-sub" style="margin-bottom:48px;">Coming soon: email a PDF, get back a complete, faithful translation. Available in English, Spanish, and Portuguese (European &amp; Brazilian).</p>
+    <div class="tr-show hero-shot" role="region" aria-roledescription="carousel" aria-label="Translation service screenshots">
+      <div class="hero-shot-bar"><span></span><span></span><span></span><div class="hero-shot-title" id="tr-title">New translation</div></div>
+      <div class="tr-track" id="tr-track" tabindex="0" aria-label="Slides, swipe or use the arrows">
+        <figure class="tr-slide tr-slide-whole" data-title="New translation" data-caption="Pick document or contract, add the scan, choose one of four languages, and list any terms that must be translated a set way.">
+          <img src="img/translation-upload-form.webp" width="1200" height="800" alt="New translation screen: choose document or contract, add the scan, pick English, Spanish, European Portuguese or Brazilian Portuguese, and an optional glossary">
+        </figure>
+        <figure class="tr-slide" data-title="Translation results" data-caption="Original and translation side by side, checked before anything is handed over.">
+          <img src="img/translation-results-page.webp" width="1200" height="800" alt="Translation results screen showing the original English lease and its Portuguese translation side by side" loading="lazy">
+        </figure>
+        <figure class="tr-slide" data-title="Translation report &middot; Portugu&ecirc;s" data-caption="The report your client takes home: a lease translated into European Portuguese, with every label in their language.">
+          <img src="img/translation-report-portuguese.webp" width="1200" height="800" alt="First page of a translation report: a sample residential lease translated into European Portuguese, with the Torres Tech Remote header, the source and target languages, and the first clauses" loading="lazy">
+        </figure>
+        <figure class="tr-slide" data-title="Translation report &middot; Espa&ntilde;ol" data-caption="The same report in Spanish: a water company&rsquo;s service notice.">
+          <img src="img/translation-report-spanish.webp" width="1200" height="800" alt="First page of a translation report: a sample water company notice translated into Spanish" loading="lazy">
+        </figure>
+      </div>
+      <div class="tr-controls">
+        <button type="button" class="tr-btn" id="tr-prev" aria-label="Previous slide">&#8249;</button>
+        <p class="tr-caption" id="tr-caption" aria-live="polite">Pick document or contract, add the scan, choose one of four languages, and list any terms that must be translated a set way.</p>
+        <button type="button" class="tr-btn" id="tr-next" aria-label="Next slide">&#8250;</button>
+      </div>
+      <div class="tr-dots" id="tr-dots"></div>
+    </div>
+    <p class="tr-note">Sample documents. Names, addresses and companies are fictional.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
 
       <div style="background:var(--white);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:28px;">
@@ -2390,6 +2435,44 @@
       if (fn) fn();
     });
   });
+</script>
+<script>
+// Translation slideshow: arrows, dots and the window title follow the
+// scroll-snap track, so swiping and the buttons always agree.
+(function () {
+  var track = document.getElementById('tr-track');
+  if (!track) return;
+  var slides = track.querySelectorAll('.tr-slide');
+  var prev = document.getElementById('tr-prev'), next = document.getElementById('tr-next');
+  var title = document.getElementById('tr-title'), caption = document.getElementById('tr-caption');
+  var dotsBox = document.getElementById('tr-dots'), dots = [], current = 0;
+  function go(i) { track.scrollTo({ left: i * track.clientWidth }); }
+  slides.forEach(function (slide, i) {
+    var dot = document.createElement('button');
+    dot.type = 'button'; dot.className = 'tr-dot';
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1) + ' of ' + slides.length);
+    dot.addEventListener('click', function () { go(i); });
+    dotsBox.appendChild(dot); dots.push(dot);
+  });
+  function update() {
+    var i = Math.round(track.scrollLeft / Math.max(track.clientWidth, 1));
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    current = i;
+    title.innerHTML = slides[i].getAttribute('data-title');
+    caption.innerHTML = slides[i].getAttribute('data-caption');
+    dots.forEach(function (d, j) { d.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    prev.disabled = i === 0; next.disabled = i === slides.length - 1;
+  }
+  prev.addEventListener('click', function () { go(current - 1); });
+  next.addEventListener('click', function () { go(current + 1); });
+  track.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(current + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(current - 1); }
+  });
+  var t; track.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(update, 60); });
+  window.addEventListener('resize', function () { go(current); });
+  update();
+})();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c60da00970ce404fbd115d07cfea6c99"}'></script><!-- End Cloudflare Web Analytics -->
 <script>
