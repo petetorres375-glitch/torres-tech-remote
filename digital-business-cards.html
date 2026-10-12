@@ -61,6 +61,17 @@
   .order-step p { margin-top: 6px; font-size: 14px; color: var(--gray-2); line-height: 1.6; }
   .order-step .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
   .order-step .btn-primary, .order-step .btn-secondary { text-align: center; }
+  .order-unlock { margin-top: 12px; }
+  .order-unlock label { display: block; font-size: 13px; font-weight: 600; color: var(--black); }
+  .order-unlock .actions { margin-top: 6px; }
+  .order-unlock input { flex: 1 1 180px; max-width: 260px; min-width: 0; font: inherit; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; padding: 12px 14px; border: 1.5px solid var(--accent-border); border-radius: var(--radius); }
+  .order-unlock input::placeholder { text-transform: none; letter-spacing: 0; }
+  .order-unlock input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .order-unlock button { border: 0; cursor: pointer; font: inherit; font-size: 15px; font-weight: 600; }
+  .order [hidden] { display: none !important; }
+  .order-msg { min-height: 1.4em; }
+  .order-msg.bad { color: var(--bad); }
+  .order-msg.ok { color: var(--ok); font-weight: 600; }
 </style>
 <script type="application/ld+json">
 {
@@ -273,10 +284,19 @@
       </div>
       <div class="order-step">
         <h3><span class="order-num">2</span>Approved your preview? Pay here</h3>
-        <p>Use the same name, business name and phone as on your form. Have the LAUNCH50 code? Enter it at checkout for $50 off setup.</p>
-        <div class="actions">
-          <a href="https://buy.stripe.com/28E00lfGzfR8bdceJO28802" target="_blank" rel="noopener" class="btn-secondary">Monthly: $110 today, then $10/mo</a>
-          <a href="https://buy.stripe.com/00wfZj7a3dJ06WW31628803" target="_blank" rel="noopener" class="btn-secondary">Yearly: $200 today, then $100/yr</a>
+        <p>Enter the unlock code we send you with your preview. Use the same name, business name and phone as on your form. Have the LAUNCH50 code? Enter it at checkout for $50 off setup.</p>
+        <form class="order-unlock" id="order-unlock">
+          <label for="order-code">Unlock code</label>
+          <div class="actions">
+            <input id="order-code" name="code" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="From your preview" required/>
+            <button type="submit" class="btn-primary">Unlock</button>
+          </div>
+          <p class="order-msg" id="order-msg" role="status" aria-live="polite"></p>
+        </form>
+        <noscript><p>No code box? <a href="mailto:pedro_torres@torrestechremote.com">Email us</a> for your payment link.</p></noscript>
+        <div class="actions" id="order-pay" hidden>
+          <a id="order-monthly" target="_blank" rel="noopener" class="btn-primary">Monthly: $110 today, then $10/mo</a>
+          <a id="order-yearly" target="_blank" rel="noopener" class="btn-primary">Yearly: $200 today, then $100/yr</a>
         </div>
       </div>
     </div>
@@ -351,6 +371,40 @@
   </div>
 </footer>
 
+<script>
+  // The payment links are encrypted; the unlock code sent with each preview decrypts them.
+  const ORDER_LOCK = {"salt":"dlqAorX2A4j55OMHeHcHbw==","iv":"5xH6Jyhtly7yNFm5","data":"O3NTRVaICgheOCdW5jox66hd9hS3fjOoXSJN0sRDd5yzSafm/JmURNax+PeNXEDAbzdXQSdkktmkWIFIqeIJXmAno/8jjYYC/INWSmK/phI4vWsz/w8UlMQttCJ90Mwb77P0ZiWqgRNVMOJjn2gt55K4xFT72tFUWqbXIHT4rAk07ppwdsw="};
+  (function () {
+    const form = document.getElementById("order-unlock");
+    const msg = document.getElementById("order-msg");
+    const bytes = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+    async function unlock(code) {
+      const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(code), "PBKDF2", false, ["deriveKey"]);
+      const key = await crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: bytes(ORDER_LOCK.salt), iterations: 250000, hash: "SHA-256" },
+        base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+      const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: bytes(ORDER_LOCK.iv) }, key, bytes(ORDER_LOCK.data));
+      return JSON.parse(new TextDecoder().decode(plain));
+    }
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const code = form.code.value.toUpperCase().replace(/\s+/g, "");
+      msg.className = "order-msg"; msg.textContent = "Checking…";
+      try {
+        const links = await unlock(code);
+        document.getElementById("order-monthly").href = links.monthly;
+        document.getElementById("order-yearly").href = links.yearly;
+        document.getElementById("order-pay").hidden = false;
+        form.hidden = true;
+      } catch (err) {
+        msg.className = "order-msg bad";
+        msg.textContent = (window.crypto && crypto.subtle)
+          ? "That code doesn’t match. Check the code we sent with your preview."
+          : "This browser can’t unlock the links. Email us for your payment link.";
+      }
+    });
+  })();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c60da00970ce404fbd115d07cfea6c99"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
