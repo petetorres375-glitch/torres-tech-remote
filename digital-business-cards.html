@@ -52,6 +52,15 @@
   .price ul { list-style: none; margin-top: 14px; font-size: 13px; color: var(--gray-2); line-height: 1.6; }
   .price li { display: flex; gap: 8px; margin-bottom: 5px; }
   .price li::before { content: "\2713"; color: var(--accent); font-weight: 700; }
+  /* Order box: free preview first, then payment. */
+  .order { margin-top: 36px; background: var(--white); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 26px; }
+  .order-warn { background: var(--accent-tint); border: 1px solid var(--accent-border); border-left: 6px solid var(--accent); border-radius: var(--radius); padding: 14px 16px; font-size: 15px; color: var(--black); line-height: 1.55; }
+  .order-step { margin-top: 22px; }
+  .order-step h3 { display: flex; align-items: center; gap: 10px; font-size: 18px; }
+  .order-num { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--white); display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
+  .order-step p { margin-top: 6px; font-size: 14px; color: var(--gray-2); line-height: 1.6; }
+  .order-step .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  .order-step .btn-primary, .order-step .btn-secondary { text-align: center; }
 </style>
 <script type="application/ld+json">
 {
@@ -253,6 +262,24 @@
         </ul>
       </div>
     </div>
+    <div class="order" id="order">
+      <p class="order-warn"><b>Please request your free preview first.</b> Don&rsquo;t pay until you&rsquo;ve seen your card and you&rsquo;re happy with it. We need your details from the form to make it.</p>
+      <div class="order-step">
+        <h3><span class="order-num">1</span>Request your free preview</h3>
+        <p>Fill in a short form (about 3 minutes), then email us your logo and photos. Up to 3 free previews.</p>
+        <div class="actions">
+          <a href="https://forms.gle/PfWVDSvLaSE2pDCU6" target="_blank" rel="noopener" class="btn-primary">Request your free preview</a>
+        </div>
+      </div>
+      <div class="order-step">
+        <h3><span class="order-num">2</span>Approved your preview? Pay here</h3>
+        <p>Use the same name, business name and phone as on your form. Have the LAUNCH50 code? Enter it at checkout for $50 off setup.</p>
+        <div class="actions">
+          <a href="https://buy.stripe.com/28E00lfGzfR8bdceJO28802" target="_blank" rel="noopener" class="btn-secondary">Monthly: $110 today, then $10/mo</a>
+          <a href="https://buy.stripe.com/00wfZj7a3dJ06WW31628803" target="_blank" rel="noopener" class="btn-secondary">Yearly: $200 today, then $100/yr</a>
+        </div>
+      </div>
+    </div>
     <p class="fine">Card accepted online and in person. Cash in person for setup and yearly plans. In-person service in the Ironbound, Newark NJ; online orders available in the US and its territories, and to US citizens abroad paying with a US card or bank account. See the <a href="tos.html">Terms</a>.</p>
   </div>
 </section>
@@ -280,7 +307,7 @@
       </details>
       <details class="faq-item">
         <summary>How do I pay?</summary>
-        <div class="faq-answer">Card accepted online and in person. Cash in person for setup and yearly plans.</div>
+        <div class="faq-answer">Card accepted online and in person. Cash in person for setup and yearly plans. After you approve your free preview, pay online with the <a href="#order">payment links</a>.</div>
       </details>
       <details class="faq-item">
         <summary>Who can order a card?</summary>
