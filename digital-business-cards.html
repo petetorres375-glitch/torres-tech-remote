@@ -65,6 +65,10 @@
   .btn-ghost { border: 1.5px solid rgba(232,235,243,.35); color: var(--on-navy); }
   .btn-ghost:hover { border-color: var(--on-navy); }
   .btn-sm { padding: 9px 14px; font-size: 14px; }
+  /* WhatsApp: the fastest way for a shop owner to ask, so it's the main button. */
+  .btn-wa { background: #15803d; color: var(--white); }
+  .btn-wa:hover { background: #166534; }
+  .btn-wa svg { width: 18px; height: 18px; flex: none; }
 
   /* Light top bar so the plum buttons and navy logo stand out. */
   .topbar { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); }
@@ -93,6 +97,20 @@
   .fb { display: inline-flex; align-items: center; gap: 6px; color: var(--white); font-weight: 600; }
   .fb svg { color: #4d8dff; }
   .fb:hover { text-decoration: underline; }
+  .hero-call { margin-top: 14px; font-size: 15px; color: var(--on-navy-muted); }
+  .hero-call a { color: var(--white); font-weight: 600; border-bottom: 1px solid rgba(255,255,255,.4); }
+  /* Spanish and Portuguese lines for Ironbound visitors, like the flyer. */
+  .tri { margin-top: 22px; display: grid; gap: 6px; font-size: 14.5px; color: var(--on-navy); max-width: 540px; }
+  .tri b { color: var(--plum-glow); font-weight: 600; margin-right: 4px; }
+
+  /* Meet Pedro */
+  .meet { display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: center; max-width: 900px; }
+  .meet img { width: 168px; height: 168px; border-radius: 50%; object-fit: cover; border: 4px solid var(--white); box-shadow: 0 10px 30px rgba(15,23,42,.18); }
+  .meet h2 { margin-bottom: 12px; }
+  .meet p { color: var(--muted); font-size: 17px; margin-bottom: 12px; }
+  .meet .cta-row { margin-top: 18px; }
+  .real { margin-top: 26px; font-size: 15.5px; color: var(--muted); }
+  .real a, .head a { color: var(--plum); font-weight: 600; }
 
   /* Two phones: demo card in front, our own card behind */
   .phones { position: relative; height: 560px; max-width: 460px; margin: 0 auto; width: 100%; }
@@ -154,13 +172,13 @@
   .ticks li::before { content: ""; position: absolute; left: 2px; top: 6px; width: 6px; height: 11px; border: solid var(--plum); border-width: 0 2px 2px 0; transform: rotate(45deg); }
   .pbox.host .ticks li::before { border-color: var(--plum-glow); }
 
-  /* Order box: free preview first, then payment. */
-  .order { margin-top: 28px; background: var(--white); border: 2px solid var(--plum-border); border-radius: 20px; padding: 32px; }
-  .order-warn { background: var(--plum-tint); border-radius: 12px; padding: 14px 18px; color: var(--plum-dark); margin-bottom: 26px; }
-  .order-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  .order-steps > div { min-width: 0; }
-  .order h3 { font-size: 21px; color: var(--navy); margin-bottom: 8px; display: flex; gap: 10px; align-items: center; }
-  .order-num { width: 30px; height: 30px; border-radius: 50%; background: var(--plum); color: var(--white); display: grid; place-items: center; font-size: 15px; flex: none; }
+  /* Pay box: folded away so first-time visitors don't see a checkout. */
+  .order { margin-top: 28px; background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 0 24px; }
+  .order summary { cursor: pointer; list-style: none; padding: 18px 0; font-weight: 600; font-size: 16px; color: var(--navy); display: flex; justify-content: space-between; gap: 16px; }
+  .order summary::-webkit-details-marker { display: none; }
+  .order summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--plum); }
+  .order[open] summary::after { content: "\2013"; }
+  .order-body { padding-bottom: 24px; max-width: 560px; }
   .order p { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
   .order-unlock label { display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
   .unlock-row { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -207,7 +225,7 @@
   .copy { border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; font-size: 13.5px; }
 
   @media (max-width: 900px) {
-    .hero-grid, .lang-grid, .pricing, .order-steps { grid-template-columns: 1fr; }
+    .hero-grid, .lang-grid, .pricing { grid-template-columns: 1fr; }
     .hero-grid { padding-block: 56px 96px; gap: 48px; }
     .features { grid-template-columns: 1fr 1fr; }
     .steps { grid-template-columns: 1fr; }
@@ -218,6 +236,10 @@
   @media (max-width: 600px) {
     .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
     .navlink { display: none; }
+    .nav .btn-plum { display: none; }
+    .meet { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+    .meet img { margin: 0 auto; width: 140px; height: 140px; }
+    .meet .cta-row { justify-content: center; }
     .brand { font-size: 16px; }
     .features, .foot { grid-template-columns: 1fr; }
     .cta-row .btn { width: 100%; }
@@ -311,7 +333,8 @@
     <div class="nav-right">
       <a class="navlink" href="https://cards.torrestechremote.com/navalha-barber-co/" target="_blank" rel="noopener">Demo card</a>
       <a class="navlink" href="#faq">FAQ</a>
-      <a class="btn btn-plum btn-sm" href="https://forms.gle/PfWVDSvLaSE2pDCU6" target="_blank" rel="noopener">Free preview</a>
+      <a class="btn btn-plum btn-sm" href="/go/preview.html" target="_blank" rel="noopener nofollow">Free preview</a>
+      <a class="btn btn-wa btn-sm" href="/go/whatsapp.html" target="_blank" rel="noopener nofollow">WhatsApp</a>
     </div>
   </div>
 </header>
@@ -325,14 +348,19 @@
       <h1>A business card your customers <em>keep on their phone.</em></h1>
       <p class="lead">One link and one QR code for your shop. Customers call, text, WhatsApp or email you in one tap, save you to their contacts, and read it in up to 3 of 25 languages. We design it, host it and keep it up to date.</p>
       <div class="cta-row">
-        <a class="btn btn-plum" href="https://forms.gle/PfWVDSvLaSE2pDCU6" target="_blank" rel="noopener">Request your free preview</a>
-        <a class="btn btn-ghost" href="https://cards.torrestechremote.com/navalha-barber-co/" target="_blank" rel="noopener">See the demo card</a>
+        <a class="btn btn-wa" href="/go/whatsapp.html" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>Ask on WhatsApp</a>
+        <a class="btn btn-ghost" href="/go/preview.html" target="_blank" rel="noopener nofollow">Request your free preview</a>
       </div>
+      <p class="hero-call">Or text or call Pedro: <a href="tel:+12017722106">(201) 772-2106</a> &middot; <a href="https://cards.torrestechremote.com/navalha-barber-co/" target="_blank" rel="noopener">See the demo card</a></p>
       <div class="price-pill"><b>Free setup</b><span class="dot"></span><span>$10/month or $100/year</span><span class="dot"></span><span>Up to 3 free previews</span></div>
       <p class="hero-small">
         <span>In-person service in the Ironbound, Newark NJ.</span>
         <a class="fb" href="https://www.facebook.com/profile.php?id=61595452617390" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.69.24 2.69.24v2.95h-1.52c-1.49 0-1.96.93-1.96 1.88V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0 0 24 12z"/></svg>Now on Facebook</a>
       </p>
+      <div class="tri">
+        <p lang="es"><b>Español:</b>Su tarjeta de presentación en el teléfono de sus clientes. Instalación gratis, vista previa gratis.</p>
+        <p lang="pt-BR"><b>Português:</b>Seu cartão de visita no celular dos seus clientes. Criação grátis, prévia grátis.</p>
+      </div>
     </div>
     <div class="phones">
       <div class="phone phone-ttr">
@@ -356,7 +384,7 @@
     <div class="head">
       <p class="kicker">What's on your card</p>
       <h2>Everything a customer needs, one tap away.</h2>
-      <p>Tap either card above to try the real thing.</p>
+      <p>Tap either card above to try the real thing, or see <a href="https://cards.torrestechremote.com/keon-torres/" target="_blank" rel="noopener">Keon&rsquo;s card</a>, a real card in English and Japanese.</p>
     </div>
     <div class="features">
       <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18"/></svg></div><h3>Your brand</h3><p>Your logo and brand colors.</p></div>
@@ -369,7 +397,25 @@
   </div>
 </section>
 
-<section id="languages" class="band-white">
+<section id="meet" class="band-white">
+  <div class="wrap">
+    <div class="meet">
+      <img src="img/pedro.webp" width="360" height="360" alt="Pedro Torres, founder of Torres Tech Remote" loading="lazy">
+      <div>
+        <p class="kicker">Who makes your card</p>
+        <h2>Hi, I&rsquo;m Pedro.</h2>
+        <p>I run Torres Tech Remote from the Ironbound, Newark. I make every card myself, and in the Ironbound I can come by your shop to set it up with you.</p>
+        <p>Send me a quick WhatsApp with your business name. I&rsquo;ll make you a free preview, and you only pay if you like it.</p>
+        <div class="cta-row">
+          <a class="btn btn-wa" href="/go/whatsapp.html" target="_blank" rel="noopener nofollow">WhatsApp Pedro</a>
+          <a class="btn btn-plum" href="/go/preview.html" target="_blank" rel="noopener nofollow">Or fill in the form</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="languages">
   <div class="wrap lang-grid">
     <div>
       <p class="kicker">Languages</p>
@@ -406,21 +452,21 @@
   </div>
 </section>
 
-<section id="how">
+<section id="how" class="band-white">
   <div class="wrap">
     <div class="head">
       <p class="kicker">How it works</p>
       <h2>See it before you pay.</h2>
     </div>
     <ol class="steps">
-      <li><h3>Fill in a short form</h3><p>About 3 minutes. Email us your logo and photos, or a photo of your current business card.</p></li>
+      <li><h3>Send a WhatsApp or fill in a form</h3><p>Tell us your business name, or fill in a short form (about 3 minutes). Send your logo and photos, or a photo of your current business card.</p></li>
       <li><h3>Get your free preview</h3><p>We make you a free preview. Up to 3 free previews.</p></li>
       <li><h3>Pay when you're happy</h3><p>You only pay when you&rsquo;re happy with it. Then your card goes live with its own link and QR code.</p></li>
     </ol>
   </div>
 </section>
 
-<section id="pricing" class="band-white">
+<section id="pricing">
   <div class="wrap">
     <div class="head">
       <p class="kicker">Pricing</p>
@@ -453,17 +499,10 @@
       </div>
     </div>
 
-    <div class="order" id="order">
-      <p class="order-warn"><b>Please request your free preview first.</b> Don&rsquo;t pay until you&rsquo;ve seen your card and you&rsquo;re happy with it. We need your details from the form to make it.</p>
-      <div class="order-steps">
-        <div>
-          <h3><span class="order-num">1</span>Request your free preview</h3>
-          <p>Fill in a short form (about 3 minutes), then email us your logo and photos. Up to 3 free previews.</p>
-          <a class="btn btn-plum" href="https://forms.gle/PfWVDSvLaSE2pDCU6" target="_blank" rel="noopener">Request your free preview</a>
-        </div>
-        <div>
-          <h3><span class="order-num">2</span>Approved your preview? Pay here</h3>
-          <p>Enter the unlock code we send you with your preview. Use the same name, business name and phone as on your form.</p>
+    <details class="order" id="order">
+      <summary>Already approved your preview? Pay here</summary>
+      <div class="order-body">
+          <p>Enter the unlock code we sent you with your preview. Use the same name, business name and phone you gave us. No preview yet? <a href="/go/whatsapp.html" target="_blank" rel="noopener nofollow">Ask for one first</a>, it&rsquo;s free.</p>
           <form class="order-unlock" id="order-unlock">
             <label for="order-code">Unlock code</label>
             <div class="unlock-row">
@@ -477,10 +516,9 @@
             <a id="order-monthly" target="_blank" rel="noopener" class="btn btn-plum">Monthly: $10/mo</a>
             <a id="order-yearly" target="_blank" rel="noopener" class="btn btn-plum">Yearly: $100/yr</a>
           </div>
-        </div>
+        <p class="fine">Card accepted online and in person. Cash in person for yearly plans. In-person service in the Ironbound, Newark NJ; online orders available in the US and its territories, and to US citizens abroad paying with a US card or bank account. See the <a href="tos.html">Terms</a>.</p>
       </div>
-      <p class="fine">Card accepted online and in person. Cash in person for yearly plans. In-person service in the Ironbound, Newark NJ; online orders available in the US and its territories, and to US citizens abroad paying with a US card or bank account. See the <a href="tos.html">Terms</a>.</p>
-    </div>
+    </details>
   </div>
 </section>
 
@@ -513,7 +551,7 @@
       </details>
       <details>
         <summary>How do I pay?</summary>
-        <div class="faq-answer">Card accepted online and in person. Cash in person for yearly plans. After you approve your free preview, pay online with the <a href="#order">payment links</a>.</div>
+        <div class="faq-answer">Card accepted online and in person. Cash in person for yearly plans. After you approve your free preview, pay online with the <a href="#order" data-open-order>payment links</a>.</div>
       </details>
       <details>
         <summary>Who can order a card?</summary>
@@ -527,12 +565,13 @@
   <div class="wrap">
     <div class="final">
       <h2>See your card before you pay.</h2>
-      <p>Fill in a short form (about 3 minutes) and we&rsquo;ll make you a free preview. Up to 3 free previews. You only pay when you&rsquo;re happy with it.</p>
+      <p>Send a WhatsApp or fill in a short form, and we&rsquo;ll make you a free preview. Up to 3 free previews. You only pay when you&rsquo;re happy with it.</p>
       <div class="cta-row">
-        <a class="btn btn-white" href="https://forms.gle/PfWVDSvLaSE2pDCU6" target="_blank" rel="noopener">Request your free preview</a>
+        <a class="btn btn-wa" href="/go/whatsapp.html" target="_blank" rel="noopener nofollow">Ask on WhatsApp</a>
+        <a class="btn btn-white" href="/go/preview.html" target="_blank" rel="noopener nofollow">Request your free preview</a>
         <a href="mailto:pedro_torres@torrestechremote.com?subject=Free%20preview%3A%20digital%20business%20card&amp;body=Hi%2C%20I%27d%20like%20a%20free%20preview%20of%20a%20digital%20business%20card.%0A%0ABusiness%20name%3A%20%0ABusiness%20phone%3A%20%0ABusiness%20email%3A%20%0AAddress%20or%20area%3A%20%0AHours%3A%20%0AServices%20%28and%20prices%2C%20if%20you%20want%20them%20shown%29%3A%20%0AHow%20customers%20book%2C%20order%20or%20get%20a%20quote%20%28app%20link%2C%20or%20call%2Ftext%2FWhatsApp%29%3A%20%0ABrand%20colors%20%28if%20any%29%3A%20%0AWebsite%2C%20Instagram%20or%20Facebook%20%28if%20any%29%3A%20%0A%0APlease%20attach%20your%20logo%20and%20a%20few%20photos%20if%20you%20have%20them." class="btn btn-out">Or email us</a>
       </div>
-      <small>See it live: <a href="https://cards.torrestechremote.com/navalha-barber-co/" target="_blank" rel="noopener">demo card</a> &middot; <a href="https://cards.torrestechremote.com/torres-tech-remote/" target="_blank" rel="noopener">our own card</a></small>
+      <small>Or text or call <a href="tel:+12017722106">(201) 772-2106</a> &middot; See it live: <a href="https://cards.torrestechremote.com/navalha-barber-co/" target="_blank" rel="noopener">demo card</a> &middot; <a href="https://cards.torrestechremote.com/torres-tech-remote/" target="_blank" rel="noopener">our own card</a></small>
     </div>
   </div>
 </section>
@@ -569,6 +608,14 @@
   // The payment links are encrypted once per customer code (made by a script
   // kept outside this repo); the code sent with each preview decrypts them.
   const ORDER_LOCKS = [{"h":"04","salt":"DTuWX8fuR9AeLZIxrSAttA==","iv":"Mw8xfcIekNS4FVl1","data":"bLIvnv0hiyaZTeVVCd0Y4QL6sbSFwJQ4ZJ7sT1I1sf3RtDBkqrbSlrWeRO/Q2ze7eU6rvgL5vRylT/Ybcc7NdafhRuI91lJKKwIb4ByOS7qX4XMPn2LtNsMWrj9tDV6YFGqfEXAyRiFdQk+pNOfo55MRI2AZpA8gny+0cZfhy/kMWFBaW20="},{"h":"12","salt":"4EYUqT0ATiQidykVnaeMiA==","iv":"rONj+wD6qZUBy7sL","data":"QJstSWG1g96qZup9P7f36WNwBov6ex4KAloxl2zjkisOG5pce5LmBVteBzntgJJUxE9wNzXzew8emLoJQrHv/sLoYCc3FlZlwJkGRfPdbchTIJx6nMWVYB9O3+nvvB7RBgdlTDFpaiOMpJQQiyxxCivZxRPJ0aByEQpl/5kL4vlejJP5mAg="},{"h":"1c","salt":"LUMzXNzPs2+5raMo7smCtQ==","iv":"ZY2WjmCh5MClxI8q","data":"QL89UMdHY9iY8kRQe+5qY5q4XtJvmqSWvq5f2jLsNC1aaeYaZOyhthFGUhMGoAMezC5pAeNJVSajkf27n0KClu7lN/xcSzUR6/K103Lbrwf2VwIvABXBTeE39dbUgp+6nFHOuK/bmmSKB1BBlh8RmhX4qubW/c+OA+7BgQBU0+1NXquvt/o="},{"h":"29","salt":"YTV7vjNZ95GOOeEUFwje9g==","iv":"TCSyCVT+dRtJIwp1","data":"R+4XuA3HePa7s+o2Jb1q7OgOSxrkbbtl0rfUzoSXbLNK2lKtEow47uKm6JkYnfcz+FzaGWLXouseU8iIUlbvjioF7fdTFDno4p38J5g8Wp9ylE0+bfIIucSfuO+QXw0YE3f4f0LjjL7u6sT3FoVxX9D9/qtMpb0/SlzkUpQMzxX4fkOzWTg="},{"h":"2b","salt":"vdk5SkIZ/QPXR1pAhZJ+Dg==","iv":"tuLGd8Z2yS2GhYCi","data":"5ot7GmrMjp89AOiv2LL0NiopVYD9pcVYpDhU5rjFDzqwOw/Ny/yLSsKHOwWO7AWrrKQLG4nfWI3Hb+lQo0mtGA7lI5ANko1ejvIFuhLFnMQacyx8XDopAP4l3FPHsB3gwD1X4JPuCPu4bs/UKWaz6TKWZXuD2hCoRK93mL1tuwVfV0U0oRc="},{"h":"31","salt":"8Cc3RdDiYimRnt9oRG7xmA==","iv":"ieO+BGmVFqVkNY2d","data":"rcWWhztEpyTr7ozqCmpeTxpeEkFlaLI5L3J3J0msXixuqzuKU3W9jvcSieieTsBFcEaEFfS+IxDLvaIOoNUsQ0cSmWHJNyX0bfUM7zIhicLQCIbm5L6lVxXxfKkcyeJBveYUsOrSP1a5hLbdbOA55/YhSMjhVvIDydDkgX/Q6UtJNcwgmY0="},{"h":"37","salt":"WL9DDb8jwky6dz5coSMJ4w==","iv":"3r3ABVCBXaVEisY6","data":"m8xwrK3sI8wSt2h+3SUDOIytsLJ4X4okzxxT4AVZc51oSt45biMLmo9vGwJ0Tzn+5RcscB5pfNzr2yL1Sd4e60Zo3BrxVdVITiKwTGz/R6Q+4+Tw7RoVowziGeXgArPmrWplzeVRMrJZZzWxcVnZ+mkAfXBu6mR5lfX/P7IWChcMliJsewg="},{"h":"3c","salt":"o2KZFeuMe5Ev+s77ym2wqA==","iv":"kdJDFWtrsjAxPa9Y","data":"HR1tTORbDOJMax/1uoiDhaW1GwWi8SN3kc5CxBMCsJo+CbN0D+V+Q37+Sish9/yIoq2oyfhgnnxTf7TTXwwS/YTarzYdGhPc1hwnGDfz89v+CFM6qgEsRNyJWj8jIjkHZ1IIKCGnyRL2+qif7AwIXysZ3+e86l7R1fo07YViamjqw4A001w="},{"h":"3f","salt":"Cfe54wvpl6uDmHVvRcxeCw==","iv":"+HYtoFNLYuJS2Et6","data":"YidYfcdlefwixU2pmvjtV20NvfXnz7whf3NTKNxifygBxncsJK9kv86HkW/kGYFV5uL31mYPS0+ZBjFLacHyks8cD8gUro4sTl+vBtWcA0ygtpybZXXC1x+BZn1pDAVQ8obdxZtdLF4p9ms7jglfBISHZxcNSz4xbenKvqUrsJ4FxZUeQGQ="},{"h":"43","salt":"6PzIkItlVeqKG7g/RhYFxg==","iv":"d2s7m3+diSfh7gCz","data":"qLbPl7eGfCnxVbNtyEI6tDLqfI6MPElrpltxWDvwOE3lVNKoTVTQH3P20rol+3M7XsN2wTLXER/gAjE8QbS4/oy1+2fdx6HZTZaFg5xJ4CmQT7yP6/Ahcr5bwdFzFydA89AX+PcwRUQfQsrq6encyo4j+2ri0KzM/Jnaz2PODwKz6zwHX1g="},{"h":"4d","salt":"PQWWwCwnEVu0pY7zU3ujKA==","iv":"lR/Tcq1LEAoPiyg2","data":"7A4ULj7Fv5KvE6K4Ezpuny9E43QvRx78t21HwGYa20+mCRfmjWych0/qkdnpnKUIBy6FiqR5W7VshPKpmdZBPiz1aMMRU7J9AUdaJ3LbX1b5/0y83chU8zrxlS18cZXuZIvLaNrbDtrJtnrlRi87RC7PitMGgvxFXtDqK7GZK5ko7PS0GpA="},{"h":"4d","salt":"cOj0g9JcAR+OoNu+jH8Spg==","iv":"0el/z7PLZ5BaXHDi","data":"7EJSpYEexAxdCbiSbnvOK2u0Zfzayi5EK7gC9c+7MveY1r7xijYy3uq0FG20QWMgNVyYUgR0ElGSLw9q2jztZcn7NfXrC1/iJ50q2IOH07v7NHLH1uHabKTOCl5HZ+Yc37WKBTqx+5tQpJ9rP6gSoLsc01NliwadK3dM1xuHwNyD87PTAdw="},{"h":"4d","salt":"oW/drJufWYm6/leJAcN6CA==","iv":"mo7F5jHrG092+dlS","data":"GfcP/T0Ne3sA9fTCd1ov84CmzACPxpH/QQNmMKGgSKOTZdD7ilWorBQAilg3k2YBL2gUFZAFg2IJCMoj5Omldh3FQ0XZdsioCmemAcFg2SlBf2+JAhl2KTvg807PilwaLgeWXuZC0utU8ozm+ZsP53w4dckAjLcNqoGrNhnZqVoXocOjO3Y="},{"h":"4f","salt":"ioI+V7UYoOaPWyBDVqZPtA==","iv":"XYPAOa4ayHSBSybw","data":"HkU/4Yb/a2AX3jNRQXHbcDBz4TAzoFvg/3wpFWDqH9tdOa2oiaoCzlTF1aXTxTjD8dfyIDk/k+SXs95VrREODp1MKZJOfobjwQntWj5AnYu/oqLOf9EHcwmmYU7VbMsvyziUNxEEKo716+iTgZdfJ6nKxQRyfhdNT8dZ7R4xhyLKh/HS+xU="},{"h":"4f","salt":"1EKCVzzsSv91Osq9gO/1lg==","iv":"U1/PAuQRyCv1j1w8","data":"JYkhTuG9QXV5tVDzgAi2v5aAsHCvNv843LQaXsGH6R+v7EqjUTUpbBESbMYLfrD95sLEkMd4RYhlffgXfgQnm9t65n1WfpDxi34JCAZsMe1qVKVxQXDUDFSc9qEyVp7RjZH4WQ6k9v1E9VBSSdIbsdw41Ag7AsEEva0p6XM5eUV4aigv/fc="},{"h":"52","salt":"U/jzF5ReE87Z/IXaB96l8A==","iv":"4be9ajxuniVZaqTZ","data":"Ohs83axzuVZuTcV7abfymeYTyLpqi6fC1dkkmCZGl/ijW0uMrpSWlrrDeKHug2KN0VmtmQpBoFh7+1sC7HY8oMHKoe4/uOCcFYNr2qN0toefCDHES/Ze1XfyDTCEh6W4TJuZbWBJM5sLOc/LhNkOe7gxIRYAXls/PDKO6pXlLgNLY9QLB88="},{"h":"55","salt":"4OJKps2S+XoYrFRGHwty8A==","iv":"vPCCDkOdIj+fX7aQ","data":"PEzOkaUt3t6iYDagYcdTqiZyzr8WWde1gK6vMuXcHpbrLPyLfdTrJOCYv9toDhoswB7GwXPb6/CcAKm6Nn1zkNhhha1H96cc2vUYrUBePEACZxNO3s06kclY94utr9XfDDWJFrjvUfZzaMdEMo/dIg573EbHj1+WXGL2RV3xHMWYILl9JQs="},{"h":"5e","salt":"MuGptowOBKdMbzSq6JVfgQ==","iv":"NCRdivabNnapcGsk","data":"WCJuFur3ZzDes9O+Jl3ATgiKo3qyVjxUsX+E53TK4H5bSeZvljgGWeR7lSzn2s4CyzHhhA+4/D2QpXG0q6aRckLu+c9vxzziOOPMBMiSxU+JPUMJtbbxBCHb229cVmhAr83hi09tDE8LgwZuopbVNSG6gO4IZPeiL4V3sUhuJ/Z7kwoevZQ="},{"h":"5f","salt":"d0uvkD3PQbaGwXH1KhnWQQ==","iv":"Sqh+AUhiyneHM0Z+","data":"Li4aYWzoIjwDasPPIJJ2QpOME2XTq5qzZNU4B1cB/rp1Q4rdm8YWrlNI7uMMrAVXWgC+tBFbsPQ5eVmixYsf/szikjyKk7PJFpkZytUOYNcv+e+lCToLdrvAtYEEMhCQzVZr0O+6CU84CSs10VADIi2SESZJEx3Dy3LS6gHVfQQD6YOoIY8="},{"h":"60","salt":"uCKdf4nkwNBoHo4D7NJ+cw==","iv":"c7ZntTsui8It5EoZ","data":"Tl8j0DdrPQS5hl6YsQwVxw61JQl8lVC+uahn622ce47dwMd07iU/KS8cvEW3fSoFfsvZNhhdgmyXBwBXkXKbdq9hX11OmAN3x1OOZ6BVQ3pkSh4X22U4U/mDyN+ZaZSpr7NeEMzeqRdCcTddUvtLeWpN1L0CKvN10NDAiZVi02BmLqBBI3c="},{"h":"62","salt":"SYACx6JiIjbRzWxq4+XdQg==","iv":"uNycIQiIwmuKRcBP","data":"Ooi6Cmi7kjD4aFRe+W7YSyM9zgOQLiiy52GVlIPlwg8/rh27bbtj1GVgvrbtavAqIYcgQAau7RMFqqCty4JkakZwi7eWqQokccjMLLyQkXoELeCwqK56tySORlqu6Qeq+lie3Dj5GG+T2BsMqVWwDYs3pyilFUXeQSj/LMN4JXJeo7jc2yM="},{"h":"67","salt":"xsXSmHjfwMCoSn5oYxWR9A==","iv":"YtGLIy6+seKrxJl3","data":"jS190DrBfi73akKM06HKyjys9rl7/esa1THg6LgJ6icL41Lo04arXae7T6Lid5+pZbsO6QKFOGLIJVrWac+kglPB+kmoZN+Pr39ddkp17CHto70etaDtH33cawau7106Uz8EmqtbeWMgYZj8GjAxxE/4xlHr78wVPGrjlnvMZl5lbAZRv8Q="},{"h":"70","salt":"Qilq4j0jxJ+fh0oZxZ/Grw==","iv":"H01XqEPcff0hQuVg","data":"8r7o7GrwoC5OWN3mms6QZVCcGZ/uBpiKsF25ib2NdbdZIzuFR1/1ieIud1LzIsh6eN0LMiLTx34vS0EkAyzl2USJg0U3z2ifd+2f1VKYmvEhLb/8xRkbUnGmvaVXNcz6DeDTY2uxszjPSX3vzSwXryVm5FdYMyCt0gQE+PQviiSnjlKq8SE="},{"h":"72","salt":"p8Awr6sROZ9TRjCZrG6hZw==","iv":"7B6X0qpbghrKcfDt","data":"gSBOab/7YvpEvM7Z3f+Tj3H6ImN/Vqx8XLqYWkZvTOdEmvZSH/xC1Uk+WVJYM3rahndgbyG8eSX5OUBkt5oWAzyRGWhragmZt92sy3wuQoW9G5W6jjqK9zbfmM+RFJAEV7Slz4BPR52hTDUtT8RdoDKZ7tc93N/fW4HdEpg/nEjCvxxCCdU="},{"h":"72","salt":"poEoLOS/jrP9WSPBadwLPQ==","iv":"VYBYd63FIZxiWSrg","data":"KBR0iJZZtzEDC3p1Ipng+2+VyDr+GyoV83spfxjUIwfEEPA5cnb83XaDadJzKVQTBOq4WBqIhFby4bk7XpQIiXsNeY8p8UUsLOdiE0qOMWjfhntZuuS+PXWMcAZGHwu2vWAGd77delS2LRRUcJszrPiNb4F0XDdJGIrSa7IFgCN/x2Dqbko="},{"h":"73","salt":"m5QrzMgeGXIx1tQVHRWbMA==","iv":"BvTgr+9YjDkt4eoy","data":"cnkxxJxiOQbZOG/jdHKF4Zoejx46bxPOHJiW80VssglHU7XUYLEWP92v8cGbrSNdGOIPxdB0URzze8g1jQCYXL1IwVsJuQws9Bne0KLGeqGpwHkM6sQ/GdmtsyjSnHHuMV9NsIJa2sTML/YifY7YBuwDG/qWwR8fJV8zlWKvCSBcxoMC5oI="},{"h":"83","salt":"75HSS+vZ1szlPqj3G5qT6g==","iv":"hZmjQgHs8cQQrbFU","data":"t2oIZ51Y7GACKZVVrKv8nRhI6EeSnlx/kyOtodY9t6CGH3bTHYSTI97rbL2vtc3iLO416Su8eFsQmZXGOrQspa0LpbGDBQkK2EJl4GFxMLrHXZFpRh5PFPW7a1wUMhUB8jRXU+klCxv2ENnG8lrWqDqJA0U+QfUa/GCm4ARGihGhI91tcEE="},{"h":"8c","salt":"6cbjfRM8c1XvTJRemiWAnw==","iv":"sXpl/k+NSUJf6ee6","data":"vhZbiLybQteQyVC6n/5zSXGnh9iedBjG1af/HXAQlXnroGl8HetVLMu8wdyxz8heNkOPHm0o0Y64wB30AYmhBbsSt1nYWLcjNhHPqC2rCO7oG0yfV/O1vf+HYE9GZ6b0zSnROC7IQL6rJAm55dLay6ilrvoQdsP1F5PqwYz1ChheAXo+GzA="},{"h":"8d","salt":"E/030dGcdBjiE5UUYB+1ZQ==","iv":"L2NYOkhUcOnsYz8h","data":"j0zb2qGXWoYt1rRH8J1D102sgIrapeD3HtRu7IMnEKbpy+4r6ElNjYJL4yzwzYyFs5A3l/UodejO7z0lfxmol/DY4gtNRLABFanbIgufnaOvkXXyrrwTlMVh0oAS9Cd/fcM5ugpHkHlIncGQWXE6KXWc7zzIuW90K/6ulHPUKm4XrUaeodk="},{"h":"95","salt":"s58SXMyrBU6kX50VO7s4mQ==","iv":"xFK6bWQZmfVGK1ly","data":"sgdEXqAbp1JcIkTrA2XvL1/DwTkAtnNDor5qJNF+heWz+oI4O/HrhvjJlL/st//pCEN4FQP8Jaw0GNR4URGsCwDS/W+RxSSb6f/FJx6LfXhjrFEtaIqPCsV9BuMmYQ6qXxDRfe8OUXG4RhgoZU+D0N4pRdwggmMyZG8Y3oEsZQgQ+gpvypg="},{"h":"9b","salt":"zbo93S+yA8zpETtpIPgQIg==","iv":"i5CN/1pik+SGWNWN","data":"vJhdUweOUxzN0NScLai+hkm8wFsGORNDxSEgiDToxZS+GeOyXNYfu+QVSP2dhVrQy8UD84AanzZNVvnG1aLEeLZoOSnQSC22HICVeX7go31kiX0v8N6FeZHAXvW4hr5T7U4Jz7pKgWBh1H/Gkh1M8SjxfIZgoWgXHwHuRoQHgruA54DXQlM="},{"h":"a6","salt":"dag3nukJVh9gTHrw50+ncw==","iv":"eS1rsF9b5jIptK9U","data":"3uA6uGpZt0WjmO35VxPdG8gIlXF1Jn25VlnYzLzkOrg4ubJ+c8QCwBrw8S2pBal2WF6dz4lffgvQ1vfsP9z3PGYwSPuYtXZ3/stZB6PkuJva5UBDZktjOyLpJGV6QVuS+rLQl5x2pUTwcV1i/EXVy5Glzbd8MnalwuqG4ul1/FbRsi/6ZGE="},{"h":"a9","salt":"XX7qNopPARn0t4RSSK0gOA==","iv":"22w9/xI6n9cdyjzD","data":"AJjsoVDOlufbQgFcaz76/CVe97knjcf9qvaKewm9e0Jtnv1HXDVEaXovrGWYZmNptVc2kMiL0rFC2G32s4p9bCrMXXpTD4+lybtHWed+VT/gvLU7C+RIqKpezx8/mmToUt+dXlnmzdcWcm5hfLmLmduWbuCJBa4DvPA56JArMySZKkgR0GU="},{"h":"ab","salt":"3bq2NpoCgg/9CXWME94wlA==","iv":"Wr0it0A0Tzm+EHO2","data":"P74iKvqtwurbuhQU+UOTB8fU4pr4n4G0z1fIgcKV1gxAhlHwlsEHxDJtBZ+KXt0eRB/kNaKeCTRloyRUWjEb5OHB0wN5tqlapu3rRebFlP4nwKdTKEXTm6NLPb5kU28NyfFIVXq+LN61HpfwkOxBLnsquwt1Lj47dRqzlhI8fTYJzIYcAKM="},{"h":"b5","salt":"4ywwOzYwDY9auj2MOInZzQ==","iv":"HVNLfYcgbWZazI0S","data":"vmd/10nyTagv00juLv2we5RsGA/HhBe5iSyxwChURR0wH6lQEVozLkjcXOLerX8mY+Obsrl62RCqT5rYTkFI1lCpE4+BqzOUxb/HVOVnU0ZB8hh68FdZBlJaVWvGywjV4M4YnsILb9T5ng3sEVmjzQaJbDkfpAIvyhYZ4zGyLENlbSuQkHA="},{"h":"bb","salt":"Vk7NUATmqv4DWFd66XMQXQ==","iv":"gg5d30501Z61Vc01","data":"gkN1M67E6wz5X4QNXOMfWEUB6oSLMznknDzyPTTR2P3x4HgKIsMACGCFPB91VDuZeg2F5UeidozUUrdnOPJqidNK0wGiep8E8ytUzEZ49BN4LaAXvCg2cgHmIs1kmOP4BR8ymTo3BI03gNaOOpM3cIBDE3192vjSQurk9e9RFXgPY0glRxs="},{"h":"be","salt":"Z9LC2+zL+tp3VMo1mcO+Yg==","iv":"55K7lZqkzwhdhOFz","data":"cHxN/O8JaD8ezpLwihVXK0kv4DyXDldUaLuxvw5y3nTWq8k2Temc2xZ7kz8HMGj7U0MMvHXBe+opzVtfPfrZq9UpxVQ0nYiFGeCVzLcivrdl0bmlLnNwZyiO8RdHDfEUbzVTmfXOzyX7XCc2rqeuD6fV/N5q1Meyghd4QTFbW3Rj7MmbOp8="},{"h":"c5","salt":"HPan8ftED31cjZ+dZPZn0A==","iv":"qTR2XSKYRoOnvjI9","data":"go10+la84w1WFV5WX9S/5Nr/vTfCBWZY1Tiabr82nrsd3nFnH6QPWk1OOBDPTL1Fa07IzmYFg6nAbCZttxnZAr7ZFHGSNWuY3Y6RteWUxwNV0rEkv7IhJC2TOzhtWLBROIlPgtv0YhBkkmVid0+2kuGW63OVhkAuGiYOjrOyby+1jpbhpYg="},{"h":"c6","salt":"c6ULn3FbCmfaO9hF9T6BPw==","iv":"C4qWZj0h2LOEtDSC","data":"oM7M3YB3iDf/+CHYZwJKI3uaBn2d73FLtDPhTpvudc5Me/TUItHAOGyaQIXfM56PG8rABLDc6xsiLeMf5gp9wIOXg0mJUKnskLcowbVUCTPR697pdu9bsh7sTZ/iw9He53oIyJ1dPwvy/VrNWniK2q8M39qG1wBrrjmZL+27FNLM+6kMDIM="},{"h":"c9","salt":"3ldRm0vJ66kzLnAVjKC06A==","iv":"xfX35/g265V64hko","data":"tt0ShsJtbciiBlz184YFMJCHGOSI9srf29b/TsIHw0eL0U35wbvVT8gWHAq0FjbGoCenBuxnAWa/wzt95KCWNFQ8hI5Rh4iJovfo7pnP+C+WWGsZMle1SKz6jt22owkwU+HO6hybWXWKDuiF+Yn/ztXxEcGJaK+usf+fo27fiZ30j/BMZio="},{"h":"cb","salt":"9uPHlahhCM4oD7u5jMbisw==","iv":"6T6BABR/ULixrEV6","data":"AuvFLNuL6e5CNzBc0s3hLYwR2F9EMhJHOL57BoBWIrDUNB4qvl8XHvYuCz0KkYo0PTBcomlEaHPv3forlT7pQyTE6DeiV+huR+j10Q5ZK5r/pFGN9JTD4zdHz2XlaMpJAZjbec9IY7gIXRl5vdYyM3S6/wpYMCdHqtyIM9b/Mz3p5FCl/10="},{"h":"cd","salt":"IRBj8klDoTRc/cobQW/P4w==","iv":"JXb/a2xfGvDnYXvO","data":"YJXm7eIVkbUhXHS1QPGy8TP5bCSSB2RoKOtnIyD/XNzVlV8bw51q3cZ7wnLZwloQZP5xk/Qs7QbRiWLVrQHQ2ZWpoHOa+Q5OZLARtOeybI1gRzJsYZElKQzYpyZ5G2gkidTB4/u8+S9mCsw+ZYhpS8BviRWdnuuQYd7TH8ZcOLr8CwKfApg="},{"h":"d6","salt":"GVrHrs47ga1ORbrq6bd4fA==","iv":"trpN5LV9q0x6ZvpU","data":"bcfh4AJgSav03KgP5RBTM4NekE65Ng8m4mhTFMP3jcTByz7WdvDHI1c0WMneZ64WHkcMrV/gw+O3r3esfHxvO6VBehKg9HIV0SkMsFarbmFULqaMn8A799xVb1IfYKxSWX4FGQ5MNaxpE32FhRg9TXqA1ctl8S4SRnzyhNDuUIRMKf3I0ZY="},{"h":"da","salt":"kl6+QUqO3FripbCAjk+OUQ==","iv":"cOyN17Pn2XrbA4yh","data":"7WLl7iRk/SXrnFTo0eCgkHNxhlbwEQHNw7bkjFpvytH8wmZ85ekg1l9/MvLyXApE90ZkZx7QRWefgT8XIHZLoxCi7J1n40hT010deFZtZ4cTvy/dVn4vAeRFtZrPONgvJaLoqQP60zZXhfWYLT2+US+E+ruqFQ+kdrLAx5xF2o7oUamXDVo="},{"h":"ed","salt":"+le7GZTKndL+b0lpfWfR0Q==","iv":"ZwXB96k8i5vRZMfm","data":"X7P4krThaMAgacq0OvV1Airr3F6FEnn4+rPpgbjcLIAFKklAdYNZK5AcLVy4D9Z47Sg7tdZEitvc5DO4HUcuwEtYc4UH8NViH2goXbXw04vaAXP0cJ326cJdo/zi+ZAPw+FpvIpoUtauQzvlpROGtzh3f6C7h4M32xg1x+VQQ11qE8z7WVI="},{"h":"ee","salt":"nmpzbYqiSRJumUG+yJaZWg==","iv":"isaOt+njnG/Ykiip","data":"fOtMCuhMP0juKgpO0/ldurvG2hXa3ap7o3iQZdEA6qGeCepY9w5RxuCdOSXBBtzu5u0TKfZmc0WGwdJwYhHl4nDod1OwfG4Va3S/KFq3WFOgHewnmlzsiW4knOqjYIEaXDYFsLp+nKgcf8XNUpM+qOI/TdjcvD+mPW8dnFA3jz/ndRqAGXA="},{"h":"ef","salt":"xD97/Q5LQMFbXw+OxMLV4g==","iv":"ylBdwhPEUl00rw+N","data":"U2PKJe6yNwavUYitfJDhw0cbGN51P8ULdxyeTpW3TMg/OZGCnsjJteIzKjj+QPnbc47C+HOHKA5AqyY/IA3dQabmyLx1i4m70TNa6mbtbP/hU9+YROStwJC8HJP9ZtJelE3yPSd9xJ1YY+/kaswzGnCPVKN+NglF6qpR/iLqNMFgLSXLoIo="},{"h":"fb","salt":"X+aNz+WFjgWZ13w/TZ7hIg==","iv":"3C14oVmN3DtBe8hv","data":"t95waSiPoaY8qbiA9VKakgHqMuFw1qbenLWhkjyDz6Wr+G8sU6L40dAY6uONsFFDO5jB/tsi7P1ImPxqIhjjQSOWKRqVjIRXEXWfCdfZrMk4amWuZarJzcHLQXwVtE3YSSe2WLeDRwBzUC/1HLARD9SqePU0YFEZGnsrsIWUaUqe6zBDb2Q="},{"h":"ff","salt":"SuHuyXiZUlWiC7NlWVP8tg==","iv":"iEIIZLIRc9I058f5","data":"tCxyIK9+tGUAIH14DsUiQKUBeRJoTl9eU95T1UeM+ZLkAKib0LTIYc5sK2U1CAPnY8BPLmPZ9TXcqkNW3BzlEdl1SQiyIthbLgiTiExSQjkq2c3qWv6NGB7BuJk34Oa9pGmcfSvstz6wrM3C6bLrygB3fgm5IXqjk68x5LXX1tMTJGIWsCg="}];
+  // The pay box is folded; open it for #order links (FAQ, old emails with #order).
+  (function () {
+    const box = document.getElementById("order");
+    const open = () => { box.open = true; };
+    if (location.hash === "#order") open();
+    window.addEventListener("hashchange", () => { if (location.hash === "#order") open(); });
+    document.querySelectorAll("[data-open-order]").forEach((a) => a.addEventListener("click", open));
+  })();
   (function () {
     const form = document.getElementById("order-unlock");
     const msg = document.getElementById("order-msg");
