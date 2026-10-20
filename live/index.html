@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Make your card live | Torres Tech Remote</title>
+<!-- "Make it live" link sent with each preview: torrestechremote.com/live#CODE. Forwards to the
+     cards page with the customer's unlock code (kept after the #, so it never reaches server logs).
+     Visits show up as /live/ in Cloudflare Web Analytics (Path). -->
+<noscript><meta http-equiv="refresh" content="0; url=/digital-business-cards.html#order"/></noscript>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:#0f172a;color:#e8ebf3;text-align:center;padding:24px}a{color:#fff;font-weight:600}</style>
+</head>
+<body>
+<p>Opening your payment page&hellip;<br><br><a id="go" href="/digital-business-cards.html#order">Tap here if nothing happens</a></p>
+<script>
+  var code = location.hash.replace(/^#/, "").replace(/[^A-Za-z2-9]/g, "").toUpperCase();
+  var url = "/digital-business-cards.html" + (code.length === 6 ? "#pay=" + code : "#order");
+  document.getElementById("go").href = url;
+  setTimeout(function () { location.replace(url); }, 700);
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c60da00970ce404fbd115d07cfea6c99"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

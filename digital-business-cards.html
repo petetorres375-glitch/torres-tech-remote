@@ -144,7 +144,7 @@
   .install { margin-top: 24px; display: grid; gap: 28px; background: var(--plum-tint); border: 1px solid var(--plum-border); border-radius: 20px; padding: 34px; }
   .install h3 { font-size: 26px; color: var(--navy); margin-bottom: 8px; }
   .install > div > p { color: var(--muted); font-size: 16px; max-width: 640px; }
-  #install, #save-contact { scroll-margin-top: 84px; }
+  #install, #save-contact, #order { scroll-margin-top: 84px; }
   .os-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   /* Android | iPhone switch: with JS only the picked phone shows (both show without JS). */
   .os-pick { display: none; margin-top: 18px; padding: 4px; gap: 4px; background: var(--white); border: 1px solid var(--plum-border); border-radius: 999px; }
@@ -593,7 +593,7 @@
     <details class="order" id="order">
       <summary>Already approved your preview? Pay here</summary>
       <div class="order-body">
-          <p>Enter the unlock code we sent you with your preview. Use the same name, business name and phone you gave us. No preview yet? <a href="/go/whatsapp.html" target="_blank" rel="noopener nofollow">Ask for one first</a>, it&rsquo;s free.</p>
+          <p id="order-intro">Enter the unlock code we sent you with your preview. Use the same name, business name and phone you gave us. No preview yet? <a href="/go/whatsapp.html" target="_blank" rel="noopener nofollow">Ask for one first</a>, it&rsquo;s free.</p>
           <form class="order-unlock" id="order-unlock">
             <label for="order-code">Unlock code</label>
             <div class="unlock-row">
@@ -603,9 +603,10 @@
             <p class="order-msg" id="order-msg" role="status" aria-live="polite"></p>
           </form>
           <noscript><p>No code box? <a href="mailto:pedro_torres@torrestechremote.com">Email us</a> for your payment link.</p></noscript>
+          <p class="order-msg ok" id="order-ready" hidden>Your preview is ready to go live. At checkout, use the same name, business name and phone you gave us. Pick a plan:</p>
           <div id="order-pay" hidden>
-            <a id="order-monthly" target="_blank" rel="noopener" class="btn btn-plum">Monthly: $10/mo</a>
-            <a id="order-yearly" target="_blank" rel="noopener" class="btn btn-plum">Yearly: $100/yr</a>
+            <a id="order-monthly" target="_blank" rel="noopener" class="btn btn-plum">Make it live: $10/month</a>
+            <a id="order-yearly" target="_blank" rel="noopener" class="btn btn-plum">Make it live: $100/year</a>
           </div>
         <p class="fine">Card accepted online and in person. Cash in person for yearly plans. In-person service in the Ironbound, Newark NJ; online orders available in the US and its territories, and to US citizens abroad paying with a US card or bank account. See the <a href="tos.html">Terms</a>.</p>
       </div>
@@ -803,15 +804,17 @@
       }
       throw new Error("no match");
     }
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const code = form.code.value.toUpperCase().replace(/\s+/g, "");
+    // client_reference_id tells Pedro in Stripe which customer's code paid.
+    const withRef = (url, code) => url + (url.includes("?") ? "&" : "?") + "client_reference_id=" + code;
+    async function tryCode(code) {
       msg.className = "order-msg"; msg.textContent = "Checking…";
       try {
         const links = await unlock(code);
-        document.getElementById("order-monthly").href = links.monthly;
-        document.getElementById("order-yearly").href = links.yearly;
+        document.getElementById("order-monthly").href = withRef(links.monthly, code);
+        document.getElementById("order-yearly").href = withRef(links.yearly, code);
         document.getElementById("order-pay").hidden = false;
+        document.getElementById("order-ready").hidden = false;
+        document.getElementById("order-intro").hidden = true;
         form.hidden = true;
       } catch (err) {
         msg.className = "order-msg bad";
@@ -819,7 +822,21 @@
           ? "That code doesn’t match. Check the code we sent with your preview."
           : "This browser can’t unlock the links. Email us for your payment link.";
       }
+    }
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      tryCode(form.code.value.toUpperCase().replace(/\s+/g, ""));
     });
+    // "Make it live" link sent with the preview: torrestechremote.com/live#CODE lands here as #pay=CODE
+    // (after the #, so the code never reaches server logs or analytics).
+    const linked = location.hash.match(/^#pay=([A-Za-z2-9]{6})$/);
+    if (linked) {
+      const order = document.getElementById("order");
+      order.open = true;
+      form.code.value = linked[1].toUpperCase();
+      order.scrollIntoView();
+      tryCode(form.code.value);
+    }
   })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c60da00970ce404fbd115d07cfea6c99"}'></script><!-- End Cloudflare Web Analytics -->
