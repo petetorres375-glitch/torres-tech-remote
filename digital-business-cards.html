@@ -138,6 +138,22 @@
   .ico svg { width: 22px; height: 22px; fill: none; stroke: var(--plum); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .feat h3 { font-size: 20px; color: var(--navy); margin-bottom: 6px; }
   .feat p { color: var(--muted); font-size: 15.5px; }
+  .feat a { color: var(--plum); font-weight: 600; }
+
+  /* Install like an app: Android and iPhone steps side by side */
+  .install { margin-top: 44px; display: grid; gap: 28px; background: var(--plum-tint); border: 1px solid var(--plum-border); border-radius: 20px; padding: 34px; }
+  .install h3 { font-size: 26px; color: var(--navy); margin-bottom: 8px; }
+  .install > div > p { color: var(--muted); font-size: 16px; max-width: 640px; }
+  #install { scroll-margin-top: 84px; }
+  .os-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  /* Short silent clip of each phone, in a phone frame like the hero. */
+  .os-video { display: block; width: 100%; max-width: 230px; margin: 0 auto 18px; border-radius: 30px; background: #05080f; padding: 7px; box-shadow: 0 16px 40px rgba(15,23,42,.25); }
+  .os-video video { display: block; width: 100%; height: auto; aspect-ratio: 540 / 1168; border-radius: 24px; background: var(--white); cursor: pointer; }
+  .os { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 20px; min-width: 0; }
+  .os h4 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-family: var(--display); font-size: 18px; color: var(--navy); }
+  .os h4 svg { width: 20px; height: 20px; flex: none; }
+  .os ol { margin: 0; padding-left: 20px; color: var(--muted); font-size: 15px; display: grid; gap: 4px; }
+  .os ol b { color: var(--ink); font-weight: 600; }
 
   /* Languages */
   .lang-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
@@ -242,6 +258,12 @@
     .meet .cta-row { justify-content: center; }
     .brand { font-size: 16px; }
     .features, .foot { grid-template-columns: 1fr; }
+    .install { padding: 24px 16px; }
+    .os-grid { gap: 10px; }
+    .os { padding: 12px; }
+    .os-video { border-radius: 22px; padding: 5px; }
+    .os-video video { border-radius: 18px; }
+    .os ol { font-size: 14px; padding-left: 18px; }
     .cta-row .btn { width: 100%; }
     .pbox, .order { padding: 24px; }
     .big { font-size: 50px; }
@@ -391,8 +413,35 @@
       <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div><h3>One-tap buttons</h3><p>Call, text, WhatsApp, email, directions and website buttons.</p></div>
       <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Your business details</h3><p>Hours, services and prices, photos, payment links.</p></div>
       <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></svg></div><h3>Easy to share</h3><p>QR code, Share and Save contact.</p></div>
-      <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></svg></div><h3>Like an app</h3><p>Installs on customers&rsquo; phones like an app, no app store.</p></div>
+      <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></svg></div><h3>Like an app</h3><p>Installs like an app on iPhone and Android, no app store. <a href="#install">See how</a>.</p></div>
       <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>A QR code that lasts</h3><p>Your QR code never changes, so printed codes keep working.</p></div>
+    </div>
+    <div class="install" id="install">
+      <div>
+        <p class="kicker">Works like an app</p>
+        <h3>Your card on their home screen.</h3>
+        <p>Customers save your card to their phone in a few taps. It gets its own icon, opens full screen like an app, and still opens without internet. No app store and no download. Watch how on Android and iPhone:</p>
+      </div>
+      <div class="os-grid">
+        <div class="os">
+          <h4><svg viewBox="0 0 24 24" fill="#3ddc84" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22a11.4 11.4 0 0 0-9.84 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>Android</h4>
+          <div class="os-video"><video src="video/install-android.mp4" poster="video/install-android.webp" width="540" height="1168" muted loop playsinline preload="none" aria-label="Video: on an Android phone, open the card in Chrome, tap Add to home screen, tap Install, and the card's icon appears on the home screen"></video></div>
+          <ol>
+            <li>Open the card in <b>Chrome</b>.</li>
+            <li>Tap <b>Add to home screen</b> on the card.</li>
+            <li>Tap <b>Install</b>.</li>
+          </ol>
+        </div>
+        <div class="os">
+          <h4><svg viewBox="0 0 24 24" fill="#141a2b" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46a4.2 4.2 0 0 0-3.3-1.8c-1.4-.14-2.74.83-3.45.83-.72 0-1.8-.81-2.97-.79A4.4 4.4 0 0 0 4.9 9.64c-1.6 2.77-.41 6.86 1.14 9.1.76 1.1 1.66 2.33 2.84 2.29 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.97.71 1.23-.02 2-1.11 2.75-2.22a9.7 9.7 0 0 0 1.25-2.57 3.97 3.97 0 0 1-2.43-3.61zM14.1 5.86A4 4 0 0 0 15.04 3a4.1 4.1 0 0 0-2.67 1.38 3.8 3.8 0 0 0-.96 2.77 3.4 3.4 0 0 0 2.69-1.29z"/></svg>iPhone</h4>
+          <div class="os-video"><video src="video/install-ios.mp4" poster="video/install-ios.webp" width="540" height="1168" muted loop playsinline preload="none" aria-label="Video: on an iPhone, open the card in Safari, tap Share, tap Add to Home Screen, tap Add, and the card's icon appears on the home screen"></video></div>
+          <ol>
+            <li>Open the card in <b>Safari</b> (iPhone or iPad).</li>
+            <li>Tap <b>Share</b> (the square with an arrow).</li>
+            <li>Tap <b>Add to Home Screen</b>, then <b>Add</b>.</li>
+          </ol>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -483,7 +532,7 @@
           <li>Hours, services and prices, photos, payment links</li>
           <li>QR code, Share and Save contact</li>
           <li>Up to 3 of 25 languages</li>
-          <li>Installs on customers&rsquo; phones like an app, no app store</li>
+          <li>Installs like an app on iPhone and Android, no app store</li>
           <li><b>Up to 3 free previews before you pay</b></li>
         </ul>
       </div>
@@ -539,7 +588,7 @@
       </details>
       <details>
         <summary>Do my customers need to download an app?</summary>
-        <div class="faq-answer">No. The card opens from its link or QR code, and installs on customers&rsquo; phones like an app, no app store.</div>
+        <div class="faq-answer">No. The card opens from its link or QR code. Customers can also save it to their home screen like an app, no app store. On Android, open it in Chrome and tap <b>Add to home screen</b>, then <b>Install</b>. On iPhone or iPad, open it in Safari, tap <b>Share</b>, then <b>Add to Home Screen</b>. <a href="#install">See the steps</a>.</div>
       </details>
       <details>
         <summary>Can customers book, order or get a quote from my card?</summary>
@@ -616,6 +665,25 @@
     if (location.hash === "#order") open();
     window.addEventListener("hashchange", () => { if (location.hash === "#order") open(); });
     document.querySelectorAll("[data-open-order]").forEach((a) => a.addEventListener("click", open));
+  })();
+  // Install videos: play only while on screen, tap to pause. Reduced motion: controls, no autoplay.
+  (function () {
+    const vids = document.querySelectorAll(".os-video video");
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+      vids.forEach((v) => { v.controls = true; v.preload = "metadata"; });
+      return;
+    }
+    const paused = new WeakSet();
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting && !paused.has(e.target)) e.target.play().catch(() => {});
+      else e.target.pause();
+    }), { threshold: 0.4 });
+    vids.forEach((v) => {
+      io.observe(v);
+      v.addEventListener("click", () => {
+        if (v.paused) { paused.delete(v); v.play().catch(() => {}); } else { paused.add(v); v.pause(); }
+      });
+    });
   })();
   (function () {
     const form = document.getElementById("order-unlock");
