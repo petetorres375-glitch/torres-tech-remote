@@ -715,6 +715,51 @@
       document.querySelectorAll(".os[data-os]").forEach((el) => { el.hidden = el.dataset.os !== os; });
       document.querySelectorAll("[data-pick]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.pick === os)));
     };
+    // Phone language: Spanish and Portuguese (Brazil or Portugal) phones get videos and steps in their language.
+    const STEPS = {
+      es: {
+        install: {
+          android: ["Abra la tarjeta en <b>Chrome</b>.", "Toque <b>Añadir a pantalla de inicio</b> en la tarjeta.", "Toque <b>Instalar</b>."],
+          ios: ["Abra la tarjeta en <b>Safari</b> (iPhone o iPad).", "Toque <b>Compartir</b> (el cuadrado con una flecha).", "Toque <b>Añadir a pantalla de inicio</b> y luego <b>Añadir</b>."],
+        },
+        contact: {
+          android: ["Toque <b>Guardar contacto</b> en la tarjeta.", "Se descarga. Toque <b>Abrir</b>.", "Toque <b>Importar</b> (algunos teléfonos dicen <b>Guardar</b>)."],
+          ios: ["Toque <b>Guardar contacto</b> en la tarjeta.", "Se abre el contacto. Toque <b>&#10003;</b> arriba a la izquierda."],
+        },
+      },
+      pt: {
+        install: {
+          android: ["Abra o cartão no <b>Chrome</b>.", "Toque em <b>Adicionar à tela inicial</b> no cartão.", "Toque em <b>Instalar</b>."],
+          ios: ["Abra o cartão no <b>Safari</b> (iPhone ou iPad).", "Toque em <b>Compartilhar</b> (o quadrado com uma seta).", "Toque em <b>Adicionar à Tela de Início</b> e depois em <b>Adicionar</b>."],
+        },
+        contact: {
+          android: ["Toque em <b>Salvar contato</b> no cartão.", "Ele é baixado. Toque em <b>Abrir</b>.", "Toque em <b>Importar</b> (alguns celulares dizem <b>Salvar</b>)."],
+          ios: ["Toque em <b>Salvar contato</b> no cartão.", "O contato abre. Toque em <b>&#10003;</b> no canto superior esquerdo."],
+        },
+      },
+      "pt-PT": {
+        install: {
+          android: ["Abra o cartão no <b>Chrome</b>.", "Toque em <b>Adicionar ao ecrã principal</b> no cartão.", "Toque em <b>Instalar</b>."],
+          ios: ["Abra o cartão no <b>Safari</b> (iPhone ou iPad).", "Toque em <b>Partilhar</b> (o quadrado com uma seta).", "Toque em <b>Adicionar ao ecrã principal</b> e depois em <b>Adicionar</b>."],
+        },
+        contact: {
+          android: ["Toque em <b>Guardar contacto</b> no cartão.", "É transferido. Toque em <b>Abrir</b>.", "Toque em <b>Importar</b> (alguns telemóveis dizem <b>Guardar</b>)."],
+          ios: ["Toque em <b>Guardar contacto</b> no cartão.", "O contacto abre. Toque em <b>&#10003;</b> no canto superior esquerdo."],
+        },
+      },
+    };
+    const lang = ((navigator.languages || [navigator.language]).map((l) => (l || "").toLowerCase())
+      .map((l) => l === "pt-pt" ? "pt-PT" : l.slice(0, 2)).find((l) => ["en", "es", "pt", "pt-PT"].includes(l))) || "en";
+    if (STEPS[lang]) {
+      document.querySelectorAll(".os[data-os]").forEach((el) => {
+        const clip = el.closest(".install").id === "install" ? "install" : "contact";
+        const v = el.querySelector("video"), name = `video/${clip}-${el.dataset.os}-${lang}`;
+        v.src = name + ".mp4"; v.poster = name + ".webp";
+        const ol = el.querySelector("ol");
+        ol.lang = lang;
+        ol.innerHTML = STEPS[lang][clip][el.dataset.os].map((li) => `<li>${li}</li>`).join("");
+      });
+    }
     document.documentElement.classList.add("js-os");
     pick(ios ? "ios" : "android");
     document.querySelectorAll("[data-pick]").forEach((b) => b.addEventListener("click", () => pick(b.dataset.pick)));
