@@ -146,6 +146,16 @@
   .install > div > p { color: var(--muted); font-size: 16px; max-width: 640px; }
   #install, #save-contact { scroll-margin-top: 84px; }
   .os-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  /* Android | iPhone switch: with JS only the picked phone shows (both show without JS). */
+  .os-pick { display: none; margin-top: 18px; padding: 4px; gap: 4px; background: var(--white); border: 1px solid var(--plum-border); border-radius: 999px; }
+  .os-pick button { display: inline-flex; align-items: center; gap: 7px; border: 0; background: transparent; padding: 9px 20px; border-radius: 999px; font: 600 15px var(--body); color: var(--muted); cursor: pointer; }
+  .os-pick button svg { width: 18px; height: 18px; }
+  .os-pick button[aria-pressed="true"] { background: var(--plum); color: var(--white); }
+  .os-pick button[aria-pressed="true"] svg { fill: currentColor; }
+  .js-os .os-pick { display: inline-flex; }
+  .js-os .install { grid-template-columns: 1fr minmax(0, 340px); align-items: center; gap: 40px; }
+  .js-os .os-grid { grid-template-columns: 1fr; }
+  .js-os .os h4 { display: none; }
   /* Short silent clip of each phone, in a phone frame like the hero. */
   .os-video { display: block; width: 100%; max-width: 230px; margin: 0 auto 18px; border-radius: 30px; background: #05080f; padding: 7px; box-shadow: 0 16px 40px rgba(15,23,42,.25); }
   .os-video video { display: block; width: 100%; height: auto; aspect-ratio: 540 / 1168; border-radius: 24px; background: var(--white); cursor: pointer; }
@@ -248,6 +258,8 @@
     .foot { grid-template-columns: 1fr 1fr; }
     section { padding-block: 72px; }
     .lang-grid { gap: 28px; }
+    .js-os .install { grid-template-columns: 1fr; gap: 22px; }
+    .js-os .os-grid { max-width: 340px; margin: 0 auto; width: 100%; }
   }
   @media (max-width: 600px) {
     .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
@@ -259,6 +271,8 @@
     .brand { font-size: 16px; }
     .features, .foot { grid-template-columns: 1fr; }
     .install { padding: 24px 16px; }
+    .js-os .os-pick { display: flex; }
+    .js-os .os-pick button { flex: 1; justify-content: center; }
     .os-grid { gap: 10px; }
     .os { padding: 12px; }
     .os-video { border-radius: 22px; padding: 5px; }
@@ -420,10 +434,11 @@
       <div>
         <p class="kicker">Works like an app</p>
         <h3>Your card on their home screen.</h3>
-        <p>Customers save your card to their phone in a few taps. It gets its own icon, opens full screen like an app, and still opens without internet. No app store and no download. Watch how on Android and iPhone:</p>
+        <p>Customers save your card to their phone in a few taps. It gets its own icon, opens full screen like an app, and still opens without internet. No app store and no download. Pick your phone to watch how:</p>
+        <div class="os-pick" role="group" aria-label="Pick your phone"><button type="button" data-pick="android" aria-pressed="false"><svg viewBox="0 0 24 24" fill="#3ddc84" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22a11.4 11.4 0 0 0-9.84 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>Android</button><button type="button" data-pick="ios" aria-pressed="false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46a4.2 4.2 0 0 0-3.3-1.8c-1.4-.14-2.74.83-3.45.83-.72 0-1.8-.81-2.97-.79A4.4 4.4 0 0 0 4.9 9.64c-1.6 2.77-.41 6.86 1.14 9.1.76 1.1 1.66 2.33 2.84 2.29 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.97.71 1.23-.02 2-1.11 2.75-2.22a9.7 9.7 0 0 0 1.25-2.57 3.97 3.97 0 0 1-2.43-3.61zM14.1 5.86A4 4 0 0 0 15.04 3a4.1 4.1 0 0 0-2.67 1.38 3.8 3.8 0 0 0-.96 2.77 3.4 3.4 0 0 0 2.69-1.29z"/></svg>iPhone</button></div>
       </div>
       <div class="os-grid">
-        <div class="os">
+        <div class="os" data-os="android">
           <h4><svg viewBox="0 0 24 24" fill="#3ddc84" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22a11.4 11.4 0 0 0-9.84 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>Android</h4>
           <div class="os-video"><video src="video/install-android.mp4" poster="video/install-android.webp" width="540" height="1168" muted loop playsinline preload="none" aria-label="Video: on an Android phone, open the card in Chrome, tap Add to home screen, tap Install, and the card's icon appears on the home screen"></video></div>
           <ol>
@@ -432,7 +447,7 @@
             <li>Tap <b>Install</b>.</li>
           </ol>
         </div>
-        <div class="os">
+        <div class="os" data-os="ios">
           <h4><svg viewBox="0 0 24 24" fill="#141a2b" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46a4.2 4.2 0 0 0-3.3-1.8c-1.4-.14-2.74.83-3.45.83-.72 0-1.8-.81-2.97-.79A4.4 4.4 0 0 0 4.9 9.64c-1.6 2.77-.41 6.86 1.14 9.1.76 1.1 1.66 2.33 2.84 2.29 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.97.71 1.23-.02 2-1.11 2.75-2.22a9.7 9.7 0 0 0 1.25-2.57 3.97 3.97 0 0 1-2.43-3.61zM14.1 5.86A4 4 0 0 0 15.04 3a4.1 4.1 0 0 0-2.67 1.38 3.8 3.8 0 0 0-.96 2.77 3.4 3.4 0 0 0 2.69-1.29z"/></svg>iPhone</h4>
           <div class="os-video"><video src="video/install-ios.mp4" poster="video/install-ios.webp" width="540" height="1168" muted loop playsinline preload="none" aria-label="Video: on an iPhone, open the card in Safari, tap Share, tap Add to Home Screen, tap Add, and the card's icon appears on the home screen"></video></div>
           <ol>
@@ -447,10 +462,11 @@
       <div>
         <p class="kicker">Saved in their contacts</p>
         <h3>In their contacts in seconds.</h3>
-        <p>&ldquo;Save contact&rdquo; adds your business to their contacts with your logo, phone, email, address and website, so they can find you and call you later. Watch how on Android and iPhone:</p>
+        <p>&ldquo;Save contact&rdquo; adds your business to their contacts with your logo, phone, email, address and website, so they can find you and call you later. Pick your phone to watch how:</p>
+        <div class="os-pick" role="group" aria-label="Pick your phone"><button type="button" data-pick="android" aria-pressed="false"><svg viewBox="0 0 24 24" fill="#3ddc84" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22a11.4 11.4 0 0 0-9.84 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>Android</button><button type="button" data-pick="ios" aria-pressed="false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46a4.2 4.2 0 0 0-3.3-1.8c-1.4-.14-2.74.83-3.45.83-.72 0-1.8-.81-2.97-.79A4.4 4.4 0 0 0 4.9 9.64c-1.6 2.77-.41 6.86 1.14 9.1.76 1.1 1.66 2.33 2.84 2.29 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.97.71 1.23-.02 2-1.11 2.75-2.22a9.7 9.7 0 0 0 1.25-2.57 3.97 3.97 0 0 1-2.43-3.61zM14.1 5.86A4 4 0 0 0 15.04 3a4.1 4.1 0 0 0-2.67 1.38 3.8 3.8 0 0 0-.96 2.77 3.4 3.4 0 0 0 2.69-1.29z"/></svg>iPhone</button></div>
       </div>
       <div class="os-grid">
-        <div class="os">
+        <div class="os" data-os="android">
           <h4><svg viewBox="0 0 24 24" fill="#3ddc84" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22a11.4 11.4 0 0 0-9.84 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>Android</h4>
           <div class="os-video"><video src="video/contact-android.mp4" poster="video/contact-android.webp" width="540" height="1168" muted loop playsinline preload="none" aria-label="Video: on an Android phone, tap Save contact on the card, it downloads, tap Open, then tap Import, and the business is in the phone's contacts"></video></div>
           <ol>
@@ -459,7 +475,7 @@
             <li>Tap <b>Import</b> (some phones say <b>Save</b>).</li>
           </ol>
         </div>
-        <div class="os">
+        <div class="os" data-os="ios">
           <h4><svg viewBox="0 0 24 24" fill="#141a2b" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46a4.2 4.2 0 0 0-3.3-1.8c-1.4-.14-2.74.83-3.45.83-.72 0-1.8-.81-2.97-.79A4.4 4.4 0 0 0 4.9 9.64c-1.6 2.77-.41 6.86 1.14 9.1.76 1.1 1.66 2.33 2.84 2.29 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.97.71 1.23-.02 2-1.11 2.75-2.22a9.7 9.7 0 0 0 1.25-2.57 3.97 3.97 0 0 1-2.43-3.61zM14.1 5.86A4 4 0 0 0 15.04 3a4.1 4.1 0 0 0-2.67 1.38 3.8 3.8 0 0 0-.96 2.77 3.4 3.4 0 0 0 2.69-1.29z"/></svg>iPhone</h4>
           <div class="os-video"><video src="video/contact-ios.mp4" poster="video/contact-ios.webp" width="540" height="1168" muted loop playsinline preload="none" aria-label="Video: on an iPhone, tap Save contact on the card, the contact opens, tap the check mark at the top left, and the business is in the phone's contacts"></video></div>
           <ol>
@@ -691,6 +707,17 @@
     if (location.hash === "#order") open();
     window.addEventListener("hashchange", () => { if (location.hash === "#order") open(); });
     document.querySelectorAll("[data-open-order]").forEach((a) => a.addEventListener("click", open));
+  })();
+  // Android | iPhone switch for both how-to sections: guess the visitor's phone, one choice drives both.
+  (function () {
+    const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const pick = (os) => {
+      document.querySelectorAll(".os[data-os]").forEach((el) => { el.hidden = el.dataset.os !== os; });
+      document.querySelectorAll("[data-pick]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.pick === os)));
+    };
+    document.documentElement.classList.add("js-os");
+    pick(ios ? "ios" : "android");
+    document.querySelectorAll("[data-pick]").forEach((b) => b.addEventListener("click", () => pick(b.dataset.pick)));
   })();
   // Install and Save contact videos: play only while on screen, tap to pause. Reduced motion: controls, no autoplay.
   (function () {
