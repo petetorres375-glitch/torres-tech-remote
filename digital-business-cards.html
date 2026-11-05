@@ -128,6 +128,21 @@ h2 { margin-bottom: 15px; color: var(--navy); font-size: clamp(34px,4vw,48px); f
 .feat p { color: #66727f; font-size: 15px; line-height: 1.65; }
 .feat a { color: var(--navy); text-decoration: underline; text-decoration-color: #aeb9c4; text-underline-offset: 3px; font-weight: 600; }
 
+
+/* Real clients */
+.clients { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px; max-width: 760px; margin: 0 auto; }
+.client { text-align: center; }
+.client a.shot { display: block; }
+.client img { display: block; width: 100%; max-width: 300px; height: auto; margin: 0 auto 18px; border: 1px solid var(--line-dark); border-radius: 18px; }
+.client h3 { margin-bottom: 4px; color: var(--navy); font-size: 21px; font-weight: 600; }
+.client p { margin: 0 0 10px; color: #66727f; font-size: 15px; line-height: 1.55; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 340px; margin: 0 auto 14px; padding: 0; list-style: none; }
+.chips li { padding: 5px 11px; background: #fff; border: 1px solid var(--line-dark); border-radius: 999px; color: #66727f; font-size: 12.5px; line-height: 1.35; }
+.chips b { color: var(--navy); font-weight: 600; }
+.client p.btns { max-width: 330px; margin: 0 auto 12px; font-size: 14px; line-height: 1.55; }
+.client a.try { color: var(--navy); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) { .clients { grid-template-columns: 1fr; gap: 34px; } }
+
 /* Demonstrations */
 .install { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); align-items: center; gap: 40px; margin-top: 24px; padding: 34px 0; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); background: transparent; border-radius: 0; }
 .install h3 { margin-bottom: 10px; color: var(--navy); font-size: 30px; font-weight: 600; }
@@ -556,6 +571,29 @@ footer .logo { border: 1px solid #69788a; }
 <li>The contact opens. Tap <b>✓</b> at the top left.</li>
 </ol>
 </div>
+</div>
+</div>
+</div>
+</section><section id="clients">
+<div class="wrap">
+<div class="head">
+<p class="kicker">Real clients</p>
+<h2>Cards already in use.</h2>
+<p>These are screenshots. On the real card, every button works when you tap it.</p>
+</div>
+<div class="clients">
+<div class="client">
+<a class="shot" href="https://cards.torrestechremote.com/keon-torres/" rel="noopener" target="_blank"><img alt="Keon Torres digital business card" height="530" loading="lazy" src="img/showcase-keon-night.webp" width="300"/></a>
+<h3>Keon Torres</h3>
+<p>English &amp; Acting Coach / Instructor<br/>Vietnam &amp; Japan</p>
+<ul class="chips"><li><b>Message on LINE</b> opens a chat</li><li><b>Email</b> writes to him</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li><li><b>QR code</b> scan to open</li><li><b>Add to home screen</b> installs like an app</li></ul>
+<a class="try" href="https://cards.torrestechremote.com/keon-torres/" rel="noopener" target="_blank">Open Keon’s card</a>
+</div>
+<div class="client">
+<img alt="Alpha Fit Club Newark digital business card" height="530" loading="lazy" src="img/showcase-alpha.webp" width="300"/>
+<h3>Alpha Fit Club</h3>
+<p>Newark, NJ location</p>
+<ul class="chips"><li><b>Book first class</b> opens booking page</li><li><b>Call</b> rings the gym</li><li><b>Text</b> starts a text</li><li><b>Email</b> writes to the gym</li><li><b>Directions</b> opens the map</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li><li><b>QR code</b> scan to open</li><li><b>Add to home screen</b> installs like an app</li></ul>
 </div>
 </div>
 </div>
