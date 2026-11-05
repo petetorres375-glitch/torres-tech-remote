@@ -131,22 +131,37 @@ h2 { margin-bottom: 15px; color: var(--navy); font-size: clamp(34px,4vw,48px); f
 
 /* Real clients */
 .client { text-align: center; }
-.client a.shot { display: block; }
-.client img { display: block; width: 100%; max-width: 300px; height: auto; margin: 0 auto 18px; border: 1px solid var(--line-dark); border-radius: 18px; }
 .client h3 { margin-bottom: 4px; color: var(--navy); font-size: 21px; font-weight: 600; }
 .client p { margin: 0 0 10px; color: #66727f; font-size: 15px; line-height: 1.55; }
 .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 340px; margin: 0 auto 14px; padding: 0; list-style: none; }
 .chips li { padding: 5px 11px; background: #fff; border: 1px solid var(--line-dark); border-radius: 999px; color: #66727f; font-size: 12.5px; line-height: 1.35; }
 .chips b { color: var(--navy); font-weight: 600; }
-.shots { display: flex; gap: 16px; justify-content: center; margin: 18px 0 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px; }
-.shots figure { flex: 0 0 auto; margin: 0; scroll-snap-align: center; }
-.shots img { display: block; width: 260px; max-width: 78vw; height: auto; margin: 0; border: 1px solid var(--line-dark); border-radius: 16px; }
-.shots figcaption { margin-top: 8px; color: var(--navy); font-size: 13px; font-weight: 600; }
 .client { margin-bottom: 56px; }
 .client .langnote { margin-bottom: 10px; }
 .chips { max-width: 700px !important; }
 .client p.btns { max-width: 330px; margin: 0 auto 12px; font-size: 14px; line-height: 1.55; }
 .client a.try { color: var(--navy); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.client-carousel { margin: 18px auto 12px; max-width: 100%; }
+.client-carousel .shots { display: flex; justify-content: flex-start; gap: 16px; margin: 0; padding: 4px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: thin; }
+.client-carousel .shots figure { flex: 0 0 auto; width: 260px; max-width: 78vw; margin: 0; scroll-snap-align: center; }
+.client-carousel .shots img { display: block; width: 100%; max-width: none; height: auto; margin: 0; border: 1px solid var(--line-dark); border-radius: 16px; }
+.client-carousel .shots figcaption { margin-top: 8px; color: var(--navy); font-size: 13px; font-weight: 600; }
+.client-carousel:not(.is-open) .shots { display: none; }
+.client-carousel:not(.is-open) .shots figure:not(:first-child) { display: none; }
+.client-carousel .shot-launch { display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; cursor: pointer; font: inherit; }
+.client-carousel .shot-launch img { transition: transform .4s ease; }
+
+.client-carousel .tap-hint { display: block; margin-top: 8px; color: #66727f; font-size: 13px; }
+.client-carousel.is-open .shot-launch { display: none; }
+.client-carousel .carousel-tools { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 14px; }
+.client-carousel:not(.is-open) .carousel-tools { display: none; }
+.client-carousel .carousel-arrow, .client-carousel .carousel-close { min-width: 36px; min-height: 34px; padding: 5px 10px; border: 1px solid var(--line-dark); border-radius: 3px; background: #fff; color: var(--navy); cursor: pointer; font: 600 13px var(--body); }
+.client-carousel .carousel-dots { display: flex; align-items: center; justify-content: center; gap: 7px; }
+.client-carousel .carousel-dot { width: 8px; height: 8px; padding: 0; border: 1px solid var(--navy); border-radius: 50%; background: transparent; cursor: pointer; }
+.client-carousel .carousel-dot[aria-current="true"] { background: var(--navy); }
+.client-carousel.is-opening .shots figure { animation: client-card-spread .4s ease both; }
+@keyframes client-card-spread { from { opacity: .35; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .client-carousel .shot-launch img, .client-carousel.is-opening .shots figure { transition: none; animation: none; } }
 @media (max-width: 640px) { .clients { grid-template-columns: 1fr; gap: 34px; } }
 
 /* Demonstrations */
@@ -590,14 +605,50 @@ footer .logo { border: 1px solid #69788a; }
 <div class="client">
 <h3>Keon Torres</h3>
 <p>English &amp; Acting Coach / Instructor<br/>Vietnam &amp; Japan</p>
-<div class="shots"><figure><img alt="Keon Torres card, Night · English" loading="lazy" src="img/feat-keon-night.webp" width="260"/><figcaption>Night · English</figcaption></figure><figure><img alt="Keon Torres card, Day · English" loading="lazy" src="img/feat-keon-day.webp" width="260"/><figcaption>Day · English</figcaption></figure><figure><img alt="Keon Torres card, Night · Japanese" loading="lazy" src="img/feat-keon-ja.webp" width="260"/><figcaption>Night · Japanese</figcaption></figure></div>
+<div class="client-carousel" data-client-carousel>
+<button class="shot-launch" type="button" aria-label="Show all Keon Torres card screenshots">
+<img src="img/feat-keon-night.webp" alt="Keon Torres card, Night · English" loading="lazy" width="260"/>
+<span class="tap-hint">Tap to see more</span>
+</button>
+<div class="shots" aria-label="Keon Torres card screenshots">
+<figure><img alt="Keon Torres card, Night · English" loading="lazy" src="img/feat-keon-night.webp" width="260"/><figcaption>Night · English</figcaption></figure>
+<figure><img alt="Keon Torres card, Day · English" loading="lazy" src="img/feat-keon-day.webp" width="260"/><figcaption>Day · English</figcaption></figure>
+<figure><img alt="Keon Torres card, Night · Japanese" loading="lazy" src="img/feat-keon-ja.webp" width="260"/><figcaption>Night · Japanese</figcaption></figure>
+<figure><img alt="Keon Torres card, Day · Japanese" loading="lazy" src="img/feat-keon-ja-day.webp" width="260"/><figcaption>Day · Japanese</figcaption></figure>
+<figure><img alt="Keon Torres card, Night · Vietnamese" loading="lazy" src="img/feat-keon-vi.webp" width="260"/><figcaption>Night · Vietnamese</figcaption></figure>
+<figure><img alt="Keon Torres card, Day · Vietnamese" loading="lazy" src="img/feat-keon-vi-day.webp" width="260"/><figcaption>Day · Vietnamese</figcaption></figure>
+</div>
+<div class="carousel-tools">
+<button class="carousel-arrow" type="button" data-prev aria-label="Previous Keon Torres screenshot">&#8592;</button>
+<div class="carousel-dots" aria-label="Choose a Keon Torres screenshot"></div>
+<button class="carousel-arrow" type="button" data-next aria-label="Next Keon Torres screenshot">&#8594;</button>
+<button class="carousel-close" type="button" data-close>Close</button>
+</div>
+</div>
 <p class="langnote">Three languages on one card: English, Japanese and Vietnamese.</p>
 <ul class="chips"><li><b>Message on LINE</b> opens a chat</li><li><b>Email</b> writes to him</li><li><b>EN / JA / VI</b> switches language</li><li><b>Day / Night</b> switches the look</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li><li><b>QR code</b> scan to open</li><li><b>Add to home screen</b> installs like an app</li></ul>
 </div>
 <div class="client">
 <h3>Alpha Fit Club</h3>
 <p>Newark, NJ location</p>
-<div class="shots"><figure><img alt="Alpha Fit Club card, Night · English" loading="lazy" src="img/feat-alpha-night.webp" width="260"/><figcaption>Night · English</figcaption></figure><figure><img alt="Alpha Fit Club card, Day · English" loading="lazy" src="img/feat-alpha-day.webp" width="260"/><figcaption>Day · English</figcaption></figure><figure><img alt="Alpha Fit Club card, Night · Spanish" loading="lazy" src="img/feat-alpha-es.webp" width="260"/><figcaption>Night · Spanish</figcaption></figure></div>
+<div class="client-carousel" data-client-carousel>
+<button class="shot-launch" type="button" aria-label="Show all Alpha Fit Club card screenshots">
+<img src="img/feat-alpha-night.webp" alt="Alpha Fit Club card, Night · English" loading="lazy" width="260"/>
+<span class="tap-hint">Tap to see more</span>
+</button>
+<div class="shots" aria-label="Alpha Fit Club card screenshots">
+<figure><img alt="Alpha Fit Club card, Night · English" loading="lazy" src="img/feat-alpha-night.webp" width="260"/><figcaption>Night · English</figcaption></figure>
+<figure><img alt="Alpha Fit Club card, Day · English" loading="lazy" src="img/feat-alpha-day.webp" width="260"/><figcaption>Day · English</figcaption></figure>
+<figure><img alt="Alpha Fit Club card, Night · Spanish" loading="lazy" src="img/feat-alpha-es.webp" width="260"/><figcaption>Night · Spanish</figcaption></figure>
+<figure><img alt="Alpha Fit Club card, Day · Spanish" loading="lazy" src="img/feat-alpha-es-day.webp" width="260"/><figcaption>Day · Spanish</figcaption></figure>
+</div>
+<div class="carousel-tools">
+<button class="carousel-arrow" type="button" data-prev aria-label="Previous Alpha Fit Club screenshot">&#8592;</button>
+<div class="carousel-dots" aria-label="Choose an Alpha Fit Club screenshot"></div>
+<button class="carousel-arrow" type="button" data-next aria-label="Next Alpha Fit Club screenshot">&#8594;</button>
+<button class="carousel-close" type="button" data-close>Close</button>
+</div>
+</div>
 <p class="langnote">English and Spanish on one card.</p>
 <ul class="chips"><li><b>Book first class</b> opens booking page</li><li><b>Call</b> rings the gym</li><li><b>Text</b> starts a text</li><li><b>Email</b> writes to the gym</li><li><b>Directions</b> opens the map</li><li><b>EN / ES</b> switches language</li><li><b>Day / Night</b> switches the look</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li><li><b>QR code</b> scan to open</li><li><b>Add to home screen</b> installs like an app</li></ul>
 </div>
@@ -989,6 +1040,83 @@ footer .logo { border: 1px solid #69788a; }
       order.scrollIntoView();
       tryCode(form.code.value);
     }
+  })();
+
+  // Featured-client screenshot carousels: each client is independent.
+  (function () {
+    const carousels = Array.from(document.querySelectorAll("[data-client-carousel]"));
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    carousels.forEach((carousel) => {
+      const rail = carousel.querySelector(".shots");
+      const slides = Array.from(rail.querySelectorAll("figure"));
+      const dots = carousel.querySelector(".carousel-dots");
+      const launch = carousel.querySelector(".shot-launch");
+      let activeIndex = 0;
+      let moving = false;
+      let moveTimer;
+      slides.forEach((slide, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "carousel-dot";
+        dot.setAttribute("aria-label", `Show screenshot ${index + 1} of ${slides.length}`);
+        dot.addEventListener("click", () => goTo(index));
+        dots.appendChild(dot);
+      });
+      const dotButtons = Array.from(dots.querySelectorAll("button"));
+      function updateDots() {
+        dotButtons.forEach((dot, index) => dot.setAttribute("aria-current", String(index === activeIndex)));
+      }
+      function goTo(index) {
+        activeIndex = Math.max(0, Math.min(slides.length - 1, index));
+        const slide = slides[activeIndex];
+        const left = slide.offsetLeft - (rail.clientWidth - slide.offsetWidth) / 2;
+        moving = true;
+        clearTimeout(moveTimer);
+        moveTimer = setTimeout(() => { moving = false; }, reducedMotion ? 50 : 600);
+        rail.scrollTo({ left: Math.max(0, left), behavior: reducedMotion ? "auto" : "smooth" });
+        updateDots();
+      }
+      function open() {
+        carousel.classList.add("is-open");
+        if (!reducedMotion) {
+          carousel.classList.remove("is-opening");
+          void rail.offsetWidth;
+          carousel.classList.add("is-opening");
+        }
+        goTo(activeIndex);
+        carousel.querySelector("[data-close]").focus({ preventScroll: true });
+      }
+      function close() {
+        carousel.classList.remove("is-open", "is-opening");
+        activeIndex = 0;
+        rail.scrollTo({ left: 0, behavior: "auto" });
+        updateDots();
+        launch.focus({ preventScroll: true });
+      }
+      launch.addEventListener("click", open);
+      carousel.querySelector("[data-prev]").addEventListener("click", () => goTo((activeIndex - 1 + slides.length) % slides.length));
+      carousel.querySelector("[data-next]").addEventListener("click", () => goTo((activeIndex + 1) % slides.length));
+      carousel.querySelector("[data-close]").addEventListener("click", close);
+      rail.addEventListener("scroll", () => {
+        if (moving || !carousel.classList.contains("is-open")) return;
+        const center = rail.scrollLeft + rail.clientWidth / 2;
+        let closest = 0, distance = Infinity;
+        slides.forEach((slide, index) => {
+          const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+          const nextDistance = Math.abs(center - slideCenter);
+          if (nextDistance < distance) { distance = nextDistance; closest = index; }
+        });
+        activeIndex = closest;
+        updateDots();
+      }, { passive: true });
+      carousel.addEventListener("keydown", (event) => {
+        if (!carousel.classList.contains("is-open")) return;
+        if (event.key === "ArrowLeft") { event.preventDefault(); goTo((activeIndex - 1 + slides.length) % slides.length); }
+        if (event.key === "ArrowRight") { event.preventDefault(); goTo((activeIndex + 1) % slides.length); }
+        if (event.key === "Escape") { event.preventDefault(); close(); }
+      });
+      updateDots();
+    });
   })();
 </script>
 <!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "c60da00970ce404fbd115d07cfea6c99"}' src="https://static.cloudflareinsights.com/beacon.min.js" type="module"></script><!-- End Cloudflare Web Analytics -->
