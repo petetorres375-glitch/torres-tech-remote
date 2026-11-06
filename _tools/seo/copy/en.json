@@ -89,5 +89,6 @@
       "QUOTE"
     ]
   ],
-  "price_note": "A quote depends on your number of locations and people. Setup is free."
+  "price_note": "A quote depends on your number of locations and people. Setup is free.",
+  "cta_url": "/go/preview.html"
 }

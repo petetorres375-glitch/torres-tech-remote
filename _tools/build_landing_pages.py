@@ -101,6 +101,7 @@ def build_page(niche, lang, page, copy, alternates=""):
         "lang": lang,
         "url": url,
         "alternates": alternates,
+        "cta_url": esc(copy["cta_url"]),
         "options_html": options_html(copy),
         "price_note": esc(copy["price_note"]),
         "phone_html": phone_html(copy),

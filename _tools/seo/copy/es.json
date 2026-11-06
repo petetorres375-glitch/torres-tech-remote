@@ -75,7 +75,7 @@
       "$10 al mes",
       "o $100 al año, que son dos meses gratis. Para un negocio.",
       "Pedir mi vista previa gratis",
-      "/go/preview.html"
+      "/go/preview-es.html"
     ],
     [
       "Coaches y entrenadores",
@@ -92,5 +92,6 @@
       "QUOTE"
     ]
   ],
-  "price_note": "La cotización depende de su número de sucursales y de personas. La instalación es gratis."
+  "price_note": "La cotización depende de su número de sucursales y de personas. La instalación es gratis.",
+  "cta_url": "/go/preview-es.html"
 }
