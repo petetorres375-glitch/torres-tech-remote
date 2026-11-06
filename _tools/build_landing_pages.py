@@ -120,9 +120,11 @@ def build_page(niche, lang, page, copy, alternates=""):
     for k in ("title", "description", "eyebrow", "h1", "lede", "uses_title", "why_title"):
         values[k] = esc(page[k])
     for k in ("nav_cta", "cta_primary", "cta_note", "how_title", "buttons_title",
-              "buttons_lead", "price_title", "not_title", "not_text",
+              "buttons_lead", "price_title", "not_title",
               "faq_title", "final_title", "footer_privacy", "footer_terms", "footer_rights"):
         values[k] = esc(copy[k])
+    # A page may override the shared "what it isn't" text.
+    values["not_text"] = esc(page.get("not_text", copy["not_text"]))
     with open(os.path.join(SEO, "landing.html"), encoding="utf-8") as f:
         tpl = f.read()
     return url, render(tpl, values)

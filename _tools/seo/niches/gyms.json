@@ -100,7 +100,8 @@
           "Which languages does it support?",
           "We offer 24 languages, including Spanish, Portuguese, Chinese, Japanese and Arabic. Each card shows up to 3 of them, and each visitor sees the one that matches their phone's language."
         ]
-      ]
+      ],
+      "not_text": "It is not a website, an app to download, a booking system or an online store. Think of it as a website that skipped the warm-up and went straight to the workout. Your card sends people to the tools you already use."
     },
     "es": {
       "path": "es/tarjeta-digital-gimnasio",
@@ -201,7 +202,8 @@
           "¿Qué idiomas ofrece?",
           "Ofrecemos 24 idiomas, entre ellos español, portugués, chino, japonés y árabe. Cada tarjeta muestra hasta 3, y cada visitante ve el que coincide con el idioma de su teléfono."
         ]
-      ]
+      ],
+      "not_text": "No es un sitio web, ni una aplicación para descargar, ni un sistema de reservas, ni una tienda en línea. Piense en ella como un sitio web que se saltó el calentamiento y fue directo al entrenamiento. Su tarjeta lleva a la gente a las herramientas que usted ya usa."
     }
   }
 }
