@@ -10,6 +10,10 @@
       "lede": "One link and one QR code. Someone scans the QR code at your front desk or on a flyer, and in one tap they can book a class, text you, call you or save your number.",
       "buttons": [
         [
+          "Made to match your gym",
+          "We design it with your logo, your brand colors and a banner photo, in a light or night look."
+        ],
+        [
           "Book a class or sign up",
           "The main button opens your own page or app: booking, memberships or a sign-up form. You can even use your logo as the button."
         ],
@@ -106,6 +110,10 @@
       "h1": "Tarjeta de presentación digital para su gimnasio",
       "lede": "Un enlace y un código QR. Alguien escanea el código QR en su recepción o en un volante, y en un toque puede reservar una clase, escribirle, llamarle o guardar su número.",
       "buttons": [
+        [
+          "Hecha a la medida de su gimnasio",
+          "La diseñamos con su logo, los colores de su marca y una foto de portada, en un estilo claro o de noche."
+        ],
         [
           "Reservar una clase o inscribirse",
           "El botón principal abre su propia página o aplicación: reservas, membresías o un formulario de inscripción. Hasta puede usar su logo como botón."
