@@ -1,0 +1,96 @@
+{
+  "lang": "es",
+  "brand_sub": "Tarjetas de presentación digitales",
+  "nav_cta": "Vista previa gratis",
+  "cta_primary": "Pedir mi vista previa gratis",
+  "cta_note": "Gratis. Usted la ve primero y solo paga si le gusta.",
+  "how_title": "Cómo funciona",
+  "steps": [
+    [
+      "Usted nos envía sus datos",
+      "Nombre, teléfono, servicios, fotos y el enlace donde ya recibe citas o pedidos, si lo tiene."
+    ],
+    [
+      "Le mostramos su tarjeta",
+      "Le preparamos su tarjeta y se la enseñamos antes de que pague. Si quiere cambios, los hacemos."
+    ],
+    [
+      "Usted la comparte",
+      "Recibe un enlace y un código QR para ponerlos en su mostrador, sus volantes o sus mensajes de texto."
+    ]
+  ],
+  "buttons_title": "Lo que ven sus clientes",
+  "buttons_lead": "Un solo toque para cada cosa. Sin descargar nada.",
+  "price_title": "Precio",
+  "price_big": "$10 al mes",
+  "price_lines": [
+    "Diseño e instalación gratis.",
+    "Vista previa gratis antes de pagar.",
+    "Nosotros hacemos sus cambios y actualizaciones.",
+    "Su tarjeta puede ofrecer hasta 3 de nuestros 24 idiomas, como español, portugués, chino, japonés o árabe. Cada visitante la ve en el idioma de su teléfono."
+  ],
+  "not_title": "Lo que no es",
+  "not_text": "No es una aplicación para descargar, ni un sistema de citas, ni una tienda en línea. Su tarjeta lleva a sus clientes a las herramientas que usted ya tiene.",
+  "faq_title": "Preguntas frecuentes",
+  "final_title": "Vea su tarjeta antes de pagar",
+  "footer_privacy": "Privacidad",
+  "footer_terms": "Términos",
+  "footer_rights": "Torres Tech Remote. Newark, Nueva Jersey, para negocios en todo Estados Unidos.",
+  "home_label": "Inicio",
+  "page_label_cards": "Tarjetas digitales",
+  "phone_title": "Póngala en un teléfono en menos de un minuto",
+  "phone_lead": "Dos cosas rápidas que sus miembros pueden hacer, en iPhone o Android.",
+  "phone_groups": [
+    [
+      "Agréguela a la pantalla de inicio, para que se abra como una aplicación",
+      [
+        [
+          "iPhone",
+          "Abra la tarjeta en Safari. Toque Compartir (el cuadrado con una flecha). Toque Añadir a pantalla de inicio y luego Añadir."
+        ],
+        [
+          "Android",
+          "Abra la tarjeta en Chrome. Toque Añadir a pantalla de inicio y luego Instalar."
+        ]
+      ]
+    ],
+    [
+      "Guarde el contacto",
+      [
+        [
+          "iPhone",
+          "Toque Guardar contacto en la tarjeta. Cuando se abra el contacto, toque la marca de verificación arriba a la izquierda."
+        ],
+        [
+          "Android",
+          "Toque Guardar contacto. Cuando se descargue, toque Abrir y luego Importar (algunos teléfonos dicen Guardar)."
+        ]
+      ]
+    ]
+  ],
+  "phone_help": "¿No está seguro de cómo? Le enviamos por correo estos pasos para que los comparta con sus miembros, y podemos guiarle por teléfono o videollamada, desde cualquier lugar de EE. UU.",
+  "price_options": [
+    [
+      "Una tarjeta",
+      "$10 al mes",
+      "o $100 al año, que son dos meses gratis. Para un negocio.",
+      "Pedir mi vista previa gratis",
+      "/go/preview.html"
+    ],
+    [
+      "Coaches y entrenadores",
+      "Cotización a su medida",
+      "Una tarjeta para cada coach o entrenador, con sus propios datos de contacto.",
+      "Pedir una cotización",
+      "QUOTE"
+    ],
+    [
+      "Varias sucursales",
+      "Cotización a su medida",
+      "Un enlace y un código QR para cada sucursal.",
+      "Pedir una cotización",
+      "QUOTE"
+    ]
+  ],
+  "price_note": "La cotización depende de su número de sucursales y de personas. La instalación es gratis."
+}

@@ -1,0 +1,93 @@
+{
+  "lang": "en",
+  "nav_cta": "Free preview",
+  "cta_primary": "Get my free preview",
+  "cta_note": "Free. You see it first and only pay if you like it.",
+  "how_title": "How it works",
+  "steps": [
+    [
+      "You send us your details",
+      "Name, phone, services, photos and the link where people already book or sign up, if you have one."
+    ],
+    [
+      "We show you your card",
+      "We build it and show it to you before you pay. If you want changes, we make them."
+    ],
+    [
+      "You share it",
+      "You get a link and a QR code to put on your counter, flyers or text messages."
+    ]
+  ],
+  "buttons_title": "What your customers see",
+  "buttons_lead": "One tap for each thing. Nothing to download.",
+  "price_title": "Price",
+  "price_big": "$10 a month",
+  "price_lines": [
+    "Design and setup are free.",
+    "Free preview before you pay.",
+    "We make your changes and updates.",
+    "Your card can offer up to 3 of our 24 languages, like Spanish, Portuguese, Chinese, Japanese or Arabic. Each visitor sees it in their phone's language."
+  ],
+  "not_title": "What it isn't",
+  "not_text": "It is not an app to download, a booking system or an online store. Your card sends people to the tools you already use.",
+  "faq_title": "Frequently asked questions",
+  "final_title": "See your card before you pay",
+  "footer_privacy": "Privacy",
+  "footer_terms": "Terms",
+  "footer_rights": "Torres Tech Remote. Newark, New Jersey, for businesses across the U.S.",
+  "phone_title": "Put it on a phone in under a minute",
+  "phone_lead": "Two quick things your members can do, on iPhone or Android.",
+  "phone_groups": [
+    [
+      "Add it to the home screen, so it opens like an app",
+      [
+        [
+          "iPhone",
+          "Open the card in Safari. Tap Share (the square with an arrow). Tap Add to Home Screen, then Add."
+        ],
+        [
+          "Android",
+          "Open the card in Chrome. Tap Add to home screen, then Install."
+        ]
+      ]
+    ],
+    [
+      "Save the contact",
+      [
+        [
+          "iPhone",
+          "Tap Save contact on the card. When the contact opens, tap the check mark at the top left."
+        ],
+        [
+          "Android",
+          "Tap Save contact. When it downloads, tap Open, then Import (some phones say Save)."
+        ]
+      ]
+    ]
+  ],
+  "phone_help": "Not sure how? We email you these steps to share with your members, and we can walk you through them by phone or video call, from anywhere in the U.S.",
+  "price_options": [
+    [
+      "One card",
+      "$10 a month",
+      "or $100 a year, which is two months free. For one business.",
+      "Get my free preview",
+      "/go/preview.html"
+    ],
+    [
+      "Coaches and trainers",
+      "Custom quote",
+      "A card for each coach or trainer, with their own contact details.",
+      "Request a quote",
+      "QUOTE"
+    ],
+    [
+      "Multiple locations",
+      "Custom quote",
+      "A link and a QR code for each location.",
+      "Request a quote",
+      "QUOTE"
+    ]
+  ],
+  "price_note": "A quote depends on your number of locations and people. Setup is free."
+}
