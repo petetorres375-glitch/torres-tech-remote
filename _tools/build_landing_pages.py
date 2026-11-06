@@ -75,6 +75,13 @@ def options_html(copy):
     return "".join(out)
 
 
+def problem_html(pr):
+    if not pr:
+        return ""
+    paras = "".join(f"<p>{esc(x)}</p>" for x in pr["text"])
+    return f'<section><div class="wrap prob"><h2>{esc(pr["title"])}</h2>{paras}</div></section>'
+
+
 def hreflang(pages):
     """Link every language version of a niche to the others (only if there are 2+)."""
     if len(pages) < 2:
@@ -101,6 +108,7 @@ def build_page(niche, lang, page, copy, alternates=""):
         "lang": lang,
         "url": url,
         "alternates": alternates,
+        "problem_html": problem_html(page.get("problem")),
         "cta_url": esc(copy["cta_url"]),
         "options_html": options_html(copy),
         "price_note": esc(copy["price_note"]),

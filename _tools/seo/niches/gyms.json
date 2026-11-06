@@ -73,6 +73,14 @@
       ],
       "faq": [
         [
+          "How do I get gym walk-ins to book a class?",
+          "Give them one easy next step. A QR code at your front desk or on your flyer opens your card, and one tap opens your own booking page, calls or texts you, or saves your contact. The card doesn't replace your booking system, it gets people to it faster."
+        ],
+        [
+          "How do I stop clients from losing my number?",
+          "Ask them to tap Save contact on your card. Your gym goes straight into their phone's contacts, so they don't need a paper card or your Instagram handle."
+        ],
+        [
           "What is a digital business card?",
           "It is a short web page built for phones. People open it with a link or a QR code, nothing is downloaded, and it can be added to the home screen like an app."
         ],
@@ -101,7 +109,14 @@
           "We offer 24 languages, including Spanish, Portuguese, Chinese, Japanese and Arabic. Each card shows up to 3 of them, and each visitor sees the one that matches their phone's language."
         ]
       ],
-      "not_text": "It is not a website, a booking system or an online store, and there is nothing to download. It still lives on your phone's home screen like an app. Think of it as a website that skipped the warm-up and went straight to the workout. Your card sends people to the tools you already use."
+      "not_text": "It is not a website, a booking system or an online store, and there is nothing to download. It still lives on your phone's home screen like an app. Think of it as a website that skipped the warm-up and went straight to the workout. Your card sends people to the tools you already use.",
+      "problem": {
+        "title": "How to stop gym clients from losing your number",
+        "text": [
+          "Someone tries a class, likes it, and then can't find your number. Paper cards get lost, and searching for your Instagram handle is one step too many. Put a QR code at your front desk or on your flyer instead. One scan and they can save your number, text you or book a class, and your card stays on their phone.",
+          "The fastest way to get walk-ins to book a session is to remove steps. This is one scan and one tap, with nothing to download."
+        ]
+      }
     },
     "es": {
       "path": "es/tarjeta-digital-gimnasio",
@@ -175,6 +190,14 @@
       ],
       "faq": [
         [
+          "¿Cómo consigo que las personas que visitan mi gimnasio reserven una clase?",
+          "Déles un siguiente paso fácil. Un código QR en su recepción o en su volante abre su tarjeta, y con un toque abren su página de reservas, le llaman o le escriben, o guardan su contacto. La tarjeta no reemplaza su sistema de reservas, lleva a la gente hasta allí más rápido."
+        ],
+        [
+          "¿Cómo evito que mis clientes pierdan mi número?",
+          "Pídales que toquen Guardar contacto en su tarjeta. Su gimnasio queda directo en los contactos de su teléfono, y no necesitan una tarjeta de papel ni su Instagram."
+        ],
+        [
           "¿Qué es una tarjeta de presentación digital?",
           "Es una página web corta hecha para el teléfono. Se abre con un enlace o un código QR, no hay que descargar nada y se puede agregar a la pantalla de inicio como una aplicación."
         ],
@@ -203,7 +226,14 @@
           "Ofrecemos 24 idiomas, entre ellos español, portugués, chino, japonés y árabe. Cada tarjeta muestra hasta 3, y cada visitante ve el que coincide con el idioma de su teléfono."
         ]
       ],
-      "not_text": "No es un sitio web, ni un sistema de reservas, ni una tienda en línea, y no hay nada que descargar. Aun así vive en la pantalla de inicio de su teléfono como una aplicación. Piense en ella como un sitio web que se saltó el calentamiento y fue directo al entrenamiento. Su tarjeta lleva a la gente a las herramientas que usted ya usa."
+      "not_text": "No es un sitio web, ni un sistema de reservas, ni una tienda en línea, y no hay nada que descargar. Aun así vive en la pantalla de inicio de su teléfono como una aplicación. Piense en ella como un sitio web que se saltó el calentamiento y fue directo al entrenamiento. Su tarjeta lleva a la gente a las herramientas que usted ya usa.",
+      "problem": {
+        "title": "Cómo evitar que los clientes del gimnasio pierdan su número",
+        "text": [
+          "Alguien prueba una clase, le gusta, y luego no encuentra su número. Las tarjetas de papel se pierden, y buscar su Instagram es un paso de más. Ponga un código QR en su recepción o en su volante. Con un escaneo pueden guardar su número, escribirle o reservar una clase, y su tarjeta se queda en su teléfono.",
+          "La forma más rápida de que los visitantes reserven una sesión es quitar pasos. Es un escaneo y un toque, sin nada que descargar."
+        ]
+      }
     }
   }
 }
