@@ -117,7 +117,7 @@ def build_page(niche, lang, page, copy, alternates=""):
         "faq_json": faq_json,
         "year": str(datetime.date.today().year),
         "buttons_html": "".join(
-            f"<div><b>{esc(t)}</b><span>{esc(d)}</span></div>" for t, d in page["buttons"]),
+            f"<div><b>{esc(t)}</b> <span>{esc(d)}</span></div>" for t, d in page["buttons"]),
         "steps_html": "".join(
             f"<li><b>{esc(t)}</b>{esc(d)}</li>" for t, d in copy["steps"]),
         "uses_html": "".join(f"<li>{esc(x)}</li>" for x in page["uses"]),
