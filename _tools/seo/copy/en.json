@@ -90,5 +90,8 @@
     ]
   ],
   "price_note": "A quote depends on your number of locations and people. Setup is free.",
+  "sms_url": "sms:+12017722106?&amp;body=Hi%20Pedro%2C%20I%27d%20like%20a%20free%20preview%20for%20my%20business%3A%20",
+  "sms_hint": "Text opens on your phone.",
+  "sms_label": "Or text Pedro",
   "cta_url": "/go/preview.html"
 }

@@ -32,11 +32,19 @@ p{margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-radius:3px;background:var(--navy);color:#fff;font-weight:600;font-size:16px;text-decoration:none;text-align:center}
 .btn:hover{background:var(--navy-2)}
 .btn-sm{min-height:40px;padding:8px 14px;font-size:14px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px}
+.btn-alt{background:transparent;color:var(--navy);border:1px solid #aeb9c4}
+.btn-alt:hover{background:#f1f3f5}
+.final .ctas{justify-content:center}
+.final .btn-alt{background:transparent;color:#fff;border-color:#c9d2dc}
+.final .btn-alt:hover{background:rgba(255,255,255,.12)}
 .hero{background:var(--paper);border-bottom:1px solid var(--line);padding:48px 0 52px}
 .eyebrow{color:var(--gold-dark);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
 .hero h1{font-size:clamp(32px,6.5vw,52px);margin-bottom:18px}
 .lede{font-size:19px;max-width:640px;margin-bottom:26px}
 .note{color:var(--muted);font-size:15px;margin-top:12px}
+.note.hint{font-size:18px;font-weight:600;line-height:1.4;color:var(--ink)}
+.final .note.hint{color:#e5ebf1}
 section{padding:44px 0;border-bottom:1px solid var(--line)}
 section h2{font-size:clamp(26px,4.5vw,34px);margin-bottom:20px}
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:18px;counter-reset:s}
@@ -85,7 +93,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
 <p class="eyebrow">Para gimnasios y estudios de fitness</p>
 <h1>Tarjeta de presentación digital para su gimnasio</h1>
 <p class="lede">Una tarjeta de presentación digital para gimnasios es un enlace y un código QR. Alguien escanea el código QR en su recepción o en un volante, y en un toque puede reservar una clase, escribirle, llamarle o guardar su número.</p>
-<a class="btn" href="/go/preview-es.html">Pedir mi vista previa gratis</a>
+<div class="ctas"><a class="btn" href="/go/preview-es.html">Pedir mi vista previa gratis</a><a class="btn btn-alt" href="sms:+12017722106?&amp;body=Hola%20Pedro%2C%20quiero%20una%20vista%20previa%20gratis%20para%20mi%20negocio%3A%20">O escríbale un texto a Pedro</a></div>
+<p class="note hint">El texto se abre en su teléfono.</p>
 <p class="note">Gratis. Usted la ve primero y solo paga si le gusta.</p>
 </div></div>
 <section><div class="wrap prob"><h2>Cómo evitar que los clientes del gimnasio pierdan su número</h2><p>Alguien prueba una clase, le gusta, y luego no encuentra su número. Las tarjetas de papel se pierden, y buscar su Instagram es un paso de más. Ponga un código QR en su recepción o en su volante. Con un escaneo pueden guardar su número, escribirle o reservar una clase, y su tarjeta se queda en su teléfono.</p><p>La forma más rápida de que los visitantes reserven una sesión es quitar pasos. Es un escaneo y un toque, sin nada que descargar.</p></div></section>
@@ -121,7 +130,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
 </div></section>
 <section class="final"><div class="wrap">
 <h2>Vea su tarjeta antes de pagar</h2>
-<p style="margin:14px 0 22px"><a class="btn" href="/go/preview-es.html">Pedir mi vista previa gratis</a></p>
+<div class="ctas" style="margin:14px 0 22px"><a class="btn" href="/go/preview-es.html">Pedir mi vista previa gratis</a><a class="btn btn-alt" href="sms:+12017722106?&amp;body=Hola%20Pedro%2C%20quiero%20una%20vista%20previa%20gratis%20para%20mi%20negocio%3A%20">O escríbale un texto a Pedro</a></div>
+<p class="note hint">El texto se abre en su teléfono.</p>
 <p class="note">Gratis. Usted la ve primero y solo paga si le gusta.</p>
 </div></section>
 </main>

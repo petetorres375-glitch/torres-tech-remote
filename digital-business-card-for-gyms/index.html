@@ -32,11 +32,19 @@ p{margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-radius:3px;background:var(--navy);color:#fff;font-weight:600;font-size:16px;text-decoration:none;text-align:center}
 .btn:hover{background:var(--navy-2)}
 .btn-sm{min-height:40px;padding:8px 14px;font-size:14px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px}
+.btn-alt{background:transparent;color:var(--navy);border:1px solid #aeb9c4}
+.btn-alt:hover{background:#f1f3f5}
+.final .ctas{justify-content:center}
+.final .btn-alt{background:transparent;color:#fff;border-color:#c9d2dc}
+.final .btn-alt:hover{background:rgba(255,255,255,.12)}
 .hero{background:var(--paper);border-bottom:1px solid var(--line);padding:48px 0 52px}
 .eyebrow{color:var(--gold-dark);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
 .hero h1{font-size:clamp(32px,6.5vw,52px);margin-bottom:18px}
 .lede{font-size:19px;max-width:640px;margin-bottom:26px}
 .note{color:var(--muted);font-size:15px;margin-top:12px}
+.note.hint{font-size:18px;font-weight:600;line-height:1.4;color:var(--ink)}
+.final .note.hint{color:#e5ebf1}
 section{padding:44px 0;border-bottom:1px solid var(--line)}
 section h2{font-size:clamp(26px,4.5vw,34px);margin-bottom:20px}
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:18px;counter-reset:s}
@@ -85,7 +93,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
 <p class="eyebrow">For gyms and fitness studios</p>
 <h1>A digital business card for your gym</h1>
 <p class="lede">A digital business card for gyms is one link and one QR code. Someone scans the QR code at your front desk or on a flyer, and in one tap they can book a class, text you, call you or save your number.</p>
-<a class="btn" href="/go/preview.html">Get my free preview</a>
+<div class="ctas"><a class="btn" href="/go/preview.html">Get my free preview</a><a class="btn btn-alt" href="sms:+12017722106?&amp;body=Hi%20Pedro%2C%20I%27d%20like%20a%20free%20preview%20for%20my%20business%3A%20">Or text Pedro</a></div>
+<p class="note hint">Text opens on your phone.</p>
 <p class="note">Free. You see it first and only pay if you like it.</p>
 </div></div>
 <section><div class="wrap prob"><h2>How to stop gym clients from losing your number</h2><p>Someone tries a class, likes it, and then can&#x27;t find your number. Paper cards get lost, and searching for your Instagram handle is one step too many. Put a QR code at your front desk or on your flyer instead. One scan and they can save your number, text you or book a class, and your card stays on their phone.</p><p>The fastest way to get walk-ins to book a session is to remove steps. This is one scan and one tap, with nothing to download.</p></div></section>
@@ -121,7 +130,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
 </div></section>
 <section class="final"><div class="wrap">
 <h2>See your card before you pay</h2>
-<p style="margin:14px 0 22px"><a class="btn" href="/go/preview.html">Get my free preview</a></p>
+<div class="ctas" style="margin:14px 0 22px"><a class="btn" href="/go/preview.html">Get my free preview</a><a class="btn btn-alt" href="sms:+12017722106?&amp;body=Hi%20Pedro%2C%20I%27d%20like%20a%20free%20preview%20for%20my%20business%3A%20">Or text Pedro</a></div>
+<p class="note hint">Text opens on your phone.</p>
 <p class="note">Free. You see it first and only pay if you like it.</p>
 </div></section>
 </main>

@@ -93,5 +93,8 @@
     ]
   ],
   "price_note": "La cotización depende de su número de sucursales y de personas. La instalación es gratis.",
+  "sms_url": "sms:+12017722106?&amp;body=Hola%20Pedro%2C%20quiero%20una%20vista%20previa%20gratis%20para%20mi%20negocio%3A%20",
+  "sms_hint": "El texto se abre en su teléfono.",
+  "sms_label": "O escríbale un texto a Pedro",
   "cta_url": "/go/preview-es.html"
 }
