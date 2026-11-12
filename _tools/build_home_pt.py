@@ -153,6 +153,9 @@ rep('>Review us on Google</a>', '>Avalie-nos no Google</a>')
 s = s.replace('https://docs.google.com/forms/d/e/1FAIpQLSenglfDQ0WaNQpeYR2ZBD-Y4AP6W5HduUZSNqFPebuN1tnx-Q/viewform', '/go/preview-pt.html')
 s = s.replace(' (formulário em inglês)', '')
 
+# links to the sales page -> Portuguese sales page
+s = s.replace('href="/digital-business-cards.html', 'href="/pt/cartoes-de-visita-digitais/')
+
 out = root / "pt" / "index.html"
 out.parent.mkdir(exist_ok=True)
 out.write_text(s, encoding="utf-8")

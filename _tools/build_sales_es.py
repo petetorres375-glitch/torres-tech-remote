@@ -57,7 +57,7 @@ R('"description": "One link and one QR code for your business, every location, a
 
 # language switch (class langsw: the page already uses .langs for the language grid)
 R('</style>\n</head>', '.langsw{display:flex;gap:12px;font-size:14px;align-items:center;margin-right:6px}.langsw a{color:var(--muted,#65717e);text-decoration:none}.langsw a:hover{text-decoration:underline}.langsw b{color:var(--navy,#12192d)}\n</style>\n</head>', 1)
-R('<div class="nav-right">\n', '<div class="nav-right">\n<nav class="langsw" aria-label="Idioma"><a href="/digital-business-cards.html" hreflang="en" lang="en">English</a><b aria-current="page">Español</b><a href="/pt/" hreflang="pt-PT" lang="pt-PT">Português</a></nav>\n', 1)
+R('<div class="nav-right">\n', '<div class="nav-right">\n<nav class="langsw" aria-label="Idioma"><a href="/digital-business-cards.html" hreflang="en" lang="en">English</a><b aria-current="page">Español</b><a href="/pt/cartoes-de-visita-digitais/" hreflang="pt-PT" lang="pt-PT">Português</a></nav>\n', 1)
 
 # ---------- absolute paths ----------
 s = s.replace('src="img/', 'src="/img/').replace('poster="video/', 'poster="/video/').replace('src="video/', 'src="/video/')
@@ -284,6 +284,10 @@ R('>Review us on Google</a>', '>Reseñe en Google</a>', 1)
 # quote buttons go to the free-preview form in this language (same as the gym pages)
 s = s.replace('https://docs.google.com/forms/d/e/1FAIpQLSenglfDQ0WaNQpeYR2ZBD-Y4AP6W5HduUZSNqFPebuN1tnx-Q/viewform', '/go/preview-es.html')
 s = s.replace(' (formulario en inglés)', '')
+
+# full hreflang set (en, es, pt-PT, x-default) on every language version of the sales page
+s = re.sub(r'<link href="[^"]*" hreflang="[^"]*" rel="alternate"/>\n?', '', s)
+s = re.sub(r'(<link href="[^"]*" rel="canonical"/>)', lambda m: m.group(1) + '\n' + '<link href="https://torrestechremote.com/digital-business-cards.html" hreflang="en" rel="alternate"/>\n<link href="https://torrestechremote.com/es/tarjetas-de-presentacion-digitales/" hreflang="es" rel="alternate"/>\n<link href="https://torrestechremote.com/pt/cartoes-de-visita-digitais/" hreflang="pt-PT" rel="alternate"/>\n<link href="https://torrestechremote.com/digital-business-cards.html" hreflang="x-default" rel="alternate"/>', s, count=1)
 
 out = root / "es" / "tarjetas-de-presentacion-digitales" / "index.html"
 out.parent.mkdir(parents=True, exist_ok=True)
