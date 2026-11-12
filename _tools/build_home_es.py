@@ -149,6 +149,13 @@ rep('>Terms</a>', '>Términos</a>'); rep('>Privacy</a>', '>Privacidad</a>')
 rep('<h3>Follow</h3>', '<h3>Síganos</h3>')
 rep('>Review us on Google</a>', '>Reseñe en Google</a>')
 
+# links to the sales page -> Spanish sales page
+s = s.replace('href="/digital-business-cards.html', 'href="/es/tarjetas-de-presentacion-digitales/')
+
+# quote buttons go to the free-preview form in this language (same as the gym pages)
+s = s.replace('https://docs.google.com/forms/d/e/1FAIpQLSenglfDQ0WaNQpeYR2ZBD-Y4AP6W5HduUZSNqFPebuN1tnx-Q/viewform', '/go/preview-es.html')
+s = s.replace(' (formulario en inglés)', '')
+
 out = root / "es" / "index.html"
 out.parent.mkdir(exist_ok=True)
 out.write_text(s, encoding="utf-8")

@@ -149,6 +149,10 @@ rep('>Terms</a>', '>Termos</a>'); rep('>Privacy</a>', '>Privacidade</a>')
 rep('<h3>Follow</h3>', '<h3>Siga-nos</h3>')
 rep('>Review us on Google</a>', '>Avalie-nos no Google</a>')
 
+# quote buttons go to the free-preview form in this language (same as the gym pages)
+s = s.replace('https://docs.google.com/forms/d/e/1FAIpQLSenglfDQ0WaNQpeYR2ZBD-Y4AP6W5HduUZSNqFPebuN1tnx-Q/viewform', '/go/preview-pt.html')
+s = s.replace(' (formulário em inglês)', '')
+
 out = root / "pt" / "index.html"
 out.parent.mkdir(exist_ok=True)
 out.write_text(s, encoding="utf-8")

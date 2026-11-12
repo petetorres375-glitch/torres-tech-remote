@@ -4,6 +4,9 @@ Only writes that one file. Safe to re-run."""
 import re, urllib.parse, pathlib
 root = pathlib.Path(__file__).resolve().parent.parent
 s = (root / "digital-business-cards.html").read_text(encoding="utf-8")
+s = re.sub(r'<link href="[^"]*" hreflang="[^"]*" rel="alternate"/>\n', "", s)  # English page has its own; each build adds the full set
+s = re.sub(r'<nav class="langsw".*?</nav>\n', "", s, flags=re.S)
+s = re.sub(r'\.langsw\{[^\n]*\n', "", s)
 
 def variants(t):
     out = [t]
@@ -277,6 +280,10 @@ R('">Contact</a>', '">Contacto</a>', 1)
 R('>Terms</a>', '>Términos</a>', 1); R('>Privacy</a>', '>Privacidad</a>', 1)
 R('<h3>Follow</h3>', '<h3>Síganos</h3>', 1)
 R('>Review us on Google</a>', '>Reseñe en Google</a>', 1)
+
+# quote buttons go to the free-preview form in this language (same as the gym pages)
+s = s.replace('https://docs.google.com/forms/d/e/1FAIpQLSenglfDQ0WaNQpeYR2ZBD-Y4AP6W5HduUZSNqFPebuN1tnx-Q/viewform', '/go/preview-es.html')
+s = s.replace(' (formulario en inglés)', '')
 
 out = root / "es" / "tarjetas-de-presentacion-digitales" / "index.html"
 out.parent.mkdir(parents=True, exist_ok=True)
