@@ -37,7 +37,7 @@ rep('"@id": "https://torrestechremote.com/#webpage",\n      "url": "https://torr
     '"@id": "https://torrestechremote.com/es/#webpage",\n      "url": "https://torrestechremote.com/es/",\n      "inLanguage": "es",\n      "name": "Torres Tech Remote: tarjetas de presentación digitales",')
 
 # language switch (English / Español; Português added when that page exists)
-rep('</style>\n</head>', '.langsw{display:flex;gap:12px;font-size:14px;align-items:center;margin-right:6px}.langsw a{color:var(--muted,#65717e);text-decoration:none}.langsw a:hover{text-decoration:underline}.langsw b{color:var(--navy,#12192d)}\n</style>\n</head>')
+rep('</style>\n</head>', '.langsw{display:flex;gap:12px;font-size:14px;align-items:center;margin-right:6px}.langsw a{color:var(--muted,#65717e);text-decoration:none}.langsw a:hover{text-decoration:underline}.langsw b{color:var(--navy,#12192d)}@media(max-width:1100px){.nav{flex-wrap:wrap;row-gap:0;padding-block:6px}.nav-right{display:contents}.navlink{display:none}.langsw{order:3;width:100%;justify-content:center;margin:0;padding:4px 0 2px;font-size:13px}.nav .btn-plum{order:2;margin-left:auto}.nav .btn-wa{order:2;margin-left:8px}}\n</style>\n</head>')
 rep('<div class="nav-right">\n', '<div class="nav-right">\n<nav class="langsw" aria-label="Idioma"><a href="/" hreflang="en" lang="en">English</a><b aria-current="page">Español</b><a href="/pt/" hreflang="pt-PT" lang="pt-PT">Português</a></nav>\n')
 
 # ---- absolute asset paths (page now lives in /es/) ----

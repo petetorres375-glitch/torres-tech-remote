@@ -56,7 +56,7 @@ R('"description": "One link and one QR code for your business, every location, a
 # the Service block keeps pointing at the English #service id (shared entity); only its name is localized elsewhere
 
 # language switch (class langsw: the page already uses .langs for the language grid)
-R('</style>\n</head>', '.langsw{display:flex;gap:12px;font-size:14px;align-items:center;margin-right:6px}.langsw a{color:var(--muted,#65717e);text-decoration:none}.langsw a:hover{text-decoration:underline}.langsw b{color:var(--navy,#12192d)}\n</style>\n</head>', 1)
+R('</style>\n</head>', '.langsw{display:flex;gap:12px;font-size:14px;align-items:center;margin-right:6px}.langsw a{color:var(--muted,#65717e);text-decoration:none}.langsw a:hover{text-decoration:underline}.langsw b{color:var(--navy,#12192d)}@media(max-width:1100px){.nav{flex-wrap:wrap;row-gap:0;padding-block:6px}.nav-right{display:contents}.navlink{display:none}.langsw{order:3;width:100%;justify-content:center;margin:0;padding:4px 0 2px;font-size:13px}.nav .btn-plum{order:2;margin-left:auto}.nav .btn-wa{order:2;margin-left:8px}}\n</style>\n</head>', 1)
 R('<div class="nav-right">\n', '<div class="nav-right">\n<nav class="langsw" aria-label="Idioma"><a href="/digital-business-cards.html" hreflang="en" lang="en">English</a><b aria-current="page">Español</b><a href="/pt/cartoes-de-visita-digitais/" hreflang="pt-PT" lang="pt-PT">Português</a></nav>\n', 1)
 
 # ---------- absolute paths ----------
