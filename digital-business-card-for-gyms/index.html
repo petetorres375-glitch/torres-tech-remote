@@ -81,13 +81,20 @@ details p{margin-top:10px;color:var(--ink)}
 footer{padding:24px 0 36px;color:var(--muted);font-size:14px}
 footer a{margin-right:14px}
 a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.navr{display:flex;align-items:center;gap:16px}
+.langs{display:flex;gap:12px;font-size:14px;align-items:center}
+.langs a{color:var(--muted);text-decoration:none}
+.langs a:hover{color:var(--navy);text-decoration:underline}
+.langs b{color:var(--navy)}
+@media(max-width:640px){.nav{flex-wrap:wrap;padding:8px 0;row-gap:6px}.navr{width:100%;justify-content:space-between}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I get gym walk-ins to book a class?", "acceptedAnswer": {"@type": "Answer", "text": "Give them one easy next step. A QR code at your front desk or on your flyer opens your card, and one tap opens your own booking page, calls or texts you, or saves your contact. The card doesn't replace your booking system, it gets people to it faster."}}, {"@type": "Question", "name": "How do I stop clients from losing my number?", "acceptedAnswer": {"@type": "Answer", "text": "Ask them to tap Save contact on your card. Your gym goes straight into their phone's contacts, so they don't need a paper card or your Instagram handle."}}, {"@type": "Question", "name": "What is a digital business card?", "acceptedAnswer": {"@type": "Answer", "text": "It is a short web page built for phones. People open it with a link or a QR code, nothing is downloaded, and it can be added to the home screen like an app."}}, {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Design and setup are free. After that it is $10 a month or $100 a year. You see a preview before you pay."}}, {"@type": "Question", "name": "Can it use the booking app my gym already has?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The main button can open your booking, class or membership page. The card does not replace that system, it sends people to it."}}, {"@type": "Question", "name": "How do my members put it on their phone?", "acceptedAnswer": {"@type": "Answer", "text": "On an iPhone or an Android phone, they can add the card to the home screen so it opens like an app, and save your contact in one tap. We email you simple step-by-step instructions for iPhone and Android to share with your members, and we can walk you through it by phone or video call."}}, {"@type": "Question", "name": "Can my trainers have their own cards?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can make one card per trainer and one per location. For a team or several locations we give you a custom quote."}}, {"@type": "Question", "name": "Who makes the changes?", "acceptedAnswer": {"@type": "Answer", "text": "We do, like a concierge. Send us an email with what to change, such as a class time, a price, a photo or a promotion, and we update it."}}, {"@type": "Question", "name": "Which languages does it support?", "acceptedAnswer": {"@type": "Answer", "text": "We offer 25 languages, including Spanish, Portuguese, Chinese, Japanese and Arabic. Each card shows up to 3 of them, and each visitor sees the one that matches their phone's language."}}]}</script>
 </head>
 <body>
 <header class="top"><div class="wrap nav">
 <a class="brand" href="/"><img src="/favicon/ttr-192.png" alt="" width="32" height="32"/>Torres Tech Remote</a>
-<a class="btn btn-sm" href="/go/preview.html">Free preview</a>
+<div class="navr"><nav class="langs" aria-label="Language"><b aria-current="page">English</b><a href="/es/tarjeta-digital-gimnasio/" hreflang="es" lang="es">Español</a><a href="/pt/cartao-digital-ginasio/" hreflang="pt-PT" lang="pt-PT">Português</a></nav>
+<a class="btn btn-sm" href="/go/preview.html">Free preview</a></div>
 </div></header>
 <main>
 <div class="hero"><div class="wrap">
