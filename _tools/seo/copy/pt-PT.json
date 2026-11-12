@@ -1,0 +1,100 @@
+{
+ "lang": "pt-PT",
+ "brand_sub": "Cartões de visita digitais",
+ "nav_cta": "Pré-visualização grátis",
+ "cta_primary": "Pedir a minha pré-visualização grátis",
+ "cta_note": "Grátis. Vê primeiro e só paga se gostar.",
+ "how_title": "Como funciona",
+ "steps": [
+  [
+   "Envia-nos os seus dados",
+   "Nome, telefone, serviços, fotografias e a ligação onde já recebe marcações ou encomendas, se tiver."
+  ],
+  [
+   "Mostramos-lhe o seu cartão",
+   "Preparamos o seu cartão e mostramo-lo antes de pagar. Se quiser alterações, fazemo-las."
+  ],
+  [
+   "Partilha-o",
+   "Recebe uma ligação e um código QR para colocar no balcão, nos folhetos ou nas mensagens de texto."
+  ]
+ ],
+ "buttons_title": "O que os seus clientes veem",
+ "buttons_lead": "Um só toque para cada coisa. Sem descarregar nada.",
+ "price_title": "Preço",
+ "price_big": "$10 por mês",
+ "price_lines": [
+  "Design e instalação grátis.",
+  "Pré-visualização grátis antes de pagar.",
+  "Nós fazemos as suas alterações e atualizações.",
+  "O seu cartão pode oferecer até 3 dos nossos 25 idiomas, como português, espanhol, chinês, japonês ou árabe. Cada visitante vê-o no idioma do seu telemóvel."
+ ],
+ "not_title": "O que não é",
+ "not_text": "Não é uma aplicação para descarregar, nem um sistema de marcações, nem uma loja online. O seu cartão leva os seus clientes às ferramentas que já tem.",
+ "faq_title": "Perguntas frequentes",
+ "final_title": "Veja o seu cartão antes de pagar",
+ "footer_privacy": "Privacidade",
+ "footer_terms": "Termos",
+ "footer_rights": "Torres Tech Remote. Newark, Nova Jérsia, para negócios em todos os Estados Unidos.",
+ "home_label": "Início",
+ "page_label_cards": "Cartões digitais",
+ "phone_title": "Coloque-o num telemóvel em menos de um minuto",
+ "phone_lead": "Duas coisas rápidas que os seus membros podem fazer, em iPhone ou Android.",
+ "phone_groups": [
+  [
+   "Adicione-o ao ecrã principal, para abrir como uma aplicação",
+   [
+    [
+     "iPhone",
+     "Abra o cartão no Safari. Toque em Partilhar (o quadrado com uma seta). Toque em Adicionar ao ecrã principal e depois em Adicionar."
+    ],
+    [
+     "Android",
+     "Abra o cartão no Chrome. Toque em Adicionar ao ecrã principal e depois em Instalar."
+    ]
+   ]
+  ],
+  [
+   "Guarde o contacto",
+   [
+    [
+     "iPhone",
+     "Toque em Guardar contacto no cartão. Quando o contacto abrir, toque na marca de verificação no canto superior esquerdo."
+    ],
+    [
+     "Android",
+     "Toque em Guardar contacto. Quando for descarregado, toque em Abrir e depois em Importar (alguns telemóveis dizem Guardar)."
+    ]
+   ]
+  ]
+ ],
+ "phone_help": "Não tem a certeza de como fazer? Enviamos-lhe estes passos por e-mail para partilhar com os seus membros, e podemos guiá-lo por telefone ou videochamada, a partir de qualquer ponto dos EUA.",
+ "price_options": [
+  [
+   "Um cartão",
+   "$10 por mês",
+   "ou $100 por ano, ou seja, dois meses grátis. Para um negócio.",
+   "Pedir a minha pré-visualização grátis",
+   "/go/preview-pt.html"
+  ],
+  [
+   "Treinadores e personal trainers",
+   "Orçamento à medida",
+   "Um cartão para cada treinador, com os seus próprios dados de contacto.",
+   "Pedir um orçamento",
+   "/go/preview-pt.html"
+  ],
+  [
+   "Várias unidades",
+   "Orçamento à medida",
+   "Uma ligação e um código QR para cada unidade.",
+   "Pedir um orçamento",
+   "/go/preview-pt.html"
+  ]
+ ],
+ "price_note": "O orçamento depende do número de unidades e de pessoas. A instalação é grátis.",
+ "sms_url": "sms:+12017722106?&amp;body=Ol%C3%A1%20Pedro%2C%20quero%20uma%20pr%C3%A9-visualiza%C3%A7%C3%A3o%20gr%C3%A1tis%20para%20o%20meu%20neg%C3%B3cio%3A%20",
+ "sms_hint": "O texto abre no seu telemóvel.",
+ "sms_label": "Ou envie uma mensagem de texto ao Pedro",
+ "cta_url": "/go/preview-pt.html"
+}
