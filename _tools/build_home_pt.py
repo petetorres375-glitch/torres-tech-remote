@@ -4,8 +4,8 @@ import re, urllib.parse, pathlib
 root = pathlib.Path(__file__).resolve().parent.parent
 s = (root / "index.html").read_text(encoding="utf-8")
 s = re.sub(r'<link href="[^"]*" hreflang="[^"]*" rel="alternate"/>\n', "", s)  # English page now has its own; each build adds the full set
-s = re.sub(r'<nav class="langs".*?</nav>\n', "", s, flags=re.S)  # drop English page\'s switch; each build adds its own
-s = re.sub(r'\.langs\{[^\n]*?\.langs b\{[^\n]*?\}\n', "", s)
+s = re.sub(r'<nav class="langsw".*?</nav>\n', "", s, flags=re.S)  # drop English page\'s switch; each build adds its own
+s = re.sub(r'\.langsw\{[^\n]*?\.langsw b\{[^\n]*?\}\n', "", s)
 
 def rep(old, new, count=1):
     global s
@@ -37,8 +37,8 @@ rep('"@id": "https://torrestechremote.com/#webpage",\n      "url": "https://torr
     '"@id": "https://torrestechremote.com/pt/#webpage",\n      "url": "https://torrestechremote.com/pt/",\n      "inLanguage": "pt-PT",\n      "name": "Torres Tech Remote: cartões de visita digitais",')
 
 # language switch (English / Español; Português added when that page exists)
-rep('</style>\n</head>', '.langs{display:flex;gap:12px;font-size:14px;align-items:center;margin-right:6px}.langs a{color:var(--muted,#65717e);text-decoration:none}.langs a:hover{text-decoration:underline}.langs b{color:var(--navy,#12192d)}\n</style>\n</head>')
-rep('<div class="nav-right">\n', '<div class="nav-right">\n<nav class="langs" aria-label="Idioma"><a href="/" hreflang="en" lang="en">English</a><a href="/es/" hreflang="es" lang="es">Español</a><b aria-current="page">Português</b></nav>\n')
+rep('</style>\n</head>', '.langsw{display:flex;gap:12px;font-size:14px;align-items:center;margin-right:6px}.langsw a{color:var(--muted,#65717e);text-decoration:none}.langsw a:hover{text-decoration:underline}.langsw b{color:var(--navy,#12192d)}\n</style>\n</head>')
+rep('<div class="nav-right">\n', '<div class="nav-right">\n<nav class="langsw" aria-label="Idioma"><a href="/" hreflang="en" lang="en">English</a><a href="/es/" hreflang="es" lang="es">Español</a><b aria-current="page">Português</b></nav>\n')
 
 # ---- absolute asset paths (page now lives in /es/) ----
 s = s.replace('src="img/', 'src="/img/').replace('src="comptia-a-certification.7.png"', 'src="/comptia-a-certification.7.png"')
