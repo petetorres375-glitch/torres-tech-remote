@@ -3,6 +3,9 @@
 import re, urllib.parse, pathlib
 root = pathlib.Path(__file__).resolve().parent.parent
 s = (root / "index.html").read_text(encoding="utf-8")
+s = re.sub(r'<link href="[^"]*" hreflang="[^"]*" rel="alternate"/>\n', "", s)  # English page now has its own; each build adds the full set
+s = re.sub(r'<nav class="langs".*?</nav>\n', "", s, flags=re.S)  # drop English page\'s switch; each build adds its own
+s = re.sub(r'\.langs\{[^\n]*?\.langs b\{[^\n]*?\}\n', "", s)
 
 def rep(old, new, count=1):
     global s
@@ -18,7 +21,7 @@ D = "Tarjetas de presentación digitales para pequeños negocios en todo EE. UU.
 rep('<meta content="Digital business cards for small businesses across the U.S.: one link and one QR code for every location, a card for each person, and we do your updates. Free setup, then $10/month. Free preview before you pay." name="description"/>',
     f'<meta content="{D}" name="description"/>')
 rep('<link href="https://torrestechremote.com/" rel="canonical"/>',
-    '<link href="https://torrestechremote.com/es/" rel="canonical"/>\n<link href="https://torrestechremote.com/" hreflang="en" rel="alternate"/>\n<link href="https://torrestechremote.com/es/" hreflang="es" rel="alternate"/>\n<link href="https://torrestechremote.com/" hreflang="x-default" rel="alternate"/>')
+    '<link href="https://torrestechremote.com/es/" rel="canonical"/>\n<link href="https://torrestechremote.com/" hreflang="en" rel="alternate"/>\n<link href="https://torrestechremote.com/es/" hreflang="es" rel="alternate"/>\n<link href="https://torrestechremote.com/pt/" hreflang="pt-PT" rel="alternate"/>\n<link href="https://torrestechremote.com/" hreflang="x-default" rel="alternate"/>')
 rep('<meta content="https://torrestechremote.com/" property="og:url"/>', '<meta content="https://torrestechremote.com/es/" property="og:url"/>')
 OT = "Torres Tech Remote | Tarjetas de presentación digitales para su negocio, cada local y su equipo"
 OD = "Para pequeños negocios en todo EE. UU.: un enlace y un código QR para cada local, una tarjeta para cada persona, y nosotros hacemos sus actualizaciones. Instalación gratis, luego $10/mes. Vista previa gratis antes de pagar."
@@ -29,13 +32,13 @@ rep('<meta content="Torres Tech Remote: digital business cards for small busines
 rep('<meta content="Torres Tech Remote | Digital Business Cards for Your Business, Every Location and Team" name="twitter:title"/>', f'<meta content="{OT}" name="twitter:title"/>')
 rep('<meta content="For small businesses across the U.S.: one link and one QR code for each location, a card for each person, and we do your updates. Free setup, then $10/month. Free preview before you pay." name="twitter:description"/>', f'<meta content="{OD}" name="twitter:description"/>')
 # JSON-LD
-rep('"url": "https://torrestechremote.com/",\n      "publisher"', '"url": "https://torrestechremote.com/",\n      "inLanguage": ["en", "es"],\n      "publisher"')
+rep('"url": "https://torrestechremote.com/",\n      "publisher"', '"url": "https://torrestechremote.com/",\n      "inLanguage": ["en", "es", "pt-PT"],\n      "publisher"')
 rep('"@id": "https://torrestechremote.com/#webpage",\n      "url": "https://torrestechremote.com/",\n      "name": "Torres Tech Remote: digital business cards",',
     '"@id": "https://torrestechremote.com/es/#webpage",\n      "url": "https://torrestechremote.com/es/",\n      "inLanguage": "es",\n      "name": "Torres Tech Remote: tarjetas de presentación digitales",')
 
 # language switch (English / Español; Português added when that page exists)
 rep('</style>\n</head>', '.langs{display:flex;gap:12px;font-size:14px;align-items:center;margin-right:6px}.langs a{color:var(--muted,#65717e);text-decoration:none}.langs a:hover{text-decoration:underline}.langs b{color:var(--navy,#12192d)}\n</style>\n</head>')
-rep('<div class="nav-right">\n', '<div class="nav-right">\n<nav class="langs" aria-label="Idioma"><a href="/" hreflang="en" lang="en">English</a><b aria-current="page">Español</b></nav>\n')
+rep('<div class="nav-right">\n', '<div class="nav-right">\n<nav class="langs" aria-label="Idioma"><a href="/" hreflang="en" lang="en">English</a><b aria-current="page">Español</b><a href="/pt/" hreflang="pt-PT" lang="pt-PT">Português</a></nav>\n')
 
 # ---- absolute asset paths (page now lives in /es/) ----
 s = s.replace('src="img/', 'src="/img/').replace('src="comptia-a-certification.7.png"', 'src="/comptia-a-certification.7.png"')
