@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Tarjeta digital para gimnasios | Torres Tech Remote</title>
 <meta name="description" content="Tarjeta de presentación digital para gimnasios y estudios de fitness. Un enlace y un código QR: llaman, escriben, reservan una clase o lo guardan en un toque. Instalación gratis, $10 al mes."/>
 <link rel="canonical" href="https://torrestechremote.com/es/tarjeta-digital-gimnasio/"/>
@@ -10,143 +10,124 @@
 <link rel="alternate" hreflang="es" href="https://torrestechremote.com/es/tarjeta-digital-gimnasio/"/>
 <link rel="alternate" hreflang="pt-PT" href="https://torrestechremote.com/pt/cartao-digital-ginasio/"/>
 <link rel="alternate" hreflang="x-default" href="https://torrestechremote.com/digital-business-card-for-gyms/"/>
-<link rel="icon" href="/favicon/ttr-32.png" sizes="32x32" type="image/png"/>
-<link rel="apple-touch-icon" href="/favicon/ttr-180.png" sizes="180x180"/>
+<link href="/favicon/ttr-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/favicon/ttr-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon/ttr-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon/ttr.ico" rel="shortcut icon"/>
+<link href="/favicon/ttr-180.png" rel="apple-touch-icon" sizes="180x180"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://torrestechremote.com/es/tarjeta-digital-gimnasio/"/>
 <meta property="og:title" content="Tarjeta de presentación digital para su gimnasio"/>
 <meta property="og:description" content="Tarjeta de presentación digital para gimnasios y estudios de fitness. Un enlace y un código QR: llaman, escriben, reservan una clase o lo guardan en un toque. Instalación gratis, $10 al mes."/>
 <meta property="og:image" content="https://torrestechremote.com/og-business-cards.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="/home.css" rel="stylesheet"/>
 <style>
-:root{--navy:#14263d;--navy-2:#203650;--gold:#9a8355;--gold-dark:#806b43;--paper:#f5f6f7;--ink:#202a36;--muted:#586472;--line:#dce1e6}
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--ink);font:17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:-.02em;line-height:1.18;margin:0;color:var(--navy);text-wrap:balance}
-p{margin:0}
-.wrap{width:min(100% - 32px,880px);margin-inline:auto}
-.top{border-bottom:1px solid var(--line);background:#fff}
-.nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);text-decoration:none}
-.brand img{width:32px;height:32px;border-radius:3px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-radius:3px;background:var(--navy);color:#fff;font-weight:600;font-size:16px;text-decoration:none;text-align:center}
-.btn:hover{background:var(--navy-2)}
-.btn-sm{min-height:40px;padding:8px 14px;font-size:14px}
-.ctas{display:flex;flex-wrap:wrap;gap:10px}
-.btn-alt{background:transparent;color:var(--navy);border:1px solid #aeb9c4}
-.btn-alt:hover{background:#f1f3f5}
-.final .ctas{justify-content:center}
-.final .btn-alt{background:transparent;color:#fff;border-color:#c9d2dc}
-.final .btn-alt:hover{background:rgba(255,255,255,.12)}
-.hero{background:var(--paper);border-bottom:1px solid var(--line);padding:48px 0 52px}
-.eyebrow{color:var(--gold-dark);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
-.hero h1{font-size:clamp(32px,6.5vw,52px);margin-bottom:18px}
-.lede{font-size:19px;max-width:640px;margin-bottom:26px}
-.note{color:var(--muted);font-size:15px;margin-top:12px}
-.note.hint{font-size:18px;font-weight:600;line-height:1.4;color:var(--ink)}
-.final .note.hint{color:#e5ebf1}
-section{padding:44px 0;border-bottom:1px solid var(--line)}
-section h2{font-size:clamp(26px,4.5vw,34px);margin-bottom:20px}
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:18px;counter-reset:s}
-.steps li{counter-increment:s;padding-left:50px;position:relative}
-.steps li:before{content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
-.steps b,.grid b{display:block;color:var(--navy)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.grid div{border:1px solid var(--line);border-radius:3px;padding:16px 18px;background:#fff}
-.grid span{color:var(--muted);font-size:16px}
-ul.list{margin:0;padding-left:22px;display:grid;gap:8px}
-.price{background:var(--paper)}
-.prob p{margin-bottom:12px;max-width:680px}
-.ph{display:grid;gap:14px;margin-bottom:22px}
-.ph h3{font-size:20px;margin-bottom:8px}
-.ph p{margin:0 0 6px}
-.help{background:var(--paper);border-left:3px solid var(--gold);padding:14px 18px}
-.ex{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-.ex img{width:200px;max-width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
-.ex p{flex:1;min-width:200px;color:var(--muted)}
-.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:20px}
-.opt{background:#fff;border:1px solid var(--line);border-radius:3px;padding:18px;display:flex;flex-direction:column;gap:8px}
-.opt h3{font-size:20px}
-.opt .pr{font-family:Georgia,serif;font-size:26px;color:var(--navy)}
-.opt p{color:var(--muted);font-size:16px;flex:1}
-details{border-top:1px solid var(--line);padding:14px 0}
-details:last-of-type{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;font-weight:600;color:var(--navy)}
-details p{margin-top:10px;color:var(--ink)}
-.final{text-align:center;background:var(--navy);color:#fff;border:0}
-.final h2{color:#fff}
-.final .btn{background:#fff;color:var(--navy)}
-.final .note{color:#c9d2dc}
-footer{padding:24px 0 36px;color:var(--muted);font-size:14px}
-footer a{margin-right:14px}
-a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.navr{display:flex;align-items:center;gap:16px}
-.langs{display:flex;gap:12px;font-size:14px;align-items:center}
-.langs a{color:var(--muted);text-decoration:none}
-.langs a:hover{color:var(--navy);text-decoration:underline}
-.langs b{color:var(--navy)}
-@media(max-width:640px){.nav{flex-wrap:wrap;padding:8px 0;row-gap:6px}.navr{width:100%;justify-content:space-between}}
+.gh{max-width:820px}
+.gh h1{font-size:clamp(34px,5.6vw,56px)}
+.gsec .wrap{max-width:1000px}
+.gsec h2{margin-bottom:12px}
+.gsec .sub{margin-bottom:0}
+.gcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:34px;text-align:left}
+.gcard{background:#fff;border:1px solid var(--line);border-radius:19px;padding:26px 26px 28px;box-shadow:0 10px 30px rgba(36,70,168,.06)}
+.gcard h3{font-size:18px;margin:0 0 8px}
+.gcard p{color:var(--muted);font-size:15.5px;line-height:1.7;margin:0 0 6px}
+.gcard p b{color:var(--ink)}
+.gcard .btn{margin-top:14px;width:100%}
+.gcard .gprice{font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin:2px 0 8px}
+.gnum{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy,#141a2b);color:#fff;font-weight:800;margin-bottom:12px}
+.gex{display:flex;gap:34px;align-items:center;justify-content:center;flex-wrap:wrap}
+.gex img{width:230px;max-width:100%;height:auto;border:1px solid var(--line);border-radius:22px;box-shadow:0 18px 40px -16px rgba(15,23,42,.3)}
+.gex p{flex:1;min-width:240px;max-width:480px;color:var(--muted);font-size:17px;line-height:1.75;text-align:left}
+.gprob{max-width:760px;margin:0 auto;text-align:left}
+.gprob p{color:var(--muted);font-size:17px;line-height:1.8;margin:0 0 14px}
+.glist{max-width:760px;margin:30px auto 0;text-align:left}
+.gnote{max-width:760px;margin:26px auto 0;text-align:left;color:var(--muted);font-size:15.5px;line-height:1.75}
+.gnote b{color:var(--ink)}
+.ghelp{max-width:760px;margin:26px auto 0;background:var(--peach);border:1px solid #f0d3bd;border-radius:16px;padding:16px 20px;text-align:left;color:var(--ink);font-size:15.5px;line-height:1.7}
+.gh .fine{margin-top:12px}
+.gfour{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media(max-width:900px){.gfour{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.gfour{grid-template-columns:minmax(0,1fr)}}
+.gphones{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.gphone{padding:30px 30px 32px}
+.gphone h3{font-size:24px;margin-bottom:6px}
+.gphone h4{font-size:15px;font-weight:800;color:var(--orange-text);letter-spacing:.02em;margin:22px 0 10px}
+.gsteps{list-style:none;margin:0;padding:0;counter-reset:gs;display:grid;gap:10px}
+.gsteps li{counter-increment:gs;position:relative;padding-left:38px;color:var(--ink);font-size:15.5px;line-height:1.6}
+.gsteps li::before{content:counter(gs);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--navy,#141a2b);color:#fff;font-weight:800;font-size:13px;display:grid;place-items:center}
+.gsec .feature-photo{position:relative}
+.pl{position:absolute;top:12px;left:12px;z-index:2;background:#fff;color:var(--orange-text);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;line-height:1;padding:7px 12px;border-radius:999px;box-shadow:0 3px 10px rgba(15,23,42,.18)}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo consigo que las personas que visitan mi gimnasio reserven una clase?", "acceptedAnswer": {"@type": "Answer", "text": "Déles un siguiente paso fácil. Un código QR en su recepción o en su volante abre su tarjeta, y con un toque abren su página de reservas, le llaman o le escriben, o guardan su contacto. La tarjeta no reemplaza su sistema de reservas, lleva a la gente hasta allí más rápido."}}, {"@type": "Question", "name": "¿Cómo evito que mis clientes pierdan mi número?", "acceptedAnswer": {"@type": "Answer", "text": "Pídales que toquen Guardar contacto en su tarjeta. Su gimnasio queda directo en los contactos de su teléfono, y no necesitan una tarjeta de papel ni su Instagram."}}, {"@type": "Question", "name": "¿Qué es una tarjeta de presentación digital?", "acceptedAnswer": {"@type": "Answer", "text": "Es una página web corta hecha para el teléfono. Se abre con un enlace o un código QR, no hay que descargar nada y se puede agregar a la pantalla de inicio como una aplicación."}}, {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "El diseño y la instalación son gratis. Después son $10 al mes o $100 al año. Usted ve una vista previa antes de pagar."}}, {"@type": "Question", "name": "¿Puede usar la aplicación de reservas que ya tiene mi gimnasio?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El botón principal puede abrir su página de reservas, clases o membresías. La tarjeta no reemplaza ese sistema, lleva a la gente hasta allí."}}, {"@type": "Question", "name": "¿Cómo ponen mis miembros la tarjeta en su teléfono?", "acceptedAnswer": {"@type": "Answer", "text": "En un iPhone o en un teléfono Android, pueden agregar la tarjeta a la pantalla de inicio para que se abra como una aplicación, y guardar su contacto en un toque. Le enviamos por correo instrucciones sencillas paso a paso para iPhone y Android para que las comparta con sus miembros, y podemos guiarle por teléfono o videollamada."}}, {"@type": "Question", "name": "¿Mis entrenadores pueden tener su propia tarjeta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Podemos hacer una tarjeta por entrenador y una por sucursal. Para un equipo o varias sucursales le damos una cotización a su medida."}}, {"@type": "Question", "name": "¿Quién hace los cambios?", "acceptedAnswer": {"@type": "Answer", "text": "Nosotros, como su concierge. Nos envía un correo con lo que quiere cambiar, como el horario de una clase, un precio, una foto o una promoción, y lo actualizamos."}}, {"@type": "Question", "name": "¿Qué idiomas ofrece?", "acceptedAnswer": {"@type": "Answer", "text": "Ofrecemos 25 idiomas, entre ellos español, portugués, chino, japonés y árabe. Cada tarjeta muestra hasta 3, y cada visitante ve el que coincide con el idioma de su teléfono."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo consigo que las personas que visitan mi gimnasio reserven una clase?", "acceptedAnswer": {"@type": "Answer", "text": "Déles un siguiente paso fácil. Un código QR en su recepción o en su volante abre su tarjeta, y con un toque abren su página de reservas, le llaman o le escriben, o guardan su contacto. La tarjeta no reemplaza su sistema de reservas, lleva a la gente hasta allí más rápido."}}, {"@type": "Question", "name": "¿Cómo evito que mis clientes pierdan mi número?", "acceptedAnswer": {"@type": "Answer", "text": "Pídales que toquen Guardar contacto en su tarjeta. Su gimnasio queda directo en los contactos de su teléfono, y no necesitan una tarjeta de papel ni su Instagram."}}, {"@type": "Question", "name": "¿Qué es una tarjeta de presentación digital?", "acceptedAnswer": {"@type": "Answer", "text": "Es una página web corta hecha para el teléfono. Se abre con un enlace o un código QR, no hay que descargar nada y se puede agregar a la pantalla de inicio como una aplicación."}}, {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "El diseño y la instalación son gratis. Después son $10 al mes o $100 al año. Usted ve una vista previa antes de pagar."}}, {"@type": "Question", "name": "¿Puede usar la aplicación de reservas que ya tiene mi gimnasio?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El botón principal puede abrir su página de reservas, clases o membresías. La tarjeta no reemplaza ese sistema, lleva a la gente hasta allí."}}, {"@type": "Question", "name": "¿Cómo ponen mis miembros la tarjeta en su teléfono?", "acceptedAnswer": {"@type": "Answer", "text": "En un iPhone o en un teléfono Android, pueden agregar la tarjeta a la pantalla de inicio para que se abra como una aplicación, y guardar su contacto en un toque. Le enviamos por correo instrucciones sencillas paso a paso para iPhone y Android para que las comparta con sus miembros, y podemos guiarle por teléfono o videollamada."}}, {"@type": "Question", "name": "¿Mis coaches y entrenadores pueden tener su propia tarjeta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Cada coach o entrenador puede tener su propia tarjeta al mismo precio que la suya, y la piden ellos mismos. También podemos hacer una tarjeta por sucursal. Para varias sucursales o una tarjeta de equipo le damos una cotización a su medida, y el negocio paga todas las tarjetas."}}, {"@type": "Question", "name": "¿Quién hace los cambios?", "acceptedAnswer": {"@type": "Answer", "text": "Nosotros, como su concierge. Nos envía un correo con lo que quiere cambiar, como el horario de una clase, un precio, una foto o una promoción, y lo actualizamos."}}, {"@type": "Question", "name": "¿Qué idiomas ofrece?", "acceptedAnswer": {"@type": "Answer", "text": "Ofrecemos 25 idiomas, entre ellos español, portugués, chino, japonés y árabe. Cada tarjeta muestra hasta 3, y cada visitante ve el que coincide con el idioma de su teléfono."}}]}</script>
 </head>
-<body>
-<header class="top"><div class="wrap nav">
-<a class="brand" href="/"><img src="/favicon/ttr-192.png" alt="" width="32" height="32"/>Torres Tech Remote</a>
-<div class="navr"><nav class="langs" aria-label="Language"><a href="/digital-business-card-for-gyms/" hreflang="en" lang="en">English</a><b aria-current="page">Español</b><a href="/pt/cartao-digital-ginasio/" hreflang="pt-PT" lang="pt-PT">Português</a></nav>
-<a class="btn btn-sm" href="/go/preview-es.html">Vista previa gratis</a></div>
-</div></header>
+<body id="top">
+<nav class="top"><div class="wrap nav">
+<a class="brand" href="/es/"><img alt="TTR" src="/img/ttr-monogram.webp" width="61" height="40"/> Torres Tech Remote</a>
+<div class="links"><a href="/es/#card">Su tarjeta</a><a href="/es/#clients">Tarjetas reales</a><a href="/es/#how">Cómo funciona</a><a href="/es/#pricing">Precios</a><a href="/es/#faq">Preguntas</a></div>
+<div class="nav-r"><span class="lang"><a hreflang="en" lang="en" href="/digital-business-card-for-gyms/">EN</a> · <b aria-current="page">ES</b> · <a hreflang="pt-PT" lang="pt-PT" href="/pt/cartao-digital-ginasio/">PT</a></span><a class="btn btn-p btn-sm" href="/go/preview-es.html" rel="noopener nofollow" target="_blank">Vista previa gratis</a></div>
+</div></nav>
 <main>
-<div class="hero"><div class="wrap">
-<p class="eyebrow">Para gimnasios y estudios de fitness</p>
+<header class="hero"><div class="wrap gh">
+<span class="pill"><i></i> Para gimnasios y estudios de fitness</span>
 <h1>Tarjeta de presentación digital para su gimnasio</h1>
-<p class="lede">Una tarjeta de presentación digital para gimnasios es un enlace y un código QR. Alguien escanea el código QR en su recepción o en un volante, y en un toque puede reservar una clase, escribirle, llamarle o guardar su número.</p>
-<div class="ctas"><a class="btn" href="/go/preview-es.html">Pedir mi vista previa gratis</a><a class="btn btn-alt" href="sms:+12017722106?&amp;body=Hola%20Pedro%2C%20quiero%20una%20vista%20previa%20gratis%20para%20mi%20negocio%3A%20">O escríbale un texto a Pedro</a></div>
-<p class="note hint">El texto se abre en su teléfono.</p>
-<p class="note">Gratis. Usted la ve primero y solo paga si le gusta.</p>
-</div></div>
-<section><div class="wrap prob"><h2>Cómo evitar que los clientes del gimnasio pierdan su número</h2><p>Alguien prueba una clase, le gusta, y luego no encuentra su número. Las tarjetas de papel se pierden, y buscar su Instagram es un paso de más. Ponga un código QR en su recepción o en su volante. Con un escaneo pueden guardar su número, escribirle o reservar una clase, y su tarjeta se queda en su teléfono.</p><p>La forma más rápida de que los visitantes reserven una sesión es quitar pasos. Es un escaneo y un toque, sin nada que descargar.</p></div></section>
-<section><div class="wrap">
-<h2>Lo que ven sus clientes</h2>
-<p style="margin-bottom:18px">Un solo toque para cada cosa. Sin descargar nada.</p>
-<div class="grid"><div><b>Hecha a la medida de su gimnasio</b> <span>La diseñamos con su logo, los colores de su marca y una foto de portada, en un estilo claro o de noche.</span></div><div><b>Reservar una clase o inscribirse</b> <span>El botón principal abre su propia página o aplicación: reservas, membresías o un formulario de inscripción. Hasta puede usar su logo como botón.</span></div><div><b>Mensaje o llamada</b> <span>El número de su recepción, a un toque.</span></div><div><b>Guardar contacto</b> <span>Su gimnasio queda en el teléfono de la persona, y le encuentra la semana siguiente.</span></div><div><b>Cómo llegar</b> <span>Abre el mapa hasta su puerta.</span></div><div><b>Promociones arriba</b> <span>Una semana de prueba gratis, una clase nueva, un volante o un horario de feriado. Desaparece en la fecha que usted elija.</span></div><div><b>Fotos, hasta 24</b> <span>Muestre su local, sus clases y su gente.</span></div><div><b>Botón de reseña de Google</b> <span>Un toque lleva a sus miembros contentos directo a su página de reseñas de Google.</span></div><div><b>Sus redes sociales</b> <span>Instagram, Facebook y más, todo en un solo lugar.</span></div><div><b>Horario y servicios</b> <span>Membresías, clases y entrenamiento, con el horario de hoy resaltado.</span></div></div>
+<p class="lead">Una tarjeta de presentación digital para gimnasios es un enlace y un código QR. Alguien escanea el código QR en su recepción o en un volante, y en un toque puede reservar una clase, escribirle, llamarle o guardar su número.</p>
+<div class="cta"><a class="btn btn-p" href="/go/preview-es.html" rel="noopener nofollow" target="_blank">Pedir mi vista previa gratis →</a><a class="btn btn-s" href="sms:+12017722106?&amp;body=Hola%20Pedro%2C%20quiero%20una%20vista%20previa%20gratis%20para%20mi%20negocio%3A%20">O escríbale un texto a Pedro</a></div>
+<p class="fine">El texto se abre en su teléfono.</p>
+<p class="fine">Gratis. Usted la ve primero y solo paga si le gusta.</p>
+</div></header>
+<section class="gsec soft"><div class="wrap center"><h2>Cómo evitar que los clientes del gimnasio pierdan su número</h2><div class="gprob" style="margin-top:22px"><p>Alguien prueba una clase, le gusta, y luego no encuentra su número. Las tarjetas de papel se pierden, y buscar su Instagram es un paso de más. Ponga un código QR en su recepción o en su volante. Con un escaneo pueden guardar su número, escribirle o reservar una clase, y su tarjeta se queda en su teléfono.</p><p>La forma más rápida de que los visitantes reserven una sesión es quitar pasos. Es un escaneo y un toque, sin nada que descargar.</p></div></div></section>
+<section class="gsec"><div class="wrap center">
+<div class="eyebrow">Lo que ven sus clientes</div>
+<h2>Un solo toque para cada cosa. Sin descargar nada.</h2>
+<div class="gcards"><div class="fc"><div class="feature-photo"><span class="pl">Su marca</span><img alt="" loading="lazy" height="700" width="840" src="/img/home/feat-brand.webp"/></div><h3>Hecha a la medida de su gimnasio</h3><p>La diseñamos con su logo, los colores de su marca y una foto de portada, en un estilo claro o de noche.</p></div><div class="fc"><div class="feature-photo feature-photo-fit" style="background:#fefefe"><span class="pl">Botón de reserva</span><img alt="" loading="lazy" height="260" width="780" src="/img/home/gym-booking.webp"/></div><h3>Reservar una clase o inscribirse</h3><p>El botón principal abre su propia página o aplicación: reservas, membresías o un formulario de inscripción. Hasta puede usar su logo como botón.</p></div><div class="fc"><div class="feature-photo feature-photo-fit" style="background:#fffdfc"><span class="pl">Llamar y escribir</span><img alt="" loading="lazy" height="106" width="780" src="/img/home/gym-textcall.webp"/></div><h3>Mensaje o llamada</h3><p>El número de su recepción, a un toque.</p></div><div class="fc"><div class="feature-photo feature-photo-fit" style="background:#fffdfc"><span class="pl">Guardar contacto</span><img alt="" loading="lazy" height="240" width="780" src="/img/home/gym-save.webp"/></div><h3>Guardar contacto</h3><p>Su gimnasio queda en el teléfono de la persona, y le encuentra la semana siguiente.</p></div><div class="fc"><div class="feature-photo feature-photo-fit" style="background:#fffdfc"><span class="pl">Cómo llegar</span><img alt="" loading="lazy" height="160" width="780" src="/img/home/gym-directions.webp"/></div><h3>Cómo llegar</h3><p>Abre el mapa hasta su puerta.</p></div><div class="fc"><div class="feature-photo"><span class="pl">Promociones</span><img alt="" loading="lazy" height="1057" width="780" src="/img/home/gym-promo.webp"/></div><h3>Promociones arriba</h3><p>Una semana de prueba gratis, una clase nueva, un volante o un horario de feriado. Desaparece en la fecha que usted elija.</p></div><div class="fc"><div class="feature-photo"><span class="pl">HSA/FSA</span><img alt="" loading="lazy" height="1057" width="780" src="/img/home/gym-truemed.webp"/></div><h3>Pago con HSA/FSA</h3><p>Avise a sus miembros que pueden pagar con dinero de HSA/FSA. Un cartel en su tarjeta les muestra cómo, con un código QR.</p></div><div class="fc"><div class="feature-photo"><span class="pl">Fotos</span><img alt="" loading="lazy" height="748" width="780" src="/img/home/gym-photos.webp"/></div><h3>Fotos, hasta 24</h3><p>Muestre su local, sus clases y su gente.</p></div><div class="fc"><div class="feature-photo feature-photo-fit" style="background:#fefefe"><span class="pl">Síganos</span><img alt="" loading="lazy" height="115" width="780" src="/img/home/gym-review.webp"/></div><h3>Botón de reseña de Google</h3><p>Un toque lleva a sus miembros contentos directo a su página de reseñas de Google.</p></div><div class="fc"><div class="feature-photo"><span class="pl">Horario</span><img alt="" loading="lazy" height="717" width="780" src="/img/home/gym-hours.webp"/></div><h3>Horario y servicios</h3><p>Membresías, clases y entrenamiento, con el horario de hoy resaltado.</p></div></div>
 </div></section>
-<section><div class="wrap ex"><img src="/img/feat-alpha-night.webp" alt="Tarjeta digital de Alpha Fit Club, modo noche" loading="lazy" width="200"/><p>Alpha Fit Club, en Newark, usa su logo como botón de reservas y un anuncio arriba.</p></div></section>
-<section><div class="wrap">
+<section class="gsec soft"><div class="wrap"><div class="gex"><img src="/img/feat-alpha-day.webp" alt="Tarjeta digital de Alpha Fit Club, modo noche" loading="lazy" width="230"/><p>Alpha Fit Club, en Newark, usa su logo como botón de reservas y un anuncio arriba.</p></div></div></section>
+<section class="gsec soft"><div class="wrap center">
 <h2>Cómo funciona</h2>
-<ol class="steps"><li><b>Usted nos envía sus datos</b>Nombre, teléfono, servicios, fotos y el enlace donde ya recibe citas o pedidos, si lo tiene.</li><li><b>Le mostramos su tarjeta</b>Le preparamos su tarjeta y se la enseñamos antes de que pague. Si quiere cambios, los hacemos.</li><li><b>Usted la comparte</b>Recibe un enlace y un código QR para ponerlos en su mostrador, sus volantes o sus mensajes de texto.</li></ol>
+<div class="steps"><div class="step"><div class="step-phone"><img alt="Usted nos envía sus datos" decoding="async" loading="lazy" height="1170" width="840" src="/img/home/step-1-form.webp"/></div><span class="step-num">1</span><h3>Usted nos envía sus datos</h3><p>Nombre, teléfono, servicios, fotos y el enlace donde ya recibe citas o pedidos, si lo tiene.</p></div><div class="step"><div class="step-phone"><img alt="Le mostramos su tarjeta" decoding="async" loading="lazy" height="1650" width="820" src="/img/home/gym-step-2-preview.webp"/></div><span class="step-num">2</span><h3>Le mostramos su tarjeta</h3><p>Le preparamos su tarjeta y se la enseñamos antes de que pague. Si quiere cambios, los hacemos.</p></div><div class="step"><div class="step-phone"><img alt="Usted la comparte" decoding="async" loading="lazy" height="1560" width="780" src="/img/home/gym-step-3-live.webp"/></div><span class="step-num">3</span><h3>Usted la comparte</h3><p>Recibe un enlace y un código QR para ponerlos en su mostrador, sus volantes o sus mensajes de texto.</p></div></div>
 </div></section>
-<section><div class="wrap"><h2>Póngala en un teléfono en menos de un minuto</h2><p style="margin-bottom:18px">Dos cosas rápidas que sus miembros pueden hacer, en iPhone o Android.</p><div class="ph"><div><h3>Agréguela a la pantalla de inicio, para que se abra como una aplicación</h3><p><b>iPhone.</b> Abra la tarjeta en Safari. Toque Compartir (el cuadrado con una flecha). Toque Añadir a pantalla de inicio y luego Añadir.</p><p><b>Android.</b> Abra la tarjeta en Chrome. Toque Añadir a pantalla de inicio y luego Instalar.</p></div><div><h3>Guarde el contacto</h3><p><b>iPhone.</b> Toque Guardar contacto en la tarjeta. Cuando se abra el contacto, toque la marca de verificación arriba a la izquierda.</p><p><b>Android.</b> Toque Guardar contacto. Cuando se descargue, toque Abrir y luego Importar (algunos teléfonos dicen Guardar).</p></div></div><p class="help">¿No está seguro de cómo? Le enviamos por correo estos pasos para que los comparta con sus miembros, y podemos guiarle por teléfono o videollamada, desde cualquier lugar de EE. UU.</p></div></section>
-<section><div class="wrap">
+<section class="gsec"><div class="wrap center"><h2>Póngala en un teléfono en menos de un minuto</h2><p class="sub">Dos cosas rápidas que sus miembros pueden hacer, en iPhone o Android.</p><div class="gcards gphones"><div class="gcard gphone"><h3>iPhone</h3><h4>Agréguela a la pantalla de inicio, para que se abra como una aplicación</h4><ol class="gsteps"><li>Abra Safari y escriba el enlace de su tarjeta.</li><li>Baje y toque Añadir a pantalla de inicio en la tarjeta.</li><li>Toque Compartir (el cuadrado con una flecha).</li><li>Toque Añadir a pantalla de inicio y luego Añadir.</li></ol><h4>Guarde el contacto</h4><ol class="gsteps"><li>Abra Safari y escriba el enlace de su tarjeta.</li><li>Baje y toque Guardar contacto en la tarjeta.</li><li>Cuando se abra el contacto, toque la marca de verificación arriba a la izquierda.</li></ol></div><div class="gcard gphone"><h3>Android</h3><h4>Agréguela a la pantalla de inicio, para que se abra como una aplicación</h4><ol class="gsteps"><li>Abra el navegador Chrome y escriba el enlace de su tarjeta.</li><li>Baje y toque Añadir a pantalla de inicio en la tarjeta.</li><li>Toque Instalar.</li><li>El ícono de la tarjeta se agrega a su pantalla de inicio y a su lista de aplicaciones.</li></ol><h4>Guarde el contacto</h4><ol class="gsteps"><li>Abra su tarjeta.</li><li>Toque el botón Guardar contacto.</li><li>Toque Descargar en el cuadro que muestra el nombre del archivo (por ejemplo, torres-tech-remote.vcf) y dónde se guardará.</li><li>Abra el archivo descargado.</li><li>En la pantalla siguiente, toque Importar y elija dónde guardarlo.</li><li>El contacto ya está en su lista de contactos.</li></ol></div></div><p class="ghelp">¿No está seguro de cómo? Le enviamos por correo estos pasos para que los comparta con sus miembros, y podemos guiarle por teléfono o videollamada, desde cualquier lugar de EE. UU.</p></div></section>
+<section class="gsec soft"><div class="wrap center">
 <h2>Dónde ponerla</h2>
-<ul class="list"><li>En un letrero con código QR en su recepción o entrada.</li><li>En volantes y carteles de clases.</li><li>En el mensaje que envía después de una clase de prueba.</li><li>En la tarjeta de cada entrenador, para que el cliente llegue a la persona correcta.</li></ul>
+<div class="gcards gfour"><div class="fc"><div class="feature-photo feature-photo-fit" style="background:#eef2f5"><span class="pl">Mostrador</span><img alt="" loading="lazy" height="650" width="780" src="/img/home/gym-where-qr.webp"/></div><h3>En un letrero con código QR en su recepción o entrada.</h3></div><div class="fc"><div class="feature-photo"><span class="pl">Volantes y carteles</span><img alt="" loading="lazy" height="745" width="780" src="/img/home/gym-where-poster.webp"/></div><h3>En volantes y carteles de clases.</h3></div><div class="fc"><div class="feature-photo feature-photo-fit" style="background:#ffffff"><span class="pl">Mensajes de texto</span><img alt="" loading="lazy" height="360" width="780" src="/img/home/gym-where-text-es.webp"/></div><h3>En el mensaje que envía después de una clase de prueba.</h3></div><div class="fc"><div class="feature-photo"><span class="pl">Coaches y entrenadores</span><img alt="" loading="lazy" height="686" width="780" src="/img/home/gym-where-trainer.webp"/></div><h3>En la tarjeta de cada coach o entrenador, para que el cliente llegue a la persona correcta.</h3></div></div>
 </div></section>
-<section><div class="wrap">
+<section class="gsec"><div class="wrap center">
 <h2>Por qué sirve para gimnasios</h2>
-<ul class="list"><li>Usted no tiene que tocar nada. Somos su concierge: nos envía un correo y actualizamos sus promociones, fotos, horario y enlaces.</li><li>La gente decide inscribirse en el momento. Un código QR en la recepción convierte un &quot;lo voy a pensar&quot; en un mensaje o una reserva en ese instante.</li><li>Las ofertas y los horarios cambian todo el tiempo. Usted actualiza la tarjeta en vez de volver a imprimir letreros.</li><li>Cada entrenador puede tener su propia tarjeta con su propio número, y cada sucursal puede tener su enlace.</li><li>Los miembros y visitantes que hablan otro idioma ven su tarjeta en el suyo. Ofrecemos 25 idiomas.</li><li>iPhone o Android, ayudamos a todos a empezar. Le enviamos por correo pasos sencillos, con el enlace y el código QR, para que usted y sus miembros pongan la tarjeta en la pantalla de inicio como una aplicación y guarden su contacto.</li></ul>
+<div class="tcards"><div class="tcard"><p class="label">Sin esfuerzo</p><h3>Usted no tiene que tocar nada.</h3><p>Somos su concierge: nos envía un correo y actualizamos sus promociones, fotos, horario y enlaces.</p></div><div class="tcard"><p class="label">En el momento</p><h3>La gente decide inscribirse en el momento.</h3><p>Un código QR en la recepción convierte un &quot;lo voy a pensar&quot; en un mensaje o una reserva en ese instante.</p></div><div class="tcard"><p class="label">Siempre al día</p><h3>Las ofertas y los horarios cambian todo el tiempo.</h3><p>Nosotros actualizamos la tarjeta por usted, en vez de que usted vuelva a imprimir letreros.</p></div><div class="tcard"><p class="label">Su equipo</p><h3>Cada coach o entrenador puede tener su propia tarjeta con su propio número, y cada sucursal puede tener su enlace.</h3></div><div class="tcard"><p class="label">Idiomas</p><h3>Los miembros y visitantes que hablan otro idioma ven su tarjeta en el suyo.</h3><p>Ofrecemos 25 idiomas.</p></div><div class="tcard"><p class="label">Puesta en marcha</p><h3>iPhone o Android, ayudamos a todos a empezar.</h3><p>Le enviamos por correo pasos sencillos, con el enlace y el código QR, para que usted y sus miembros pongan la tarjeta en la pantalla de inicio como una aplicación y guarden su contacto.</p></div></div>
 </div></section>
-<section class="price"><div class="wrap">
+<section class="gsec soft"><div class="wrap center">
 <h2>Precio</h2>
-<div class="opts"><div class="opt"><h3>Una tarjeta</h3><p class="pr">$10 al mes</p><p>o $100 al año, que son dos meses gratis. Para un negocio.</p><a class="btn" href="/go/preview-es.html">Pedir mi vista previa gratis</a></div><div class="opt"><h3>Coaches y entrenadores</h3><p class="pr">Cotización a su medida</p><p>Una tarjeta para cada coach o entrenador, con sus propios datos de contacto.</p><a class="btn" href="/go/preview-es.html">Pedir una cotización</a></div><div class="opt"><h3>Varias sucursales</h3><p class="pr">Cotización a su medida</p><p>Un enlace y un código QR para cada sucursal.</p><a class="btn" href="/go/preview-es.html">Pedir una cotización</a></div></div>
-<p style="margin:0 0 16px"><b>La cotización depende de su número de sucursales y de personas. La instalación es gratis.</b></p>
-<ul class="list"><li>Diseño e instalación gratis.</li><li>Vista previa gratis antes de pagar.</li><li>Nosotros hacemos sus cambios y actualizaciones.</li><li>Su tarjeta puede ofrecer hasta 3 de nuestros 25 idiomas, como español, portugués, chino, japonés o árabe. Cada visitante la ve en el idioma de su teléfono.</li></ul>
-<p style="margin-top:22px"><b>Lo que no es.</b> No es un sitio web, ni un sistema de reservas, ni una tienda en línea, y no hay nada que descargar. Aun así vive en la pantalla de inicio de su teléfono como una aplicación. Piense en ella como un sitio web que se saltó el calentamiento y fue directo al entrenamiento. Su tarjeta lleva a la gente a las herramientas que usted ya usa.</p>
+<div class="gcards"><div class="gcard"><h3>Una tarjeta</h3><p class="gprice">$10 al mes</p><p>o $100 al año, que son dos meses gratis. Para un negocio.</p><a class="btn btn-p" href="/go/preview-es.html" rel="noopener nofollow" target="_blank">Pedir mi vista previa gratis</a></div><div class="gcard"><h3>Coaches y entrenadores</h3><p class="gprice">$10 al mes</p><p>o $100 al año. Cada coach o entrenador puede tener su propia tarjeta, con sus propios datos de contacto. La piden ellos mismos.</p><a class="btn btn-p" href="/go/preview-es.html" rel="noopener nofollow" target="_blank">Pedir mi vista previa gratis</a></div><div class="gcard"><h3>Varias sucursales</h3><p class="gprice">Cotización a su medida</p><p>Un enlace y un código QR para cada sucursal. El negocio paga todas las tarjetas.</p><a class="btn btn-p" href="https://docs.google.com/forms/d/e/1FAIpQLSenglfDQ0WaNQpeYR2ZBD-Y4AP6W5HduUZSNqFPebuN1tnx-Q/viewform" rel="noopener nofollow" target="_blank">Pedir una cotización</a></div></div>
+<p class="gnote" style="text-align:center"><b>Las cotizaciones a su medida son para varias sucursales y tarjetas de equipo, donde el negocio paga todas las tarjetas. La instalación es gratis.</b></p>
+<div class="pc glist"><ul class="ticks" style="margin-top:0"><li>Diseño e instalación gratis.</li><li>Vista previa gratis antes de pagar.</li><li>Nosotros hacemos sus cambios y actualizaciones.</li><li>Su tarjeta puede ofrecer hasta 3 de nuestros 25 idiomas, como español, portugués, chino, japonés o árabe. Cada visitante la ve en el idioma de su teléfono.</li></ul></div>
+<p class="gnote"><b>Lo que no es.</b> No es un sitio web, ni un sistema de reservas, ni una tienda en línea, y no hay nada que descargar. Aun así vive en la pantalla de inicio de su teléfono como una aplicación. Piense en ella como un sitio web que se saltó el calentamiento y fue directo al entrenamiento. Su tarjeta lleva a la gente a las herramientas que usted ya usa.</p>
 </div></section>
-<section><div class="wrap">
+<section class="gsec"><div class="wrap center">
 <h2>Preguntas frecuentes</h2>
-<details><summary>¿Cómo consigo que las personas que visitan mi gimnasio reserven una clase?</summary><p>Déles un siguiente paso fácil. Un código QR en su recepción o en su volante abre su tarjeta, y con un toque abren su página de reservas, le llaman o le escriben, o guardan su contacto. La tarjeta no reemplaza su sistema de reservas, lleva a la gente hasta allí más rápido.</p></details><details><summary>¿Cómo evito que mis clientes pierdan mi número?</summary><p>Pídales que toquen Guardar contacto en su tarjeta. Su gimnasio queda directo en los contactos de su teléfono, y no necesitan una tarjeta de papel ni su Instagram.</p></details><details><summary>¿Qué es una tarjeta de presentación digital?</summary><p>Es una página web corta hecha para el teléfono. Se abre con un enlace o un código QR, no hay que descargar nada y se puede agregar a la pantalla de inicio como una aplicación.</p></details><details><summary>¿Cuánto cuesta?</summary><p>El diseño y la instalación son gratis. Después son $10 al mes o $100 al año. Usted ve una vista previa antes de pagar.</p></details><details><summary>¿Puede usar la aplicación de reservas que ya tiene mi gimnasio?</summary><p>Sí. El botón principal puede abrir su página de reservas, clases o membresías. La tarjeta no reemplaza ese sistema, lleva a la gente hasta allí.</p></details><details><summary>¿Cómo ponen mis miembros la tarjeta en su teléfono?</summary><p>En un iPhone o en un teléfono Android, pueden agregar la tarjeta a la pantalla de inicio para que se abra como una aplicación, y guardar su contacto en un toque. Le enviamos por correo instrucciones sencillas paso a paso para iPhone y Android para que las comparta con sus miembros, y podemos guiarle por teléfono o videollamada.</p></details><details><summary>¿Mis entrenadores pueden tener su propia tarjeta?</summary><p>Sí. Podemos hacer una tarjeta por entrenador y una por sucursal. Para un equipo o varias sucursales le damos una cotización a su medida.</p></details><details><summary>¿Quién hace los cambios?</summary><p>Nosotros, como su concierge. Nos envía un correo con lo que quiere cambiar, como el horario de una clase, un precio, una foto o una promoción, y lo actualizamos.</p></details><details><summary>¿Qué idiomas ofrece?</summary><p>Ofrecemos 25 idiomas, entre ellos español, portugués, chino, japonés y árabe. Cada tarjeta muestra hasta 3, y cada visitante ve el que coincide con el idioma de su teléfono.</p></details>
+<div class="faq"><details><summary>¿Cómo consigo que las personas que visitan mi gimnasio reserven una clase?</summary><div class="faq-answer">Déles un siguiente paso fácil. Un código QR en su recepción o en su volante abre su tarjeta, y con un toque abren su página de reservas, le llaman o le escriben, o guardan su contacto. La tarjeta no reemplaza su sistema de reservas, lleva a la gente hasta allí más rápido.</div></details><details><summary>¿Cómo evito que mis clientes pierdan mi número?</summary><div class="faq-answer">Pídales que toquen Guardar contacto en su tarjeta. Su gimnasio queda directo en los contactos de su teléfono, y no necesitan una tarjeta de papel ni su Instagram.</div></details><details><summary>¿Qué es una tarjeta de presentación digital?</summary><div class="faq-answer">Es una página web corta hecha para el teléfono. Se abre con un enlace o un código QR, no hay que descargar nada y se puede agregar a la pantalla de inicio como una aplicación.</div></details><details><summary>¿Cuánto cuesta?</summary><div class="faq-answer">El diseño y la instalación son gratis. Después son $10 al mes o $100 al año. Usted ve una vista previa antes de pagar.</div></details><details><summary>¿Puede usar la aplicación de reservas que ya tiene mi gimnasio?</summary><div class="faq-answer">Sí. El botón principal puede abrir su página de reservas, clases o membresías. La tarjeta no reemplaza ese sistema, lleva a la gente hasta allí.</div></details><details><summary>¿Cómo ponen mis miembros la tarjeta en su teléfono?</summary><div class="faq-answer">En un iPhone o en un teléfono Android, pueden agregar la tarjeta a la pantalla de inicio para que se abra como una aplicación, y guardar su contacto en un toque. Le enviamos por correo instrucciones sencillas paso a paso para iPhone y Android para que las comparta con sus miembros, y podemos guiarle por teléfono o videollamada.</div></details><details><summary>¿Mis coaches y entrenadores pueden tener su propia tarjeta?</summary><div class="faq-answer">Sí. Cada coach o entrenador puede tener su propia tarjeta al mismo precio que la suya, y la piden ellos mismos. También podemos hacer una tarjeta por sucursal. Para varias sucursales o una tarjeta de equipo le damos una cotización a su medida, y el negocio paga todas las tarjetas.</div></details><details><summary>¿Quién hace los cambios?</summary><div class="faq-answer">Nosotros, como su concierge. Nos envía un correo con lo que quiere cambiar, como el horario de una clase, un precio, una foto o una promoción, y lo actualizamos.</div></details><details><summary>¿Qué idiomas ofrece?</summary><div class="faq-answer">Ofrecemos 25 idiomas, entre ellos español, portugués, chino, japonés y árabe. Cada tarjeta muestra hasta 3, y cada visitante ve el que coincide con el idioma de su teléfono.</div></details></div>
 </div></section>
-<section class="final"><div class="wrap">
+<section class="gsec"><div class="wrap">
+<div class="cta-band">
 <h2>Vea su tarjeta antes de pagar</h2>
-<div class="ctas" style="margin:14px 0 22px"><a class="btn" href="/go/preview-es.html">Pedir mi vista previa gratis</a><a class="btn btn-alt" href="sms:+12017722106?&amp;body=Hola%20Pedro%2C%20quiero%20una%20vista%20previa%20gratis%20para%20mi%20negocio%3A%20">O escríbale un texto a Pedro</a></div>
-<p class="note hint">El texto se abre en su teléfono.</p>
-<p class="note">Gratis. Usted la ve primero y solo paga si le gusta.</p>
+<p></p>
+<div class="cta"><a class="btn btn-p" href="/go/preview-es.html" rel="noopener nofollow" target="_blank">Pedir mi vista previa gratis →</a><a class="btn btn-s" href="sms:+12017722106?&amp;body=Hola%20Pedro%2C%20quiero%20una%20vista%20previa%20gratis%20para%20mi%20negocio%3A%20">O escríbale un texto a Pedro</a></div>
+<p class="fine">El texto se abre en su teléfono.</p>
+<p class="fine">Gratis. Usted la ve primero y solo paga si le gusta.</p>
+</div>
 </div></section>
 </main>
 <footer><div class="wrap">
-<a href="/privacy.html">Privacidad</a><a href="/tos.html">Términos</a>
-<p style="margin-top:10px">&copy; 2026 Torres Tech Remote. Newark, Nueva Jersey, para negocios en todo Estados Unidos.</p>
+<div class="foot">
+<div><a class="brand" href="/es/"><img alt="TTR" src="/img/ttr-monogram.webp" width="61" height="40"/> Torres Tech Remote</a><p>Tarjetas de presentación digitales · Ironbound, Newark, NJ</p><div class="footer-social"><div aria-label="Redes sociales de Torres Tech Remote" class="social-row"><a aria-label="Facebook (se abre en una pestaña nueva)" class="social-link" href="https://www.facebook.com/profile.php?id=61595452617390" rel="noopener noreferrer" target="_blank" title="Facebook"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M14 21v-8h3l.5-4H14V7c0-1 .3-2 2-2h2V1.5A23 23 0 0 0 15 1c-3 0-5 2-5 5v3H7v4h3v8z"/></svg></a><a aria-label="Instagram (se abre en una pestaña nueva)" class="social-link" href="https://www.instagram.com/torrestechremote/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a><a aria-label="YouTube (se abre en una pestaña nueva)" class="social-link" href="https://www.youtube.com/@torrestechremote" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect height="14" rx="4" width="20" x="2" y="5"/><path d="m10 9 5 3-5 3z"/></svg></a><a aria-label="Reseña de Google (se abre en una pestaña nueva)" class="social-link" href="https://g.page/r/CcmkhrdSiKwmEBM/review" rel="noopener noreferrer" target="_blank" title="Reseña de Google"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M20.5 12.2c0 5-3.4 8.3-8.4 8.3a8.5 8.5 0 1 1 6-14.5l-2.5 2.5a5 5 0 1 0 1.2 5.2H12v-3.3h8.3c.1.6.2 1.1.2 1.8z"/></svg></a></div></div></div>
+<div><h3>Torres Tech Remote</h3><a href="/es/">Inicio</a><a href="/es/tarjeta-digital-gimnasio/">Tarjetas para gimnasios</a><a href="mailto:pedro_torres@torrestechremote.com">Contacto</a><a href="/tos.html">Términos</a><a href="/privacy.html">Privacidad</a></div>
+<div><h3>Idiomas</h3><a hreflang="en" lang="en" href="/digital-business-card-for-gyms/">English</a><a href="/es/tarjeta-digital-gimnasio/" aria-current="page">Español</a><a hreflang="pt-PT" lang="pt-PT" href="/pt/cartao-digital-ginasio/">Português</a></div>
+</div>
+<div class="copy"><span>© 2026 Torres Tech Remote</span><span>Newark, NJ</span></div>
 </div></footer>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c60da00970ce404fbd115d07cfea6c99"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "c60da00970ce404fbd115d07cfea6c99"}' src="https://static.cloudflareinsights.com/beacon.min.js" defer></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

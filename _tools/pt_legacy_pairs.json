@@ -1,0 +1,730 @@
+[
+[
+"<html lang=\"en\">",
+"<html lang=\"pt-PT\">"
+],
+[
+"<title>Digital Business Cards for Small Businesses Across the U.S. | Torres Tech Remote</title>",
+"<title>Cartões de visita digitais para pequenos negócios em todos os EUA | Torres Tech Remote</title>"
+],
+[
+"content=\"Digital business cards for one business, every location, and your whole team. One link and one QR code; customers call, text, email or save you in one tap, in up to 3 of 25 languages. Free setup, then $10/month. Free preview before you pay.\"",
+"content=\"Cartões de visita digitais para um negócio, cada local e toda a sua equipa. Uma ligação e um código QR; os clientes ligam, enviam mensagem, enviam e-mail ou guardam-no com um só toque, em até 3 de 25 idiomas. Criação grátis, depois $10/mês. Pré-visualização grátis antes de pagar.\""
+],
+[
+"content=\"Torres Tech Remote: digital business cards for small businesses across the U.S., for one business, every location, and your whole team\"",
+"content=\"Torres Tech Remote: cartões de visita digitais para pequenos negócios em todos os EUA, para um negócio, cada local e toda a sua equipa\""
+],
+[
+"\"description\": \"One link and one QR code for your business, every location, and your team. Customers call, text or email you in one tap, save you to their contacts, and read it in up to 3 of 25 languages. We design it, host it and keep it up to date.\",",
+"\"description\": \"Uma ligação e um código QR para o seu negócio, cada local e a sua equipa. Os clientes ligam, enviam mensagem ou e-mail com um só toque, guardam-no nos contactos e leem-no em até 3 de 25 idiomas. Nós desenhamo-lo, alojamo-lo e mantemo-lo atualizado.\","
+],
+[
+"</style>\n</head>",
+".langsw{display:flex;gap:12px;font-size:14px;align-items:center;margin-right:6px}.langsw a{color:var(--muted,#65717e);text-decoration:none}.langsw a:hover{text-decoration:underline}.langsw b{color:var(--navy,#12192d)}@media(max-width:1100px){.nav{flex-wrap:wrap;row-gap:0;padding-block:6px}.nav-right{display:contents}.navlink{display:none}.langsw{order:3;width:100%;justify-content:center;margin:0;padding:4px 0 2px;font-size:13px}.nav .btn-plum{order:2;margin-left:auto}.nav .btn-wa{order:2;margin-left:8px}}\n</style>\n</head>"
+],
+[
+"<div class=\"nav-right\">\n",
+"<div class=\"nav-right\">\n<nav class=\"langsw\" aria-label=\"Idioma\"><a href=\"/digital-business-cards.html\" hreflang=\"en\" lang=\"en\">English</a><a href=\"/es/tarjetas-de-presentacion-digitales/\" hreflang=\"es\" lang=\"es\">Español</a><b aria-current=\"page\">Português</b></nav>\n"
+],
+[
+"`video/${clip}-",
+"`/video/${clip}-"
+],
+[
+"href=\"tos.html\"",
+"href=\"/tos.html\""
+],
+[
+"href=\"privacy.html\"",
+"href=\"/privacy.html\""
+],
+[
+"<a class=\"brand\" href=\"/\">",
+"<a class=\"brand\" href=\"/pt/\">"
+],
+[
+".find((l) => [\"en\", \"es\", \"pt\", \"pt-PT\"].includes(l))) || \"en\";",
+".find((l) => [\"en\", \"es\", \"pt\", \"pt-PT\"].includes(l))) || \"en\";\n    const pageLang = \"pt-PT\"; // this page is the Portuguese (Portugal) page"
+],
+[
+"    if (STEPS[lang]) {",
+"    const lang = pageLang;\n    if (STEPS[lang]) {"
+],
+[
+"rel=\"noopener\" target=\"_blank\">Demo card</a>",
+"rel=\"noopener\" target=\"_blank\">Cartão de demonstração</a>"
+],
+[
+"<a class=\"navlink\" href=\"#faq\">FAQ</a>",
+"<a class=\"navlink\" href=\"#faq\">Perguntas frequentes</a>"
+],
+[
+"target=\"_blank\">Free preview</a>",
+"target=\"_blank\">Pré-visualização grátis</a>"
+],
+[
+"href=\"tel:+12017722106\">Call</a>",
+"href=\"tel:+12017722106\">Ligar</a>"
+],
+[
+"Digital Business Cards · Newark, NJ",
+"Cartões de visita digitais · Newark, NJ"
+],
+[
+"<h1>A business card your customers <em>keep on their phone.</em></h1>",
+"<h1>Um cartão de visita que os seus clientes <em>guardam no telemóvel.</em></h1>"
+],
+[
+"One link and one QR code for your shop. Customers call, text, WhatsApp or email you in one tap and save you to their contacts. Your card opens in your customer's own phone language, and they can tap to switch. We design it, host it and keep it up to date. You never touch an app.",
+"Uma ligação e um código QR para o seu negócio. Os seus clientes ligam, enviam mensagem, WhatsApp ou e-mail com um só toque e guardam-no nos contactos. O seu cartão abre-se no idioma do telemóvel de cada cliente, e eles podem tocar para mudar. Nós desenhamo-lo, alojamo-lo e mantemo-lo atualizado. Nunca precisa de mexer numa aplicação."
+],
+[
+">Call (201) 772-2106</a>",
+">Ligar para (201) 772-2106</a>"
+],
+[
+">Text Pedro</a>",
+">Enviar mensagem ao Pedro</a>"
+],
+[
+">Request your free preview</a>",
+">Peça a sua pré-visualização grátis</a>"
+],
+[
+"Call and Text open on your phone. Email works from a computer or a phone.",
+"Ligar e Mensagem abrem no seu telemóvel. O e-mail funciona num computador ou num telemóvel."
+],
+[
+"Free preview. No payment or credit card required. Just your name, business name, phone, and email to get started.",
+"Pré-visualização grátis. Sem pagamento nem cartão de crédito. Só o seu nome, o nome do negócio, telefone e e-mail para começar."
+],
+[
+"alt=\"Pedro Torres, owner of Torres Tech Remote\"",
+"alt=\"Pedro Torres, dono da Torres Tech Remote\""
+],
+[
+">Email Pedro</a> · ",
+">Enviar e-mail ao Pedro</a> · "
+],
+[
+"target=\"_blank\">See the demo card</a>",
+"target=\"_blank\">Ver o cartão de demonstração</a>"
+],
+[
+"alt=\"Torres Tech Remote's own digital business card on a phone: TTR logo, See a demo card button, call, text, WhatsApp, email and website buttons, Share, Save contact, Show QR code, and opening hours\"",
+"alt=\"O cartão de visita digital da Torres Tech Remote num telemóvel: logótipo da TTR, botão para ver um cartão de demonstração, botões de chamada, mensagem, WhatsApp, e-mail e site, Partilhar, Guardar contacto, Mostrar código QR e horário\""
+],
+[
+"<b>Our own card</b>",
+"<b>O nosso próprio cartão</b>"
+],
+[
+"alt=\"Demo digital business card for a barbershop on a phone: logo, Book now button, call, text, WhatsApp, email, directions and website buttons, Save contact, Show QR code, and opening hours\"",
+"alt=\"Cartão de visita digital de demonstração de uma barbearia num telemóvel: logótipo, botão de reservar, botões de chamada, mensagem, WhatsApp, e-mail, direções e site, Guardar contacto, Mostrar código QR e horário\""
+],
+[
+"<b>Demo card</b> for a made-up barbershop",
+"<b>Cartão de demonstração</b> de uma barbearia inventada"
+],
+[
+"aria-label=\"Service and pricing details\"",
+"aria-label=\"Serviço e preços\""
+],
+[
+"<b>Free setup</b>",
+"<b>Criação grátis</b>"
+],
+[
+"<span>$10/month or $100/year</span>",
+"<span>$10/mês ou $100/ano</span>"
+],
+[
+"<span>Up to 3 free previews</span>",
+"<span>Até 3 pré-visualizações grátis</span>"
+],
+[
+"In-person service in the Ironbound, Newark NJ.",
+"Serviço presencial no Ironbound, Newark, NJ."
+],
+[
+"</svg>Now on Facebook</a>",
+"</svg>Agora no Facebook</a>"
+],
+[
+"<p class=\"kicker\">What's on your card</p>",
+"<p class=\"kicker\">O que leva o seu cartão</p>"
+],
+[
+"<h2>Everything a customer needs, one tap away.</h2>",
+"<h2>Tudo o que um cliente precisa, a um toque.</h2>"
+],
+[
+"<p>Tap either card above to try the real thing.</p>",
+"<p>Toque em qualquer um dos cartões acima para experimentar o verdadeiro.</p>"
+],
+[
+"<h3>Your brand</h3><p>Your logo and brand colors.</p>",
+"<h3>O seu logótipo</h3><p>O seu logótipo e as cores da sua marca.</p>"
+],
+[
+"<h3>One-tap buttons</h3><p>Call, text, WhatsApp, email, directions and website buttons.</p>",
+"<h3>Botões de um toque</h3><p>Botões de chamada, mensagem, WhatsApp, e-mail, direções e site.</p>"
+],
+[
+"<h3>Your business details</h3><p>Hours, services and prices, photos, payment links.</p>",
+"<h3>Os dados do seu negócio</h3><p>Horário, serviços e preços, fotos e ligações de pagamento.</p>"
+],
+[
+"<h3>Opens in their language</h3><p>Their phone is set to Spanish? They see Spanish, and can tap to switch to your other languages. You pick up to 3 of 25.</p>",
+"<h3>Abre no idioma deles</h3><p>O telemóvel está em inglês? Veem inglês e podem tocar para mudar para os outros idiomas do seu negócio. Escolhe até 3 de 25.</p>"
+],
+[
+"<h3>A spot for your offer</h3><p>Having a sale? Email me and I change it for you. It can turn itself off when your offer ends.</p>",
+"<h3>Um espaço para a sua oferta</h3><p>Tem uma promoção? Escreva-me e eu altero-a por si. Pode desligar-se sozinha quando a oferta terminar.</p>"
+],
+[
+"<h3>Easy to share</h3><p>QR code, Share and Save contact. <a href=\"#save-contact\">See how</a>.</p>",
+"<h3>Fácil de partilhar</h3><p>Código QR, Partilhar e Guardar contacto. <a href=\"#save-contact\">Veja como</a>.</p>"
+],
+[
+"<h3>Like an app</h3><p>Installs like an app on iPhone and Android, no app store. <a href=\"#install\">See how</a>.</p>",
+"<h3>Como uma aplicação</h3><p>Instala-se como uma aplicação no iPhone e no Android, sem loja de aplicações. <a href=\"#install\">Veja como</a>.</p>"
+],
+[
+"<h3>A QR code that lasts</h3><p>Your QR code never changes, so printed codes keep working.</p>",
+"<h3>Um código QR que dura</h3><p>O seu código QR nunca muda, por isso os códigos impressos continuam a funcionar.</p>"
+],
+[
+"<p class=\"kicker\">Works like an app</p>",
+"<p class=\"kicker\">Funciona como uma aplicação</p>"
+],
+[
+"<h3>Your card on their home screen.</h3>",
+"<h3>O seu cartão no ecrã principal deles.</h3>"
+],
+[
+"<p>Customers save your card to their phone in a few taps. It gets its own icon, opens full screen like an app, and still opens without internet. No app store and no download. Pick your phone to watch how:</p>",
+"<p>Os clientes guardam o seu cartão no telemóvel com alguns toques. Tem o seu próprio ícone, abre em ecrã inteiro como uma aplicação e abre mesmo sem internet. Sem loja de aplicações e sem descarregar nada. Escolha o seu telemóvel para ver como:</p>"
+],
+[
+"aria-label=\"Pick your phone\"",
+"aria-label=\"Escolha o seu telemóvel\""
+],
+[
+"<p class=\"kicker\">Saved in their contacts</p>",
+"<p class=\"kicker\">Guardado nos contactos</p>"
+],
+[
+"<h3>In their contacts in seconds.</h3>",
+"<h3>Nos contactos em segundos.</h3>"
+],
+[
+"<p>“Save contact” adds your business to their contacts with your logo, phone, email, address and website, so they can find you and call you later. Pick your phone to watch how:</p>",
+"<p>\"Guardar contacto\" adiciona o seu negócio aos contactos do cliente com o seu logótipo, telefone, e-mail, morada e site, para que o possam encontrar e ligar-lhe mais tarde. Escolha o seu telemóvel para ver como:</p>"
+],
+[
+"Video: on an Android phone, open the card in Chrome, tap Add to home screen, tap Install, and the card's icon appears on the home screen",
+"Vídeo: num telemóvel Android, abra o cartão no Chrome, toque em Adicionar ao ecrã principal, toque em Instalar, e o ícone do cartão aparece no ecrã principal"
+],
+[
+"Video: on an iPhone, open the card in Safari, tap Share, tap Add to Home Screen, tap Add, and the card's icon appears on the home screen",
+"Vídeo: num iPhone, abra o cartão no Safari, toque em Partilhar, toque em Adicionar ao ecrã principal, toque em Adicionar, e o ícone do cartão aparece no ecrã principal"
+],
+[
+"Video: on an Android phone, tap Save contact on the card, it downloads, tap Open, then tap Import, and the business is in the phone's contacts",
+"Vídeo: num telemóvel Android, toque em Guardar contacto no cartão, é transferido, toque em Abrir, depois toque em Importar, e o negócio fica nos contactos do telemóvel"
+],
+[
+"Video: on an iPhone, tap Save contact on the card, the contact opens, tap the check mark at the top left, and the business is in the phone's contacts",
+"Vídeo: num iPhone, toque em Guardar contacto no cartão, o contacto abre, toque na marca de verificação no canto superior esquerdo, e o negócio fica nos contactos do telemóvel"
+],
+[
+"<p class=\"kicker\">Real cards</p>",
+"<p class=\"kicker\">Cartões reais</p>"
+],
+[
+"<h2>Featured clients.</h2>",
+"<h2>Clientes em destaque.</h2>"
+],
+[
+"<p>These are screenshots. On the real card, every button works when you tap it.</p>",
+"<p>São capturas de ecrã. No cartão real, cada botão funciona ao tocar.</p>"
+],
+[
+"<p>English &amp; Acting Coach / Instructor<br/>Vietnam &amp; Japan</p>",
+"<p>Professor e treinador de inglês e representação<br/>Vietname e Japão</p>"
+],
+[
+"Tap to see more",
+"Toque para ver mais"
+],
+[
+"aria-label=\"Choose a Keon Torres screenshot\"",
+"aria-label=\"Escolher uma captura de Keon Torres\""
+],
+[
+"aria-label=\"Choose an Alpha Fit Club screenshot\"",
+"aria-label=\"Escolher uma captura de Alpha Fit Club\""
+],
+[
+"alt=\"Keon Torres card, ",
+"alt=\"Cartão de Keon Torres, "
+],
+[
+"alt=\"Alpha Fit Club card, ",
+"alt=\"Cartão de Alpha Fit Club, "
+],
+[
+">Close</button>",
+">Fechar</button>"
+],
+[
+"<p class=\"langnote\">Three languages on one card: English, Japanese and Vietnamese.</p>",
+"<p class=\"langnote\">Três idiomas num só cartão: inglês, japonês e vietnamita.</p>"
+],
+[
+"<p class=\"langnote\">English and Spanish on one card.</p>",
+"<p class=\"langnote\">Inglês e espanhol num só cartão.</p>"
+],
+[
+"aria-label=\"5 out of 5 stars\"",
+"aria-label=\"5 em 5 estrelas\""
+],
+[
+"Google review, 5.0",
+"Avaliação do Google (em inglês), 5.0"
+],
+[
+"<p class=\"kicker\">How it works</p>",
+"<p class=\"kicker\">Como funciona</p>"
+],
+[
+"<h2>See it before you pay.</h2>",
+"<h2>Veja antes de pagar.</h2>"
+],
+[
+"<h3>Fill out our Free Preview form</h3><p>Only your name, business name, phone, email, and confirmation checkbox are required. All other questions are optional.</p>",
+"<h3>Preencha o nosso formulário de pré-visualização grátis</h3><p>Só são pedidos o seu nome, o nome do negócio, telefone, e-mail e uma caixa de confirmação. As restantes perguntas são opcionais.</p>"
+],
+[
+"<h3>Get your free preview</h3><p>We'll create your free digital business card preview using the information you provide and email it to you for review. You can receive up to 3 free previews. You only pay if you approve your card.</p>",
+"<h3>Receba a sua pré-visualização grátis</h3><p>Criaremos a pré-visualização grátis do seu cartão de visita digital com os dados que nos der e enviá-la-emos por e-mail para a rever. Pode receber até 3 pré-visualizações grátis. Só paga se aprovar o seu cartão.</p>"
+],
+[
+"<h3>Pay when you're happy</h3><p>You only pay when you’re happy with it. Then your card goes live with its own link and QR code.</p>",
+"<h3>Pague quando estiver satisfeito</h3><p>Só paga quando estiver satisfeito com o resultado. Depois o seu cartão fica publicado com a sua própria ligação e código QR.</p>"
+],
+[
+"<p class=\"kicker\">Languages</p>",
+"<p class=\"kicker\">Idiomas</p>"
+],
+[
+"<h2>Up to 3 of 25 languages.</h2>",
+"<h2>Até 3 de 25 idiomas.</h2>"
+],
+[
+"<p class=\"sub-lead\">Pick up to 3 languages for your card, like Spanish, Portuguese, Chinese, Japanese and Arabic. Customers switch between them on the card.</p>",
+"<p class=\"sub-lead\">Escolha até 3 idiomas para o seu cartão, como espanhol, português, chinês, japonês e árabe. Os clientes alternam entre eles no cartão.</p>"
+],
+[
+"<span>English</span>\n<span lang=\"es\">",
+"<span>English</span>\n<span lang=\"es\">"
+],
+[
+"<p class=\"kicker\">Pricing</p>",
+"<p class=\"kicker\">Preços</p>"
+],
+[
+"<h2>Free setup. Just a small monthly fee.</h2>",
+"<h2>Criação grátis. Só uma pequena mensalidade.</h2>"
+],
+[
+"<p class=\"label\">Design &amp; setup</p>",
+"<p class=\"label\">Design e criação</p>"
+],
+[
+"<div class=\"big\">Free</div>",
+"<div class=\"big\">Grátis</div>"
+],
+[
+"<p class=\"psub\"><b>No setup fee.</b></p>",
+"<p class=\"psub\"><b>Sem custos de criação.</b></p>"
+],
+[
+"<p class=\"label\">Hosting &amp; updates</p>",
+"<p class=\"label\">Alojamento e atualizações</p>"
+],
+[
+"<div class=\"big\">$10<small> /month</small></div>",
+"<div class=\"big\">$10<small> /mês</small></div>"
+],
+[
+"<p class=\"psub\">or <b>$100 per year</b>, 2 months free</p>",
+"<p class=\"psub\">ou <b>$100 por ano</b>, 2 meses grátis</p>"
+],
+[
+"<summary>Already approved your preview? Pay here</summary>",
+"<summary>Já aprovou a sua pré-visualização? Pague aqui</summary>"
+],
+[
+"Enter the unlock code we sent you with your preview. Use the same name, business name and phone you gave us. No preview yet? <a href=\"mailto:pedro_torres@torrestechremote.com\">Ask for one first</a>, it’s free.",
+"Introduza o código de desbloqueio que lhe enviámos com a sua pré-visualização. Use o mesmo nome, nome do negócio e telefone que nos deu. Ainda não tem pré-visualização? <a href=\"mailto:pedro_torres@torrestechremote.com\">Peça uma primeiro</a>, é grátis."
+],
+[
+"<label for=\"order-code\">Unlock code</label>",
+"<label for=\"order-code\">Código de desbloqueio</label>"
+],
+[
+"placeholder=\"From your preview\"",
+"placeholder=\"Da sua pré-visualização\""
+],
+[
+"type=\"submit\">Unlock</button>",
+"type=\"submit\">Desbloquear</button>"
+],
+[
+"<p>No code box? <a href=\"mailto:pedro_torres@torrestechremote.com\">Email us</a> for your payment link.</p>",
+"<p>Não vê o campo do código? <a href=\"mailto:pedro_torres@torrestechremote.com\">Escreva-nos</a> para receber a sua ligação de pagamento.</p>"
+],
+[
+"Your preview is ready to go live. At checkout, use the same name, business name and phone you gave us. Pick a plan:",
+"A sua pré-visualização está pronta para ser publicada. Ao pagar, use o mesmo nome, nome do negócio e telefone que nos deu. Escolha um plano:"
+],
+[
+">Make it live: $10/month</a>",
+">Publicar o meu cartão: $10/mês</a>"
+],
+[
+">Make it live: $100/year</a>",
+">Publicar o meu cartão: $100/ano</a>"
+],
+[
+"Card accepted online and in person. Cash in person for yearly plans. In-person service in the Ironbound, Newark NJ; online orders available in the US and its territories, and to US citizens abroad paying with a US card or bank account. See the <a href=\"/tos.html\">Terms</a>.",
+"Aceitamos cartão online e em pessoa. Numerário em pessoa para os planos anuais. Serviço presencial no Ironbound, Newark, NJ; encomendas online disponíveis nos EUA e nos seus territórios, e para cidadãos norte-americanos no estrangeiro que paguem com um cartão ou conta bancária dos EUA. Veja os <a href=\"/tos.html\">Termos</a> (em inglês)."
+],
+[
+"\"That code doesn’t match. Check the code we sent with your preview.\"",
+"\"Esse código não corresponde. Verifique o código que lhe enviámos com a sua pré-visualização.\""
+],
+[
+"\"This browser can’t unlock the links. Email us for your payment link.\"",
+"\"Este navegador não consegue desbloquear as ligações. Escreva-nos para receber a sua ligação de pagamento.\""
+],
+[
+"<p class=\"kicker\">For businesses</p>",
+"<p class=\"kicker\">Para negócios</p>"
+],
+[
+"<h2>Multiple locations or employees?</h2>",
+"<h2>Vários locais ou funcionários?</h2>"
+],
+[
+"<p>Select the option that fits your organization, or combine them. Each business is different, so we provide a custom quote based on your number of locations and employees. Setup is free.</p>",
+"<p>Escolha a opção que se adapta à sua organização, ou combine-as. Cada negócio é diferente, por isso fazemos um orçamento à medida consoante o número de locais e funcionários. A criação é grátis.</p>"
+],
+[
+"Run a gym or fitness studio? <a href=\"/digital-business-card-for-gyms/\"><b>See the digital business card for gyms</b></a>.",
+"Tem um ginásio ou um estúdio de fitness? <a href=\"/pt/cartao-digital-ginasio/\"><b>Veja o cartão de visita digital para ginásios</b></a>."
+],
+[
+"Prefer to talk? Call <a href=\"tel:+12017722106\">(201) 772-2106</a> or email <a",
+"Prefere falar? Ligue para <a href=\"tel:+12017722106\">(201) 772-2106</a> ou escreva para <a"
+],
+[
+"<p class=\"kicker\">Who makes your card</p>",
+"<p class=\"kicker\">Quem faz o seu cartão</p>"
+],
+[
+"<h2>Hi, I’m Pedro.</h2>",
+"<h2>Olá, sou o Pedro.</h2>"
+],
+[
+"alt=\"Pedro Torres, founder of Torres Tech Remote\"",
+"alt=\"Pedro Torres, fundador da Torres Tech Remote\""
+],
+[
+"I run Torres Tech Remote from the Ironbound, Newark. I make every card myself, and in the Ironbound I can come by your shop to set it up with you.",
+"Giro a Torres Tech Remote a partir do Ironbound, em Newark. Faço cada cartão eu mesmo, e no Ironbound posso passar pelo seu negócio para o preparar consigo."
+],
+[
+"I’m Pedro, the owner. Send me your business name and I’ll make you a free preview and send you a link to review. You only pay if you like it.",
+"Sou o Pedro, o dono. Envie-me o nome do seu negócio e farei uma pré-visualização grátis com uma ligação para a rever. Só paga se gostar."
+],
+[
+"<a class=\"btn btn-ghost\" href=\"mailto:pedro_torres@torrestechremote.com\">Email Pedro</a>",
+"<a class=\"btn btn-ghost\" href=\"mailto:pedro_torres@torrestechremote.com\">Enviar e-mail ao Pedro</a>"
+],
+[
+">Or fill in the form</a>",
+">Ou preencha o formulário</a>"
+],
+[
+"<p class=\"contact-hint\">Email works from a computer or a phone.</p>",
+"<p class=\"contact-hint\">O e-mail funciona num computador ou num telemóvel.</p>"
+],
+[
+"<p class=\"kicker\">FAQ</p>",
+"<p class=\"kicker\">Perguntas frequentes</p>"
+],
+[
+"<h2>Common questions.</h2>",
+"<h2>Perguntas comuns.</h2>"
+],
+[
+"<h2>See your card before you pay.</h2>",
+"<h2>Veja o seu cartão antes de pagar.</h2>"
+],
+[
+"Call, email or fill in a short form, and we’ll make you a free preview. Up to 3 free previews. You only pay when you’re happy with it.",
+"Ligue, escreva ou preencha um formulário curto e faremos uma pré-visualização grátis. Até 3 pré-visualizações grátis. Só paga quando estiver satisfeito com o resultado."
+],
+[
+"<small>See it live: <a href",
+"<small>Veja-o ao vivo: <a href"
+],
+[
+"rel=\"noopener\" target=\"_blank\">demo card</a> · ",
+"rel=\"noopener\" target=\"_blank\">cartão de demonstração</a> · "
+],
+[
+">our own card</a>",
+">o nosso próprio cartão</a>"
+],
+[
+"<p>Digital Business Cards · Ironbound, Newark, NJ</p>",
+"<p>Cartões de visita digitais · Ironbound, Newark, NJ</p>"
+],
+[
+"<a href=\"/\">Home</a>",
+"<a href=\"/pt/\">Início</a>"
+],
+[
+"<a href=\"/digital-business-card-for-gyms/\">Cards for gyms</a>",
+"<a href=\"/pt/cartao-digital-ginasio/\">Cartões para ginásios</a>"
+],
+[
+"\">Contact</a>",
+"\">Contacto</a>"
+],
+[
+">Terms</a>",
+">Termos</a>"
+],
+[
+">Privacy</a>",
+">Privacidade</a>"
+],
+[
+"<h3>Follow</h3>",
+"<h3>Siga-nos</h3>"
+],
+[
+">Review us on Google</a>",
+">Avalie-nos no Google</a>"
+],
+[
+"<p>Alpha Fit Club</p>",
+"<p>Alpha Fit Club</p>"
+],
+[
+"What does it cost?",
+"Quanto custa?"
+],
+[
+"Design and setup are free. You pay $10 per month for hosting and updates, or $100 per year (2 months free). Up to 3 free previews before you pay. For several locations or employees, request a custom quote <a href=\"#teams\">here</a>.",
+"O design e a criação são grátis. Paga $10 por mês pelo alojamento e atualizações, ou $100 por ano (2 meses grátis). Até 3 pré-visualizações grátis antes de pagar. Para vários locais ou funcionários, peça <a href=\"#teams\">aqui</a> um orçamento à medida."
+],
+[
+"Which languages can my card show?",
+"Que idiomas pode mostrar o meu cartão?"
+],
+[
+"Up to 3 of 25 languages, like Spanish, Portuguese, Chinese, Japanese and Arabic. See the <a href=\"#languages\">full list</a>.",
+"Até 3 de 25 idiomas, como espanhol, português, chinês, japonês e árabe. Veja a <a href=\"#languages\">lista completa</a>."
+],
+[
+"Do my customers need to download an app?",
+"Os meus clientes têm de descarregar uma aplicação?"
+],
+[
+"No. The card opens from its link or QR code. Customers can also save it to their home screen like an app, no app store. On Android, open it in Chrome and tap <b>Add to home screen</b>, then <b>Install</b>. On iPhone or iPad, open it in Safari, tap <b>Share</b>, then <b>Add to Home Screen</b>. <a href=\"#install\">See the steps</a>.",
+"Não. O cartão abre a partir da sua ligação ou código QR. Os clientes também o podem guardar no ecrã principal como uma aplicação, sem loja de aplicações. No Android, abra-o no Chrome e toque em <b>Adicionar ao ecrã principal</b>, depois em <b>Instalar</b>. No iPhone ou iPad, abra-o no Safari, toque em <b>Partilhar</b> e depois em <b>Adicionar ao ecrã principal</b>. <a href=\"#install\">Veja os passos</a>."
+],
+[
+"Can customers book, order or get a quote from my card?",
+"Os clientes podem reservar, encomendar ou pedir orçamento a partir do meu cartão?"
+],
+[
+"Yes. Your card’s main button, like Book now, Order online or Get a quote, opens the booking, ordering or quote page you already use, such as Square, Booksy, OpenTable or DoorDash. Or it can call, text or WhatsApp you. It works for barbers and salons, cafés and restaurants, contractors, pest control and more.",
+"Sim. O botão principal do seu cartão, como Reservar, Encomendar online ou Pedir orçamento, abre a página de reservas, encomendas ou orçamentos que já usa, como Square, Booksy, OpenTable ou DoorDash. Ou pode ligar-lhe, enviar-lhe mensagem ou WhatsApp. Serve para barbeiros e salões, cafés e restaurantes, empreiteiros, controlo de pragas e mais."
+],
+[
+"Can I change my hours or prices later?",
+"Posso alterar o meu horário ou preços mais tarde?"
+],
+[
+"Yes. Hosting includes unlimited changes to your hours, prices, photos and links. Your QR code never changes, so printed codes keep working.",
+"Sim. O alojamento inclui alterações ilimitadas ao seu horário, preços, fotos e ligações. O seu código QR nunca muda, por isso os códigos impressos continuam a funcionar."
+],
+[
+"How do I pay?",
+"Como pago?"
+],
+[
+"Card accepted online and in person. Cash in person for yearly plans. After you approve your free preview, pay online with the <a data-open-order=\"\" href=\"#order\">payment links</a>.",
+"Aceitamos cartão online e em pessoa. Numerário em pessoa para os planos anuais. Depois de aprovar a sua pré-visualização grátis, pague online com as <a data-open-order=\"\" href=\"#order\">ligações de pagamento</a>."
+],
+[
+"Can one card cover several locations?",
+"Um cartão pode cobrir vários locais?"
+],
+[
+"Yes. One card lists every location, each with its own address, directions, phone number and hours. Each location can also have its own QR code, so a customer who scans it at that location lands on that location. See the <a href=\"#teams\">examples</a>.",
+"Sim. Um cartão mostra cada local, cada um com a sua morada, direções, telefone e horário. Cada local pode também ter o seu próprio código QR, assim o cliente que o digitaliza nesse local chega a esse local. Veja os <a href=\"#teams\">exemplos</a>."
+],
+[
+"Can each of my employees have their own card?",
+"Cada um dos meus funcionários pode ter o seu próprio cartão?"
+],
+[
+"Yes. Each employee receives an individual card with their name, photo and contact details. One office card lists the entire team, and each person can be assigned to the location where they work.",
+"Sim. Cada funcionário recebe o seu próprio cartão com nome, foto e dados de contacto. Um cartão de escritório mostra toda a equipa, e cada pessoa pode ser atribuída ao local onde trabalha."
+],
+[
+"How much does it cost for several locations or employees?",
+"Quanto custa com vários locais ou funcionários?"
+],
+[
+"Each business is different, so we provide a custom quote based on your number of locations and employees. Setup is free. <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSenglfDQ0WaNQpeYR2ZBD-Y4AP6W5HduUZSNqFPebuN1tnx-Q/viewform\" rel=\"noopener nofollow\" target=\"_blank\">Request a quote</a>.",
+"Cada negócio é diferente, por isso fazemos um orçamento à medida consoante o número de locais e funcionários. A criação é grátis. <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSenglfDQ0WaNQpeYR2ZBD-Y4AP6W5HduUZSNqFPebuN1tnx-Q/viewform\" rel=\"noopener nofollow\" target=\"_blank\">Peça um orçamento</a>."
+],
+[
+"What happens when we add or lose an employee?",
+"O que acontece se adicionarmos ou perdermos um funcionário?"
+],
+[
+"You can add people at any time and they are billed for the rest of that year. If someone leaves, you can give their place to a new person at no charge. Please tell us by the 1st of the month, and we make the change that week.",
+"Pode adicionar pessoas a qualquer momento e são cobradas pelo resto desse ano. Se alguém sair, pode dar o seu lugar a outra pessoa sem custos. Avise-nos até ao dia 1 do mês e fazemos a alteração nessa semana."
+],
+[
+"What if one of my locations is a franchise?",
+"E se um dos meus locais for uma franquia?"
+],
+[
+"A location owned by another business is a separate customer with its own card and its own bill. It can link back to your main card if you both agree.",
+"Um local que pertence a outro negócio é um cliente à parte, com o seu próprio cartão e a sua própria fatura. Pode ligar de volta ao seu cartão principal se ambos estiverem de acordo."
+],
+[
+"Who can order a card?",
+"Quem pode encomendar um cartão?"
+],
+[
+"In-person service in the Ironbound, Newark NJ; online orders available in the US and its territories, and to US citizens abroad paying with a US card or bank account.",
+"Serviço presencial no Ironbound, Newark, NJ; encomendas online disponíveis nos EUA e nos seus territórios, e para cidadãos norte-americanos no estrangeiro que paguem com um cartão ou conta bancária dos EUA."
+],
+[
+"<link href=\"https://torrestechremote.com/\" rel=\"canonical\"/>",
+"<link href=\"https://torrestechremote.com/pt/\" rel=\"canonical\"/>\n<link href=\"https://torrestechremote.com/\" hreflang=\"en\" rel=\"alternate\"/>\n<link href=\"https://torrestechremote.com/es/\" hreflang=\"es\" rel=\"alternate\"/>\n<link href=\"https://torrestechremote.com/pt/\" hreflang=\"pt-PT\" rel=\"alternate\"/>\n<link href=\"https://torrestechremote.com/\" hreflang=\"x-default\" rel=\"alternate\"/>"
+],
+[
+"<meta content=\"https://torrestechremote.com/\" property=\"og:url\"/>",
+"<meta content=\"https://torrestechremote.com/pt/\" property=\"og:url\"/>"
+],
+[
+"<meta content=\"Torres Tech Remote: digital business cards for small businesses across the U.S., for one business, every location, and your whole team\" property=\"og:image:alt\"/>",
+"<meta content=\"Torres Tech Remote: cartões de visita digitais para pequenos negócios em todos os EUA, para um negócio, cada local e toda a sua equipa\" property=\"og:image:alt\"/>"
+],
+[
+"\"url\": \"https://torrestechremote.com/\",\n      \"publisher\"",
+"\"url\": \"https://torrestechremote.com/\",\n      \"inLanguage\": [\"en\", \"es\", \"pt-PT\"],\n      \"publisher\""
+],
+[
+"\"@id\": \"https://torrestechremote.com/#webpage\",\n      \"url\": \"https://torrestechremote.com/\",\n      \"name\": \"Torres Tech Remote: digital business cards\",",
+"\"@id\": \"https://torrestechremote.com/pt/#webpage\",\n      \"url\": \"https://torrestechremote.com/pt/\",\n      \"inLanguage\": \"pt-PT\",\n      \"name\": \"Torres Tech Remote: cartões de visita digitais\","
+],
+[
+"<a class=\"navlink\" href=\"/digital-business-cards.html#pricing\">Pricing</a>",
+"<a class=\"navlink\" href=\"/digital-business-cards.html#pricing\">Preços</a>"
+],
+[
+"<a class=\"navlink\" href=\"/digital-business-cards.html#faq\">FAQ</a>",
+"<a class=\"navlink\" href=\"/digital-business-cards.html#faq\">Perguntas frequentes</a>"
+],
+[
+"Call and Text open on your phone. Email works from a computer or a phone.</p>\n<p class=\"contact-hint\">Free preview.",
+"Ligar e Mensagem abrem no seu telemóvel. O e-mail funciona num computador ou num telemóvel.</p>\n<p class=\"contact-hint\">Free preview."
+],
+[
+"<p class=\"kicker\">Choose what fits</p>",
+"<p class=\"kicker\">Escolha o que lhe convém</p>"
+],
+[
+"<h2>One card, or a card for every location and employee.</h2>",
+"<h2>Um cartão, ou um cartão para cada local e cada funcionário.</h2>"
+],
+[
+"<p>Setup is free. See your card before you pay, with up to 3 free previews.</p>",
+"<p>A criação é grátis. Veja o seu cartão antes de pagar, com até 3 pré-visualizações grátis.</p>"
+],
+[
+"<p class=\"label\">One business</p>",
+"<p class=\"label\">Um negócio</p>"
+],
+[
+"<h3>One card for your business</h3>",
+"<h3>Um cartão para o seu negócio</h3>"
+],
+[
+"Your logo and brand colors, call, text, WhatsApp, email, directions and website buttons, hours, services and prices, payment links, and a QR code that never changes. Free setup, then $10/month or $100/year.",
+"O seu logótipo e as cores da sua marca, botões de chamada, mensagem, WhatsApp, e-mail, direções e site, horários, serviços e preços, ligações de pagamento e um código QR que nunca muda. Criação grátis, depois $10/mês ou $100/ano."
+],
+[
+">See how it works and pricing</a>",
+">Veja como funciona e os preços</a>"
+],
+[
+"<p class=\"label\">Locations and teams</p>",
+"<p class=\"label\">Locais e equipas</p>"
+],
+[
+"<h3>Multiple locations or employees</h3>",
+"<h3>Vários locais ou funcionários</h3>"
+],
+[
+"A single card can list every location with its own address, phone and hours, and each employee can have an individual card with their name, photo and contact details. Each business is different, so we provide a custom quote. Setup is free.",
+"Um só cartão pode mostrar cada local com a sua própria morada, telefone e horário, e cada funcionário pode ter o seu cartão com nome, foto e dados de contacto. Cada negócio é diferente, por isso fazemos um orçamento à medida. A criação é grátis."
+],
+[
+">Request a quote</a>",
+">Pedir um orçamento (formulário em inglês)</a>"
+],
+[
+">See examples</a>",
+">Ver exemplos</a>"
+],
+[
+"<p class=\"kicker\">About Torres Tech Remote</p>",
+"<p class=\"kicker\">Sobre a Torres Tech Remote</p>"
+],
+[
+"alt=\"CompTIA A+ Certified\"",
+"alt=\"Técnico de TI certificado CompTIA A+\""
+],
+[
+"<b>CompTIA A+ Certified</b>",
+"<b>Técnico de TI certificado CompTIA A+</b>"
+],
+[
+"IT Technician — Hardware &amp; Software Support. Industry-recognized certification covering troubleshooting, networking, and system configuration.",
+"Suporte de hardware e software. Certificação reconhecida na indústria que cobre resolução de problemas, redes e configuração de sistemas."
+],
+[
+"<a href=\"/digital-business-cards.html\">Digital business cards</a>",
+"<a href=\"/digital-business-cards.html\">Cartões de visita digitais</a>"
+],
+[
+">Or email us</a>",
+">Ou escreva-nos por e-mail</a>"
+]
+]

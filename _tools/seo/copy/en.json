@@ -43,11 +43,11 @@
       [
         [
           "iPhone",
-          "Open the card in Safari. Tap Share (the square with an arrow). Tap Add to Home Screen, then Add."
+          "Open Safari and type in your card’s link. Scroll down and tap Add to home screen on the card. Tap Share (the square with an arrow). Tap Add to Home Screen, then Add."
         ],
         [
           "Android",
-          "Open the card in Chrome. Tap Add to home screen, then Install."
+          "Open the Chrome browser and type in your card’s link. Scroll down and tap Add to home screen on the card. Tap Install. The card’s icon is added to your home screen and to your app list."
         ]
       ]
     ],
@@ -56,11 +56,11 @@
       [
         [
           "iPhone",
-          "Tap Save contact on the card. When the contact opens, tap the check mark at the top left."
+          "Open Safari and type in your card’s link. Scroll down and tap Save contact on the card. When the contact opens, tap the check mark at the top left."
         ],
         [
           "Android",
-          "Tap Save contact. When it downloads, tap Open, then Import (some phones say Save)."
+          "Open your card. Tap the Save contact button. Tap Download in the box that shows the file name (like torres-tech-remote.vcf) and where it will be saved. Open the downloaded file. On the next screen, tap Import and choose where to save it. The contact is now in your contacts list."
         ]
       ]
     ]
@@ -76,20 +76,20 @@
     ],
     [
       "Coaches and trainers",
-      "Custom quote",
-      "A card for each coach or trainer, with their own contact details.",
-      "Request a quote",
-      "QUOTE"
+      "$10 a month",
+      "or $100 a year. Each coach or trainer can get their own card, with their own contact details. They order it themselves.",
+      "Get my free preview",
+      "/go/preview.html"
     ],
     [
       "Multiple locations",
       "Custom quote",
-      "A link and a QR code for each location.",
+      "A link and a QR code for each location. The business pays for all the cards.",
       "Request a quote",
       "QUOTE"
     ]
   ],
-  "price_note": "A quote depends on your number of locations and people. Setup is free.",
+  "price_note": "Custom quotes are for multiple locations and team cards, where the business pays for all the cards. Setup is free.",
   "sms_url": "sms:+12017722106?&amp;body=Hi%20Pedro%2C%20I%27d%20like%20a%20free%20preview%20for%20my%20business%3A%20",
   "sms_hint": "Text opens on your phone.",
   "sms_label": "Or text Pedro",

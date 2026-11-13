@@ -34,6 +34,10 @@
      "A free trial week, a new class, a flyer or holiday hours. It disappears on the date you choose."
     ],
     [
+     "Pay with HSA/FSA",
+     "Let members know they can pay with HSA/FSA money. A poster on your card shows how, with a QR code."
+    ],
+    [
      "Photos, up to 24",
      "Show your space, your classes and your people."
     ],
@@ -42,16 +46,12 @@
      "One tap sends happy members straight to your Google review page."
     ],
     [
-     "Your social links",
-     "Instagram, Facebook and more, all in one place."
-    ],
-    [
      "Hours and services",
      "Memberships, classes and training, with today's hours highlighted."
     ]
    ],
    "example": {
-    "image": "img/feat-alpha-night.webp",
+    "image": "img/feat-alpha-day.webp",
     "alt": "Alpha Fit Club digital business card, night mode",
     "caption": "Alpha Fit Club in Newark uses its logo as the booking button, plus an announcement at the top."
    },
@@ -60,14 +60,14 @@
     "On a QR sign at your front desk or entrance.",
     "On flyers and class posters.",
     "In the text you send after a free trial class.",
-    "On each trainer's own card, so clients reach the right person."
+    "On each coach's or trainer's own card, so clients reach the right person."
    ],
    "why_title": "Why it works for gyms",
    "why": [
     "You don't have to touch anything. We are your concierge: send us an email and we update your promotions, photos, hours and links.",
     "People decide to join in the moment. A QR code at the desk turns \"I'll think about it\" into a message or a booking right then.",
-    "Offers and schedules change all the time. You update the card instead of reprinting signs.",
-    "Each trainer can have their own card with their own number, and each location can have its own link.",
+    "Offers and schedules change all the time. We update the card for you instead of you reprinting signs.",
+    "Each coach or trainer can have their own card with their own number, and each location can have its own link.",
     "Members and visitors who speak another language see your card in theirs. We offer 25 languages.",
     "iPhone or Android, we help everyone get set up. We email you simple steps, with a link and QR code, so you and your members can put the card on the home screen like an app and save your contact."
    ],
@@ -97,8 +97,8 @@
      "On an iPhone or an Android phone, they can add the card to the home screen so it opens like an app, and save your contact in one tap. We email you simple step-by-step instructions for iPhone and Android to share with your members, and we can walk you through it by phone or video call."
     ],
     [
-     "Can my trainers have their own cards?",
-     "Yes. We can make one card per trainer and one per location. For a team or several locations we give you a custom quote."
+     "Can my coaches and trainers have their own cards?",
+     "Yes. Each coach or trainer can get their own card at the same price as yours, and they order it themselves. We can also make one card per location. For several locations or a team card we give you a custom quote, and the business pays for all the cards."
     ],
     [
      "Who makes the changes?",
@@ -151,6 +151,10 @@
      "Una semana de prueba gratis, una clase nueva, un volante o un horario de feriado. Desaparece en la fecha que usted elija."
     ],
     [
+     "Pago con HSA/FSA",
+     "Avise a sus miembros que pueden pagar con dinero de HSA/FSA. Un cartel en su tarjeta les muestra cómo, con un código QR."
+    ],
+    [
      "Fotos, hasta 24",
      "Muestre su local, sus clases y su gente."
     ],
@@ -159,16 +163,12 @@
      "Un toque lleva a sus miembros contentos directo a su página de reseñas de Google."
     ],
     [
-     "Sus redes sociales",
-     "Instagram, Facebook y más, todo en un solo lugar."
-    ],
-    [
      "Horario y servicios",
      "Membresías, clases y entrenamiento, con el horario de hoy resaltado."
     ]
    ],
    "example": {
-    "image": "img/feat-alpha-night.webp",
+    "image": "img/feat-alpha-day.webp",
     "alt": "Tarjeta digital de Alpha Fit Club, modo noche",
     "caption": "Alpha Fit Club, en Newark, usa su logo como botón de reservas y un anuncio arriba."
    },
@@ -177,14 +177,14 @@
     "En un letrero con código QR en su recepción o entrada.",
     "En volantes y carteles de clases.",
     "En el mensaje que envía después de una clase de prueba.",
-    "En la tarjeta de cada entrenador, para que el cliente llegue a la persona correcta."
+    "En la tarjeta de cada coach o entrenador, para que el cliente llegue a la persona correcta."
    ],
    "why_title": "Por qué sirve para gimnasios",
    "why": [
     "Usted no tiene que tocar nada. Somos su concierge: nos envía un correo y actualizamos sus promociones, fotos, horario y enlaces.",
     "La gente decide inscribirse en el momento. Un código QR en la recepción convierte un \"lo voy a pensar\" en un mensaje o una reserva en ese instante.",
-    "Las ofertas y los horarios cambian todo el tiempo. Usted actualiza la tarjeta en vez de volver a imprimir letreros.",
-    "Cada entrenador puede tener su propia tarjeta con su propio número, y cada sucursal puede tener su enlace.",
+    "Las ofertas y los horarios cambian todo el tiempo. Nosotros actualizamos la tarjeta por usted, en vez de que usted vuelva a imprimir letreros.",
+    "Cada coach o entrenador puede tener su propia tarjeta con su propio número, y cada sucursal puede tener su enlace.",
     "Los miembros y visitantes que hablan otro idioma ven su tarjeta en el suyo. Ofrecemos 25 idiomas.",
     "iPhone o Android, ayudamos a todos a empezar. Le enviamos por correo pasos sencillos, con el enlace y el código QR, para que usted y sus miembros pongan la tarjeta en la pantalla de inicio como una aplicación y guarden su contacto."
    ],
@@ -214,8 +214,8 @@
      "En un iPhone o en un teléfono Android, pueden agregar la tarjeta a la pantalla de inicio para que se abra como una aplicación, y guardar su contacto en un toque. Le enviamos por correo instrucciones sencillas paso a paso para iPhone y Android para que las comparta con sus miembros, y podemos guiarle por teléfono o videollamada."
     ],
     [
-     "¿Mis entrenadores pueden tener su propia tarjeta?",
-     "Sí. Podemos hacer una tarjeta por entrenador y una por sucursal. Para un equipo o varias sucursales le damos una cotización a su medida."
+     "¿Mis coaches y entrenadores pueden tener su propia tarjeta?",
+     "Sí. Cada coach o entrenador puede tener su propia tarjeta al mismo precio que la suya, y la piden ellos mismos. También podemos hacer una tarjeta por sucursal. Para varias sucursales o una tarjeta de equipo le damos una cotización a su medida, y el negocio paga todas las tarjetas."
     ],
     [
      "¿Quién hace los cambios?",
@@ -268,6 +268,10 @@
      "Uma semana de experiência grátis, uma aula nova, um folheto ou um horário de feriado. Desaparece na data que escolher."
     ],
     [
+     "Pagamento com HSA/FSA",
+     "Avise os seus membros de que podem pagar com dinheiro HSA/FSA. Um cartaz no seu cartão mostra como, com um código QR."
+    ],
+    [
      "Fotografias, até 24",
      "Mostre o seu espaço, as suas aulas e as suas pessoas."
     ],
@@ -276,16 +280,12 @@
      "Um toque leva os seus membros satisfeitos diretamente à sua página de avaliações do Google."
     ],
     [
-     "As suas redes sociais",
-     "Instagram, Facebook e mais, tudo num só lugar."
-    ],
-    [
      "Horário e serviços",
      "Mensalidades, aulas e treino, com o horário de hoje em destaque."
     ]
    ],
    "example": {
-    "image": "img/feat-alpha-night.webp",
+    "image": "img/feat-alpha-day.webp",
     "alt": "Cartão digital do Alpha Fit Club, modo noturno",
     "caption": "Alpha Fit Club, em Newark, usa o seu logótipo como botão de marcação e um anúncio no topo."
    },
@@ -294,14 +294,14 @@
     "Num cartaz com código QR na sua receção ou entrada.",
     "Em folhetos e cartazes de aulas.",
     "Na mensagem que envia depois de uma aula experimental.",
-    "No cartão de cada treinador, para o cliente chegar à pessoa certa."
+    "No cartão de cada treinador ou coach, para o cliente chegar à pessoa certa."
    ],
    "why_title": "Porque funciona para ginásios",
    "why": [
     "Não tem de mexer em nada. Somos o seu concierge: envia-nos um e-mail e atualizamos as suas promoções, fotografias, horário e ligações.",
     "As pessoas decidem inscrever-se no momento. Um código QR na receção transforma um \"vou pensar\" numa mensagem ou numa marcação nesse instante.",
-    "As ofertas e os horários mudam o tempo todo. Atualiza o cartão em vez de voltar a imprimir cartazes.",
-    "Cada treinador pode ter o seu próprio cartão com o seu próprio número, e cada unidade pode ter a sua ligação.",
+    "As ofertas e os horários mudam o tempo todo. Nós atualizamos o cartão por si, em vez de ter de voltar a imprimir cartazes.",
+    "Cada treinador ou coach pode ter o seu próprio cartão com o seu próprio número, e cada unidade pode ter a sua ligação.",
     "Os membros e visitantes que falam outro idioma veem o seu cartão no deles. Oferecemos 25 idiomas.",
     "iPhone ou Android, ajudamos todos a começar. Enviamos-lhe por e-mail passos simples, com a ligação e o código QR, para que o senhor e os seus membros ponham o cartão no ecrã principal como uma aplicação e guardem o seu contacto."
    ],
@@ -331,8 +331,8 @@
      "Num iPhone ou num telemóvel Android, podem adicionar o cartão ao ecrã principal para abrir como uma aplicação, e guardar o seu contacto com um toque. Enviamos-lhe por e-mail instruções simples passo a passo para iPhone e Android para partilhar com os seus membros, e podemos guiá-lo por telefone ou videochamada."
     ],
     [
-     "Os meus treinadores podem ter o seu próprio cartão?",
-     "Sim. Podemos fazer um cartão por treinador e um por unidade. Para uma equipa ou várias unidades damos um orçamento à medida."
+     "Os meus treinadores e coaches podem ter o seu próprio cartão?",
+     "Sim. Cada treinador ou coach pode ter o seu próprio cartão ao mesmo preço do seu, e pedem-no eles próprios. Também podemos fazer um cartão por unidade. Para várias unidades ou um cartão de equipa damos um orçamento à medida, e o negócio paga todos os cartões."
     ],
     [
      "Quem faz as alterações?",

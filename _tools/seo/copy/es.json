@@ -46,11 +46,11 @@
       [
         [
           "iPhone",
-          "Abra la tarjeta en Safari. Toque Compartir (el cuadrado con una flecha). Toque Añadir a pantalla de inicio y luego Añadir."
+          "Abra Safari y escriba el enlace de su tarjeta. Baje y toque Añadir a pantalla de inicio en la tarjeta. Toque Compartir (el cuadrado con una flecha). Toque Añadir a pantalla de inicio y luego Añadir."
         ],
         [
           "Android",
-          "Abra la tarjeta en Chrome. Toque Añadir a pantalla de inicio y luego Instalar."
+          "Abra el navegador Chrome y escriba el enlace de su tarjeta. Baje y toque Añadir a pantalla de inicio en la tarjeta. Toque Instalar. El ícono de la tarjeta se agrega a su pantalla de inicio y a su lista de aplicaciones."
         ]
       ]
     ],
@@ -59,11 +59,11 @@
       [
         [
           "iPhone",
-          "Toque Guardar contacto en la tarjeta. Cuando se abra el contacto, toque la marca de verificación arriba a la izquierda."
+          "Abra Safari y escriba el enlace de su tarjeta. Baje y toque Guardar contacto en la tarjeta. Cuando se abra el contacto, toque la marca de verificación arriba a la izquierda."
         ],
         [
           "Android",
-          "Toque Guardar contacto. Cuando se descargue, toque Abrir y luego Importar (algunos teléfonos dicen Guardar)."
+          "Abra su tarjeta. Toque el botón Guardar contacto. Toque Descargar en el cuadro que muestra el nombre del archivo (por ejemplo, torres-tech-remote.vcf) y dónde se guardará. Abra el archivo descargado. En la pantalla siguiente, toque Importar y elija dónde guardarlo. El contacto ya está en su lista de contactos."
         ]
       ]
     ]
@@ -79,20 +79,20 @@
     ],
     [
       "Coaches y entrenadores",
-      "Cotización a su medida",
-      "Una tarjeta para cada coach o entrenador, con sus propios datos de contacto.",
-      "Pedir una cotización",
-      "QUOTE"
+      "$10 al mes",
+      "o $100 al año. Cada coach o entrenador puede tener su propia tarjeta, con sus propios datos de contacto. La piden ellos mismos.",
+      "Pedir mi vista previa gratis",
+      "/go/preview-es.html"
     ],
     [
       "Varias sucursales",
       "Cotización a su medida",
-      "Un enlace y un código QR para cada sucursal.",
+      "Un enlace y un código QR para cada sucursal. El negocio paga todas las tarjetas.",
       "Pedir una cotización",
       "QUOTE"
     ]
   ],
-  "price_note": "La cotización depende de su número de sucursales y de personas. La instalación es gratis.",
+  "price_note": "Las cotizaciones a su medida son para varias sucursales y tarjetas de equipo, donde el negocio paga todas las tarjetas. La instalación es gratis.",
   "sms_url": "sms:+12017722106?&amp;body=Hola%20Pedro%2C%20quiero%20una%20vista%20previa%20gratis%20para%20mi%20negocio%3A%20",
   "sms_hint": "El texto se abre en su teléfono.",
   "sms_label": "O escríbale un texto a Pedro",

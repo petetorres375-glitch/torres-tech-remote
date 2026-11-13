@@ -46,11 +46,11 @@
    [
     [
      "iPhone",
-     "Abra o cartão no Safari. Toque em Partilhar (o quadrado com uma seta). Toque em Adicionar ao ecrã principal e depois em Adicionar."
+     "Abra o Safari e escreva a ligação do seu cartão. Desloque para baixo e toque em Adicionar ao ecrã principal no cartão. Toque em Partilhar (o quadrado com uma seta). Toque em Adicionar ao ecrã principal e depois em Adicionar."
     ],
     [
      "Android",
-     "Abra o cartão no Chrome. Toque em Adicionar ao ecrã principal e depois em Instalar."
+     "Abra o navegador Chrome e escreva a ligação do seu cartão. Desloque para baixo e toque em Adicionar ao ecrã principal no cartão. Toque em Instalar. O ícone do cartão é adicionado ao seu ecrã principal e à sua lista de aplicações."
     ]
    ]
   ],
@@ -59,11 +59,11 @@
    [
     [
      "iPhone",
-     "Toque em Guardar contacto no cartão. Quando o contacto abrir, toque na marca de verificação no canto superior esquerdo."
+     "Abra o Safari e escreva a ligação do seu cartão. Desloque para baixo e toque em Guardar contacto no cartão. Quando o contacto abrir, toque na marca de verificação no canto superior esquerdo."
     ],
     [
      "Android",
-     "Toque em Guardar contacto. Quando for descarregado, toque em Abrir e depois em Importar (alguns telemóveis dizem Guardar)."
+     "Abra o seu cartão. Toque no botão Guardar contacto. Toque em Transferir na caixa que mostra o nome do ficheiro (por exemplo, torres-tech-remote.vcf) e onde será guardado. Abra o ficheiro transferido. No ecrã seguinte, toque em Importar e escolha onde o guardar. O contacto já está na sua lista de contactos."
     ]
    ]
   ]
@@ -79,20 +79,20 @@
   ],
   [
    "Treinadores e personal trainers",
-   "Orçamento à medida",
-   "Um cartão para cada treinador, com os seus próprios dados de contacto.",
-   "Pedir um orçamento",
+   "$10 por mês",
+   "ou $100 por ano. Cada treinador ou coach pode ter o seu próprio cartão, com os seus próprios dados de contacto. Pedem-no eles próprios.",
+   "Pedir a minha pré-visualização grátis",
    "/go/preview-pt.html"
   ],
   [
    "Várias unidades",
    "Orçamento à medida",
-   "Uma ligação e um código QR para cada unidade.",
+   "Uma ligação e um código QR para cada unidade. O negócio paga todos os cartões.",
    "Pedir um orçamento",
    "/go/preview-pt.html"
   ]
  ],
- "price_note": "O orçamento depende do número de unidades e de pessoas. A instalação é grátis.",
+ "price_note": "Os orçamentos à medida são para várias unidades e cartões de equipa, onde o negócio paga todos os cartões. A instalação é grátis.",
  "sms_url": "sms:+12017722106?&amp;body=Ol%C3%A1%20Pedro%2C%20quero%20uma%20pr%C3%A9-visualiza%C3%A7%C3%A3o%20gr%C3%A1tis%20para%20o%20meu%20neg%C3%B3cio%3A%20",
  "sms_hint": "O texto abre no seu telemóvel.",
  "sms_label": "Ou envie uma mensagem de texto ao Pedro",
