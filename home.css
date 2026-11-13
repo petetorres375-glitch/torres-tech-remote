@@ -214,6 +214,7 @@ h3{font-weight:800}
 #order-pay{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
 .order .fine{margin-top:14px}
 .order a{color:var(--orange-text);text-decoration:underline}
+.order a.btn{color:#fff;text-decoration:none}
 
 /* teams */
 .tcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px;text-align:left}
