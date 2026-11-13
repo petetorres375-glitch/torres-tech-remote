@@ -160,6 +160,8 @@ TRANSLATIONS.update({
 "See it live:": "Véalo en vivo:",
 })
 
+TRANSLATIONS.update({'Put it on a phone in under a minute': 'Póngala en un teléfono en menos de un minuto', 'Two quick things your customers can do, on iPhone or Android.': 'Dos cosas rápidas que sus clientes pueden hacer, en iPhone o Android.', 'Add it to the home screen, so it opens like an app': 'Agréguela a la pantalla de inicio, para que se abra como una aplicación', 'Save the contact': 'Guarde el contacto', 'Not sure how? We email you these steps to share with your customers, and we can walk you through them by phone or video call, from anywhere in the U.S.': '¿No está seguro de cómo? Le enviamos por correo estos pasos para que los comparta con sus clientes, y podemos guiarle por teléfono o videollamada, desde cualquier lugar de EE. UU.'})
+
 RAW = [
     ('<li>Open the <b>Chrome</b> browser and type in your card’s link.</li><li>Scroll down and tap <b>Add to home screen</b> on the card.</li><li>Tap <b>Install</b>. The card’s icon is added to your home screen and to your app list.</li>',
      '<li>Abra el navegador <b>Chrome</b> y escriba el enlace de su tarjeta.</li><li>Baje y toque <b>Añadir a pantalla de inicio</b> en la tarjeta.</li><li>Toque <b>Instalar</b>. El ícono de la tarjeta se agrega a su pantalla de inicio y a su lista de aplicaciones.</li>'),

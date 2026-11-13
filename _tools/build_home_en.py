@@ -95,6 +95,22 @@ contact = os_block(
     "<li>Open <b>Safari</b> and type in your card’s link.</li><li>Scroll down and tap <b>Save contact</b> on the card.</li><li>The contact opens. Tap <b>✓</b> at the top left.</li>",
     "contact")
 
+def _grab(block):
+    import re as _re
+    return block
+
+_ios_inst = "<li>Open <b>Safari</b> and type in your card’s link.</li><li>Scroll down and tap <b>Add to home screen</b> on the card.</li><li>Tap <b>Share</b> (the square with an arrow).</li><li>Tap <b>Add to Home Screen</b>, then <b>Add</b>.</li>"
+_and_inst = "<li>Open the <b>Chrome</b> browser and type in your card’s link.</li><li>Scroll down and tap <b>Add to home screen</b> on the card.</li><li>Tap <b>Install</b>. The card’s icon is added to your home screen and to your app list.</li>"
+_ios_con = "<li>Open <b>Safari</b> and type in your card’s link.</li><li>Scroll down and tap <b>Save contact</b> on the card.</li><li>The contact opens. Tap <b>✓</b> at the top left.</li>"
+_and_con = "<li>Open your card.</li><li>Tap the <b>Save contact</b> button.</li><li>Download the file: tap <b>Download</b> in the box that shows the file name (like <b>torres-tech-remote.vcf</b>) and where it will be saved.</li><li>Open the downloaded file.</li><li>On the next screen, tap <b>Import</b> and choose where to save it.</li><li>The contact is now in your contacts list.</li>"
+assert _ios_inst in install and _and_inst in install and _ios_con in contact and _and_con in contact
+phone = f'''<div class="gsec phone-sec reveal" id="install"><div class="center"><h2>Put it on a phone in under a minute</h2><p class="sub">Two quick things your customers can do, on iPhone or Android.</p>
+<div class="gcards gphones">
+<div class="gcard gphone"><h3>iPhone</h3><h4>Add it to the home screen, so it opens like an app</h4><ol class="gsteps">{_ios_inst}</ol><h4 id="save-contact">Save the contact</h4><ol class="gsteps">{_ios_con}</ol></div>
+<div class="gcard gphone"><h3>Android</h3><h4>Add it to the home screen, so it opens like an app</h4><ol class="gsteps">{_and_inst}</ol><h4>Save the contact</h4><ol class="gsteps">{_and_con}</ol></div>
+</div>
+<p class="ghelp">Not sure how? We email you these steps to share with your customers, and we can walk you through them by phone or video call, from anywhere in the U.S.</p></div></div>'''
+
 ICONS = {
     "brand": '<circle cx="12" cy="12" r="9"/><circle cx="8.5" cy="10" r="1.2"/><circle cx="15.5" cy="10" r="1.2"/><path d="M8 15c1.2 1.4 2.6 2 4 2s2.8-.6 4-2"/>',
 }
@@ -275,8 +291,7 @@ BODY = f'''<body id="top" class="no-js">
 <div class="fc"><div class="feature-photo feature-photo-double"><img alt="Alpha Fit Club November events promotion on the card" loading="lazy" height="1100" width="840" src="/img/home/feat-offer-events.webp"/><img alt="Alpha Fit Club promotional poster on the card" loading="lazy" height="1160" width="840" src="/img/home/feat-offer-poster.webp"/></div><h3>A spot for your offer</h3><p>Having a sale? Email me and I change it for you. It can turn itself off when your offer ends.</p></div>
 <div class="fc"><div class="feature-photo"><img alt="A digital business card QR code" loading="lazy" height="710" width="840" src="/img/home/feat-share.webp"/></div><h3>Easy to share, and it lasts</h3><p>QR code, Share and Save contact. Your QR code never changes, so printed codes keep working.</p></div>
 </div>
-{install}
-{contact}
+{phone}
 </div></section>
 
 <section class="soft" id="clients"><div class="wrap center reveal">

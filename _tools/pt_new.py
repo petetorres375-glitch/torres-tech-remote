@@ -11,6 +11,8 @@ KEEP = {"Torres Tech Remote", "Android", "iPhone", "Chrome", "Safari", "ES", "EN
         "pedro_torres@torrestechremote.com", "WhatsApp", "LINE", "Facebook", "Instagram", "YouTube", "QR", "TTR", "OK"}
 
 TRANSLATIONS = {}
+TRANSLATIONS.update({'Put it on a phone in under a minute': 'Coloque-o num telemóvel em menos de um minuto', 'Two quick things your customers can do, on iPhone or Android.': 'Duas coisas rápidas que os seus clientes podem fazer, em iPhone ou Android.', 'Add it to the home screen, so it opens like an app': 'Adicione-o ao ecrã principal, para abrir como uma aplicação', 'Save the contact': 'Guarde o contacto', 'Not sure how? We email you these steps to share with your customers, and we can walk you through them by phone or video call, from anywhere in the U.S.': 'Não tem a certeza de como fazer? Enviamos-lhe estes passos por e-mail para partilhar com os seus clientes, e podemos guiá-lo por telefone ou videochamada, a partir de qualquer ponto dos EUA.'})
+
 RAW = [
     ('<li>Open the <b>Chrome</b> browser and type in your card’s link.</li><li>Scroll down and tap <b>Add to home screen</b> on the card.</li><li>Tap <b>Install</b>. The card’s icon is added to your home screen and to your app list.</li>',
      '<li>Abra o navegador <b>Chrome</b> e escreva a ligação do seu cartão.</li><li>Desloque para baixo e toque em <b>Adicionar ao ecrã principal</b> no cartão.</li><li>Toque em <b>Instalar</b>. O ícone do cartão é adicionado ao ecrã principal e à lista de aplicações.</li>'),
