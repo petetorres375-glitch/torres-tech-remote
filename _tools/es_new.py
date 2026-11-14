@@ -179,7 +179,16 @@ RAW = [
 import re
 
 
+TRANSLATIONS.update({
+"Watch it step by step": "Véalo paso a paso",
+"Screen recording on an iPhone: add the card to the home screen and save the contact": "Grabación de pantalla en un iPhone: añada la tarjeta a la pantalla de inicio y guarde el contacto",
+"Screen recording on an Android phone: add the card to the home screen and save the contact": "Grabación de pantalla en un teléfono Android: añada la tarjeta a la pantalla de inicio y guarde el contacto",
+})
+
+
 def PAGE(s):
+    for os_ in ('ios', 'android'):
+        s = s.replace('/video/real-install-%s.' % os_, '/video/real-install-%s-es.' % os_)
     # language links / hreflang
     s = re.sub(r'<link href="[^"]*" hreflang="[^"]*" rel="alternate"/>\n', "", s)
     s = s.replace('<link href="https://torrestechremote.com/es/" rel="canonical"/>\n',

@@ -321,3 +321,5 @@ footer{background:#f8fafc;border-top:1px solid var(--line);padding:48px 0 36px;c
 .gsteps{list-style:none;margin:0;padding:0;counter-reset:gs;display:grid;gap:10px}
 .gsteps li{counter-increment:gs;position:relative;padding-left:38px;color:var(--ink);font-size:15.5px;line-height:1.6}
 .gsteps li::before{content:counter(gs);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--navy,#141a2b);color:#fff;font-weight:800;font-size:13px;display:grid;place-items:center}
+
+.gphone .os-real{max-width:270px;margin:6px auto 0}.gphone .os-real video{aspect-ratio:540/960;background:#0f172a}

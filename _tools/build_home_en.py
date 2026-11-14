@@ -106,8 +106,8 @@ _and_con = "<li>Open your card.</li><li>Tap the <b>Save contact</b> button.</li>
 assert _ios_inst in install and _and_inst in install and _ios_con in contact and _and_con in contact
 phone = f'''<div class="gsec phone-sec reveal" id="install"><div class="center"><h2>Put it on a phone in under a minute</h2><p class="sub">Two quick things your customers can do, on iPhone or Android.</p>
 <div class="gcards gphones">
-<div class="gcard gphone"><h3>iPhone</h3><h4>Add it to the home screen, so it opens like an app</h4><ol class="gsteps">{_ios_inst}</ol><h4 id="save-contact">Save the contact</h4><ol class="gsteps">{_ios_con}</ol></div>
-<div class="gcard gphone"><h3>Android</h3><h4>Add it to the home screen, so it opens like an app</h4><ol class="gsteps">{_and_inst}</ol><h4>Save the contact</h4><ol class="gsteps">{_and_con}</ol></div>
+<div class="gcard gphone"><h3>iPhone</h3><h4>Add it to the home screen, so it opens like an app</h4><ol class="gsteps">{_ios_inst}</ol><h4 id="save-contact">Save the contact</h4><ol class="gsteps">{_ios_con}</ol><h4>Watch it step by step</h4><div class="os-video os-real"><video aria-label="Screen recording on an iPhone: add the card to the home screen and save the contact" height="960" loop="" muted="" playsinline="" poster="/video/real-install-ios.jpg" preload="none" src="/video/real-install-ios.mp4" width="540"></video></div></div>
+<div class="gcard gphone"><h3>Android</h3><h4>Add it to the home screen, so it opens like an app</h4><ol class="gsteps">{_and_inst}</ol><h4>Save the contact</h4><ol class="gsteps">{_and_con}</ol><h4>Watch it step by step</h4><div class="os-video os-real"><video aria-label="Screen recording on an Android phone: add the card to the home screen and save the contact" height="960" loop="" muted="" playsinline="" poster="/video/real-install-android.jpg" preload="none" src="/video/real-install-android.mp4" width="540"></video></div></div>
 </div>
 <p class="ghelp">Not sure how? We email you these steps to share with your customers, and we can walk you through them by phone or video call, from anywhere in the U.S.</p></div></div>'''
 

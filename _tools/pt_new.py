@@ -170,7 +170,16 @@ TRANSLATIONS.update({
 })
 
 
+TRANSLATIONS.update({
+"Watch it step by step": "Veja passo a passo",
+"Screen recording on an iPhone: add the card to the home screen and save the contact": "Gravação de ecrã num iPhone: adicione o cartão ao ecrã principal e guarde o contacto",
+"Screen recording on an Android phone: add the card to the home screen and save the contact": "Gravação de ecrã num telemóvel Android: adicione o cartão ao ecrã principal e guarde o contacto",
+})
+
+
 def PAGE(s):
+    for os_ in ('ios', 'android'):
+        s = s.replace('/video/real-install-%s.' % os_, '/video/real-install-%s-pt.' % os_)
     s = re.sub(r'<link href="[^"]*" hreflang="[^"]*" rel="alternate"/>\n', "", s)
     s = s.replace('<link href="https://torrestechremote.com/pt/" rel="canonical"/>\n',
         '<link href="https://torrestechremote.com/pt/" rel="canonical"/>\n'
