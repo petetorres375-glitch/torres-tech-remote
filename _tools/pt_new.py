@@ -154,7 +154,7 @@ TRANSLATIONS.update({
 "Unlimited changes to your hours, prices, photos and links": "Alterações ilimitadas ao seu horário, preços, fotos e ligações",
 "Your QR code never changes, so printed codes keep working": "O seu código QR nunca muda, por isso os códigos impressos continuam a funcionar",
 "For businesses": "Para negócios",
-"Select the option that fits your organization, or combine them. Each business is different, so we provide a custom quote based on your number of locations and employees. Setup is free.": "Escolha a opção que se adequa à sua organização, ou combine-as. Cada negócio é diferente, por isso damos um orçamento à medida com base no número de locais e funcionários. A criação é grátis.",
+"Select the option that fits your organization, or combine them. Each business is different, so we provide a custom quote based on your number of locations and employees. Setup is free. The business pays for all the cards.": "Escolha a opção que se adequa à sua organização, ou combine-as. Cada negócio é diferente, por isso damos um orçamento à medida com base no número de locais e funcionários. A criação é grátis. A empresa paga todos os cartões.",
 "Run a gym or fitness studio?": "Tem um ginásio ou um estúdio de fitness?",
 "See the digital business card for gyms": "Veja o cartão de visita digital para ginásios",
 "A single card lists every location, each with its own address, directions, phone number and hours. Suited to retail, fitness and multi-site businesses.": "Um só cartão mostra cada local, cada um com a sua morada, direções, telefone e horário. Ideal para comércio, fitness e negócios com várias sedes.",
