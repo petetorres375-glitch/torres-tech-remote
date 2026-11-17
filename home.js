@@ -109,7 +109,7 @@
       function goTo(index) {
         activeIndex = Math.max(0, Math.min(slides.length - 1, index));
         const slide = slides[activeIndex];
-        const left = slide.offsetLeft - (rail.clientWidth - slide.offsetWidth) / 2;
+        const left = (slide.offsetLeft - rail.offsetLeft) - (rail.clientWidth - slide.offsetWidth) / 2;
         moving = true;
         clearTimeout(moveTimer);
         moveTimer = setTimeout(() => { moving = false; }, reducedMotion ? 50 : 600);
@@ -142,7 +142,7 @@
         const center = rail.scrollLeft + rail.clientWidth / 2;
         let closest = 0, distance = Infinity;
         slides.forEach((slide, index) => {
-          const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+          const slideCenter = (slide.offsetLeft - rail.offsetLeft) + slide.offsetWidth / 2;
           const nextDistance = Math.abs(center - slideCenter);
           if (nextDistance < distance) { distance = nextDistance; closest = index; }
         });
