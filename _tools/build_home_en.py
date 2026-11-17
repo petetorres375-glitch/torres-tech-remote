@@ -122,6 +122,8 @@ keon = carousel("Keon Torres", "feat-keon-night.webp", 793, [
 alpha = carousel("Alpha Fit Club", "feat-alpha-night.webp", 1133, [
     ("feat-alpha-night.webp", "Night · English"), ("feat-alpha-day.webp", "Day · English"),
     ("feat-alpha-es.webp", "Night · Spanish"), ("feat-alpha-es-day.webp", "Day · Spanish")])
+andrew = carousel("Andrew J. Rodney", "feat-andrew-en.webp", 1019, [
+    ("feat-andrew-en.webp", "English"), ("feat-andrew-es.webp", "Spanish")])
 
 FAQ = [
     ("What does it cost?", 'Design and setup are free. You pay $10 per month for hosting and updates, or $100 per year (2 months free). Up to 3 free previews before you pay. For several locations or employees, request a custom quote <a href="#teams">here</a>.'),
@@ -312,6 +314,13 @@ BODY = f'''<body id="top" class="no-js">
 {keon}
 <p class="langnote">Three languages on one card: English, Japanese and Vietnamese.</p>
 <ul class="chips"><li><b>Message on LINE</b> opens a chat</li><li><b>Email</b> writes to him</li><li><b>EN / JA / VI</b> switches language</li><li><b>Day / Night</b> switches the look</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li><li><b>QR code</b> scan to open</li><li><b>Add to home screen</b> installs like an app</li></ul>
+</div>
+<div class="client">
+<h3>Andrew J. Rodney</h3>
+<p>Handyman &amp; Animal Care</p>
+{andrew}
+<p class="langnote">English and Spanish on one card.</p>
+<ul class="chips"><li><b>Text me to book</b> starts a text</li><li><b>Call</b> rings him</li><li><b>WhatsApp</b> opens a chat</li><li><b>Email</b> writes to him</li><li><b>EN / ES</b> switches language</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li><li><b>QR code</b> scan to open</li><li><b>Add to home screen</b> installs like an app</li></ul>
 </div>
 </div>
 <figure class="review"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Great product. Great service. Best digital business card out there! I&rsquo;ve had several and this is the most interactive I&rsquo;ve had. Pete&rsquo;s very accommodating and works with you on all the details till it&rsquo;s just right. So happy to do business with Torres Tech Remote!&rdquo;</blockquote><figcaption>Miriam Ramos, Alpha Fit Club &middot; Google review, 5.0</figcaption></figure>
