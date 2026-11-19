@@ -125,6 +125,9 @@ alpha = carousel("Alpha Fit Club", "feat-alpha-night.webp", 1133, [
 andrew = carousel("Andrew J. Rodney", "feat-andrew-en.webp", 1019, [
     ("feat-andrew-en.webp", "English"), ("feat-andrew-es.webp", "Spanish")])
 
+rodolfo = carousel("Ironbound TaeKwon-Do", "feat-taekwondo-en.webp", 1003, [
+    ("feat-taekwondo-en.webp", "English"), ("feat-taekwondo-es.webp", "Spanish")])
+
 FAQ = [
     ("What does it cost?", 'Design and setup are free. You pay $10 per month for hosting and updates, or $100 per year (2 months free). Up to 3 free previews before you pay. For several locations or employees, request a custom quote <a href="#teams">here</a>.'),
     ("Which languages can my card show?", 'Up to 3 of 25 languages, like Spanish, Portuguese, Chinese, Japanese and Arabic. See the <a href="#languages">full list</a>.'),
@@ -286,6 +289,7 @@ BODY = f'''<body id="top" class="no-js">
 <div class="grid3 grid4">
 <div class="fc"><div class="feature-photo"><img alt="Alpha Fit Club brand shown on the card" loading="lazy" height="700" width="840" src="/img/home/feat-brand.webp"/></div><h3>Your brand</h3><p>Your logo and brand colors.</p></div>
 <div class="fc"><div class="feature-photo"><img alt="One-tap buttons on a digital card" loading="lazy" height="580" width="840" src="/img/home/feat-buttons.webp"/></div><h3>One-tap buttons</h3><p>Call, text, WhatsApp, email, directions and website buttons.</p></div>
+<div class="fc"><div class="feature-photo"><img alt="Book a free class form on a digital card that sends the request on WhatsApp" loading="lazy" height="920" width="780" src="/img/home/feat-booking.webp"/></div><h3>A booking form</h3><p>Customers fill in a short form and WhatsApp opens with their request ready to send. No app, no account.</p></div>
 <div class="fc"><div class="feature-photo"><img alt="Business hours and service pricing on a card" loading="lazy" height="1500" width="840" src="/img/home/feat-details.webp"/></div><h3>Your business details</h3><p>Hours, services and prices, photos, payment links.</p></div>
 <div class="fc"><div class="feature-photo"><img alt="Photo gallery on the Alpha Fit Club card" loading="lazy" height="690" width="780" src="/img/home/feat-photos.webp"/></div><h3>Your photos</h3><p>Show your place, your work or your team in a photo gallery customers can swipe.</p></div>
 <div class="fc"><div class="feature-photo feature-photo-fit"><img alt="Torres Tech Remote card with Facebook, Instagram, YouTube, video and Leave a review buttons" loading="lazy" height="610" width="780" src="/img/home/feat-socials.webp"/></div><h3>Your socials and reviews</h3><p>Facebook, Instagram, YouTube, your videos, your website and a Leave a review button, so customers can follow you.</p></div>
@@ -322,8 +326,18 @@ BODY = f'''<body id="top" class="no-js">
 <p class="langnote">English and Spanish on one card.</p>
 <ul class="chips"><li><b>Text me to book</b> starts a text</li><li><b>Call</b> rings him</li><li><b>WhatsApp</b> opens a chat</li><li><b>Email</b> writes to him</li><li><b>EN / ES</b> switches language</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li><li><b>QR code</b> scan to open</li><li><b>Add to home screen</b> installs like an app</li></ul>
 </div>
+<div class="client">
+<h3>Ironbound TaeKwon-Do</h3>
+<p>Martial Arts School<br/>Newark, NJ</p>
+{rodolfo}
+<p class="langnote">English and Spanish on one card.</p>
+<ul class="chips"><li><b>Call</b> rings the school</li><li><b>Book a free class</b> sends it on WhatsApp</li><li><b>WhatsApp</b> opens a chat</li><li><b>Email</b> writes to him</li><li><b>Directions</b> opens the map</li><li><b>Hours</b> shows the class schedule</li><li><b>EN / ES</b> switches language</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li></ul>
 </div>
+</div>
+<div class="reviews">
 <figure class="review"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Great product. Great service. Best digital business card out there! I&rsquo;ve had several and this is the most interactive I&rsquo;ve had. Pete&rsquo;s very accommodating and works with you on all the details till it&rsquo;s just right. So happy to do business with Torres Tech Remote!&rdquo;</blockquote><figcaption>Miriam Ramos, Alpha Fit Club &middot; Google review, 5.0</figcaption></figure>
+<figure class="review"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;This digital business card is perfect for my online business and more convenient than having to get physical business cards. I highly recommend this! Worth the purchase!&rdquo;</blockquote><figcaption>Keon Torres, English &amp; Acting Coach &middot; Google review, 5.0</figcaption></figure>
+</div>
 </div></section>
 
 <section id="how"><div class="wrap center reveal">

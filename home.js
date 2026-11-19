@@ -159,3 +159,28 @@
     });
   })();
 })();
+
+/* Featured clients rail: arrow buttons under the row */
+(function () {
+  const rail = document.querySelector("#clients .clients");
+  if (!rail) return;
+  const lang = document.documentElement.lang || "en";
+  const labels = lang.startsWith("es") ? ["Clientes anteriores", "Más clientes"] : lang.startsWith("pt") ? ["Clientes anteriores", "Mais clientes"] : ["Previous clients", "More clients"];
+  const nav = document.createElement("div");
+  nav.className = "clients-nav";
+  nav.innerHTML = '<button type="button" aria-label="' + labels[0] + '">&#8592;</button><button type="button" aria-label="' + labels[1] + '">&#8594;</button>';
+  rail.after(nav);
+  const [prev, next] = nav.querySelectorAll("button");
+  const step = () => Math.max(260, rail.clientWidth * 0.8);
+  const update = () => {
+    const max = rail.scrollWidth - rail.clientWidth - 2;
+    nav.style.display = max <= 0 ? "none" : "flex";
+    prev.disabled = rail.scrollLeft <= 2;
+    next.disabled = rail.scrollLeft >= max;
+  };
+  prev.addEventListener("click", () => rail.scrollBy({ left: -step(), behavior: "smooth" }));
+  next.addEventListener("click", () => rail.scrollBy({ left: step(), behavior: "smooth" }));
+  rail.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
