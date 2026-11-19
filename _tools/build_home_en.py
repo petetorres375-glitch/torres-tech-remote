@@ -313,13 +313,6 @@ BODY = f'''<body id="top" class="no-js">
 <ul class="chips"><li><b>Book first class</b> opens booking page</li><li><b>Call</b> rings the gym</li><li><b>Text</b> starts a text</li><li><b>Email</b> writes to the gym</li><li><b>Directions</b> opens the map</li><li><b>EN / ES</b> switches language</li><li><b>Day / Night</b> switches the look</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li><li><b>QR code</b> scan to open</li></ul>
 </div>
 <div class="client">
-<h3>Keon Torres</h3>
-<p>English &amp; Acting Coach / Instructor<br/>Vietnam &amp; Japan</p>
-{keon}
-<p class="langnote">Three languages on one card: English, Japanese and Vietnamese.</p>
-<ul class="chips"><li><b>Message on LINE</b> opens a chat</li><li><b>Email</b> writes to him</li><li><b>EN / JA / VI</b> switches language</li><li><b>Day / Night</b> switches the look</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li><li><b>QR code</b> scan to open</li><li><b>Add to home screen</b> installs like an app</li></ul>
-</div>
-<div class="client">
 <h3>Andrew J. Rodney</h3>
 <p>Handyman &amp; Animal Care</p>
 {andrew}
@@ -332,6 +325,13 @@ BODY = f'''<body id="top" class="no-js">
 {rodolfo}
 <p class="langnote">English and Spanish on one card.</p>
 <ul class="chips"><li><b>Call</b> rings the school</li><li><b>Book a free class</b> sends it on WhatsApp</li><li><b>WhatsApp</b> opens a chat</li><li><b>Email</b> writes to him</li><li><b>Directions</b> opens the map</li><li><b>Hours</b> shows the class schedule</li><li><b>EN / ES</b> switches language</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li></ul>
+</div>
+<div class="client">
+<h3>Keon Torres</h3>
+<p>English &amp; Acting Coach / Instructor<br/>Vietnam &amp; Japan</p>
+{keon}
+<p class="langnote">Three languages on one card: English, Japanese and Vietnamese.</p>
+<ul class="chips"><li><b>Message on LINE</b> opens a chat</li><li><b>Email</b> writes to him</li><li><b>EN / JA / VI</b> switches language</li><li><b>Day / Night</b> switches the look</li><li><b>Share</b> send the card</li><li><b>Save contact</b> adds to phone</li><li><b>QR code</b> scan to open</li><li><b>Add to home screen</b> installs like an app</li></ul>
 </div>
 </div>
 <div class="reviews">
